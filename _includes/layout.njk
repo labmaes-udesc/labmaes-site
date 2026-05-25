@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title and title != 'LabMAES' %}{{ title }} | LabMAES{% else %}LabMAES{% endif %}</title>
+  <meta name="description" content="{{ description or site.description }}">
+
+  <!-- Open Graph (preview em redes sociais e WhatsApp) -->
+  <meta property="og:title" content="{% if title and title != 'LabMAES' %}{{ title }} | LabMAES{% else %}LabMAES{% endif %}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:image" content="{{ site.url }}{% if ogImage %}{{ ogImage }}{% else %}/assets/banners/banner-caminhos-desktop.webp{% endif %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Fontes: Poppins e DM Mono via Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=DM+Mono&display=swap">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/components.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/logos/logo-labmaes-vermelho.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  {% include "header.njk" %}
+  {{ content | safe }}
+  {% include "footer.njk" %}
+  <script src="/js/main.js"></script>
+</body>
+</html>

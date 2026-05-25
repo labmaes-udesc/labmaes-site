@@ -4,3 +4,12 @@
 !.dev.vars.example
 .env*
 !.env.example
+
+# Eleventy output
+_site/
+
+# Node
+node_modules/
+
+# Brainstorming visual companion (gerado em sessões de trabalho com IA)
+.superpowers/
