@@ -7,7 +7,7 @@
     <a class="button button--ghost" href="/sobre/"
        {% if page.url == '/sobre/' %}aria-current="page"{% endif %}>Sobre nós</a>
     <a class="button button--ghost" href="/eventos/caminhos-do-contemporaneo/2026/"
-       {% if '/eventos/caminhos-do-contemporaneo/2026/' in page.url %}aria-current="page"{% endif %}>Eventos</a>
+       {% if page.url == '/eventos/caminhos-do-contemporaneo/2026/' %}aria-current="page"{% elif '/eventos/caminhos-do-contemporaneo/2026/' in page.url %}aria-current="true"{% endif %}>Eventos</a>
     <a class="button button--ghost" href="/contato/"
        {% if page.url == '/contato/' %}aria-current="page"{% endif %}>Contato</a>
   </nav>
