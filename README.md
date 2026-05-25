@@ -1,27 +1,31 @@
-# LabMAES site estático
+# LabMAES site
 
-Pacote pronto para subir no GitHub e publicar via Cloudflare Pages.
+Site estático do LabMAES e do 7º Caminhos do Contemporâneo, gerado com [Eleventy](https://www.11ty.dev/).
 
-## Publicação no Cloudflare Pages
+## Desenvolvimento local
 
-- Build command: deixar vazio
-- Build output directory: `/` se o repositório tiver esta pasta como raiz
-- Caso a pasta `labmaes-site` seja enviada dentro do repositório, usar `labmaes-site` como output directory
+Pré-requisitos: Node.js 18+
 
-## Rotas principais
+```bash
+npm install
+npm start        # preview em http://localhost:8080
+npm run build    # gera _site/
+```
 
-- `/`
-- `/sobre/`
-- `/contato/`
-- `/eventos/caminhos-do-contemporaneo/2026/`
-- `/eventos/caminhos-do-contemporaneo/2026/programacao/`
-- `/eventos/caminhos-do-contemporaneo/2026/submissoes/`
-- `/eventos/caminhos-do-contemporaneo/2026/oficinas/`
-- `/eventos/caminhos-do-contemporaneo/2026/anais/`
+## Publicar
 
-## Pendências
+Fazer push para `main`. O Cloudflare Pages executa o build automaticamente.
 
-- Conferir visual contra o Figma
-- Inserir links finais de inscrição/submissão
-- Revisar conteúdo das páginas em construção
-- Validar domínio no Cloudflare
+- Build command: `npx @11ty/eleventy`
+- Output directory: `_site`
+- Node.js version: 18 (variável de ambiente `NODE_VERSION=18`)
+
+## Editar páginas
+
+Cada página é um arquivo `.njk` na raiz ou nas subpastas.
+O cabeçalho (front matter) de cada arquivo define:
+
+- `title` — título da página (aparece na aba do navegador e no Google)
+- `description` — texto para Google e redes sociais
+
+Header, footer e navegação do evento ficam em `_includes/` — editar lá afeta todas as páginas de uma vez.
