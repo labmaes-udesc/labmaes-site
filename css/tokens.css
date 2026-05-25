@@ -1,3 +1,14 @@
+/* ─── Fontes auto-hospedadas ─────────────────────────────── */
+@font-face {
+  font-family: "Thunder";
+  src:
+    url("/assets/fonts/Thunder-BoldHC.woff2") format("woff2"),
+    url("/assets/fonts/Thunder-BoldHC.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-brand-red: #B10000;
   --color-brand-ice: #F0F0FF;
