@@ -86,6 +86,11 @@ img {
   font-weight: 700;
 }
 
+.event-nav [aria-current="page"] {
+  outline: 2px solid var(--color-brand-ice);
+  outline-offset: 2px;
+}
+
 .mobile-menu-toggle {
   display: none;
   border: 0;
