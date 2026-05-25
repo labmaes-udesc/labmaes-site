@@ -9,34 +9,84 @@
   font-display: swap;
 }
 
+/* ─── Tokens globais ─────────────────────────────────────── */
 :root {
+  /* Cores de marca */
   --color-brand-red: #B10000;
   --color-brand-ice: #F0F0FF;
   --color-brand-blue: #302A66;
+
+  /* Cores de suporte */
   --color-support-orange: #F44F21;
   --color-support-green: #00523C;
   --color-support-pink: #F4BEBE;
+
+  /* Neutros */
   --color-white: #FFFFFF;
   --color-black: #111111;
+
+  /* Semânticos */
   --color-background-default: var(--color-brand-ice);
   --color-background-inverse: var(--color-brand-red);
   --color-text-primary: var(--color-brand-blue);
   --color-text-inverse: var(--color-brand-ice);
   --color-action-primary: var(--color-brand-red);
   --color-action-secondary: var(--color-brand-blue);
-  --space-8: 8px; --space-12: 12px; --space-16: 16px; --space-24: 24px; --space-32: 32px; --space-48: 48px; --space-64: 64px; --space-80: 80px; --space-120: 120px;
-  --radius-sm: 8px; --radius-md: 16px; --radius-lg: 28px; --radius-xl: 36px; --radius-pill: 999px;
-  --container-max: 1280px; --desktop-margin: 80px; --mobile-margin: 20px;
+
+  /* Espaçamento */
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-120: 120px;
+
+  /* Bordas arredondadas */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+
+  /* Layout */
+  --container-max: 1280px;
+  --desktop-margin: 80px;
+  --mobile-margin: 20px;
+
+  /* Tipografia — famílias */
   --font-sans: "Poppins", system-ui, sans-serif;
   --font-display: "Thunder", "Poppins", system-ui, sans-serif;
   --font-event: "DM Mono", "Poppins", monospace;
-  --text-button-size: 16px; --text-button-line: 20px;
-  --text-tag-size: 13px; --text-tag-line: 16px;
-  --text-body-size: 18px; --text-body-line: 28px;
-  --text-body-large-size: 22px; --text-body-large-line: 32px;
-  --text-h3-size: 28px; --text-h3-line: 36px;
-  --text-section-size: 56px; --text-hero-size: 88px;
+
+  /* Tipografia — escalas */
+  --text-button-size: 16px;
+  --text-button-line: 20px;
+  --text-tag-size: 13px;
+  --text-tag-line: 16px;
+  --text-body-size: 18px;
+  --text-body-line: 28px;
+  --text-body-large-size: 22px;
+  --text-body-large-line: 32px;
+  --text-h3-size: 28px;
+  --text-h3-line: 36px;
+  --text-section-size: 56px;
+  --text-hero-size: 88px;
 }
+
+/* Escala responsiva */
 @media (max-width: 767px) {
-  :root { --desktop-margin: 20px; --text-body-size: 16px; --text-body-line: 25px; --text-body-large-size: 18px; --text-body-large-line: 28px; --text-h3-size: 22px; --text-h3-line: 30px; --text-section-size: 42px; --text-hero-size: 54px; }
+  :root {
+    --desktop-margin: 20px;
+    --text-body-size: 16px;
+    --text-body-line: 25px;
+    --text-body-large-size: 18px;
+    --text-body-large-line: 28px;
+    --text-h3-size: 22px;
+    --text-h3-line: 30px;
+    --text-section-size: 42px;
+    --text-hero-size: 54px;
+  }
 }
