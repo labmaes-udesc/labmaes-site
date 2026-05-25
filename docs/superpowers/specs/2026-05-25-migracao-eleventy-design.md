@@ -160,7 +160,7 @@ O `header.njk` usa `page.url` do Eleventy para marcar a página ativa:
 {
   "name": "LabMAES",
   "description": "Laboratório de Moda, Artes, Ensino e Sociedade da UDESC CEART.",
-  "url": "https://labmaes.udesc.br"
+  "url": "https://labmaes.com.br"
 }
 ```
 
