@@ -262,6 +262,19 @@ img {
   color: rgba(240, 240, 255, 0.88);
 }
 
+/* ─── Hero do evento ─────────────────────────────────────── */
+.event-hero {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0; /* remove gap abaixo da img */
+}
+
+.event-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ─── Navegação do evento ────────────────────────────────── */
 .event-nav {
   background: var(--color-brand-blue);
@@ -271,6 +284,12 @@ img {
 .event-nav__row {
   justify-content: center;
   gap: var(--space-48);
+}
+
+/* Botão de inscrições: outline ice (fundo azul escuro) */
+.event-nav__inscricoes.button--outline {
+  color: var(--color-brand-ice);
+  border-color: var(--color-brand-ice);
 }
 
 .event-nav--mobile {
@@ -291,6 +310,12 @@ img {
   width: max-content;
   gap: 10px;
   justify-content: flex-start;
+}
+
+/* No mobile (fundo branco), inscrições volta ao outline azul padrão */
+.event-nav--mobile .event-nav__inscricoes.button--outline {
+  color: var(--color-brand-blue);
+  border-color: var(--color-brand-blue);
 }
 
 /* ─── Timeline ───────────────────────────────────────────── */
