@@ -115,14 +115,21 @@ img {
   border: 1.5px solid transparent;
   cursor: pointer;
   transition:
-    transform 0.16s ease,
+    transform 0.16s cubic-bezier(0.23, 1, 0.32, 1),
     background-color 0.16s ease,
     color 0.16s ease,
     border-color 0.16s ease;
 }
 
-.button:hover {
-  transform: translateY(-1px);
+@media (hover: hover) {
+  .button:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.button:active {
+  transform: scale(0.97);
+  transition-duration: 0.08s;
 }
 
 .button--primary {
@@ -452,6 +459,18 @@ img {
   border-radius: var(--radius-lg);
   padding: 40px 48px;
   margin: 24px 10px 10px;
+}
+
+/* ─── Acessibilidade: sem animações ─────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* ─── Responsivo ─────────────────────────────────────────── */
