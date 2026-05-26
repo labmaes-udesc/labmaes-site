@@ -5,27 +5,44 @@ description: Laboratório de Moda, Artes, Ensino e Sociedade da UDESC CEART.
 ---
 
 <main id="conteudo" class="site-page">
+
+  <!-- Hero principal: texto + imagem em duas colunas -->
   <section class="section section--ice">
     <div class="container">
-      <span class="tag tag--red">LABORATÓRIO · UDESC CEART</span>
-      <h1 class="section-title">Moda, Artes, Ensino e Sociedade</h1>
-      <p class="section-body">Investigações, ações formativas e experiências sensíveis que aproximam universidade, escola, cultura e sociedade.</p>
-      <p>
-        <a class="button button--primary" href="/sobre/">Conheça o LabMAES</a>
-        <a class="button button--outline" href="/eventos/caminhos-do-contemporaneo/2026/">Acesse o 7º Caminhos</a>
-      </p>
+      <div class="site-hero">
+        <div class="site-hero__text">
+          <span class="tag tag--red">LABORATÓRIO · UDESC CEART</span>
+          <h1 class="section-title">Moda, Artes, Ensino e Sociedade</h1>
+          <p class="section-body">Investigações, ações formativas e experiências sensíveis que aproximam universidade, escola, cultura e sociedade.</p>
+          <div class="site-hero__actions">
+            <a class="button button--primary" href="/sobre/">Conheça o LabMAES</a>
+            <a class="button button--outline" href="/eventos/caminhos-do-contemporaneo/2026/">Acesse o 7º Caminhos</a>
+          </div>
+        </div>
+        <div class="site-hero__graphic" aria-hidden="true">
+          <img src="/assets/images/hero-labmaes-imagem.webp" alt="" loading="lazy">
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="event-hero" aria-label="7º Caminhos do Contemporâneo">
-    <a href="/eventos/caminhos-do-contemporaneo/2026/">
-      <picture>
-        <source media="(max-width: 767px)" srcset="/assets/banners/banner-caminhos-mobile.webp">
-        <img src="/assets/banners/banner-caminhos-desktop.webp" alt="7º Seminário Caminhos do Contemporâneo 2026" width="1440" height="600">
-      </picture>
-    </a>
+  <!-- Banner do Caminhos do Contemporâneo -->
+  <section class="caminhos-banner">
+    <div class="caminhos-banner__image" aria-hidden="true">
+      <img src="/assets/banners/banner-caminhos-desktop.webp" alt=""
+           width="1600" height="600" loading="lazy">
+    </div>
+    <div class="caminhos-banner__content">
+      <span class="tag tag--red">EVENTO HÍBRIDO</span>
+      <img class="caminhos-banner__logo" src="/assets/logos/logo-caminhos.svg"
+           alt="7º Seminário Caminhos do Contemporâneo" loading="lazy">
+      <p class="caminhos-banner__subtitle">CRIAÇÃO, TESSITURAS SENSÍVEIS E NARRATIVAS EM MOVIMENTO</p>
+      <p class="caminhos-banner__info">19–21 AGO 2026<br>UDESC CEART · FLORIANÓPOLIS-SC</p>
+      <a class="button button--secondary" href="/eventos/caminhos-do-contemporaneo/2026/">Acesse o site</a>
+    </div>
   </section>
 
+  <!-- Áreas de atuação: 4 cards com ícones -->
   <section class="section section--ice">
     <div class="container">
       <span class="tag tag--blue">ATUAÇÃO TRANSDISCIPLINAR</span>
@@ -33,18 +50,27 @@ description: Laboratório de Moda, Artes, Ensino e Sociedade da UDESC CEART.
       <p class="section-body">O LabMAES articula moda, artes, design e educação como campos interdependentes de criação, formação e produção de conhecimento.</p>
       <div class="event-card-grid section-content">
         <article class="event-card">
+          <span class="event-card__icon" aria-hidden="true"></span>
           <h3>Ensino</h3>
           <p>Atuação da educação básica à pós-graduação, articulando práticas pedagógicas, formação docente e experiências sensíveis de aprendizagem.</p>
         </article>
         <article class="event-card">
+          <span class="event-card__icon" aria-hidden="true"></span>
           <h3>Pesquisa</h3>
           <p>Investigações em iniciação científica, pós-graduação e grupo de pesquisa, com formações conjuntas e produção coletiva de conhecimento.</p>
         </article>
         <article class="event-card">
+          <span class="event-card__icon" aria-hidden="true"></span>
           <h3>Extensão</h3>
           <p>Ações educativas em diálogo com a sociedade, com formação continuada e práticas em contextos de ensino não formal.</p>
+        </article>
+        <article class="event-card">
+          <span class="event-card__icon" aria-hidden="true"></span>
+          <h3>Publicações</h3>
+          <p>Produção e circulação de livros, artigos e periódicos, com destaque para a editoriação da Revista de Moda, Ensino e Sociedade.</p>
         </article>
       </div>
     </div>
   </section>
+
 </main>

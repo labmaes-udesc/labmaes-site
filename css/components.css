@@ -212,6 +212,94 @@ img {
   margin-top: var(--space-32);
 }
 
+/* ─── Hero principal (duas colunas) ──────────────────────── */
+.site-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space-48);
+}
+
+.site-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.site-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+}
+
+.site-hero__graphic {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.site-hero__graphic img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+/* ─── Banner Caminhos do Contemporâneo ───────────────────── */
+.caminhos-banner {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+}
+
+.caminhos-banner__image {
+  position: absolute;
+  inset: 0;
+}
+
+.caminhos-banner__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.caminhos-banner__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-16);
+  padding: 56px var(--desktop-margin);
+  color: var(--color-brand-ice);
+  max-width: 560px;
+}
+
+.caminhos-banner__logo {
+  max-width: 260px;
+  height: auto;
+}
+
+.caminhos-banner__subtitle {
+  margin: 0;
+  font-family: var(--font-event);
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  color: var(--color-support-orange);
+}
+
+.caminhos-banner__info {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.7;
+  color: rgba(240, 240, 255, 0.68);
+}
+
 /* ─── Cards de evento ────────────────────────────────────── */
 .event-card,
 .event-placeholder-card {
@@ -227,8 +315,23 @@ img {
 
 .event-card-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 28px;
+}
+
+/* Ícone do card via CSS mask (aplica cor de marca ao SVG) */
+.event-card__icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-12);
+  background-color: var(--color-support-orange);
+  -webkit-mask-image: url('/assets/graphics/module-labmaes-block-2x2-a.svg');
+  mask-image: url('/assets/graphics/module-labmaes-block-2x2-a.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 /* ─── Callout do evento ──────────────────────────────────── */
@@ -408,8 +511,24 @@ img {
     line-height: 32px;
   }
 
-  .event-card-grid {
+  .site-hero {
     grid-template-columns: 1fr;
+  }
+
+  .site-hero__graphic {
+    display: none;
+  }
+
+  .caminhos-banner {
+    min-height: 320px;
+  }
+
+  .caminhos-banner__content {
+    max-width: 100%;
+  }
+
+  .event-card-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .timeline-item {
