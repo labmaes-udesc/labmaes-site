@@ -389,6 +389,14 @@ img {
 .event-nav {
   background: var(--color-brand-blue);
   padding: 24px 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.event-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .event-nav__row {
@@ -396,36 +404,10 @@ img {
   gap: var(--space-48);
 }
 
-/* Botão de inscrições: outline ice (fundo azul escuro) */
+/* Botão de inscrições: outline ice sobre fundo azul escuro */
 .event-nav__inscricoes.button--outline {
   color: var(--color-brand-ice);
   border-color: var(--color-brand-ice);
-}
-
-.event-nav--mobile {
-  width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  background: var(--color-white);
-  padding: 14px 20px;
-}
-
-.event-nav--mobile::-webkit-scrollbar {
-  display: none;
-}
-
-.event-nav--mobile .event-nav__row {
-  width: max-content;
-  gap: 10px;
-  justify-content: flex-start;
-}
-
-/* No mobile (fundo branco), inscrições volta ao outline azul padrão */
-.event-nav--mobile .event-nav__inscricoes.button--outline {
-  color: var(--color-brand-blue);
-  border-color: var(--color-brand-blue);
 }
 
 /* ─── Timeline ───────────────────────────────────────────── */
@@ -589,6 +571,24 @@ img {
 
   .event-card-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  /* Nav do evento: fundo branco + scroll horizontal no mobile */
+  .event-nav {
+    background: var(--color-white);
+    padding: 14px 20px;
+  }
+
+  .event-nav .event-nav__row {
+    width: max-content;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+  /* No mobile (fundo branco), inscrições volta ao outline azul */
+  .event-nav .event-nav__inscricoes.button--outline {
+    color: var(--color-brand-blue);
+    border-color: var(--color-brand-blue);
   }
 
   .timeline-item {
