@@ -461,6 +461,46 @@ img {
   margin: 24px 10px 10px;
 }
 
+/* ─── Animações de entrada ───────────────────────────────── */
+
+/* Hero: filhos do bloco de texto entram com fade+slide no carregamento */
+.site-hero__text > * {
+  transition:
+    opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.site-hero__text > *:nth-child(1) { transition-delay: 0.05s; }
+.site-hero__text > *:nth-child(2) { transition-delay: 0.15s; }
+.site-hero__text > *:nth-child(3) { transition-delay: 0.25s; }
+.site-hero__text > *:nth-child(4) { transition-delay: 0.35s; }
+
+@starting-style {
+  .site-hero__text > * {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+/* Cards: scroll reveal via IntersectionObserver (ativo só com JS) */
+.js .event-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.js .event-card:nth-child(1) { transition-delay: 0s; }
+.js .event-card:nth-child(2) { transition-delay: 0.08s; }
+.js .event-card:nth-child(3) { transition-delay: 0.16s; }
+.js .event-card:nth-child(4) { transition-delay: 0.24s; }
+
+.js .event-card[data-visible] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ─── Acessibilidade: sem animações ─────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -469,6 +509,7 @@ img {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
     scroll-behavior: auto !important;
   }
 }
