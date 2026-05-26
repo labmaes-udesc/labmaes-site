@@ -1,4 +1,28 @@
+// Sinaliza que JS está disponível (habilita animações de entrada via CSS)
+document.documentElement.classList.add("js");
+
 document.addEventListener("DOMContentLoaded", () => {
+  // ── Scroll reveal: cards de atuação ────────────────────────
+  const cards = document.querySelectorAll(".event-card");
+  if (cards.length && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.setAttribute("data-visible", "");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    cards.forEach((card) => observer.observe(card));
+  } else {
+    // Fallback: sem IntersectionObserver, mostra tudo imediatamente
+    cards.forEach((card) => card.setAttribute("data-visible", ""));
+  }
+
+  // ── Menu mobile ─────────────────────────────────────────────
   const toggle = document.querySelector("[data-mobile-menu-toggle]");
   const nav = document.querySelector("[data-site-nav]");
   if (!toggle || !nav) return;
