@@ -255,56 +255,21 @@ img {
 
 /* ─── Banner Caminhos do Contemporâneo ───────────────────── */
 .caminhos-banner {
-  position: relative;
-  overflow: hidden;
-  min-height: 420px;
-}
-
-.caminhos-banner__image {
-  position: absolute;
-  inset: 0;
-}
-
-.caminhos-banner__image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.caminhos-banner__link {
   display: block;
 }
 
-.caminhos-banner__content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: var(--space-16);
-  padding: 56px var(--desktop-margin);
-  color: var(--color-brand-ice);
-  max-width: 560px;
-}
-
-.caminhos-banner__logo {
-  max-width: 260px;
+.caminhos-banner__link img,
+.caminhos-banner picture,
+.caminhos-banner img {
+  width: 100%;
   height: auto;
-}
-
-.caminhos-banner__subtitle {
-  margin: 0;
-  font-family: var(--font-event);
-  font-size: 12px;
-  line-height: 1.6;
-  letter-spacing: 0.05em;
-  color: var(--color-support-orange);
-}
-
-.caminhos-banner__info {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.7;
-  color: rgba(240, 240, 255, 0.68);
+  display: block;
 }
 
 /* ─── Cards de evento ────────────────────────────────────── */
@@ -559,14 +524,6 @@ img {
 
   .site-hero__graphic {
     display: none;
-  }
-
-  .caminhos-banner {
-    min-height: 320px;
-  }
-
-  .caminhos-banner__content {
-    max-width: 100%;
   }
 
   .event-card-grid {

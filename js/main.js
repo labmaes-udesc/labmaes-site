@@ -5,18 +5,28 @@ document.addEventListener("DOMContentLoaded", () => {
   // ── Scroll reveal: cards de atuação ────────────────────────
   const cards = document.querySelectorAll(".event-card");
   if (cards.length && "IntersectionObserver" in window) {
+    const revealCard = (card) => card.setAttribute("data-visible", "");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.setAttribute("data-visible", "");
+            revealCard(entry.target);
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.15 }
+      // threshold:0 dispara ao primeiro pixel visível;
+      // rootMargin positivo na base aciona cards ainda 80px abaixo do viewport
+      { threshold: 0, rootMargin: "0px 0px 80px 0px" }
     );
     cards.forEach((card) => observer.observe(card));
+
+    // Segurança: após 1,5 s revela qualquer card que ainda não foi observado
+    setTimeout(() => {
+      cards.forEach((card) => {
+        if (!card.hasAttribute("data-visible")) revealCard(card);
+      });
+    }, 1500);
   } else {
     // Fallback: sem IntersectionObserver, mostra tudo imediatamente
     cards.forEach((card) => card.setAttribute("data-visible", ""));
