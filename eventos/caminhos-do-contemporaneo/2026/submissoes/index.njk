@@ -1,16 +1,235 @@
 ---
 layout: layout.njk
 title: Submissões — 7º Caminhos do Contemporâneo
-description: Chamadas e informações de submissão para o 7º Seminário Caminhos do Contemporâneo 2026.
+description: Normas, prazos, editais e template para submissão de comunicações orais, pôsteres e propostas de oficina ao 7º Seminário Caminhos do Contemporâneo 2026.
 ---
 
 <main id="conteudo" class="site-page">
+
   {% include "event-nav.njk" %}
+
+  <!-- S1: Cabeçalho e prazos -->
   <section class="section section--ice">
     <div class="container">
-      <span class="tag tag--red">EM CONSTRUÇÃO</span>
-      <h1 class="section-title">Submissões</h1>
-      <p class="section-body">As chamadas e links de submissão serão atualizados quando a operação acadêmica estiver fechada.</p>
+      <div class="submissoes-header">
+        <div class="submissoes-header__text">
+          <span class="tag tag--red">CHAMADAS ABERTAS</span>
+          <h1 class="section-title">Submissões</h1>
+          <p class="section-body">O 7º Caminhos do Contemporâneo recebe trabalhos em três modalidades: comunicação oral, pôster digital e proposta de oficina. As submissões são realizadas pela plataforma Even3. Leia o edital da sua modalidade antes de submeter.</p>
+        </div>
+        <aside class="submissoes-header__side" aria-label="Prazos importantes">
+          <div class="prazo-card">
+            <span class="tag tag--blue">PRAZOS</span>
+            <ul class="prazo-list" role="list">
+              <li class="prazo-item">
+                <span class="prazo-item__label">Submissão de trabalhos</span>
+                <span class="prazo-item__date">30 jun 2026</span>
+              </li>
+              <li class="prazo-item">
+                <span class="prazo-item__label">Resultado da avaliação</span>
+                <span class="prazo-item__date">A confirmar</span>
+              </li>
+              <li class="prazo-item">
+                <span class="prazo-item__label">Versão final dos aceitos</span>
+                <span class="prazo-item__date">A confirmar</span>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
     </div>
   </section>
+
+  <!-- S2: Modalidades de submissão -->
+  <section class="section section--pink" aria-labelledby="modalidades-heading">
+    <div class="container">
+      <div class="modalidades-header">
+        <div class="modalidades-header__content">
+          <span class="tag tag--red">MODALIDADES</span>
+          <h2 id="modalidades-heading" class="section-title">Escolha sua modalidade</h2>
+          <p class="section-body">Cada modalidade possui edital próprio com normas e critérios específicos. Todos os formatos utilizam o mesmo template de submissão.</p>
+        </div>
+        <div class="modalidades-header__graphic" aria-hidden="true"></div>
+      </div>
+      <div class="event-card-grid event-card-grid--3 section-content">
+
+        <!-- Edital 1: Comunicação Oral -->
+        <article class="submissao-card" aria-labelledby="card-co-title">
+          <div class="submissao-card__header">
+            <span class="tag tag--blue">EDITAL 1</span>
+            <h3 id="card-co-title">Comunicação Oral</h3>
+          </div>
+          <p class="submissao-card__desc">Apresentação de pesquisa acadêmica em sessões presenciais e online. Trabalhos nos três eixos: Criação, Tessituras Sensíveis e Narrativas em Movimento.</p>
+          <dl class="submissao-meta">
+            <div class="submissao-meta__item">
+              <dt>Formato</dt>
+              <dd>Resumo expandido (Word)</dd>
+            </div>
+            <div class="submissao-meta__item">
+              <dt>Modalidade</dt>
+              <dd>Presencial e online</dd>
+            </div>
+            <div class="submissao-meta__item submissao-meta__item--prazo">
+              <dt>Prazo</dt>
+              <dd>30 jun 2026</dd>
+            </div>
+          </dl>
+          <div class="submissao-card__actions">
+            <a class="button button--secondary"
+               href="/assets/editais/Caminhos_edital_01_CO.pdf"
+               download
+               aria-label="Baixar Edital 1 — Comunicação Oral">
+              Edital 1 ↓
+            </a>
+            <a class="button button--outline"
+               href="/assets/editais/Caminhos-template.docx"
+               download
+               aria-label="Baixar template de submissão">
+              Template ↓
+            </a>
+          </div>
+        </article>
+
+        <!-- Edital 2: Pôster Digital -->
+        <article class="submissao-card" aria-labelledby="card-poster-title">
+          <div class="submissao-card__header">
+            <span class="tag tag--blue">EDITAL 2</span>
+            <h3 id="card-poster-title">Pôster Digital</h3>
+          </div>
+          <p class="submissao-card__desc">Apresentação em formato de pôster audiovisual, voltada a pesquisas em andamento, relatos de experiência e produções em processo.</p>
+          <dl class="submissao-meta">
+            <div class="submissao-meta__item">
+              <dt>Formato</dt>
+              <dd>Resumo expandido (Word)</dd>
+            </div>
+            <div class="submissao-meta__item">
+              <dt>Modalidade</dt>
+              <dd>Presencial e online</dd>
+            </div>
+            <div class="submissao-meta__item submissao-meta__item--prazo">
+              <dt>Prazo</dt>
+              <dd>30 jun 2026</dd>
+            </div>
+          </dl>
+          <div class="submissao-card__actions">
+            <a class="button button--secondary"
+               href="/assets/editais/Caminhos_edital_02_PO.pdf"
+               download
+               aria-label="Baixar Edital 2 — Pôster Digital">
+              Edital 2 ↓
+            </a>
+            <a class="button button--outline"
+               href="/assets/editais/Caminhos-template.docx"
+               download
+               aria-label="Baixar template de submissão">
+              Template ↓
+            </a>
+          </div>
+        </article>
+
+        <!-- Edital 3: Proposta de Oficina -->
+        <article class="submissao-card" aria-labelledby="card-oficina-title">
+          <div class="submissao-card__header">
+            <span class="tag tag--blue">EDITAL 3</span>
+            <h3 id="card-oficina-title">Proposta de Oficina</h3>
+          </div>
+          <p class="submissao-card__desc">Submissão de proposta para oficina ou minicurso presencial, com vagas limitadas. Para proponentes externos à equipe organizadora do evento.</p>
+          <dl class="submissao-meta">
+            <div class="submissao-meta__item">
+              <dt>Formato</dt>
+              <dd>Formulário de proposta</dd>
+            </div>
+            <div class="submissao-meta__item">
+              <dt>Modalidade</dt>
+              <dd>Presencial</dd>
+            </div>
+            <div class="submissao-meta__item submissao-meta__item--prazo">
+              <dt>Prazo</dt>
+              <dd>A confirmar</dd>
+            </div>
+          </dl>
+          <div class="submissao-card__actions">
+            <a class="button button--secondary"
+               href="/assets/editais/Caminhos_edital_03_MA.pdf"
+               download
+               aria-label="Baixar Edital 3 — Proposta de Oficina">
+              Edital 3 ↓
+            </a>
+            <a class="button button--outline"
+               href="/assets/editais/Caminhos-template.docx"
+               download
+               aria-label="Baixar template de submissão">
+              Template ↓
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- S3: Callout de submissão via Even3 -->
+  <section class="section section--red" aria-label="Submeta pela Even3">
+    <div class="container">
+      <div class="event-callout">
+        <div class="event-callout__content">
+          <h2 class="event-callout__title">Submeta seu trabalho pela Even3</h2>
+          <p class="event-callout__body">Acesse a plataforma Even3, faça sua inscrição gratuita e envie seu trabalho. Certifique-se de ter baixado e lido o edital da sua modalidade antes de submeter.</p>
+        </div>
+        <a class="button button--outline-ice"
+           href="https://www.even3.com.br/7-seminario-caminhos-do-contemporaneo-744454"
+           target="_blank"
+           rel="noopener noreferrer">
+          Acessar Even3 ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4: Normas gerais -->
+  <section class="section section--ice" aria-labelledby="normas-heading">
+    <div class="container">
+      <div class="areas-header">
+        <div class="areas-header__content">
+          <span class="tag tag--red">ORIENTAÇÕES</span>
+          <h2 id="normas-heading" class="section-title">Normas gerais</h2>
+        </div>
+        <div class="areas-header__graphic" aria-hidden="true"></div>
+      </div>
+      <div class="normas-grid section-content">
+
+        <article class="event-card normas-card">
+          <h3>Eixos temáticos</h3>
+          <p>Os trabalhos devem se articular a um ou mais dos eixos conceituais da edição: <strong>Criação</strong> (moda, arte, design, educação), <strong>Tessituras Sensíveis</strong> (têxteis, materialidades, corpo) ou <strong>Narrativas em Movimento</strong> (cinema, audiovisual, imagem).</p>
+        </article>
+
+        <article class="event-card normas-card">
+          <h3>Avaliação</h3>
+          <p>Os trabalhos passam por avaliação em <strong>duplo cego</strong> pela comissão científica do evento. Os critérios de avaliação estão detalhados no edital de cada modalidade.</p>
+        </article>
+
+        <article class="event-card normas-card">
+          <h3>Publicação em anais</h3>
+          <p>Os trabalhos aprovados e apresentados poderão compor os anais do 7º Caminhos do Contemporâneo com ISBN. As orientações editoriais finais serão divulgadas após a realização do evento.</p>
+        </article>
+
+        <article class="event-card normas-card">
+          <h3>Inscrição obrigatória</h3>
+          <p>Todos os autores e apresentadores devem estar inscritos no evento antes da submissão. A inscrição é <strong>gratuita</strong> e é feita pela mesma plataforma Even3.</p>
+        </article>
+
+        <article class="event-card normas-card">
+          <h3>Template único</h3>
+          <p>Todas as modalidades utilizam o mesmo template de submissão disponível para download. O template contém as orientações de formatação e as normas de apresentação do texto.</p>
+        </article>
+
+        <article class="event-card normas-card">
+          <h3>Dúvidas</h3>
+          <p>Questões sobre as chamadas devem ser enviadas para a comissão científica por e-mail: <a href="mailto:modaesociedade@gmail.com">modaesociedade@gmail.com</a></p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
 </main>

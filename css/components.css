@@ -687,6 +687,258 @@ img {
   color: rgba(48, 42, 102, 0.52);
 }
 
+/* ─── Cabeçalho de modalidades (flex com gráfico laranja) ── */
+.modalidades-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-32);
+}
+
+.modalidades-header__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 640px;
+}
+
+.modalidades-header__content .tag + .section-title {
+  margin-top: var(--space-16);
+}
+
+.modalidades-header__content .section-title + .section-body {
+  margin-top: var(--space-12);
+}
+
+/* Wrapper para o pseudo-elemento com máscara colorida */
+.modalidades-header__graphic {
+  flex-shrink: 0;
+  position: relative;
+  width: 120px;
+  height: 240px;
+  align-self: center;
+}
+
+.modalidades-header__graphic::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 240px;
+  height: 240px;
+  transform: translate(-50%, -50%) rotate(12deg);
+  background-color: var(--color-support-orange);
+  -webkit-mask-image: url('/assets/graphics/module-labmaes-block-3x3-large.svg');
+  mask-image: url('/assets/graphics/module-labmaes-block-3x3-large.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  opacity: 0.22;
+}
+
+/* ─── Cabeçalho de submissões (grid 2 colunas) ──────────── */
+.submissoes-header {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--space-48);
+  align-items: start;
+}
+
+.submissoes-header__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.submissoes-header__side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+/* ─── Card de prazos (sidebar) ───────────────────────────── */
+.prazo-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: 24px;
+  background: var(--color-white);
+  border: 1px solid rgba(48, 42, 102, 0.12);
+  border-radius: var(--radius-lg);
+}
+
+.prazo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.prazo-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(48, 42, 102, 0.08);
+}
+
+.prazo-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.prazo-item__label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: rgba(48, 42, 102, 0.52);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.prazo-item__date {
+  font-family: var(--font-event);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-brand-red);
+}
+
+/* ─── Card de submissão ──────────────────────────────────── */
+.submissao-card {
+  background: var(--color-white);
+  border: 1px solid rgba(48, 42, 102, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.submissao-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.submissao-card__header h3 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--color-brand-blue);
+}
+
+.submissao-card__desc {
+  margin: 0;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  color: rgba(48, 42, 102, 0.72);
+  flex-grow: 1;
+}
+
+/* ─── Metadados do card de submissão ─────────────────────── */
+.submissao-meta {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 16px;
+  background: var(--color-brand-ice);
+  border-radius: var(--radius-sm);
+}
+
+.submissao-meta__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-8);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(48, 42, 102, 0.08);
+}
+
+.submissao-meta__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.submissao-meta dt {
+  font-family: var(--font-event);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: rgba(48, 42, 102, 0.48);
+  flex-shrink: 0;
+}
+
+.submissao-meta dd {
+  margin: 0;
+  font-family: var(--font-event);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-brand-blue);
+  text-align: right;
+}
+
+.submissao-meta__item--prazo dd {
+  font-weight: 700;
+  color: var(--color-brand-red);
+}
+
+/* ─── Ações do card (botões de download) ─────────────────── */
+.submissao-card__actions {
+  display: flex;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: var(--space-8);
+  border-top: 1px solid rgba(48, 42, 102, 0.08);
+}
+
+.submissao-card__actions .button {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  padding: 10px 16px;
+  min-height: 42px;
+  white-space: nowrap;
+}
+
+/* ─── Grid de normas gerais (2 colunas) ──────────────────── */
+.normas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.normas-card h3 {
+  margin: 0 0 var(--space-8);
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--color-brand-blue);
+}
+
+.normas-card p {
+  margin: 0;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  color: rgba(48, 42, 102, 0.72);
+}
+
+.normas-card a {
+  color: var(--color-brand-red);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ─── Acessibilidade: sem animações ─────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -815,5 +1067,26 @@ img {
 
   .areas-header__graphic {
     display: none;
+  }
+
+  .submissoes-header {
+    grid-template-columns: 1fr;
+  }
+
+  .modalidades-header {
+    flex-direction: column;
+  }
+
+  .modalidades-header__graphic {
+    display: none;
+  }
+
+  .normas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .submissao-card__actions .button {
+    flex: 1 1 auto;
+    font-size: 13px;
   }
 }
