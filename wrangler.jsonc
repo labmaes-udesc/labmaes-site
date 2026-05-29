@@ -5,8 +5,11 @@
   "observability": {
     "enabled": true
   },
+  "build": {
+    "command": "npm run build"
+  },
   "assets": {
-    "directory": "."
+    "directory": "./_site"
   },
   "compatibility_flags": [
     "nodejs_compat"
