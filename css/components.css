@@ -1670,3 +1670,247 @@ img {
     display: none;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   CONTATO
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Hero do contato ───────────────────────────────────── */
+.contact-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-48);
+}
+
+.contact-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  max-width: 560px;
+}
+
+.contact-hero__text .section-title {
+  margin-top: var(--space-8);
+}
+
+.contact-hero__graphic {
+  flex-shrink: 0;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  align-self: center;
+}
+
+.contact-hero__graphic::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  height: 280px;
+  transform: translate(-50%, -50%) rotate(15deg);
+  background-color: var(--color-brand-red);
+  -webkit-mask-image: url('/assets/graphics/module-labmaes-block-3x3-large.svg');
+  mask-image: url('/assets/graphics/module-labmaes-block-3x3-large.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  opacity: 0.16;
+}
+
+/* ─── Grid 2×2 de canais ────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-24);
+  margin-top: var(--space-64);
+}
+
+/* ─── Card de contato ───────────────────────────────────── */
+.contact-card {
+  background: var(--color-white);
+  border: 1px solid rgba(48, 42, 102, 0.12);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  text-decoration: none;
+  color: var(--color-brand-blue);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.contact-card--static {
+  cursor: default;
+}
+
+@media (hover: hover) {
+  .contact-card:not(.contact-card--static):hover {
+    border-color: rgba(177, 0, 0, 0.4);
+    box-shadow: 0 8px 28px rgba(177, 0, 0, 0.09);
+    transform: translateY(-3px);
+  }
+}
+
+.contact-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--color-brand-ice);
+  border-radius: var(--radius-md);
+  color: var(--color-brand-red);
+  margin-bottom: var(--space-8);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+@media (hover: hover) {
+  .contact-card:not(.contact-card--static):hover .contact-card__icon {
+    background: var(--color-brand-red);
+    color: var(--color-white);
+  }
+}
+
+/* Ícones via CSS mask — herdam a cor do container via currentColor */
+.contact-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background-color: currentColor;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.contact-icon--email {
+  -webkit-mask-image: url('/assets/icons/icon-email.svg');
+  mask-image: url('/assets/icons/icon-email.svg');
+}
+
+.contact-icon--instagram {
+  -webkit-mask-image: url('/assets/icons/icon-instagram.svg');
+  mask-image: url('/assets/icons/icon-instagram.svg');
+}
+
+.contact-icon--linkedin {
+  -webkit-mask-image: url('/assets/icons/icon-linkedin.svg');
+  mask-image: url('/assets/icons/icon-linkedin.svg');
+}
+
+.contact-card__label {
+  margin: 0;
+  font-family: var(--font-event);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: rgba(48, 42, 102, 0.44);
+}
+
+.contact-card__value {
+  margin: 0;
+  font-size: var(--text-body-large-size);
+  line-height: var(--text-body-large-line);
+  font-weight: 600;
+  color: var(--color-brand-blue);
+  word-break: break-word;
+}
+
+.contact-card__hint {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(48, 42, 102, 0.44);
+}
+
+/* ─── Seção de localização ──────────────────────────────── */
+.contact-location {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-48);
+}
+
+.contact-location__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  max-width: 560px;
+}
+
+.contact-location__text .tag + .section-title {
+  margin-top: 0;
+}
+
+.contact-location__graphic {
+  flex-shrink: 0;
+  position: relative;
+  width: 180px;
+  height: 180px;
+  align-self: center;
+}
+
+.contact-location__graphic::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 116px;
+  transform: translate(-50%, -50%) rotate(-10deg);
+  background-color: var(--color-brand-blue);
+  -webkit-mask-image: url('/assets/graphics/module-labmaes-rectangle-3x1-a.svg');
+  mask-image: url('/assets/graphics/module-labmaes-rectangle-3x1-a.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  opacity: 0.32;
+}
+
+/* ─── Responsivo: contato ───────────────────────────────── */
+@media (max-width: 767px) {
+  .contact-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-hero__graphic {
+    display: none;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    margin-top: var(--space-48);
+  }
+
+  .contact-card {
+    padding: 24px;
+  }
+
+  .contact-location {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-location__graphic {
+    display: none;
+  }
+}

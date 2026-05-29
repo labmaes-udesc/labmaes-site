@@ -1,15 +1,91 @@
 ---
 layout: layout.njk
 title: Contato
-description: Entre em contato com o LabMAES — Laboratório de Moda, Artes, Ensino e Sociedade da UDESC CEART.
+description: Entre em contato com o LabMAES — e-mail, Instagram, LinkedIn e endereço do Laboratório de Moda, Artes, Ensino e Sociedade da UDESC CEART.
 ---
 
 <main id="conteudo" class="site-page">
-  <section class="section section--ice">
+
+  <!-- ── Intro + canais ──────────────────────────────────── -->
+  <section class="section section--ice" aria-labelledby="contato-titulo">
     <div class="container">
-      <span class="tag tag--red">EM CONSTRUÇÃO</span>
-      <h1 class="section-title">Contato</h1>
-      <p class="section-body">Informações de contato e canais oficiais do LabMAES.</p>
+
+      <div class="contact-hero">
+        <div class="contact-hero__text">
+          <span class="tag tag--red">CONTATO</span>
+          <h1 id="contato-titulo" class="section-title">Fale com<br>o LabMAES</h1>
+          <p class="section-body">Canais oficiais do Laboratório de Moda, Artes, Ensino e Sociedade — UDESC CEART.</p>
+        </div>
+        <div class="contact-hero__graphic" aria-hidden="true"></div>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- E-mail -->
+        <a href="mailto:labmaes.ceart@udesc.br" class="contact-card">
+          <div class="contact-card__icon" aria-hidden="true">
+            <span class="contact-icon contact-icon--email"></span>
+          </div>
+          <p class="contact-card__label">E-mail</p>
+          <p class="contact-card__value">labmaes.ceart@udesc.br</p>
+          <p class="contact-card__hint">Clique para enviar mensagem</p>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com/labmaes" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-card__icon" aria-hidden="true">
+            <span class="contact-icon contact-icon--instagram"></span>
+          </div>
+          <p class="contact-card__label">Instagram</p>
+          <p class="contact-card__value">@labmaes</p>
+          <p class="contact-card__hint">Acompanhe nossas publicações</p>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/school/laborat%C3%B3rio-de-moda-artes-ensino-e-sociedade/" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-card__icon" aria-hidden="true">
+            <span class="contact-icon contact-icon--linkedin"></span>
+          </div>
+          <p class="contact-card__label">LinkedIn</p>
+          <p class="contact-card__value">LabMAES · UDESC</p>
+          <p class="contact-card__hint">Conecte-se com o laboratório</p>
+        </a>
+
+        <!-- Endereço -->
+        <div class="contact-card contact-card--static">
+          <div class="contact-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <p class="contact-card__label">Endereço</p>
+          <p class="contact-card__value">Av. Madre Benvenuta, 1907<br>Sala 06 — DDE/DMO<br>Florianópolis · SC</p>
+          <p class="contact-card__hint">UDESC CEART · Itacorubi</p>
+        </div>
+
+      </div>
     </div>
   </section>
+
+  <!-- ── Como chegar ─────────────────────────────────────── -->
+  <section class="section section--pink" aria-labelledby="localizacao-titulo">
+    <div class="container">
+      <div class="contact-location">
+        <div class="contact-location__text">
+          <span class="tag tag--blue">COMO NOS ENCONTRAR</span>
+          <h2 id="localizacao-titulo" class="section-title">UDESC CEART</h2>
+          <p class="section-body">Estamos no Centro de Artes da Universidade do Estado de Santa Catarina, no bairro Itacorubi, em Florianópolis.</p>
+          <a
+            href="https://www.google.com/maps/search/Av.+Madre+Benvenuta,+1907,+Florianópolis,+SC"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button button--secondary"
+          >Ver no mapa</a>
+        </div>
+        <div class="contact-location__graphic" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
 </main>
