@@ -506,13 +506,17 @@ img {
 
 .event-about__logos {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-16);
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.event-about__logos-row {
+  display: flex;
   align-items: center;
+  gap: var(--space-16);
 }
 
 .event-about__logos img {
-  height: 34px;
   width: auto;
   object-fit: contain;
 }
@@ -526,6 +530,11 @@ img {
 /* ─── Corpo de seção inverse ─────────────────────────────── */
 .section-body--inverse {
   color: rgba(240, 240, 255, 0.84);
+}
+
+/* ─── Espaço entre tag e título em section--red ─────────── */
+.section--red .section-title {
+  margin-top: var(--space-16);
 }
 
 /* ─── Callout em fundo escuro (section--red) ─────────────── */
