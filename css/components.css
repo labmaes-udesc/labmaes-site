@@ -1730,7 +1730,7 @@ img {
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: var(--space-24);
   margin-top: var(--space-64);
 }
 
@@ -1739,7 +1739,7 @@ img {
   background: var(--color-white);
   border: 1px solid rgba(48, 42, 102, 0.12);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: var(--space-32);
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
