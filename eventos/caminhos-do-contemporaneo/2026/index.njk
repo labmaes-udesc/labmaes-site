@@ -5,6 +5,8 @@ description: 7º Seminário Caminhos do Contemporâneo — Criação, tessituras
 ---
 
 <main id="conteudo" class="site-page">
+
+  <!-- Banner do evento -->
   <section class="event-hero" aria-label="Banner do evento">
     <picture>
       <source media="(max-width: 767px)" srcset="/assets/banners/banner-caminhos-mobile.webp">
@@ -12,16 +14,38 @@ description: 7º Seminário Caminhos do Contemporâneo — Criação, tessituras
     </picture>
   </section>
 
+  <!-- T1: Navegação imediatamente após o banner -->
+  {% include "event-nav.njk" %}
+
+  <!-- T2: Sobre o evento — 2 colunas (texto + info/realização) -->
   <section class="section section--ice">
     <div class="container">
-      <span class="tag tag--blue">SOBRE O EVENTO</span>
-      <h1 class="section-title">Criação, tessituras sensíveis e narrativas em movimento</h1>
-      <p class="section-body">O 7º Seminário Caminhos do Contemporâneo reúne pesquisas, práticas formativas e experiências estéticas em torno da criação em artes, moda e design, dos saberes sensíveis e das narrativas em movimento.</p>
+      <div class="event-about">
+        <div class="event-about__text">
+          <span class="tag tag--blue">SOBRE O EVENTO</span>
+          <h1 class="section-title">Criação, tessituras sensíveis e narrativas em movimento</h1>
+          <p class="section-body">O 7º Seminário Caminhos do Contemporâneo reúne pesquisas, práticas formativas e experiências estéticas em torno da criação em artes, moda e design, dos saberes sensíveis e das narrativas em movimento.</p>
+        </div>
+        <aside class="event-about__side">
+          <div class="event-about__info">
+            <span class="tag tag--red">DATA</span>
+            <p class="event-about__date">19 a 22 de agosto de 2026</p>
+            <p class="event-about__location">Florianópolis, SC · formato híbrido</p>
+          </div>
+          <div class="event-about__realization">
+            <span class="tag tag--blue">REALIZAÇÃO</span>
+            <div class="event-about__logos">
+              <img src="/assets/logos/logo-labmaes-vermelho.svg" alt="LabMAES" height="34">
+              <img src="/assets/logos/logo-ceart.svg" alt="UDESC CEART" height="34">
+              <img src="/assets/logos/logo-fapesc.svg" alt="Fapesc" height="34">
+            </div>
+          </div>
+        </aside>
+      </div>
     </div>
   </section>
 
-  {% include "event-nav.njk" %}
-
+  <!-- Callout: inscrições e submissões -->
   <section class="section section--pink">
     <div class="container">
       <div class="event-callout">
@@ -34,9 +58,58 @@ description: 7º Seminário Caminhos do Contemporâneo — Criação, tessituras
     </div>
   </section>
 
-  <section class="section section--ice">
+  <!-- T3: Tipos de submissão -->
+  <section class="section section--ice" aria-label="Tipos de submissão">
     <div class="container">
-      <h2 class="section-title">Programação</h2>
+      <div class="event-card-grid event-card-grid--3 section-content">
+        <article class="event-card">
+          <span class="tag tag--red">CHAMADA</span>
+          <h3>Comunicação oral</h3>
+          <p>Submissão de resumo expandido e apresentação de trabalhos em sessões presenciais e online.</p>
+        </article>
+        <article class="event-card">
+          <span class="tag tag--red">CHAMADA</span>
+          <h3>Pôster digital</h3>
+          <p>Apresentação em formato audiovisual, voltado à pesquisa em andamento e experiências formativas.</p>
+        </article>
+        <article class="event-card">
+          <span class="tag tag--blue">A CONFIRMAR</span>
+          <h3>Mostra audiovisual</h3>
+          <p>Exibição e debate de obras audiovisuais vinculadas à pesquisa. Informações e chamadas serão divulgadas em breve.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- T4: Eixos temáticos (campos de criação) -->
+  <section class="section section--red" aria-labelledby="campos-heading">
+    <div class="container">
+      <span class="tag tag--ice">EIXOS TEMÁTICOS</span>
+      <h2 id="campos-heading" class="section-title section-title--inverse">Campos de criação, formação e pesquisa</h2>
+      <div class="event-card-grid event-card-grid--3 section-content">
+        <article class="event-card">
+          <span class="tag tag--red">SUB</span>
+          <h3>Criação em moda e arte</h3>
+          <p>Processos criativos, práticas estéticas, formação e experimentação em moda, artes e design.</p>
+        </article>
+        <article class="event-card">
+          <span class="tag tag--red">SUB</span>
+          <h3>Tessituras sensíveis</h3>
+          <p>As tramas que constituem imagens, experiências, relações, corpos, materialidades, memórias e modos de percepção, aproximando dimensões sociais, educativas, artísticas e técnicas.</p>
+        </article>
+        <article class="event-card">
+          <span class="tag tag--red">SUB</span>
+          <h3>Narrativas em movimento</h3>
+          <p>Cinema/educação, audiovisual, imagens, deslocamentos e modos de narrar o contemporâneo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programação -->
+  <section class="section section--ice" aria-labelledby="programacao-heading">
+    <div class="container">
+      <h2 id="programacao-heading" class="section-title">Programação</h2>
       <p class="section-body">As atividades previstas incluem conferências, mesas, mostra audiovisual, exposição, oficinas, comunicações, pôsteres e atividades culturais.</p>
       <div class="timeline section-content">
         <article class="timeline-item">
@@ -70,4 +143,55 @@ description: 7º Seminário Caminhos do Contemporâneo — Criação, tessituras
       </div>
     </div>
   </section>
+
+  <!-- T5: Oficinas (conteúdo do Edital 04) -->
+  <section class="section section--pink" aria-labelledby="oficinas-heading">
+    <div class="container">
+      <div class="oficinas-header">
+        <div class="oficinas-header__content">
+          <span class="tag tag--red">OFICINAS</span>
+          <h2 id="oficinas-heading" class="section-title">Inscrições abertas</h2>
+          <p class="section-body">Três oficinas simultâneas, gratuitas e presenciais, com 12 vagas cada. Inscreva-se até 1º de agosto de 2026 pela plataforma Even3.</p>
+          <a class="button button--primary" href="https://www.even3.com.br/7-seminario-caminhos-do-contemporaneo-744454" target="_blank" rel="noopener noreferrer">Inscreva-se nas oficinas ↗</a>
+        </div>
+        <div class="oficinas-header__graphic" aria-hidden="true">
+          <img src="/assets/graphics/module-labmaes-block-2x2-a.svg" alt="">
+        </div>
+      </div>
+      <div class="event-card-grid event-card-grid--3 section-content">
+        <article class="event-card oficina-card">
+          <span class="tag tag--blue">19 AGO · 17h–18h30</span>
+          <h3>Composição visual para figurinos cênicos</h3>
+          <p>Com base nos elementos compositivos de figurinos cênicos — cor, estilo, forma, movimento, textura e volume — os participantes irão desenhar personagens descrevendo escolhas técnicas, criativas e estéticas.</p>
+          <p class="oficina-card__meta">Valdecir Babinski Júnior et al. · Sala BC 102 – UDESC CEART</p>
+        </article>
+        <article class="event-card oficina-card">
+          <span class="tag tag--blue">19 AGO · 17h–18h30</span>
+          <h3>Do texto ao têxtil</h3>
+          <p>Experimentações para investigar as relações entre a palavra escrita e a materialidade têxtil, ativando a sensibilidade visual e tátil a partir da leitura e despedaçamento de palavras poéticas.</p>
+          <p class="oficina-card__meta">Janaina Nascimento · Sala BC 101 – UDESC CEART</p>
+        </article>
+        <article class="event-card oficina-card">
+          <span class="tag tag--blue">20 AGO · 17h30–19h</span>
+          <h3>Desenhando com linhas</h3>
+          <p>Uma investigação sensível do desenho a partir de fios, linhas e materiais têxteis como linguagem estética, corporal e afetiva. Práticas experimentais e coletivas de criação.</p>
+          <p class="oficina-card__meta">Camila França, Emanoela Mardula et al. · Sala BC 101 – UDESC CEART</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- T6: Anais e registro acadêmico -->
+  <section class="section section--red" aria-labelledby="anais-heading">
+    <div class="container">
+      <div class="event-callout">
+        <div class="event-callout__content">
+          <h2 id="anais-heading" class="event-callout__title">Anais e registro acadêmico</h2>
+          <p class="event-callout__body">Os trabalhos aprovados e apresentados poderão compor publicação em anais com ISBN, conforme as indicações das chamadas. Informações editoriais serão atualizadas ao longo da organização.</p>
+        </div>
+        <a class="button button--outline-ice" href="/eventos/caminhos-do-contemporaneo/2026/submissoes/">Ver chamadas</a>
+      </div>
+    </div>
+  </section>
+
 </main>
