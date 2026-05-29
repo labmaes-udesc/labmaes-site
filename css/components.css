@@ -180,7 +180,7 @@ img {
 
 /* ─── Seções ─────────────────────────────────────────────── */
 .section {
-  padding: 72px var(--desktop-margin);
+  padding-block: 72px;
 }
 
 .section--ice {
@@ -219,6 +219,15 @@ img {
   margin-top: var(--space-32);
 }
 
+/* Espaçamento entre tag → título → corpo quando filhos diretos do container */
+.container > .tag + .section-title {
+  margin-top: var(--space-16);
+}
+
+.container > .section-title + .section-body {
+  margin-top: var(--space-12);
+}
+
 /* ─── Hero principal (duas colunas) ──────────────────────── */
 .site-hero {
   display: grid;
@@ -249,8 +258,6 @@ img {
   width: 100%;
   max-width: 520px;
   height: auto;
-  border-radius: var(--radius-lg);
-  object-fit: cover;
 }
 
 /* ─── Banner Caminhos do Contemporâneo ───────────────────── */
@@ -291,6 +298,22 @@ img {
   gap: 28px;
 }
 
+/* Títulos dos cards */
+.event-card h3 {
+  margin: 0 0 var(--space-8);
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--color-brand-blue);
+}
+
+.event-card p {
+  margin: 0;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  color: rgba(48, 42, 102, 0.72);
+}
+
 /* Ícone do card via CSS mask (aplica cor de marca ao SVG) */
 .event-card__icon {
   display: block;
@@ -298,8 +321,8 @@ img {
   height: 48px;
   margin-bottom: var(--space-12);
   background-color: var(--color-support-orange);
-  -webkit-mask-image: url('/assets/graphics/module-labmaes-block-2x2-a.svg');
-  mask-image: url('/assets/graphics/module-labmaes-block-2x2-a.svg');
+  -webkit-mask-image: url('/assets/graphics/module-labmaes-composite-wide-large.svg');
+  mask-image: url('/assets/graphics/module-labmaes-composite-wide-large.svg');
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
@@ -562,6 +585,58 @@ img {
   border-color: rgba(240, 240, 255, 0.56);
 }
 
+/* ─── Cabeçalho "Áreas de atuação" ──────────────────────── */
+.areas-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-32);
+}
+
+.areas-header__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 640px;
+}
+
+.areas-header__content .tag + .section-title {
+  margin-top: var(--space-16);
+}
+
+.areas-header__content .section-title + .section-body {
+  margin-top: var(--space-12);
+}
+
+/* Wrapper dimensiona o espaço para o flex; pseudo-element aplica a rotação */
+.areas-header__graphic {
+  flex-shrink: 0;
+  position: relative;
+  width: 88px;
+  height: 240px;
+  align-self: center;
+}
+
+.areas-header__graphic::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 240px;
+  height: 88px;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  background-color: var(--color-brand-red);
+  -webkit-mask-image: url('/assets/graphics/module-labmaes-rectangle-3x1-b.svg');
+  mask-image: url('/assets/graphics/module-labmaes-rectangle-3x1-b.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  opacity: 0.85;
+}
+
 /* ─── Grid 3 colunas ─────────────────────────────────────── */
 .event-card-grid--3 {
   grid-template-columns: repeat(3, 1fr);
@@ -665,7 +740,7 @@ img {
   }
 
   .section {
-    padding: 56px var(--mobile-margin);
+    padding-block: 56px;
   }
 
   .container {
@@ -730,6 +805,15 @@ img {
   }
 
   .oficinas-header__graphic {
+    display: none;
+  }
+
+  .areas-header {
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+
+  .areas-header__graphic {
     display: none;
   }
 }
