@@ -508,17 +508,26 @@ img {
   display: flex;
   flex-direction: column;
   gap: var(--space-12);
+  align-self: flex-start; /* encolhe ao conteúdo — largura = LabMAES */
 }
 
 .event-about__logos-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-16);
 }
 
-.event-about__logos img {
+.event-about__logos-row:first-child img {
+  height: 38px;
   width: auto;
-  object-fit: contain;
+  display: block;
+}
+
+/* Divide a largura da linha 1 igualmente entre as duas logos */
+.event-about__logos-row:last-child img {
+  flex: 1;
+  min-width: 0;
+  height: auto;
 }
 
 /* ─── Tag variante ice (fundos escuros) ──────────────────── */
