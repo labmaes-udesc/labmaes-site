@@ -1686,16 +1686,12 @@ img {
 .contact-hero__text {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: var(--space-12);
   max-width: 560px;
 }
 
-.contact-hero__text .tag + .section-title {
-  margin-top: var(--space-16);
-}
-
-.contact-hero__text .section-title + .section-body {
-  margin-top: var(--space-12);
+.contact-hero__text .section-title {
+  margin-top: var(--space-8);
 }
 
 .contact-hero__graphic {
