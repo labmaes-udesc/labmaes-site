@@ -321,8 +321,8 @@ img {
   height: 48px;
   margin-bottom: var(--space-12);
   background-color: var(--color-support-orange);
-  -webkit-mask-image: url('/assets/graphics/module-labmaes-block-2x2-a.svg');
-  mask-image: url('/assets/graphics/module-labmaes-block-2x2-a.svg');
+  -webkit-mask-image: url('/assets/graphics/module-labmaes-composite-wide-large.svg');
+  mask-image: url('/assets/graphics/module-labmaes-composite-wide-large.svg');
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
@@ -608,13 +608,26 @@ img {
   margin-top: var(--space-12);
 }
 
+/* Wrapper dimensiona o espaço para o flex; pseudo-element aplica a rotação */
 .areas-header__graphic {
   flex-shrink: 0;
-  width: 200px;
-  height: 140px;
+  position: relative;
+  width: 88px;
+  height: 240px;
+  align-self: center;
+}
+
+.areas-header__graphic::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 240px;
+  height: 88px;
+  transform: translate(-50%, -50%) rotate(-90deg);
   background-color: var(--color-brand-red);
-  -webkit-mask-image: url('/assets/graphics/module-labmaes-composite-wide-large.svg');
-  mask-image: url('/assets/graphics/module-labmaes-composite-wide-large.svg');
+  -webkit-mask-image: url('/assets/graphics/module-labmaes-rectangle-3x1-b.svg');
+  mask-image: url('/assets/graphics/module-labmaes-rectangle-3x1-b.svg');
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
@@ -622,7 +635,6 @@ img {
   -webkit-mask-position: center;
   mask-position: center;
   opacity: 0.85;
-  align-self: center;
 }
 
 /* ─── Grid 3 colunas ─────────────────────────────────────── */
