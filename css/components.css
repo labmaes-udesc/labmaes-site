@@ -1628,6 +1628,14 @@ img {
   font-weight: 700;
 }
 
+/* ─── Ações do callout de oficinas ──────────────────────── */
+.event-callout__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  flex-shrink: 0;
+}
+
 /* ─── Responsivo: oficinas ──────────────────────────────── */
 @media (max-width: 767px) {
   .oficinas-header-grid {
