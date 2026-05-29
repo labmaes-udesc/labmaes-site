@@ -1466,6 +1466,7 @@ img {
 
 /* Botão PDF — outline vermelho */
 .button--pdf {
+  background: transparent;
   color: var(--color-brand-red);
   border-color: var(--color-brand-red);
 }
