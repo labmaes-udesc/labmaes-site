@@ -32,6 +32,31 @@ document.addEventListener("DOMContentLoaded", () => {
     cards.forEach((card) => card.setAttribute("data-visible", ""));
   }
 
+  // ── Scroll reveal: itens da programação ─────────────────
+  const scheduleItems = document.querySelectorAll(".schedule-item, .schedule-parallel");
+  if (scheduleItems.length && "IntersectionObserver" in window) {
+    const revealItem = (el) => el.setAttribute("data-visible", "");
+    const scheduleObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            revealItem(entry.target);
+            scheduleObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0, rootMargin: "0px 0px 80px 0px" }
+    );
+    scheduleItems.forEach((item) => scheduleObserver.observe(item));
+    setTimeout(() => {
+      scheduleItems.forEach((item) => {
+        if (!item.hasAttribute("data-visible")) revealItem(item);
+      });
+    }, 1500);
+  } else {
+    scheduleItems.forEach((item) => item.setAttribute("data-visible", ""));
+  }
+
   // ── Menu mobile ─────────────────────────────────────────────
   const toggle = document.querySelector("[data-mobile-menu-toggle]");
   const nav = document.querySelector("[data-site-nav]");
