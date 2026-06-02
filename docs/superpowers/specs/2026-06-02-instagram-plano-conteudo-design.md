@@ -7,7 +7,7 @@
 
 ## Contexto
 
-O 7º Seminário Caminhos do Contemporâneo acontece de **19 a 22 de agosto de 2026**, em formato híbrido — presencial no UDESC CEART (Florianópolis, SC) e online pelo Zoom.
+O 7º Seminário Caminhos do Contemporâneo acontece de **19 a 22 de agosto de 2026**, em formato híbrido, com atividades presenciais no UDESC CEART (Florianópolis, SC) e online pelo Zoom. Promovido pela Universidade do Estado de Santa Catarina por meio do LabMAES, com apoio da FAPESC.
 
 **Tema:** Criação, tessituras sensíveis e narrativas em movimento
 **Três eixos:** Criação · Tessituras Sensíveis · Narrativas em Movimento
@@ -17,11 +17,11 @@ O 7º Seminário Caminhos do Contemporâneo acontece de **19 a 22 de agosto de 2
 
 ## Identidade Visual (KV)
 
-- **Imagem central:** obra *Rio Doce* (Nara Guichon, 2022) — escultura têxtil orgânica
+- **Imagem central:** obra *Rio Doce* (Nara Guichon, 2022): escultura têxtil orgânica
 - **Paleta:** creme (fundo base), verde musgo/floresta, terracota/vermelho, azul-acinzentado
 - **Elementos gráficos recorrentes:** fios vermelhos com miçangas (remetem a "caminhos" e à trama têxtil), tira de filme (fala à Mostra Audiovisual)
 - **Tipografia:** serif para títulos principais, caps para subtítulo temático
-- **Tom visual:** elegante, material, sensorial — arte e pesquisa, sem apelo corporativo
+- **Tom visual:** elegante, material, sensorial; arte e pesquisa, sem apelo corporativo
 
 ### Diretrizes gerais de arte para todos os posts
 - Fundo creme como base
@@ -29,6 +29,7 @@ O 7º Seminário Caminhos do Contemporâneo acontece de **19 a 22 de agosto de 2
 - Fios vermelhos com miçangas podem ser usados como elemento gráfico de continuidade entre telas de carrosséis
 - Fragmentos da textura têxtil de *Rio Doce* podem aparecer como fundo sutil em telas conceituais
 - Tira de filme reservada para posts relacionados à Mostra Audiovisual (posts 10, 14, 15)
+- **Logos LabMAES e FAPESC no rodapé de todas as artes, em todas as telas**
 
 ---
 
@@ -51,6 +52,9 @@ Para cada publicação:
 
 **Temáticas — quando o post toca o eixo:**
 `#Criação #TessiturasSensíveis #NarrativasEmMovimento`
+
+**Fixo institucional — todos os posts:**
+`@fapesc.sc`
 
 ---
 
@@ -83,7 +87,7 @@ Para cada publicação:
 ### POST 1 — 05/06 · Carrossel 4 telas
 **Tema:** Abertura — tema da edição + identidade visual (Rio Doce, Nara Guichon, 2022)
 
-**Direcionamento de arte geral:** KV principal do evento adaptado ao formato feed (1:1 ou 4:5). Apresenta a obra e o evento lado a lado.
+**Direcionamento de arte geral:** KV principal do evento adaptado ao formato feed (1:1 ou 4:5). Apresenta a obra e o evento lado a lado. Logos LabMAES e FAPESC no rodapé de todas as telas.
 
 **TELA 1 — Abertura do evento**
 - Arte: KV completo ou versão adaptada para o feed. Título do seminário em tipografia do KV.
@@ -95,19 +99,21 @@ Para cada publicação:
 
 **TELA 3 — A conexão**
 - Arte: Detalhe ou fragmento da obra em composição com o título do evento. Sobreposição sutil de tipografia sobre a imagem.
-- Copy: `Fluxo, memória, matéria. O rio que corre também tece — e carrega nas suas águas aquilo que esta edição quer mover: criação que sente, narrativas que se deslocam, tessituras que permanecem.`
+- Copy: `Fluxo, memória, matéria. O rio que corre também tece: carrega nas suas águas aquilo que esta edição quer mover. Criação que sente, narrativas que se deslocam, tessituras que permanecem.`
 
 **TELA 4 — CTA**
-- Arte: Fundo creme. Logo LabMAES. Elemento dos fios vermelhos do KV.
+- Arte: Fundo creme. Logos LabMAES e FAPESC. Elemento dos fios vermelhos do KV.
 - Copy: `Inscrições abertas` / `19 a 22 de agosto · Florianópolis · Online` / `↗ labmaes.com.br`
 
 **Legenda:**
-> *Rio Doce* foi criada por Nara Guichon em 2022. É uma obra têxtil — matéria orgânica, fio, tempo de fazer. Escolhemos ela para abrir esta edição porque carrega algo do que queremos dizer: que criação não é só resultado, é também o que atravessa enquanto acontece.
+> *Rio Doce* foi criada por Nara Guichon em 2022. É uma obra têxtil: matéria orgânica, fio, tempo de fazer. Escolhemos ela para abrir esta edição porque carrega algo do que queremos dizer, que criação não é só resultado, é também o que atravessa enquanto acontece.
 >
 > 7º Seminário Caminhos do Contemporâneo
 > 19 a 22 de agosto · Florianópolis + online
 >
 > Inscrições abertas. Link na bio.
+>
+> @fapesc.sc
 >
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #UDESCCEART #NaraGuichon #SeminárioDeArtes`
 
@@ -116,7 +122,7 @@ Para cada publicação:
 ### POST 2 — 12/06 · Carrossel 3 telas
 **Tema:** Eixo Criação
 
-**Direcionamento de arte geral:** Fundo creme. Tag "EIXO 1" em destaque. Elementos gráficos que remetam ao gesto criativo — traços, formas abertas. Verde musgo como cor dominante.
+**Direcionamento de arte geral:** Fundo creme. Tag "EIXO 1" em destaque. Elementos gráficos que remetam ao gesto criativo: traços, formas abertas. Verde musgo como cor dominante. Logos LabMAES e FAPESC no rodapé.
 
 **TELA 1**
 - Arte: Fundo creme com elemento gráfico abstrato em verde musgo. Tag "EIXO 1" no topo.
@@ -124,18 +130,20 @@ Para cada publicação:
 
 **TELA 2**
 - Arte: Fundo creme levemente texturizado (fragmento de Rio Doce). Espaço amplo para texto em tipografia verde musgo.
-- Copy: `Criação é um dos três eixos do 7º Caminhos do Contemporâneo — e talvez o mais difícil de nomear, porque o ato de criar resiste a toda definição fechada. É exatamente por isso que faz sentido como objeto de pesquisa.`
+- Copy: `Criação é um dos três eixos do 7º Caminhos do Contemporâneo, talvez o mais difícil de nomear, porque o ato de criar resiste a toda definição fechada. É exatamente por isso que faz sentido como objeto de pesquisa.`
 
 **TELA 3**
 - Arte: Arte do evento. CTA em destaque terracota.
 - Copy: `Submeta sua pesquisa até 30 de junho` / `Comunicação oral · Pôster digital · Mostra audiovisual` / `↗ labmaes.com.br`
 
 **Legenda:**
-> Criação é um dos três eixos do 7º Caminhos do Contemporâneo — e talvez o mais difícil de nomear, porque o ato de criar resiste a toda definição fechada. É exatamente por isso que faz sentido como objeto de pesquisa.
+> Criação é um dos três eixos do 7º Caminhos do Contemporâneo, talvez o mais difícil de nomear, porque o ato de criar resiste a toda definição fechada. É exatamente por isso que faz sentido como objeto de pesquisa.
 >
-> O eixo reúne trabalhos em artes, moda, design, teatro, audiovisual. O que os aproxima não é a área — é a pergunta que compartilham sobre o fazer.
+> O eixo reúne trabalhos em artes, moda, design, teatro, audiovisual. O que os aproxima não é a área, mas a pergunta que compartilham sobre o fazer.
 >
 > Submissões abertas até 30 de junho: comunicação oral, pôster digital e mostra audiovisual. Editais no link da bio.
+>
+> @fapesc.sc
 >
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #Criação #SubmissõesAbertas #UDESCCEART #PesquisaEmArte`
 
@@ -144,7 +152,7 @@ Para cada publicação:
 ### POST 3 — 19/06 · Carrossel 3 telas
 **Tema:** Eixo Tessituras Sensíveis
 
-**Direcionamento de arte geral:** Fundo creme. Tag "EIXO 2". Elementos que remetam à textura, ao toque, ao têxtil — trama, fio, proximidade. Terracota como cor de apoio.
+**Direcionamento de arte geral:** Fundo creme. Tag "EIXO 2". Elementos que remetam à textura, ao toque, ao têxtil: trama, fio, proximidade. Terracota como cor de apoio. Logos LabMAES e FAPESC no rodapé.
 
 **TELA 1**
 - Arte: Fundo creme com elemento têxtil/trama sutil. Tag "EIXO 2".
@@ -152,18 +160,20 @@ Para cada publicação:
 
 **TELA 2**
 - Arte: Fotografia ou elemento gráfico que remeta ao toque e à materialidade. Espaço para texto.
-- Copy: `Não é fácil de nomear — e talvez seja por isso que funciona: porque toca em algo que resiste à abstração. Pesquisas com corpo, com material, com o que o ensino carrega de tátil.`
+- Copy: `Não é fácil de nomear. Talvez seja por isso que funciona: porque toca em algo que resiste à abstração. Pesquisas com corpo, com material, com o que o ensino carrega de tátil.`
 
 **TELA 3**
 - Arte: Arte do evento. CTA.
 - Copy: `Submeta sua pesquisa até 30 de junho` / `↗ labmaes.com.br`
 
 **Legenda:**
-> Tessituras Sensíveis é o eixo das pesquisas que trabalham com corpo, com material, com o que o ensino carrega de tátil. Não é fácil de nomear — e talvez seja por isso que funciona: porque toca em algo que resiste à abstração.
+> Tessituras Sensíveis é o eixo das pesquisas que trabalham com corpo, com material, com o que o ensino carrega de tátil. Não é fácil de nomear. Talvez seja por isso que funciona: porque toca em algo que resiste à abstração.
 >
-> Práticas têxteis, mediação artística, pesquisa somática, educação de arte: se o seu trabalho passa por aí, este é o seu eixo.
+> Práticas têxteis, mediação artística, pesquisa somática, educação de arte. Se o seu trabalho está aí, o eixo é este.
 >
 > Submissões abertas até 30 de junho. Link na bio.
+>
+> @fapesc.sc
 >
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #TessiturasSensíveis #EducaçãoArtística #Têxtil #UDESCCEART`
 
@@ -172,13 +182,15 @@ Para cada publicação:
 ### POST 4 — 26/06 · Imagem única
 **Tema:** Operacional — Último chamado para submissões (prazo: 30/06)
 
-**Direcionamento de arte:** Design limpo e urgente. "30 DE JUNHO" em tipografia grande, cor terracota/vermelho do KV. Fundo creme. Hierarquia máxima na data — nada compete com ela. Logo LabMAES discreto no rodapé.
+**Direcionamento de arte:** Design limpo e urgente. "30 DE JUNHO" em tipografia grande, cor terracota do KV. Fundo creme. Hierarquia máxima na data: nada compete com ela. Logos LabMAES e FAPESC discretos no rodapé.
 - Copy da arte: `Últimos dias` / `Prazo de submissão: 30 de junho` / `Comunicação oral · Pôster digital · Mostra audiovisual` / `↗ labmaes.com.br`
 
 **Legenda:**
 > Último aviso: o prazo de submissão de trabalhos ao 7º Caminhos do Contemporâneo encerra na terça-feira, 30 de junho.
 >
-> Ainda dá tempo — comunicação oral, pôster digital e mostra audiovisual. Submissões pela plataforma Even3. Editais e template no link da bio.
+> Ainda dá tempo. Comunicação oral, pôster digital e mostra audiovisual. Submissões pela plataforma Even3. Editais e template no link da bio.
+>
+> @fapesc.sc
 >
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #SubmissõesAbertas #UDESCCEART`
 
@@ -187,7 +199,7 @@ Para cada publicação:
 ### POST 5 — 03/07 · Carrossel 3 telas
 **Tema:** Eixo Narrativas em Movimento
 
-**Direcionamento de arte geral:** Fundo creme. Tag "EIXO 3". Elementos visuais de movimento e deslocamento — linhas dinâmicas, formas que escorregam. Azul-acinzentado como cor de apoio.
+**Direcionamento de arte geral:** Fundo creme. Tag "EIXO 3". Elementos visuais de movimento e deslocamento: linhas dinâmicas, formas que escorregam. Azul-acinzentado como cor de apoio. Logos LabMAES e FAPESC no rodapé.
 
 **TELA 1**
 - Arte: Composição com energia de deslocamento. Tag "EIXO 3".
@@ -195,16 +207,18 @@ Para cada publicação:
 
 **TELA 2**
 - Arte: Elemento de movimento (pode usar os fios vermelhos em diagonal). Espaço para texto.
-- Copy: `Pesquisas que trabalham com o como se conta — audiovisual, performance, escrita, memória. Produções que têm o tempo como parte da linguagem, não só como contexto.`
+- Copy: `Pesquisas que trabalham com o como se conta: audiovisual, performance, escrita, memória. Produções que têm o tempo como parte da linguagem, não só como contexto.`
 
 **TELA 3**
 - Arte: Arte do evento.
 - Copy: `Resultado das avaliações: 13 de julho` / `↗ labmaes.com.br`
 
 **Legenda:**
-> Narrativas em Movimento fecha os três eixos do seminário. É o espaço das pesquisas que trabalham com o *como* se conta — audiovisual, performance, escrita, memória. Produções que têm o tempo como parte da linguagem, não só como contexto.
+> Narrativas em Movimento fecha os três eixos do seminário. É o espaço das pesquisas que trabalham com o *como* se conta: audiovisual, performance, escrita, memória. Produções que têm o tempo como parte da linguagem, não só como contexto.
 >
 > O resultado das avaliações sai em 13 de julho.
+>
+> @fapesc.sc
 >
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #NarrativasEmMovimento #Audiovisual #PesquisaEmArte #UDESCCEART`
 
@@ -213,7 +227,7 @@ Para cada publicação:
 ### POST 6 — 10/07 · Carrossel 3 telas
 **Tema:** Conferencista — Prof. Dra. Myriam Lemonchois (conferência de abertura, 19/ago, 9h30)
 
-**Direcionamento de arte geral:** Foto da pesquisadora com tratamento visual em paleta do KV (overlay creme ou verde musgo). Tag "CONFERÊNCIA DE ABERTURA".
+**Direcionamento de arte geral:** Foto da pesquisadora com tratamento visual em paleta do KV (overlay creme ou verde musgo). Tag "CONFERÊNCIA DE ABERTURA". Logos LabMAES e FAPESC no rodapé.
 > ⚠️ Preencher: foto da pesquisadora + mini-bio (área de pesquisa, instituição, conexão com o tema do evento)
 
 **TELA 1**
@@ -231,10 +245,12 @@ Para cada publicação:
 **Legenda:**
 > A conferência de abertura do 7º Caminhos do Contemporâneo será com a Prof. Dra. Myriam Lemonchois.
 >
-> [2-3 linhas sobre a pesquisadora e sua pesquisa — escritas pela equipe, com a voz de quem conhece o trabalho dela de perto.]
+> [2-3 linhas sobre a pesquisadora e sua pesquisa, escritas pela equipe com a voz de quem conhece o trabalho dela de perto.]
 >
-> 19 de agosto, 9h30 — Auditório UDESC CEART e Zoom.
+> 19 de agosto, 9h30. Auditório UDESC CEART e Zoom.
 > Inscrições: link na bio.
+>
+> @fapesc.sc
 >
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #MyriamLemonchois #Conferência #UDESCCEART`
 
@@ -243,7 +259,7 @@ Para cada publicação:
 ### POST 7 — 17/07 · Carrossel 3 telas
 **Tema:** Conferencista — Prof. Dr. Mario Barro Hérnandez (conferência, 20/ago, 10h–12h)
 
-**Direcionamento de arte geral:** Mesma estrutura do post 6. Tag "CONFERÊNCIA".
+**Direcionamento de arte geral:** Mesma estrutura do post 6. Tag "CONFERÊNCIA". Logos LabMAES e FAPESC no rodapé.
 > ⚠️ Preencher: foto do pesquisador + mini-bio
 
 **TELA 1**
@@ -261,10 +277,12 @@ Para cada publicação:
 **Legenda:**
 > No segundo dia, conferência com o Prof. Dr. Mario Barro Hérnandez.
 >
-> [2-3 linhas sobre o pesquisador — escritas pela equipe.]
+> [2-3 linhas sobre o pesquisador, escritas pela equipe.]
 >
-> 20 de agosto, 10h–12h — Auditório UDESC CEART e Zoom.
+> 20 de agosto, 10h–12h. Auditório UDESC CEART e Zoom.
 > Inscrições: link na bio.
+>
+> @fapesc.sc
 >
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #MarioBarro #Conferência #UDESCCEART`
 
@@ -273,18 +291,18 @@ Para cada publicação:
 ### POST 8 — 24/07 · Carrossel 5 telas
 **Tema:** Chamada para oficinas (prazo: 01/08)
 
-**Direcionamento de arte geral:** Visual dinâmico com elemento manual/têxtil. Cada oficina tem sua tela com cor ou textura distinta dentro da paleta do KV. Urgência do prazo visível na tela de CTA em terracota.
+**Direcionamento de arte geral:** Visual dinâmico com elemento manual/têxtil. Cada oficina tem sua tela com cor ou textura distinta dentro da paleta do KV. Urgência do prazo visível na tela de CTA em terracota. Logos LabMAES e FAPESC no rodapé.
 
 **TELA 1 — Abertura**
 - Arte: Elemento gráfico que remeta ao fazer manual. "OFICINAS" em destaque. Dados essenciais.
 - Copy: `Oficinas` / `3 oficinas simultâneas · gratuitas · presenciais` / `12 vagas cada · Inscrições até 1º de agosto`
 
 **TELA 2 — Oficina 1**
-- Arte: Elemento visual que remeta a figurino, desenho, grafite — lápis, linha de contorno.
+- Arte: Elemento visual que remeta a figurino, desenho, grafite: lápis, linha de contorno.
 - Copy: `Oficina 1 · 19 ago · 17h–18h30` / `Composição visual para figurinos cênicos: exercícios de representação` / `Valdecir Babinski Júnior e equipe (UEM)` / `Sala BC 102 · UDESC CEART`
 
 **TELA 3 — Oficina 2**
-- Arte: Elemento visual que remeta ao têxtil, ao texto, ao fio — costura, bordado, palavra.
+- Arte: Elemento visual que remeta ao têxtil, ao texto, ao fio: costura, bordado, palavra.
 - Copy: `Oficina 2 · 19 ago · 17h–18h30` / `Do texto ao têxtil` / `Janaina Nascimento` / `Sala BC 101 · UDESC CEART`
 
 **TELA 4 — Oficina 3**
@@ -302,6 +320,8 @@ Para cada publicação:
 >
 > Para participar é necessário estar inscrito no evento. Informações e link: na bio.
 >
+> @fapesc.sc
+>
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #Oficinas #UDESCCEART #Florianópolis #TessiturasSensíveis`
 
 ---
@@ -309,7 +329,7 @@ Para cada publicação:
 ### POST 9 — 31/07 · Carrossel 3 telas
 **Tema:** Conferencista — Prof. Dra. Mónica Faria (conferência, 21/ago, 10h30)
 
-**Direcionamento de arte geral:** Mesma estrutura dos posts 6 e 7. Tag "CONFERÊNCIA".
+**Direcionamento de arte geral:** Mesma estrutura dos posts 6 e 7. Tag "CONFERÊNCIA". Logos LabMAES e FAPESC no rodapé.
 > ⚠️ Preencher: foto da pesquisadora + mini-bio
 
 **TELA 1**
@@ -327,10 +347,12 @@ Para cada publicação:
 **Legenda:**
 > No terceiro dia, conferência com a Prof. Dra. Mónica Faria.
 >
-> [2-3 linhas sobre a pesquisadora — escritas pela equipe.]
+> [2-3 linhas sobre a pesquisadora, escritas pela equipe.]
 >
-> 21 de agosto, 10h30 — Auditório UDESC CEART e Zoom.
+> 21 de agosto, 10h30. Auditório UDESC CEART e Zoom.
 > Inscrições: link na bio.
+>
+> @fapesc.sc
 >
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #MónicaFaria #Conferência #UDESCCEART`
 
@@ -339,7 +361,7 @@ Para cada publicação:
 ### POST 10 — 07/08 · Carrossel 4 telas
 **Tema:** Mesas Redondas
 
-**Direcionamento de arte geral:** Tag "MESAS REDONDAS". Composição que evoque encontro e debate — pode usar elementos circulares ou sobreposição de tipografia. Paleta do KV.
+**Direcionamento de arte geral:** Tag "MESAS REDONDAS". Composição que evoque encontro e debate: elementos circulares ou sobreposição de tipografia. Paleta do KV. Logos LabMAES e FAPESC no rodapé.
 
 **TELA 1 — Abertura**
 - Arte: Arte do evento com destaque para "MESAS REDONDAS". Pode usar a tira de filme sutil no fundo.
@@ -358,9 +380,11 @@ Para cada publicação:
 - Copy: `Programação completa em labmaes.com.br` / `Presencial em Florianópolis · Online pelo Zoom` / `Inscrições: link na bio`
 
 **Legenda:**
-> Além das conferências e comunicações orais, a programação inclui seis mesas redondas e temáticas distribuídas entre os três dias presenciais — Economia Criativa, Tessituras Sensíveis do Ensino de Arte, Educação Básica Contemporânea e Criação.
+> Além das conferências e comunicações orais, a programação inclui seis mesas redondas e temáticas distribuídas entre os três dias presenciais. Os temas cobrem Economia Criativa, Tessituras Sensíveis do Ensino de Arte, Educação Básica Contemporânea e Criação.
 >
 > Parte acontece no auditório do UDESC CEART, parte pelo Zoom. Programação completa no link da bio.
+>
+> @fapesc.sc
 >
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #MesasRedondas #UDESCCEART #PesquisaEmArte #EducaçãoArtística`
 
@@ -369,15 +393,17 @@ Para cada publicação:
 ### POST 11 — 14/08 · Imagem única
 **Tema:** Contagem regressiva — faltam 5 dias
 
-**Direcionamento de arte:** Impacto visual máximo. "FALTAM 5 DIAS" em tipografia grande do KV, cor terracota. Fundo creme. Logo LabMAES. Hierarquia clara: countdown → evento → acesso.
+**Direcionamento de arte:** Impacto visual máximo. "FALTAM 5 DIAS" em tipografia grande do KV, cor terracota. Fundo creme. Logos LabMAES e FAPESC. Hierarquia clara: countdown, evento, acesso.
 - Copy da arte: `Faltam 5 dias` / `7º Seminário Caminhos do Contemporâneo` / `19 a 22 de agosto · UDESC CEART + Zoom` / `Inscrições: labmaes.com.br`
 
 **Legenda:**
 > Faltam cinco dias.
 >
-> Conferências, mesas redondas, comunicações orais, três oficinas presenciais, Mostra Audiovisual, Exposição *The Rotfather* e Desfile Rotfather. Quatro dias — Florianópolis e Zoom.
+> Conferências, mesas redondas, comunicações orais, três oficinas presenciais, Mostra Audiovisual, Exposição *The Rotfather* e Desfile Rotfather. Quatro dias entre Florianópolis e Zoom.
 >
 > Programação completa e inscrições: link na bio.
+>
+> @fapesc.sc
 >
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #UDESCCEART #Florianópolis #SeminárioDeArtes`
 
@@ -386,7 +412,7 @@ Para cada publicação:
 ### POST 12 — 17/08 (seg) · Carrossel 4 telas
 **Tema:** A semana do evento começa
 
-**Direcionamento de arte geral:** KV em versão "semana do evento" — pode adicionar indicadores de dia (Qua / Qui / Sex / Sáb) à paleta já estabelecida. Tag "ESTA SEMANA".
+**Direcionamento de arte geral:** KV em versão "semana do evento" com indicadores de dia (Qua / Qui / Sex / Sáb) integrados à paleta já estabelecida. Tag "ESTA SEMANA". Logos LabMAES e FAPESC no rodapé.
 
 **TELA 1 — Abertura da semana**
 - Arte: KV adaptado. "ESTA SEMANA" em destaque. Data.
@@ -401,7 +427,7 @@ Para cada publicação:
 - Copy: `Sex 21` / `Conferência: Mónica Faria` / `Mesas Redondas · Encerramento presencial` / `Desfile Rotfather · Cervejaria Nefasta · 21h`
 
 **TELA 4 — Sáb 22 + acesso online**
-- Arte: Azul-acinzentado para o dia online. Ícone ou referência ao Zoom.
+- Arte: Azul-acinzentado para o dia online. Referência ao Zoom.
 - Copy: `Sáb 22 · Sessão online` / `Comunicações Orais · Mostra Audiovisual` / `Roda de conversa com professores da Educação Básica` / `Zoom · link na bio`
 
 **Legenda:**
@@ -411,6 +437,8 @@ Para cada publicação:
 >
 > Acesso online pelo Zoom: link na bio.
 >
+> @fapesc.sc
+>
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #UDESCCEART #Florianópolis`
 
 ---
@@ -418,7 +446,7 @@ Para cada publicação:
 ### POST 13 — 18/08 (ter) · Imagem única
 **Tema:** Véspera
 
-**Direcionamento de arte:** Clima de antecipação. "AMANHÃ." em tipografia grande, fundo creme escurecido ou composição mais intimista com fragmento da obra. Data e horário.
+**Direcionamento de arte:** Clima de antecipação. "AMANHÃ." em tipografia grande, fundo creme escurecido ou composição intimista com fragmento da obra. Data e horário. Logos LabMAES e FAPESC no rodapé.
 - Copy da arte: `Amanhã começa.` / `7º Caminhos do Contemporâneo` / `19 de agosto · 9h · UDESC CEART + Zoom`
 
 **Legenda:**
@@ -426,7 +454,9 @@ Para cada publicação:
 >
 > Às 9h, abertura institucional. Às 9h30, conferência inaugural com a Prof. Dra. Myriam Lemonchois. À tarde, Mostra Audiovisual, Exposição *The Rotfather* e as primeiras oficinas.
 >
-> UDESC CEART e Zoom — link de acesso na bio.
+> UDESC CEART e Zoom. Link de acesso na bio.
+>
+> @fapesc.sc
 >
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #UDESCCEART`
 
@@ -435,7 +465,7 @@ Para cada publicação:
 ### POST 14 — 19/08 (qua) · Imagem única
 **Tema:** Abertura — Dia 1
 
-**Direcionamento de arte:** Arte de abertura e celebração. "HOJE COMEÇA." em destaque máximo. KV principal. Pode usar a tira de filme como elemento de dinamismo (referência à Mostra).
+**Direcionamento de arte:** Arte de abertura e celebração. "HOJE COMEÇA." em destaque máximo. KV principal. Pode usar a tira de filme como elemento de dinamismo. Logos LabMAES e FAPESC no rodapé.
 - Copy da arte: `Hoje começa.` / `7º Seminário Caminhos do Contemporâneo` / `Criação, tessituras sensíveis e narrativas em movimento`
 
 **Legenda:**
@@ -445,6 +475,8 @@ Para cada publicação:
 >
 > Link de acesso online: na bio.
 >
+> @fapesc.sc
+>
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #UDESCCEART #Florianópolis`
 
 ---
@@ -452,13 +484,15 @@ Para cada publicação:
 ### POST 15 — 20/08 (qui) · Imagem única
 **Tema:** Dia 2
 
-**Direcionamento de arte:** Visual de "em andamento". Pode incorporar foto do dia anterior se disponível. "DIA 2" em destaque. Pode usar a tira de filme para reforçar a Mostra Audiovisual online do dia.
+**Direcionamento de arte:** Visual de "em andamento". Pode incorporar foto do dia anterior se disponível. "DIA 2" em destaque. Tira de filme pode aparecer para reforçar a Mostra Audiovisual online do dia. Logos LabMAES e FAPESC no rodapé.
 - Copy da arte: `Dia 2` / `7º Caminhos do Contemporâneo` / `Conferência: Prof. Dr. Mario Barro Hérnandez · 10h`
 
 **Legenda:**
 > Dia 2. Conferência com o Prof. Dr. Mario Barro Hérnandez às 10h, comunicações orais, Mostra Audiovisual online, mesas temáticas e duas oficinas à tarde.
 >
 > Acesso pelo Zoom: link na bio.
+>
+> @fapesc.sc
 >
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #UDESCCEART #MarioBarro`
 
@@ -467,7 +501,7 @@ Para cada publicação:
 ### POST 16 — 21/08 (sex) · Imagem única
 **Tema:** Dia 3 — Mónica Faria + Desfile Rotfather
 
-**Direcionamento de arte:** Registra o duplo registro do dia — acadêmico (manhã) e cultural/festivo (noite). Pode dividir a composição visualmente (claro/escuro, dia/noite) ou usar contraste tipográfico.
+**Direcionamento de arte:** Registra o duplo registro do dia: acadêmico (manhã) e cultural/festivo (noite). Pode dividir a composição entre claro/escuro ou usar contraste tipográfico para marcar os dois momentos. Logos LabMAES e FAPESC no rodapé.
 - Copy da arte: `Dia 3` / `Conferência: Prof. Dra. Mónica Faria · 10h30` / `Desfile Rotfather · Cervejaria Nefasta · 21h`
 
 **Legenda:**
@@ -477,6 +511,8 @@ Para cada publicação:
 >
 > Zoom durante o dia: link na bio.
 >
+> @fapesc.sc
+>
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #DesfileRotfather #UDESCCEART #Florianópolis`
 
 ---
@@ -484,7 +520,7 @@ Para cada publicação:
 ### POST 17 — 22/08 (sáb) · Imagem única
 **Tema:** Encerramento
 
-**Direcionamento de arte:** Visual poético e contemplativo. "OBRIGADA." ou elemento de fechamento simbólico — pode usar fragmento da obra *Rio Doce* para fechar o ciclo aberto no post 1. Paleta completa do KV. Logo LabMAES em evidência.
+**Direcionamento de arte:** Visual poético e contemplativo. "OBRIGADA." como elemento central; pode usar fragmento da obra *Rio Doce* para fechar o ciclo aberto no post 1. Paleta completa do KV. Logos LabMAES e FAPESC em evidência.
 - Copy da arte: `Obrigada.` / `7º Seminário Caminhos do Contemporâneo · 2026`
 
 **Legenda:**
@@ -492,9 +528,9 @@ Para cada publicação:
 >
 > Acesso: link na bio.
 >
-> —
->
 > Obrigada a quem veio, apresentou, assistiu, debateu. Até a próxima.
+>
+> @fapesc.sc
 >
 > `#CaminhosDoContemporâneo #7Caminhos #LabMAES #UDESCCEART`
 
