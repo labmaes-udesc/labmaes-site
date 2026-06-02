@@ -29,7 +29,7 @@ O 7º Seminário Caminhos do Contemporâneo acontece de **19 a 22 de agosto de 2
 - Fios vermelhos com miçangas podem ser usados como elemento gráfico de continuidade entre telas de carrosséis
 - Fragmentos da textura têxtil de *Rio Doce* podem aparecer como fundo sutil em telas conceituais
 - Tira de filme reservada para posts relacionados à Mostra Audiovisual (posts 10, 14, 15)
-- **Logos LabMAES e FAPESC no rodapé de todas as artes, em todas as telas**
+- **Logos LabMAES e FAPESC no rodapé de todas as artes:** em imagens únicas, presentes na própria arte; em carrosséis, presentes apenas na última tela (CTA)
 
 ---
 
@@ -87,7 +87,7 @@ Para cada publicação:
 ### POST 1 — 05/06 · Carrossel 4 telas
 **Tema:** Abertura — tema da edição + identidade visual (Rio Doce, Nara Guichon, 2022)
 
-**Direcionamento de arte geral:** KV principal do evento adaptado ao formato feed (1:1 ou 4:5). Apresenta a obra e o evento lado a lado. Logos LabMAES e FAPESC no rodapé de todas as telas.
+**Direcionamento de arte geral:** KV principal do evento adaptado ao formato feed (1:1 ou 4:5). Apresenta a obra e o evento lado a lado.
 
 **TELA 1 — Abertura do evento**
 - Arte: KV completo ou versão adaptada para o feed. Título do seminário em tipografia do KV.
@@ -102,7 +102,7 @@ Para cada publicação:
 - Copy: `Fluxo, memória, matéria. O rio que corre também tece: carrega nas suas águas aquilo que esta edição quer mover. Criação que sente, narrativas que se deslocam, tessituras que permanecem.`
 
 **TELA 4 — CTA**
-- Arte: Fundo creme. Logos LabMAES e FAPESC. Elemento dos fios vermelhos do KV.
+- Arte: Fundo creme. Logos LabMAES e FAPESC no rodapé. Elemento dos fios vermelhos do KV.
 - Copy: `Inscrições abertas` / `19 a 22 de agosto · Florianópolis · Online` / `↗ labmaes.com.br`
 
 **Legenda:**
@@ -122,7 +122,7 @@ Para cada publicação:
 ### POST 2 — 12/06 · Carrossel 3 telas
 **Tema:** Eixo Criação
 
-**Direcionamento de arte geral:** Fundo creme. Tag "EIXO 1" em destaque. Elementos gráficos que remetam ao gesto criativo: traços, formas abertas. Verde musgo como cor dominante. Logos LabMAES e FAPESC no rodapé.
+**Direcionamento de arte geral:** Fundo creme. Tag "EIXO 1" em destaque. Elementos gráficos que remetam ao gesto criativo: traços, formas abertas. Verde musgo como cor dominante.
 
 **TELA 1**
 - Arte: Fundo creme com elemento gráfico abstrato em verde musgo. Tag "EIXO 1" no topo.
@@ -133,7 +133,7 @@ Para cada publicação:
 - Copy: `Criação é um dos três eixos do 7º Caminhos do Contemporâneo, talvez o mais difícil de nomear, porque o ato de criar resiste a toda definição fechada. É exatamente por isso que faz sentido como objeto de pesquisa.`
 
 **TELA 3**
-- Arte: Arte do evento. CTA em destaque terracota.
+- Arte: Arte do evento. CTA em destaque terracota. Logos LabMAES e FAPESC no rodapé.
 - Copy: `Submeta sua pesquisa até 30 de junho` / `Comunicação oral · Pôster digital · Mostra audiovisual` / `↗ labmaes.com.br`
 
 **Legenda:**
@@ -152,7 +152,7 @@ Para cada publicação:
 ### POST 3 — 19/06 · Carrossel 3 telas
 **Tema:** Eixo Tessituras Sensíveis
 
-**Direcionamento de arte geral:** Fundo creme. Tag "EIXO 2". Elementos que remetam à textura, ao toque, ao têxtil: trama, fio, proximidade. Terracota como cor de apoio. Logos LabMAES e FAPESC no rodapé.
+**Direcionamento de arte geral:** Fundo creme. Tag "EIXO 2". Elementos que remetam à textura, ao toque, ao têxtil: trama, fio, proximidade. Terracota como cor de apoio.
 
 **TELA 1**
 - Arte: Fundo creme com elemento têxtil/trama sutil. Tag "EIXO 2".
@@ -163,7 +163,7 @@ Para cada publicação:
 - Copy: `Não é fácil de nomear. Talvez seja por isso que funciona: porque toca em algo que resiste à abstração. Pesquisas com corpo, com material, com o que o ensino carrega de tátil.`
 
 **TELA 3**
-- Arte: Arte do evento. CTA.
+- Arte: Arte do evento. CTA. Logos LabMAES e FAPESC no rodapé.
 - Copy: `Submeta sua pesquisa até 30 de junho` / `↗ labmaes.com.br`
 
 **Legenda:**
@@ -199,7 +199,7 @@ Para cada publicação:
 ### POST 5 — 03/07 · Carrossel 3 telas
 **Tema:** Eixo Narrativas em Movimento
 
-**Direcionamento de arte geral:** Fundo creme. Tag "EIXO 3". Elementos visuais de movimento e deslocamento: linhas dinâmicas, formas que escorregam. Azul-acinzentado como cor de apoio. Logos LabMAES e FAPESC no rodapé.
+**Direcionamento de arte geral:** Fundo creme. Tag "EIXO 3". Elementos visuais de movimento e deslocamento: linhas dinâmicas, formas que escorregam. Azul-acinzentado como cor de apoio.
 
 **TELA 1**
 - Arte: Composição com energia de deslocamento. Tag "EIXO 3".
@@ -210,7 +210,7 @@ Para cada publicação:
 - Copy: `Pesquisas que trabalham com o como se conta: audiovisual, performance, escrita, memória. Produções que têm o tempo como parte da linguagem, não só como contexto.`
 
 **TELA 3**
-- Arte: Arte do evento.
+- Arte: Arte do evento. Logos LabMAES e FAPESC no rodapé.
 - Copy: `Resultado das avaliações: 13 de julho` / `↗ labmaes.com.br`
 
 **Legenda:**
@@ -227,7 +227,7 @@ Para cada publicação:
 ### POST 6 — 10/07 · Carrossel 3 telas
 **Tema:** Conferencista — Prof. Dra. Myriam Lemonchois (conferência de abertura, 19/ago, 9h30)
 
-**Direcionamento de arte geral:** Foto da pesquisadora com tratamento visual em paleta do KV (overlay creme ou verde musgo). Tag "CONFERÊNCIA DE ABERTURA". Logos LabMAES e FAPESC no rodapé.
+**Direcionamento de arte geral:** Foto da pesquisadora com tratamento visual em paleta do KV (overlay creme ou verde musgo). Tag "CONFERÊNCIA DE ABERTURA".
 > ⚠️ Preencher: foto da pesquisadora + mini-bio (área de pesquisa, instituição, conexão com o tema do evento)
 
 **TELA 1**
@@ -239,7 +239,7 @@ Para cada publicação:
 - Copy: `[mini-bio — 3-4 linhas, escritas pela equipe]`
 
 **TELA 3**
-- Arte: Arte do evento com data.
+- Arte: Arte do evento com data. Logos LabMAES e FAPESC no rodapé.
 - Copy: `19 de agosto · 9h30` / `Auditório UDESC CEART · Zoom` / `Inscrições: link na bio`
 
 **Legenda:**
@@ -259,7 +259,7 @@ Para cada publicação:
 ### POST 7 — 17/07 · Carrossel 3 telas
 **Tema:** Conferencista — Prof. Dr. Mario Barro Hérnandez (conferência, 20/ago, 10h–12h)
 
-**Direcionamento de arte geral:** Mesma estrutura do post 6. Tag "CONFERÊNCIA". Logos LabMAES e FAPESC no rodapé.
+**Direcionamento de arte geral:** Mesma estrutura do post 6. Tag "CONFERÊNCIA".
 > ⚠️ Preencher: foto do pesquisador + mini-bio
 
 **TELA 1**
@@ -271,7 +271,7 @@ Para cada publicação:
 - Copy: `[mini-bio — 3-4 linhas, escritas pela equipe]`
 
 **TELA 3**
-- Arte: Arte do evento.
+- Arte: Arte do evento. Logos LabMAES e FAPESC no rodapé.
 - Copy: `20 de agosto · 10h–12h` / `Auditório UDESC CEART · Zoom` / `Inscrições: link na bio`
 
 **Legenda:**
@@ -291,7 +291,7 @@ Para cada publicação:
 ### POST 8 — 24/07 · Carrossel 5 telas
 **Tema:** Chamada para oficinas (prazo: 01/08)
 
-**Direcionamento de arte geral:** Visual dinâmico com elemento manual/têxtil. Cada oficina tem sua tela com cor ou textura distinta dentro da paleta do KV. Urgência do prazo visível na tela de CTA em terracota. Logos LabMAES e FAPESC no rodapé.
+**Direcionamento de arte geral:** Visual dinâmico com elemento manual/têxtil. Cada oficina tem sua tela com cor ou textura distinta dentro da paleta do KV. Urgência do prazo visível na tela de CTA em terracota.
 
 **TELA 1 — Abertura**
 - Arte: Elemento gráfico que remeta ao fazer manual. "OFICINAS" em destaque. Dados essenciais.
@@ -310,7 +310,7 @@ Para cada publicação:
 - Copy: `Oficina 3 · 20 ago · 17h30–19h` / `Desenhando com linhas` / `Camila França, Emanoela Mardula e equipe (IFSC-JAR / UEM)` / `Sala BC 101 · UDESC CEART`
 
 **TELA 5 — CTA**
-- Arte: Arte do evento. "1º DE AGOSTO" em terracota, destaque máximo.
+- Arte: Arte do evento. "1º DE AGOSTO" em terracota, destaque máximo. Logos LabMAES e FAPESC no rodapé.
 - Copy: `Inscrições até 1º de agosto` / `Pela plataforma Even3` / `É necessário estar inscrito no evento antes` / `↗ link na bio`
 
 **Legenda:**
@@ -329,7 +329,7 @@ Para cada publicação:
 ### POST 9 — 31/07 · Carrossel 3 telas
 **Tema:** Conferencista — Prof. Dra. Mónica Faria (conferência, 21/ago, 10h30)
 
-**Direcionamento de arte geral:** Mesma estrutura dos posts 6 e 7. Tag "CONFERÊNCIA". Logos LabMAES e FAPESC no rodapé.
+**Direcionamento de arte geral:** Mesma estrutura dos posts 6 e 7. Tag "CONFERÊNCIA".
 > ⚠️ Preencher: foto da pesquisadora + mini-bio
 
 **TELA 1**
@@ -341,7 +341,7 @@ Para cada publicação:
 - Copy: `[mini-bio — 3-4 linhas, escritas pela equipe]`
 
 **TELA 3**
-- Arte: Arte do evento.
+- Arte: Arte do evento. Logos LabMAES e FAPESC no rodapé.
 - Copy: `21 de agosto · 10h30` / `Auditório UDESC CEART · Zoom` / `Inscrições: link na bio`
 
 **Legenda:**
@@ -361,7 +361,7 @@ Para cada publicação:
 ### POST 10 — 07/08 · Carrossel 4 telas
 **Tema:** Mesas Redondas
 
-**Direcionamento de arte geral:** Tag "MESAS REDONDAS". Composição que evoque encontro e debate: elementos circulares ou sobreposição de tipografia. Paleta do KV. Logos LabMAES e FAPESC no rodapé.
+**Direcionamento de arte geral:** Tag "MESAS REDONDAS". Composição que evoque encontro e debate: elementos circulares ou sobreposição de tipografia. Paleta do KV.
 
 **TELA 1 — Abertura**
 - Arte: Arte do evento com destaque para "MESAS REDONDAS". Pode usar a tira de filme sutil no fundo.
@@ -376,7 +376,7 @@ Para cada publicação:
 - Copy: `Tessituras Sensíveis do Ensino de Arte` / `Educação Básica Contemporânea` / `Sessões presenciais e online · 19, 20 e 21 de agosto`
 
 **TELA 4 — CTA**
-- Arte: Arte do evento.
+- Arte: Arte do evento. Logos LabMAES e FAPESC no rodapé.
 - Copy: `Programação completa em labmaes.com.br` / `Presencial em Florianópolis · Online pelo Zoom` / `Inscrições: link na bio`
 
 **Legenda:**
@@ -412,7 +412,7 @@ Para cada publicação:
 ### POST 12 — 17/08 (seg) · Carrossel 4 telas
 **Tema:** A semana do evento começa
 
-**Direcionamento de arte geral:** KV em versão "semana do evento" com indicadores de dia (Qua / Qui / Sex / Sáb) integrados à paleta já estabelecida. Tag "ESTA SEMANA". Logos LabMAES e FAPESC no rodapé.
+**Direcionamento de arte geral:** KV em versão "semana do evento" com indicadores de dia (Qua / Qui / Sex / Sáb) integrados à paleta já estabelecida. Tag "ESTA SEMANA".
 
 **TELA 1 — Abertura da semana**
 - Arte: KV adaptado. "ESTA SEMANA" em destaque. Data.
@@ -427,7 +427,7 @@ Para cada publicação:
 - Copy: `Sex 21` / `Conferência: Mónica Faria` / `Mesas Redondas · Encerramento presencial` / `Desfile Rotfather · Cervejaria Nefasta · 21h`
 
 **TELA 4 — Sáb 22 + acesso online**
-- Arte: Azul-acinzentado para o dia online. Referência ao Zoom.
+- Arte: Azul-acinzentado para o dia online. Referência ao Zoom. Logos LabMAES e FAPESC no rodapé.
 - Copy: `Sáb 22 · Sessão online` / `Comunicações Orais · Mostra Audiovisual` / `Roda de conversa com professores da Educação Básica` / `Zoom · link na bio`
 
 **Legenda:**

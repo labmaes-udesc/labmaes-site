@@ -61,7 +61,7 @@
 |1|KV adaptado para 1:1 ou 4:5. Título em tipografia do KV.|`7º Seminário Caminhos do Contemporâneo` / `Criação, tessituras sensíveis e narrativas em movimento` / `19 a 22 de agosto de 2026 · Florianópolis · Híbrido`|
 |2|*Rio Doce* centralizada. Crédito no rodapé: *"Rio Doce, 2022 · Nara Guichon"*. Fundo creme.|`A identidade visual desta edição nasce de uma obra.` / `Rio Doce (2022)` / `Nara Guichon`|
 |3|Detalhe/fragmento da obra + sobreposição tipográfica sutil.|`Fluxo, memória, matéria. O rio que corre também tece: carrega nas suas águas aquilo que esta edição quer mover. Criação que sente, narrativas que se deslocam, tessituras que permanecem.`|
-|4|Fundo creme. Logos LabMAES e FAPESC. Fios vermelhos do KV.|`Inscrições abertas` / `19 a 22 de agosto · Florianópolis · Online` / `↗ labmaes.com.br`|
+|4|Fundo creme. Logos LabMAES e FAPESC no rodapé. Fios vermelhos do KV.|`Inscrições abertas` / `19 a 22 de agosto · Florianópolis · Online` / `↗ labmaes.com.br`|
 
 **Legenda completa:**
 
