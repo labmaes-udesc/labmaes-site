@@ -1,0 +1,24 @@
+<section class="event-hero" aria-label="Banner do evento">
+  <picture>
+    <source media="(max-width: 767px)" srcset="/assets/banners/banner-caminhos-mobile.webp">
+    <img src="/assets/banners/banner-caminhos-desktop.webp" alt="7º Seminário Caminhos do Contemporâneo 2026" width="1440" height="600">
+  </picture>
+</section>
+
+<nav class="event-nav" aria-label="Navegação do evento">
+  <div class="event-nav__row">
+    <a class="button button--outline event-nav__link" href="/eventos/caminhos-do-contemporaneo/2026/"
+       {% if page.url == '/eventos/caminhos-do-contemporaneo/2026/' %}aria-current="page"{% endif %}>Edição atual</a>
+    <a class="button button--outline event-nav__link" href="/eventos/caminhos-do-contemporaneo/2026/programacao/"
+       {% if page.url == '/eventos/caminhos-do-contemporaneo/2026/programacao/' %}aria-current="page"{% endif %}>Programação</a>
+    <a class="button button--outline event-nav__link" href="/eventos/caminhos-do-contemporaneo/2026/submissoes/"
+       {% if page.url == '/eventos/caminhos-do-contemporaneo/2026/submissoes/' %}aria-current="page"{% endif %}>Submissões</a>
+    <a class="button button--outline event-nav__link" href="/eventos/caminhos-do-contemporaneo/2026/oficinas/"
+       {% if page.url == '/eventos/caminhos-do-contemporaneo/2026/oficinas/' %}aria-current="page"{% endif %}>Oficinas</a>
+    <a class="button button--outline event-nav__link" href="/eventos/caminhos-do-contemporaneo/2026/anais/"
+       {% if page.url == '/eventos/caminhos-do-contemporaneo/2026/anais/' %}aria-current="page"{% endif %}>Anais</a>
+    <a class="button button--primary event-nav__inscricoes"
+       href="https://www.even3.com.br/7-seminario-caminhos-do-contemporaneo-744454"
+       target="_blank" rel="noopener noreferrer">Inscrições ↗</a>
+  </div>
+</nav>

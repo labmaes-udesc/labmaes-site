@@ -392,8 +392,8 @@ img {
   gap: var(--space-48);
 }
 
-/* Botão de inscrições: outline ice sobre fundo azul escuro */
-.event-nav__inscricoes.button--outline {
+/* Botões de navegação: outline ice sobre fundo azul */
+.event-nav__link.button--outline {
   color: var(--color-brand-ice);
   border-color: var(--color-brand-ice);
 }
@@ -429,6 +429,26 @@ img {
   border-radius: var(--radius-lg);
   padding: 40px 48px;
   margin: 24px 10px 10px;
+}
+
+.footer-social {
+  display: flex;
+  gap: var(--space-16);
+  margin-top: var(--space-16);
+}
+
+.footer-social a {
+  color: var(--color-brand-ice);
+  display: flex;
+  align-items: center;
+  opacity: 0.8;
+  transition: opacity 0.16s ease;
+}
+
+@media (hover: hover) {
+  .footer-social a:hover {
+    opacity: 1;
+  }
 }
 
 /* ─── Animações de entrada ───────────────────────────────── */
@@ -1049,8 +1069,8 @@ img {
     justify-content: flex-start;
   }
 
-  /* No mobile (fundo branco), inscrições volta ao outline azul */
-  .event-nav .event-nav__inscricoes.button--outline {
+  /* No mobile (fundo branco), links de nav usam outline azul padrão */
+  .event-nav .event-nav__link.button--outline {
     color: var(--color-brand-blue);
     border-color: var(--color-brand-blue);
   }
