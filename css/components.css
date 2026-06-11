@@ -393,7 +393,7 @@ img {
 }
 
 /* Botões de navegação: outline ice sobre fundo azul */
-.event-nav__link.button--outline {
+.event-nav .event-nav__link.button--outline {
   color: var(--color-brand-ice);
   border-color: var(--color-brand-ice);
 }
