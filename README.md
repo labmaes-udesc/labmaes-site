@@ -29,3 +29,7 @@ O cabeçalho (front matter) de cada arquivo define:
 - `description` — texto para Google e redes sociais
 
 Header, footer e navegação do evento ficam em `_includes/` — editar lá afeta todas as páginas de uma vez.
+
+## Pendências
+
+- **Atualizar o Edital 03 (Mostra Audiovisual)** — `assets/editais/Caminhos_edital_03_MA.pdf`. As cláusulas 2.6 e 2.7 ainda indicam que a inscrição da Mostra é feita pela Even3 ("Modalidade Mostra Audiovisual"). O fluxo mudou para inscrição no evento via Even3 + submissão da obra via Google Forms (refletido na página `/2026/mostra-audiovisual/`). O PDF precisa ser regenerado para evitar novas dúvidas.
