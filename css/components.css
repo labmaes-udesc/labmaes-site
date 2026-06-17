@@ -662,6 +662,11 @@ img {
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* ─── Grid 2 colunas (eixos, passos) ─────────────────────── */
+.event-card-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 /* ─── Oficinas: cabeçalho com gráfico decorativo ─────────── */
 .oficinas-header {
   display: flex;
@@ -1084,6 +1089,7 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .event-card-grid--2,
   .event-card-grid--3 {
     grid-template-columns: 1fr;
   }
@@ -1933,4 +1939,58 @@ img {
   .contact-location__graphic {
     display: none;
   }
+}
+
+/* ─── Curadoria dentro do card de eixo ───────────────────── */
+.curadoria {
+  margin-top: auto;
+  padding-top: var(--space-16);
+  border-top: 1px solid rgba(48, 42, 102, 0.12);
+}
+
+.curadoria__label {
+  display: block;
+  font-family: var(--font-event, 'DM Mono', monospace);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-brand-red);
+  margin-bottom: var(--space-8);
+}
+
+.curadoria__names {
+  margin: 0;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  color: rgba(48, 42, 102, 0.72);
+}
+
+/* ─── Passo (fluxo de inscrição) ─────────────────────────── */
+.passo-card {
+  position: relative;
+  background: var(--color-white);
+  border: 1px solid rgba(48, 42, 102, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.passo-card__numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: var(--color-brand-red);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.passo-card .button {
+  margin-top: auto;
+  align-self: flex-start;
 }
