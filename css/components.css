@@ -662,6 +662,11 @@ img {
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* ─── Grid 2 colunas (eixos, passos) ─────────────────────── */
+.event-card-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 /* ─── Oficinas: cabeçalho com gráfico decorativo ─────────── */
 .oficinas-header {
   display: flex;
@@ -1934,11 +1939,6 @@ img {
   .contact-location__graphic {
     display: none;
   }
-}
-
-/* ─── Grid 2 colunas (eixos, passos) ─────────────────────── */
-.event-card-grid--2 {
-  grid-template-columns: repeat(2, 1fr);
 }
 
 /* ─── Curadoria dentro do card de eixo ───────────────────── */
