@@ -1,0 +1,432 @@
+[
+  {
+    "data": "2026-08-19",
+    "rotulo": "19 AGO",
+    "diaSemana": "quarta-feira",
+    "secao": "section--pink",
+    "atividades": [
+      {
+        "hora": "9h",
+        "tipo": "Abertura",
+        "tag": "tag--red",
+        "destaque": true,
+        "titulo": "Cerimônia de Abertura",
+        "modalidade": "presencial",
+        "local": "Auditório do Bloco Amarelo",
+        "ementa": "Cerimônia de abertura com as autoridades convidadas.",
+        "participantes": [
+          { "slug": "mara-rubia" },
+          { "slug": "vicente-concilio" },
+          { "slug": "maria-de-fatima" }
+        ]
+      },
+      {
+        "hora": "9h30",
+        "tipo": "Conferência",
+        "tag": "tag--red",
+        "destaque": true,
+        "titulo": "A formação da sensibilidade para a preparação de uma vida artística. Tecer com quatro fios condutores",
+        "modalidade": "presencial",
+        "local": "Auditório",
+        "ementa": "A partir da crítica sobre a formação da sensibilidade, em diálogo com Rousseau e as possibilidades de uma educação emancipatória, segundo John Dewey, a professora Lemonchois propõem discussões sobre a formação da sensibilidade na preparação de uma vida artística a partir das quatro formas de educação de Rousseau, descrevendo exemplos de situações diversas, métodos de emancipação para aprender uma lógica de ação que permita experimentar, em muitas dimensões, a criação, interpretação e apreciação de uma obra de arte.",
+        "participantes": [
+          { "slug": "myriam-lemonchois" },
+          { "slug": "leticia-francez", "papel": "mediadora" }
+        ]
+      },
+      {
+        "hora": "11h15",
+        "tipo": "Exposições",
+        "tag": "tag--blue",
+        "titulo": "(a) “Tramar Saberes, Tecer Coletividades” (Coletivo CROCHÊ.JAR); (b) The Rotfather: experimentações têxteis para figurinos anímicos (c ) Moda em Viés e o Avesso do Glamour (Moda Udesc); (d) Nara Guichon; (e) Trajes Açorianos.",
+        "modalidade": "presencial",
+        "local": "Hall - Básica 02",
+        "participantes": [
+          { "slug": "coletivo-croche-jar" },
+          { "slug": "nara-guichon" }
+        ]
+      },
+      {
+        "hora": "11h30",
+        "tipo": "Mediação",
+        "tag": "tag--blue",
+        "modalidade": "presencial",
+        "local": "Hall",
+        "participantes": [
+          { "slug": "leticia-francez", "papel": "coordenação" }
+        ]
+      },
+      {
+        "hora": "14h–15h",
+        "tipo": "Mostra",
+        "tag": "tag--blue",
+        "titulo": "Mostra Narrativas em Movimento: Cinema Universitário e Comunitário latino-americano - 1a sessão",
+        "modalidade": "presencial",
+        "local": "Auditório",
+        "link": { "texto": "Ver programação completa →", "href": "/eventos/caminhos-do-contemporaneo/2026/mostra-audiovisual/" },
+        "participantes": [
+          { "slug": "monica-rodrigues", "papel": "coordenação" },
+          { "slug": "andrei-galkowski", "papel": "coordenação" },
+          { "slug": "mario-barro", "papel": "curadoria" }
+        ]
+      },
+      {
+        "hora": "15h–17h",
+        "paralelas": [
+          {
+            "tipo": "Mesa Temática",
+            "tag": "tag--blue",
+            "titulo": "Economia Criativa e Manualidades Têxteis",
+            "modalidade": "presencial",
+            "local": "Auditório",
+            "participantes": [
+              { "slug": "maria-de-fatima", "papel": "mediadora" },
+              { "slug": "carol-garcia" }
+            ]
+          },
+          {
+            "tipo": "Mesa Temática",
+            "tag": "tag--blue",
+            "titulo": "Tessituras Sensíveis do Ensino de Arte na Educação Básica contemporânea: desafios e conquistas",
+            "modalidade": "online",
+            "local": "Zoom – transmissão no ESPINE",
+            "participantes": [
+              { "slug": "monica-rodrigues", "papel": "mediadora" },
+              { "slug": "mirian-celeste" },
+              { "slug": "rejane-ledur" },
+              { "slug": "jessica-policarpo" },
+              { "slug": "beatriz-sousa" }
+            ]
+          }
+        ]
+      },
+      {
+        "hora": "17h",
+        "tipo": "Coffee Break",
+        "tag": "tag--blue",
+        "modalidade": "presencial",
+        "expansivel": false
+      },
+      {
+        "hora": "17h30–19h",
+        "paralelas": [
+          {
+            "tipo": "Oficina 1",
+            "tag": "tag--blue",
+            "titulo": "Composição visual para figurinos cênicos: exercícios de representação",
+            "modalidade": "presencial",
+            "local": "BC 102",
+            "ementa": "Com base nos elementos compositivos utilizados para a elaboração de figurinos cênicos (cor, estilo, forma, movimento, origem, textura e volume), os participantes irão desenhar personagens para representar trajes de cena, descrevendo e justificando escolhas técnicas, criativas, plásticas e estéticas.",
+            "link": { "texto": "Ver inscrição e materiais →", "href": "/eventos/caminhos-do-contemporaneo/2026/oficinas/" },
+            "participantes": [
+              { "slug": "valdecir-babinski" },
+              { "slug": "pietra-eurich" },
+              { "slug": "poliana-cardoso" },
+              { "slug": "maria-gabriela-zoldan" }
+            ]
+          },
+          {
+            "tipo": "Oficina 2",
+            "tag": "tag--blue",
+            "titulo": "Do texto ao têxtil",
+            "modalidade": "presencial",
+            "local": "BC 101",
+            "ementa": "A oficina propõe experimentações para investigar as relações entre a palavra escrita e a materialidade têxtil. Tendo como partida a raiz etimológica que une texto e têxtil, a proposição convida os participantes a ativar a sensibilidade visual e tátil a partir da leitura e despedaçamento das palavras poéticas. Consideram-se práticas artísticas contemporâneas para que a palavra deixe de ocupar um lugar de escrita verbal, ganhando sentido pelo corpo, textura, dimensionalidade, ritmo etc, e acionando as relações integradoras entre fazer textual e fazer manual.",
+            "link": { "texto": "Ver inscrição e materiais →", "href": "/eventos/caminhos-do-contemporaneo/2026/oficinas/" },
+            "participantes": [
+              { "slug": "janaina-nascimento" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "data": "2026-08-20",
+    "rotulo": "20 AGO",
+    "diaSemana": "quinta-feira",
+    "secao": "section--ice",
+    "atividades": [
+      {
+        "hora": "9h30",
+        "tipo": "Mediação",
+        "tag": "tag--blue",
+        "modalidade": "presencial",
+        "local": "Hall",
+        "participantes": [
+          { "slug": "ana-hoffmann" },
+          { "slug": "camila-franca" }
+        ]
+      },
+      {
+        "hora": "10h–12h",
+        "tipo": "Conferência",
+        "tag": "tag--red",
+        "destaque": true,
+        "titulo": "Cinema Comunitário e Mídia-Educação como Prática Educativa: Criação, Participação e Senso de Pertencimento",
+        "modalidade": "presencial",
+        "local": "Auditório",
+        "ementa": "Esta mesa propõe uma reflexão sobre o cinema comunitário como prática educativa e cultural que fomenta a participação coletiva, a construção de identidades e a apropriação de meios audiovisuais. Nesse contexto, serão analisadas as dinâmicas de produção, distribuição e acesso aos meios audiovisuais, bem como as desigualdades que condicionam a representação de comunidades e territórios. Com base nessa discussão, serão apresentadas experiências de cinema comunitário voltadas para o fortalecimento de processos de criação e participação social. Por meio de exemplos do estado de Oaxaca, México, a atividade abordará iniciativas que conectam cinema, identidade cultural, memória coletiva e ação comunitária, destacando o potencial dos meios audiovisuais como ferramenta de aprendizagem, expressão e fortalecimento do tecido social.Em diálogo com essas perspectivas, o painel também se articula às discussões desenvolvidas pelo Grupo de Pesquisa Núcleo Infância, Comunicação, Cultura e Arte (NICA/UFSC/CNPq), especialmente no campo das relações entre cinema, educação e mídia-educação. Nesse sentido, serão apresentadas reflexões e experiências reunidas na temática \"Cinema e educação na escola, na pesquisa e na formação docente: experiências e desafios de pensar e praticar cinema na perspectiva da mídia-educação\", evidenciando aproximações entre práticas comunitárias, processos formativos e a construção de experiências educativas mediadas pelo audiovisual. A mesa busca contribuir para o debate sobre formas alternativas de produção e apropriação cinematográfica, enfatizando a relevância das práticas comunitárias e educativas no cenário audiovisual contemporâneo.",
+        "participantes": [
+          { "slug": "mario-barro" },
+          { "slug": "monica-fantin" },
+          { "slug": "jose-douglas" },
+          { "slug": "karine-joulie" },
+          { "slug": "andrei-galkowski", "papel": "mediador" }
+        ]
+      },
+      {
+        "hora": "13h30–15h",
+        "tipo": "Comunicações Orais",
+        "tag": "tag--blue",
+        "modalidade": "presencial",
+        "local": "Auditório",
+        "participantes": []
+      },
+      {
+        "hora": "14h–15h",
+        "tipo": "Mostra",
+        "tag": "tag--blue",
+        "titulo": "Cinema Universitário e Comunitário Latino-Americano",
+        "modalidade": "online",
+        "local": "Zoom",
+        "link": { "texto": "Ver programação completa →", "href": "/eventos/caminhos-do-contemporaneo/2026/mostra-audiovisual/" },
+        "participantes": [
+          { "slug": "andrei-galkowski", "papel": "coordenação" },
+          { "slug": "mario-barro", "papel": "coordenação" }
+        ]
+      },
+      {
+        "hora": "15h–17h",
+        "paralelas": [
+          {
+            "tipo": "Mesa Temática",
+            "tag": "tag--blue",
+            "titulo": "Educação e Complexidade",
+            "modalidade": "online",
+            "local": "Zoom – transmissão no Espine",
+            "ementa": "A teoria da Complexidade tem alimentado inúmeras discussões e revisões no campo da pedagogia, propondo uma nova perspectiva para o que ensinamos, como ensinamos e sobre os papeis de todos os sujeitos envolvidos no ato eductivo. Portanto, a mesa proposta ira elucidar essas questões a partir de três abordagens: saberes sensíveis, (izabel) e Wilson)",
+            "participantes": [
+              { "slug": "mara-rubia", "papel": "mediadora", "titulo_fala": "Incertezas e possibilidades de uma estratégia nominada Saberes Sensíveis" },
+              { "slug": "izabel-petraglia" },
+              { "slug": "wilson-horvath" }
+            ]
+          },
+          {
+            "tipo": "Mesa Temática",
+            "tag": "tag--blue",
+            "titulo": "Modos de criar e [re]existir: processos sensíveis em Arte, Moda e Design",
+            "modalidade": "presencial",
+            "local": "Auditório",
+            "ementa": "Esta mesa entrelaça olhares críticos sobre a criação, explorando como processos artísticos, artesanais e projetuais, ancorados na subjetividade e na dialogia, tecem sentidos entre arte, moda e design através do tempo. Nos debruçaremos sobre criação como gesto sensível, em que as vozes e contextos se entrelaçam na tessitura de saberes e práticas.",
+            "participantes": [
+              { "slug": "felipe-fonseca", "papel": "mediador" },
+              { "slug": "nani-da-fonseca" },
+              { "slug": "milena-ogushi" },
+              { "slug": "valdecir-babinski" }
+            ]
+          }
+        ]
+      },
+      {
+        "hora": "17h–17h30",
+        "tipo": "Apresentação Musical",
+        "tag": "tag--red",
+        "modalidade": "presencial",
+        "local": "Auditório",
+        "participantes": []
+      },
+      {
+        "hora": "17h30–19h",
+        "paralelas": [
+          {
+            "tipo": "Oficina 3",
+            "tag": "tag--blue",
+            "titulo": "Desenhando com linhas",
+            "modalidade": "presencial",
+            "local": "BC 102",
+            "ementa": "A oficina-performance “Desenhando com Linhas” propõe uma investigação sensível do desenho a partir do uso de fios, linhas e materiais têxteis como linguagem estética, corporal e afetiva. Por meio de práticas experimentais e coletivas, os participantes serão convidados a explorar o desenho para além da representação, ativando percepções táteis, espaciais e relacionais. A oficina articula referências entre arte, moda, corpo e tessitura, estimulando processos de criação a partir da manipulação intuitiva de diferentes materiais lineares.",
+            "link": { "texto": "Ver inscrição e materiais →", "href": "/eventos/caminhos-do-contemporaneo/2026/oficinas/" },
+            "participantes": [
+              { "slug": "camila-franca" },
+              { "slug": "emanoela-mardula" },
+              { "slug": "valdecir-babinski" }
+            ]
+          },
+          {
+            "tipo": "Oficina 4",
+            "tag": "tag--blue",
+            "titulo": "A teia e a trama da paisagem: entrelaçar saberes",
+            "modalidade": "presencial",
+            "local": "BC 101",
+            "ementa": "1. Fibra, Cor e Território — A matéria como paisagem\nBreve introdução ao universo das fibras, e das cores naturais e das práticas realizadas nas oficinas “Da ovelha ao Arco-Íris\" inserida no projeto REVIVE. Contextualização histórica e cultural das receitas tintureiras da Fábrica de Lanifícios da Covilhã, a partir do projeto REVIVE. Reflexão sobre como as cores naturais, extraídas de plantas, raízes, cascas e insetos, inscreve-se no território e na matéria têxtil. Discussão sobre a transmissão geracional de conhecimentos técnicos sensíveis e a sua relevância contemporânea para a sustentabilidade e para a preservação da identidade cultural.\n2. Tecer — Criação coletiva e sensível\nPrática de tecelagem manual em teares manuais, com fios de diversas espessuras, texturas e cores. Os participantes desenvolveram um fragmento têxtil como expressão da sua relação pessoal com a memória e a paisagem. A dimensão coletiva da criação é estimulada pela partilha de materiais, técnicas e narrativas. O conjunto das peças produzidas constituirá uma teia plural, uma paisagem tecida em comum.",
+            "link": { "texto": "Ver inscrição e materiais →", "href": "/eventos/caminhos-do-contemporaneo/2026/oficinas/" },
+            "participantes": [
+              { "slug": "monica-faria" },
+              { "slug": "joana-sequeira" },
+              { "slug": "ivis-aguiar" }
+            ]
+          }
+        ]
+      },
+      {
+        "hora": "17h30–19h",
+        "tipo": "Pôster",
+        "tag": "tag--blue",
+        "modalidade": "online",
+        "local": "Zoom – Transmissão no ESPINE",
+        "participantes": []
+      }
+    ]
+  },
+  {
+    "data": "2026-08-21",
+    "rotulo": "21 AGO",
+    "diaSemana": "sexta-feira",
+    "secao": "section--pink",
+    "atividades": [
+      {
+        "hora": "9h30",
+        "tipo": "Mediação",
+        "tag": "tag--blue",
+        "modalidade": "presencial",
+        "participantes": [
+          { "slug": "ana-hoffmann", "papel": "coordenação" }
+        ]
+      },
+      {
+        "hora": "10h",
+        "tipo": "Conferência",
+        "tag": "tag--red",
+        "destaque": true,
+        "modalidade": "presencial",
+        "local": "Auditório",
+        "participantes": [
+          { "slug": "monica-faria" },
+          { "slug": "maria-de-fatima", "papel": "mediadora" }
+        ]
+      },
+      {
+        "hora": "14h–15h",
+        "tipo": "Mostra",
+        "tag": "tag--blue",
+        "titulo": "Olhares sensíveis da escola",
+        "modalidade": "online",
+        "local": "Auditório",
+        "link": { "texto": "Ver programação completa →", "href": "/eventos/caminhos-do-contemporaneo/2026/mostra-audiovisual/" },
+        "participantes": [
+          { "slug": "monica-rodrigues", "papel": "coordenação" },
+          { "slug": "karine-joulie", "papel": "curadoria" }
+        ]
+      },
+      {
+        "hora": "15h–17h",
+        "paralelas": [
+          {
+            "tipo": "Mesa Temática",
+            "tag": "tag--blue",
+            "titulo": "Do saber ao produto: criatividade, património, cultura e trabalho nas indústrias criativas",
+            "modalidade": "online",
+            "local": "Zoom – Transmissão no Auditório",
+            "participantes": [
+              { "slug": "ivis-aguiar", "papel": "mediador" },
+              { "slug": "fernanda-schulz" },
+              { "slug": "joao-barata" },
+              { "slug": "cynthia-gomez" }
+            ]
+          },
+          {
+            "tipo": "Mesa Temática",
+            "tag": "tag--blue",
+            "titulo": "Educação e Audiovisual",
+            "modalidade": "online",
+            "local": "Zoom – transmissão no Espine",
+            "participantes": [
+              { "slug": "andrei-galkowski", "papel": "mediador" },
+              { "slug": "mario-barro" },
+              { "slug": "estudantes-unam" }
+            ]
+          }
+        ]
+      },
+      {
+        "hora": "17h30",
+        "tipo": "Encerramento",
+        "tag": "tag--red",
+        "titulo": "Hora de dizer “até breve”",
+        "modalidade": "presencial",
+        "local": "Auditório",
+        "ementa": "Agradecimentos e dados do evento, síntese das conferências e mesas temáticas.",
+        "participantes": [
+          { "slug": "mara-rubia" }
+        ]
+      }
+    ]
+  },
+  {
+    "data": "2026-08-22",
+    "rotulo": "22 AGO",
+    "diaSemana": "sábado",
+    "secao": "section--ice",
+    "atividades": [
+      {
+        "hora": "9h30",
+        "tipo": "Mediação",
+        "tag": "tag--blue",
+        "modalidade": "online",
+        "local": "Zoom",
+        "participantes": []
+      },
+      {
+        "hora": "10h30",
+        "tipo": "Roda de Conversa",
+        "tag": "tag--blue",
+        "modalidade": "online",
+        "local": "Zoom",
+        "participantes": [
+          { "slug": "leticia-francez", "papel": "mediadora" }
+        ]
+      },
+      {
+        "hora": "14h–16h",
+        "paralelas": [
+          {
+            "tipo": "Comunicações Orais",
+            "tag": "tag--blue",
+            "modalidade": "online",
+            "local": "Zoom",
+            "participantes": [
+              { "slug": "janaina-nascimento", "papel": "mediadora" }
+            ]
+          },
+          {
+            "tipo": "Mostra",
+            "tag": "tag--blue",
+            "titulo": "Olhares Sensíveis da Escola",
+            "modalidade": "online",
+            "local": "Zoom",
+            "link": { "texto": "Ver programação completa →", "href": "/eventos/caminhos-do-contemporaneo/2026/mostra-audiovisual/" },
+            "participantes": [
+              { "slug": "monica-rodrigues", "papel": "coordenação" },
+              { "slug": "karine-joulie", "papel": "curadoria" }
+            ]
+          }
+        ]
+      },
+      {
+        "hora": "21h",
+        "tipo": "Desfile",
+        "tag": "tag--red",
+        "destaque": true,
+        "titulo": "Desfile The RotFather",
+        "modalidade": "presencial",
+        "local": "Cervejaria Nefasta",
+        "ementa": "O desfile apresenta as criações realizadas em conjunto pelos estudantes de Moda da Universidade Estadual de Maringá (UEM) e os alunos de bacharelado em Animação da Universidade Federal de Santa Catarina (UFSC). Confeccionados para o universo animado The RotFather, o desfile celebra a parceria institucional e demonstra como o compartilhamento de saberes e processos criativos pode resultar em trajes de cena para obras animadas.",
+        "participantes": [
+          { "slug": "valdecir-babinski" },
+          { "slug": "monica-stein" }
+        ]
+      }
+    ]
+  }
+]
