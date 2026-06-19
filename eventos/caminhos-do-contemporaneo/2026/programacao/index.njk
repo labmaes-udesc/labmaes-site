@@ -55,7 +55,7 @@ description: Programação completa do 7º Seminário Caminhos do Contemporâneo
       <div class="prog-card__head">
         <span class="tag {{ a.tag }}">{{ a.tipo }}</span>
         {% if a.titulo %}<h3 class="prog-card__title">{{ a.titulo }}</h3>{% endif %}
-        {% if a.participantes %}<p class="prog-card__nomes">{% for p in a.participantes %}{% if pessoas[p.slug] %}{{ pessoas[p.slug].nome }}{% if not loop.last %} · {% endif %}{% endif %}{% endfor %}</p>{% endif %}
+        {% if a.participantes and a.participantes | length %}<p class="prog-card__nomes">{% for p in a.participantes %}{% if pessoas[p.slug] %}{{ pessoas[p.slug].nome }}{% if not loop.last %} · {% endif %}{% endif %}{% endfor %}</p>{% endif %}
         <div class="prog-card__meta">
           <span class="modality-tag modality-tag--{{ a.modalidade }}">{{ a.modalidade | capitalize }}</span>
           {% if a.local %}<span class="prog-card__location">{{ a.local }}</span>{% endif %}
@@ -66,7 +66,7 @@ description: Programação completa do 7º Seminário Caminhos do Contemporâneo
     <div class="prog-card__detail">
       {% if a.ementa %}<p class="prog-card__ementa">{{ a.ementa }}</p>{% endif %}
       {% if a.link %}<a class="prog-card__link" href="{{ a.link.href }}">{{ a.link.texto }}</a>{% endif %}
-      {% if a.participantes %}
+      {% if a.participantes and a.participantes | length %}
       <ul class="participantes" role="list">
         {% for p in a.participantes %}{{ participante(p) }}{% endfor %}
       </ul>

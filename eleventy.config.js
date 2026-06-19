@@ -19,6 +19,7 @@ export default function (eleventyConfig) {
     );
     const palavras = limpo
       .replace(/[.'']/g, "")
+      .replace(/[ªº]/g, "")
       .split(/\s+/)
       .filter(Boolean);
     if (palavras.length === 0) return "?";
