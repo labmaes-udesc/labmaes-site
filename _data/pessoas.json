@@ -2,6 +2,7 @@
   "mara-rubia": {
     "nome": "Profa. Dra. Mara Rúbia Sant'Anna",
     "instituicao": "Udesc",
+    "foto": "mara-rubia.webp",
     "bio": "Coordenadora Geral do evento e coordenadora do Laboratório Moda, Artes, Ensino e Sociedade (LabMAES). Professora no bacharelado em Moda e no Programa de Pós-Graduação em Artes Visuais da Udesc. Doutora em História (UFRGS, 2005), com pós-doutorado em História (Université de Strasbourg, 2011) e em Artes Visuais (UFRJ, 2017)."
   },
   "vicente-concilio": {
@@ -12,11 +13,13 @@
   "maria-de-fatima": {
     "nome": "Profa. Dra. Maria de Fátima Mattos",
     "instituicao": "Abepem",
+    "foto": "maria-de-fatima.webp",
     "bio": "Presidente de Honra da Associação de Estudos e Pesquisas em Moda (Abepem). É professora e coordenadora do curso de Moda do Centro Universitário Moura Lacerda."
   },
   "myriam-lemonchois": {
     "nome": "Prof. Dra. Myriam Lemonchois",
     "instituicao": "Montréal",
+    "foto": "myriam-lemonchois.webp",
     "bio": "Professora aposentada da Universidade de Montréal. Realiza pesquisas na linha do Ensino das Artes Visuais. Seus trabalhos discutem as finalidades atribuídas à educação artística no âmbito da pedagogia e da didática, em especial, tendo desenvolvido a abordagem SIR: sensibilidade, imaginação e compreensão. Coordenou com Alain Kerlan o livro \"Infâncias de hoje: da criança cidadão à criança artística, as políticas para a infância\" (2014), entre diversos outros artigos, capítulos de livros e livros."
   },
   "leticia-francez": {
@@ -44,11 +47,13 @@
   "mario-barro": {
     "nome": "Prof. Dr. Mario Barro Hérnandez",
     "instituicao": "UNAM",
+    "foto": "mario-barro.webp",
     "bio": "Mario Barro é pesquisador do Instituto de Pesquisa Estética e professor do curso de graduação em Design e Comunicação Visual da Faculdade de Artes e Design (FAD) e do curso de pós-graduação em História da Arte da Universidade Nacional Autônoma do México (UNAM). Seu trabalho situa-se na interseção entre estudos cinematográficos, cultura visual e novas tecnologias como espaço criativo e de pesquisa nas artes e humanidades. Ele desenvolveu projetos sobre cinema mexicano e latino-americano, alfabetização cinematográfica e, mais recentemente, sobre o uso da inteligência artificial aplicada à pós-produção fotográfica. Também trabalhou em projetos de gestão cultural, curadoria e promoção entre o México e a Espanha."
   },
   "carol-garcia": {
     "nome": "Profa. Dra. Carol Garcia",
-    "instituicao": "BA"
+    "instituicao": "BA",
+    "foto": "carol-garcia.webp"
   },
   "mirian-celeste": {
     "nome": "Profa. Dra. Mirian Celeste Martins"
@@ -88,6 +93,7 @@
   "janaina-nascimento": {
     "nome": "Profa. Ma. Janaina Nascimento",
     "instituicao": "Udesc",
+    "foto": "janaina-nascimento.webp",
     "bio": "Professora da rede de ensino do Município de São José. Bacharel em Design de Moda (Udesc, 2018), Mestre em Artes Visuais (Udesc, 2025) e doutoranda em Artes Visuais no Programa de Pós-Graduação em Artes Visuais."
   },
   "ana-hoffmann": {
