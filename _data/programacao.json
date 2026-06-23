@@ -38,12 +38,13 @@
         "hora": "11h15",
         "tipo": "Exposições",
         "tag": "tag--blue",
-        "titulo": "(a) “Tramar Saberes, Tecer Coletividades” (Coletivo CROCHÊ.JAR); (b) The Rotfather: experimentações têxteis para figurinos anímicos (c ) Moda em Viés e o Avesso do Glamour (Moda Udesc); (d) Nara Guichon; (e) Trajes Açorianos.",
+        "titulo": "(a) “Tramar Saberes, Tecer Coletividades” (Coletivo CROCHÊ.JAR); (b) The Rotfather: experimentações têxteis para figurinos anímicos; (c) Moda em Viés e o Avesso do Glamour (Moda Udesc).",
         "modalidade": "presencial",
         "local": "Hall - Básica 02",
         "participantes": [
           { "slug": "coletivo-croche-jar" },
-          { "slug": "nara-guichon" }
+          { "slug": "the-rotfather" },
+          { "slug": "moda-em-vies" }
         ]
       },
       {
@@ -79,9 +80,11 @@
             "titulo": "Economia Criativa e Manualidades Têxteis",
             "modalidade": "presencial",
             "local": "Auditório",
+            "ementa": "Maria de Fátima apresenta o levantamento do Instituto Paulista de Cidades e Identidades Culturais (Ribeirão Preto) sobre o artesanato têxtil nas 34 cidades de sua Região Metropolitana, programa de formação que deu origem à plataforma circulaai.com.br, voltada a apresentar, valorizar e apoiar a venda dos produtos artesanais. Carol Garcia mapeia iniciativas que aproximam o design de moda do conceito indígena de “buen vivir” em países latino-americanos — México, Peru, Colômbia, Chile e Uruguai —, em torno de um design regenerativo capaz de religar inovação responsável, cuidado ambiental, técnicas ancestrais e sustentabilidade cultural.",
             "participantes": [
               { "slug": "maria-de-fatima", "papel": "mediadora" },
-              { "slug": "carol-garcia" }
+              { "slug": "carol-garcia" },
+              { "slug": "janaina-cordeiro" }
             ]
           },
           {
@@ -208,8 +211,8 @@
             "ementa": "A teoria da Complexidade tem alimentado inúmeras discussões e revisões no campo da pedagogia, propondo uma nova perspectiva para o que ensinamos, como ensinamos e sobre os papeis de todos os sujeitos envolvidos no ato eductivo. Portanto, a mesa proposta ira elucidar essas questões a partir de três abordagens: saberes sensíveis, (izabel) e Wilson)",
             "participantes": [
               { "slug": "mara-rubia", "papel": "mediadora", "titulo_fala": "Incertezas e possibilidades de uma estratégia nominada Saberes Sensíveis" },
-              { "slug": "izabel-petraglia" },
-              { "slug": "wilson-horvath" }
+              { "slug": "izabel-petraglia", "titulo_fala": "Educação e complexidade" },
+              { "slug": "wilson-horvath", "titulo_fala": "Educação e complexidade" }
             ]
           },
           {
@@ -275,7 +278,12 @@
         "tag": "tag--blue",
         "modalidade": "online",
         "local": "Zoom – Transmissão no ESPINE",
-        "participantes": []
+        "ementa": "A Sessão de Apresentação de Pôster do 7º Seminário Caminhos do Contemporâneo constitui um espaço de diálogo e difusão científica sob a temática central “Criação, Tessituras Sensíveis, Narrativas em Movimento”. Destinada a estudantes, pesquisadores e profissionais do setor do vestuário e das manualidades, a atividade ocorre inteiramente em formato online no dia 20 de agosto de 2026. A dinâmica compreende a socialização de pesquisas e experiências por meio de vídeos de até 5 minutos (slides e narração em áudio), seguidos por um debate mediado com o público. Os resumos expandidos aprovados são publicados nos Anais eletrônicos do evento, com registro ISBN.",
+        "participantes": [
+          { "slug": "pam-ignowski", "papel": "coordenação" },
+          { "slug": "beatriz-monteiro", "papel": "coordenação" },
+          { "slug": "alice-firmo", "papel": "coordenação" }
+        ]
       }
     ]
   },
@@ -328,11 +336,12 @@
             "titulo": "Do saber ao produto: criatividade, património, cultura e trabalho nas indústrias criativas",
             "modalidade": "online",
             "local": "Zoom – Transmissão no Auditório",
+            "ementa": "Partindo da premissa de que o saber — particularmente quando ancorado em práticas culturais e patrimoniais — não é um dado estático, mas uma força motriz em permanente transformação, esta mesa-redonda propõe um diálogo transdisciplinar sobre os processos que convertem conhecimentos tradicionais, técnicos, históricos e experimentais em produtos culturais criativos. Ao fazê-lo, tensiona as fronteiras entre passado e futuro, memória e inovação, artesanato e indústria. Mais do que evidenciar o património como fonte de criatividade, o debate interroga o papel mediador do design, da indústria e das políticas culturais na tradução material, económica e simbólica desses saberes. Num momento em que as indústrias criativas buscam caminhos mais sustentáveis e significativos, esta conversa revela-se essencial para repensar o futuro do trabalho, da produção e da criatividade.",
             "participantes": [
-              { "slug": "ivis-aguiar", "papel": "mediador" },
-              { "slug": "fernanda-schulz" },
-              { "slug": "joao-barata" },
-              { "slug": "cynthia-gomez" }
+              { "slug": "fabiana-heinrich" },
+              { "slug": "fernanda-schulz", "titulo_fala": "Quem teceu a indústria? Saberes femininos entre patrimônio, criatividade e trabalho" },
+              { "slug": "joao-barata", "titulo_fala": "O figurino e o contexto cultural – Exemplos de Portugal" },
+              { "slug": "cynthia-gomez", "titulo_fala": "Projetar após o extrativismo: novas materialidades e futuros regenerativos" }
             ]
           },
           {

@@ -32,12 +32,11 @@
     "instituicao": "IFSC",
     "bio": "\"Tramar Saberes, Tecer Coletividades\" – Instalação coletiva em crochê, composta por uma tenda confeccionada com materiais têxteis reciclados da indústria local, concebida como projeto final da Oficina de Crochê do IFSC Câmpus Jaraguá do Sul – Centro e desenvolvida no âmbito do projeto de extensão Poéticas e Políticas das Artes Manuais Têxteis no Ensino do Crochê."
   },
-  "nara-guichon": {
-    "nome": "Nara Guichon"
-  },
   "monica-rodrigues": {
     "nome": "Profa. Dra. Monica Rodrigues",
-    "instituicao": "IEMA"
+    "instituicao": "IEMA",
+    "bio": "Monica Rodrigues de Farias: Doutora em Artes Visuais (Udesc). Mestra em Artes Visuais pelo Prof-Artes (Ufma/Udesc), Especialista em Arte, Mídia e Educação (Ifma) e Artes Visuais: Cultura e Criação (Senac). Licenciada em Educação Artística com habilitação em Artes Plásticas pela Ufma. Docente do Ensino Médio (Seduc-MA) em Artes Visuais (2003-2019). Desde 2020 é gestora geral da Escola de Cinema do Maranhão – Iema. Professora colaboradora do Mestrado Profissional em Artes – Prof-Artes (Ufma). Realizadora audiovisual, curadora, produtora cultural e proponente de projetos cineclubistas para educação escolar.",
+    "foto": "monica-rodrigues.webp"
   },
   "andrei-galkowski": {
     "nome": "Prof. Me. Andrei Galkowski",
@@ -53,14 +52,19 @@
   "carol-garcia": {
     "nome": "Profa. Dra. Carol Garcia",
     "instituicao": "BA",
-    "foto": "carol-garcia.webp"
+    "foto": "carol-garcia.webp",
+    "bio": "Doutora em Comunicação e Semiótica (PUCSP). Pesquisadora associada do Sistema Nacional de Investigadores do Uruguai (SNI). Professora da Facultad de Diseño/Universidad ORT Uruguay. Coordenadora do GTI Design Regenerativo no IEA-USP. Docente licenciada do PPG-AUD da Belas Artes de São Paulo."
   },
   "mirian-celeste": {
-    "nome": "Profa. Dra. Mirian Celeste Martins"
+    "nome": "Profa. Dra. Mirian Celeste Martins",
+    "bio": "Professora, artista e pesquisadora com Mestrado na Escola de Comunicações e Artes/ECA-USP e Doutorado na Faculdade de Educação/USP. Atuou no Instituto de Artes/UNESP e na Universidade Presbiteriana Mackenzie. Publicou inúmeros livros e artigos acessíveis no www.mirianceleste.com.",
+    "foto": "mirian-celeste.webp"
   },
   "rejane-ledur": {
     "nome": "Profa. Dra. Rejane Ledur",
-    "instituicao": "FAEB"
+    "instituicao": "FAEB",
+    "bio": "Doutora e Mestre em Educação (UFRGS), Licenciada em Artes Plásticas. Presidente da FAEB (2026/2027), Editora da Revista GEARTE e docente com trajetória em Artes Visuais e formação de professores. Pesquisadora focada em ensino de arte, produção de sentido e arte contemporânea.",
+    "foto": "rejane-ledur.webp"
   },
   "jessica-policarpo": {
     "nome": "Profa. Ma. Jéssica Policarpo",
@@ -68,7 +72,9 @@
   },
   "beatriz-sousa": {
     "nome": "Profa. Dra. Beatriz Sousa",
-    "instituicao": "AMAE"
+    "instituicao": "AMAE",
+    "bio": "Doutora em Arte e Cultura Visual pela UFG. Mestra em Cultura e Sociedade, com licenciatura em Educação Artística e especialização em História do Maranhão pela UFMA. Docente do COLUN/UFMA. Bolsista no doutorado (FAPEMA e CNPq).",
+    "foto": "beatriz-sousa.webp"
   },
   "valdecir-babinski": {
     "nome": "Prof. Me. Valdecir Babinski Júnior",
@@ -102,7 +108,8 @@
   "camila-franca": {
     "nome": "Profa. Ma. Camila França",
     "instituicao": "IFSC-JS",
-    "bio": "Mestra em Educação Profissional e Tecnológica pelo IFSC, especialista em Gestão e Marketing de Moda pelo SENAC e bacharel em Moda pela UDESC. Atua no IFSC Câmpus Jaraguá do Sul e coordena projetos de extensão voltados ao crochê e às relações entre artes manuais têxteis, educação e moda."
+    "bio": "Mestra em Educação Profissional e Tecnológica pelo IFSC, especialista em Gestão e Marketing de Moda pelo SENAC e bacharel em Moda pela UDESC. Atua no IFSC Câmpus Jaraguá do Sul e coordena projetos de extensão voltados ao crochê e às relações entre artes manuais têxteis, educação e moda.",
+    "foto": "camila-franca.webp"
   },
   "monica-fantin": {
     "nome": "Profa. Dra. Mônica Fantin",
@@ -119,11 +126,15 @@
   },
   "izabel-petraglia": {
     "nome": "Profa. Dra. Izabel Petraglia",
-    "instituicao": "Centro Edgar Morin"
+    "instituicao": "Centro Edgar Morin",
+    "bio": "Pedagoga pela Pontifícia Universidade Católica de São Paulo (1985), Mestre em Educação (Currículo) pela Pontifícia Universidade Católica de São Paulo (1991), Doutora em Educação pela Universidade de São Paulo (1998) e Pós-doutorado pelo Centre Edgar Morin, da Escola de Altos Estudos em Ciências Sociais – EHESS, em Paris, França (2001). Mais de 35 anos de experiência no magistério do Ensino Superior, sendo os últimos 25 na Pós-Graduação Stricto Sensu em Educação. Atualmente é Diretora do Centro de Estudos e Pesquisa Edgar Morin, em São Paulo, Brasil. É membro do Comitê Científico Internacional da Fundação Edgar Morin, da UNESCO, Paris, França.",
+    "foto": "izabel-petraglia.webp"
   },
   "wilson-horvath": {
     "nome": "Prof. Dr. Wilson Horvath",
-    "instituicao": "Centro Edgar Morin"
+    "instituicao": "Centro Edgar Morin",
+    "bio": "Professor e Diretor do Centro de Estudos e Pesquisas Edgar Morin. Possui graduação em Filosofia, Bacharelado em Teologia, Mestrado e Doutorado em Educação, com trajetória acadêmica voltada à integração do pensamento complexo e das ciências humanas.",
+    "foto": "wilson-horvath.webp"
   },
   "felipe-fonseca": {
     "nome": "Felipe Fonseca",
@@ -145,27 +156,66 @@
   },
   "monica-faria": {
     "nome": "Prof. Dra. Mónica Faria",
-    "instituicao": "UMinho"
+    "instituicao": "UMinho",
+    "bio": "Doutora em Educação Artística pela Faculdade de Belas Artes da Universidade do Porto – FBAUP. Mestre em Ensino das Artes Visuais pela Faculdade de Psicologia e Ciências da Educação da Universidade do Minho – FPCEUP. Licenciada em Artes Plásticas – Escultura pela FBAUP. Docente na Universidade do Minho, nos cursos de Licenciatura em Artes Visuais e Mestrado em Ensino de Artes Visuais da Escola de Arquitetura, Artes e Design. Pesquisadora no Laboratório Paisagens, Património e Território – Lab2PT/UM e colaboradora externa no Núcleo de Estudos e Pesquisa sobre Etnicidade – NEPE/UFPE."
   },
   "joana-sequeira": {
     "nome": "Joana Sequeira",
-    "instituicao": "UMinho"
+    "instituicao": "UMinho",
+    "bio": "Investigadora Auxiliar em História no Lab2PT – Laboratório de Paisagem, Património e Território da Universidade do Minho (Braga, Portugal). Doutora em História pela Universidade do Porto (Portugal) e pela École des Hautes Études en Sciences Sociales (França), com o grau obtido em 2012 mediante uma tese dedicada à produção têxtil em Portugal durante a Baixa Idade Média. Sua investigação centra-se na história social e económica dos séculos XIII a XVI, com particular ênfase na produção e no consumo de têxteis e de indumentária, na cultura material, nas redes mercantis e no comércio mediterrânico, nas atividades artesanais e na sua regulamentação, bem como nas práticas contabilísticas mercantis e urbanas."
   },
   "ivis-aguiar": {
     "nome": "PhD. Candidate Me. Ivis Aguiar",
-    "instituicao": "UMinho"
+    "instituicao": "UMinho",
+    "bio": "Doutorando em Engenharia Têxtil pela Universidade do Minho (Portugal), em parceria com a spin-off eDynamics e a Empa – Swiss Federal Laboratories for Materials Science and Technology (Suíça), onde desempenha a função de bolsista de doutoramento em Ambiente Não Acadêmico da Fundação de Ciência e Tecnologia (FCT). Possui mestrado em Design e Marketing de Produto Têxtil, Vestuário e Acessórios pela Universidade do Minho e bacharelado em Economia Doméstica pela Universidade Federal de Viçosa.",
+    "foto": "ivis-aguiar.webp"
   },
   "fernanda-schulz": {
     "nome": "Profa. Dra. Fernanda Schulz",
-    "instituicao": "UMinho"
+    "instituicao": "UMinho",
+    "bio": "Doutoranda no Programa Doutoral em Design de Moda na Universidade do Minho, desenvolve sua investigação com o tema “Design in the feminine: knowledge, textile and fashion design”, com bolsa de investigação da FCT (n.º 2023.04439.BD). Desde 2023, é também investigadora no Centro de Ciência e Tecnologia Têxtil (2C2T), no Departamento de Engenharia Têxtil da mesma instituição. Em 2023, integrou o Projeto Be@t como bolseira de investigação (2C2T) e, em 2022, colaborou como Designer Formadora no Projeto Oficina Criativa, desenvolvido pela Sol do Ave, IDEGUI e IEFP em Guimarães. É Mestre em Design de Comunicação de Moda pela Universidade do Minho/PT (2021), Especialista em Design Estratégico pela Universidade do Vale do Rio dos Sinos/BR (2011) e Licenciada em Moda e Estilo pela Universidade de Caxias do Sul/BR (2009). Com um percurso profissional no design de moda desde 2010, soma experiência na indústria e na docência.",
+    "foto": "fernanda-schulz.webp"
   },
   "joao-barata": {
     "nome": "Prof. Dr. João Barata",
-    "instituicao": "UMinho"
+    "instituicao": "ULusófona",
+    "bio": "Concluiu o 3.º ciclo de estudos em Design de Moda na Universidade da Beira Interior em parceria com a Universidade do Minho. O doutoramento seguiu-se em linha com a área de estudos do seu Mestrado e Licenciatura, também em Design de Moda. Apresenta uma experiência de uma década a lecionar no Ensino Superior e atualmente é Professor Auxiliar na Universidade Lusófona – Centro de estudos de Lisboa. Esteve envolvido em vários projetos relacionados com a Indústria e a Academia. Tem várias publicações sobre Design de Moda (na sua vertente prática e teórica), Criatividade, Sustentabilidade e Figurinos Cinematográficos e de Media.",
+    "foto": "joao-barata.webp"
   },
   "cynthia-gomez": {
     "nome": "Profa. Dra. Cynthia Gomez",
-    "instituicao": "UMinho"
+    "instituicao": "UMinho",
+    "bio": "Licenciada em Design Têxtil e mestre em Gestão de Empresas, estudou marketing de moda, tendências de estilo de vida, moda sustentável e experimentação têxtil na Central Saint Martins School. Foi reconhecida como uma das 50 mulheres de maior sucesso no México pelo grupo Expansión e pela revista Universal. Fundou seu atelier em 1996, onde desenvolveu sua marca homónima, especializada em têxteis para moda e decoração de interiores. Foi coordenadora do programa de Moda Sustentável e Design Têxtil no Departamento de Design da Universidade IBERO (México), sendo atualmente professora catedrática e investigadora em têxteis de biodesign e biomateriais.",
+    "foto": "cynthia-gomez.webp"
+  },
+  "janaina-cordeiro": {
+    "nome": "Janaina Machado Cordeiro",
+    "bio": "Artesã, coordenadora e idealizadora do Floripa Quilt, evento que reúne artesãos têxteis anualmente desde 2012."
+  },
+  "fabiana-heinrich": {
+    "nome": "Prof. Fabiana Oliveira Heinrich"
+  },
+  "pam-ignowski": {
+    "nome": "Pam Ignowski",
+    "instituicao": "Udesc",
+    "bio": "Técnica em modelagem do vestuário pelo Instituto Federal de Educação, Ciência e Tecnologia de Santa Catarina (2022) e bacharelanda em Moda pela Universidade do Estado de Santa Catarina. Atualmente é bolsista de iniciação científica pelo Laboratório de Moda, Artes, Ensino e Sociedade (LabMAES)."
+  },
+  "beatriz-monteiro": {
+    "nome": "Beatriz Silveira Monteiro",
+    "instituicao": "Udesc",
+    "bio": "Graduanda do curso de licenciatura em História e bolsista de iniciação científica do LabMAES – Udesc."
+  },
+  "alice-firmo": {
+    "nome": "Alice Firmo"
+  },
+  "the-rotfather": {
+    "nome": "The Rotfather: experimentações têxteis para figurinos anímicos",
+    "bio": "A exposição apresenta o resultado de uma parceria entre o curso de bacharelado em Moda da Universidade Estadual de Maringá (UEM) e o curso de bacharelado em Animação da Universidade Federal de Santa Catarina (UFSC). Trata-se de uma coleção de figurinos realizados a partir de experimentações têxteis inspiradas pelo universo animado do projeto The RotFather, conduzido pela Prof.ª Dr.ª Mônica Stein. Cada traje de cena conta a narrativa de um personagem que reúne concepções de alunos de ambos os cursos, sendo um trabalho metodologicamente híbrido e criativamente compartilhado."
+  },
+  "moda-em-vies": {
+    "nome": "Moda em Viés e o Avesso do Glamour",
+    "instituicao": "Moda Udesc",
+    "bio": "Exame crítico das condições de atuação, remuneração, visibilidade e reconhecimento no sistema de moda, deslocando o olhar do brilho do desfile para o cotidiano do trabalho criativo e suas contradições. A proposta articula prática, reflexão e partilha: parte de um roteiro didático que convidou as alunas a relacionar dados, experiências e relatos do campo, para então transpor essa síntese a uma linguagem visual e tátil. O brilho e o bruto se encostam, e é nesse atrito que a moda se reconhece como trabalho, linguagem e mundo."
   },
   "estudantes-unam": {
     "nome": "Estudantes da UNAM"
