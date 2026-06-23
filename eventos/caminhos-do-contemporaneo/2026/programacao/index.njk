@@ -22,537 +22,85 @@ description: Programação completa do 7º Seminário Caminhos do Contemporâneo
     </div>
   </section>
 
-  <!-- P2: Dia 19 de agosto — Quarta-feira -->
-  <section class="section section--pink" aria-labelledby="dia19-heading">
-    <div class="container">
+  {% macro participante(p) %}
+  {% set pessoa = pessoas[p.slug] %}
+  {% if pessoa %}
+  <li class="participante">
+    {% if pessoa.foto %}
+      <img class="participante__avatar" src="/assets/img/convidados/{{ pessoa.foto }}" alt="{{ pessoa.nome }}" loading="lazy" width="48" height="48">
+    {% else %}
+      <span class="participante__avatar participante__avatar--iniciais avatar--c{{ p.slug | corAvatar }}" aria-hidden="true">{{ pessoa.nome | iniciais }}</span>
+    {% endif %}
+    <div class="participante__texto">
+      <p class="participante__nome">{{ pessoa.nome }}{% if pessoa.instituicao %} <span class="participante__inst">· {{ pessoa.instituicao }}</span>{% endif %}{% if p.papel %} <span class="participante__papel">{{ p.papel }}</span>{% endif %}</p>
+      {% if p.titulo_fala %}<p class="participante__fala">{{ p.titulo_fala }}</p>{% endif %}
+      {% if pessoa.bio %}<p class="participante__bio">{{ pessoa.bio }}</p>{% endif %}
+    </div>
+  </li>
+  {% endif %}
+{% endmacro %}
 
-      <div class="schedule-day">
-        <div class="schedule-day__text">
-          <h2 id="dia19-heading" class="schedule-day__date">19 AGO</h2>
-          <p class="schedule-day__weekday">quarta-feira</p>
+{% macro card(a) %}
+  {% if a.expansivel == false %}
+  <article class="prog-card prog-card--simples">
+    <div class="prog-card__slot">{% if a.hora %}<p class="prog-card__time">{{ a.hora }}</p>{% endif %}</div>
+    <div class="prog-card__head">
+      <span class="tag {{ a.tag }}">{{ a.tipo }}</span>
+    </div>
+  </article>
+  {% else %}
+  <details class="prog-card{% if a.destaque %} prog-card--destaque{% endif %}" open>
+    <summary class="prog-card__summary">
+      <div class="prog-card__slot">{% if a.hora %}<p class="prog-card__time">{{ a.hora }}</p>{% endif %}</div>
+      <div class="prog-card__head">
+        <span class="tag {{ a.tag }}">{{ a.tipo }}</span>
+        {% if a.titulo %}<h3 class="prog-card__title">{{ a.titulo }}</h3>{% endif %}
+        {% if a.participantes and a.participantes | length %}<p class="prog-card__nomes">{% for p in a.participantes %}{% if pessoas[p.slug] %}{{ pessoas[p.slug].nome }}{% if not loop.last %} · {% endif %}{% endif %}{% endfor %}</p>{% endif %}
+        <div class="prog-card__meta">
+          <span class="modality-tag modality-tag--{{ a.modalidade }}">{{ a.modalidade | capitalize }}</span>
+          {% if a.local %}<span class="prog-card__location">{{ a.local }}</span>{% endif %}
         </div>
-        <div class="schedule-day__graphic schedule-day__graphic--19" aria-hidden="true"></div>
       </div>
+      <span class="prog-card__chevron" aria-hidden="true"></span>
+    </summary>
+    <div class="prog-card__detail">
+      {% if a.ementa %}<p class="prog-card__ementa">{{ a.ementa }}</p>{% endif %}
+      {% if a.link %}<a class="prog-card__link" href="{{ a.link.href }}">{{ a.link.texto }}</a>{% endif %}
+      {% if a.participantes and a.participantes | length %}
+      <ul class="participantes" role="list">
+        {% for p in a.participantes %}{{ participante(p) }}{% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </details>
+  {% endif %}
+{% endmacro %}
 
-      <div class="schedule-list section-content">
-
-        <!-- 9h: Abertura -->
-        <article class="schedule-item">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">9h</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--red">ABERTURA</span>
-            <h3 class="schedule-item__title">Abertura institucional</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--hibrido">Presencial + Online</span>
-              <span class="schedule-item__location">Auditório · Zoom</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 9h30: Conferência de abertura -->
-        <article class="schedule-item schedule-item--featured">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">9h30</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--red">CONFERÊNCIA</span>
-            <h3 class="schedule-item__title">Conferência de abertura</h3>
-            <p class="schedule-item__speaker">Prof. Dra. Myriam Lemonchois</p>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--hibrido">Presencial + Online</span>
-              <span class="schedule-item__location">Auditório · Zoom</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 11h15: Exposições simultâneas -->
-        <div class="schedule-parallel">
-          <div class="schedule-parallel__slot">
-            <p class="schedule-item__time">11h15</p>
-          </div>
-          <div class="schedule-parallel__sessions">
-            <article class="schedule-session">
-              <span class="tag tag--blue">EXPOSIÇÃO</span>
-              <h3 class="schedule-session__title">Abertura da Exposição — <em>The Rotfather: experimentações têxteis para figurinos anímicos</em></h3>
-              <div class="schedule-item__meta">
-                <span class="modality-tag modality-tag--presencial">Presencial</span>
-                <span class="schedule-item__location">Hall – Básica 02</span>
-              </div>
-            </article>
-            <article class="schedule-session">
-              <span class="tag tag--blue">EXPOSIÇÃO</span>
-              <h3 class="schedule-session__title">Exposições — Tenda de Crochê (IFSC-JS) · O avesso do glamour: trabalho em moda</h3>
-              <div class="schedule-item__meta">
-                <span class="modality-tag modality-tag--presencial">Presencial</span>
-                <span class="schedule-item__location">Hall – Básica 02</span>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <!-- 11h30: Mediação sensível -->
-        <article class="schedule-item">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">11h30</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--blue">MEDIAÇÃO</span>
-            <h3 class="schedule-item__title">Mediação sensível</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--presencial">Presencial</span>
-              <span class="schedule-item__location">Hall</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 14–15h: Abertura da Mostra Audiovisual -->
-        <article class="schedule-item">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">14–15h</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--blue">MOSTRA</span>
-            <h3 class="schedule-item__title">Abertura da Mostra Audiovisual — Cinema Universitário e Comunitário Latino-Americano (1ª sessão)</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--presencial">Presencial</span>
-              <span class="schedule-item__location">Auditório</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 15–17h: Duas mesas simultâneas -->
-        <div class="schedule-parallel">
-          <div class="schedule-parallel__slot">
-            <p class="schedule-item__time">15–17h</p>
-          </div>
-          <div class="schedule-parallel__sessions">
-            <article class="schedule-session">
-              <span class="tag tag--blue">MESA TEMÁTICA</span>
-              <h3 class="schedule-session__title">Economia Criativa (sessão 1)</h3>
-              <div class="schedule-item__meta">
-                <span class="modality-tag modality-tag--presencial">Presencial</span>
-                <span class="schedule-item__location">Auditório</span>
-              </div>
-            </article>
-            <article class="schedule-session">
-              <span class="tag tag--blue">MESA TEMÁTICA</span>
-              <h3 class="schedule-session__title">Tessituras Sensíveis do Ensino de Arte na Educação Básica Contemporânea (sessão 2)</h3>
-              <div class="schedule-item__meta">
-                <span class="modality-tag modality-tag--online">Online</span>
-                <span class="schedule-item__location">Zoom</span>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <!-- 17h: Coffee break + Apresentação da Coletânea -->
-        <article class="schedule-item">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">17h</p>
-          </div>
-          <div class="schedule-item__content">
-            <h3 class="schedule-item__title">Coffee break — Apresentação da Coletânea Saberes Sensíveis</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--presencial">Presencial</span>
-              <span class="schedule-item__location">Básica 2</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 17h30–19h: Duas oficinas simultâneas -->
-        <div class="schedule-parallel">
-          <div class="schedule-parallel__slot">
-            <p class="schedule-item__time">17h30–19h</p>
-          </div>
-          <div class="schedule-parallel__sessions">
-            <article class="schedule-session">
-              <span class="tag tag--blue">OFICINA 1</span>
-              <h3 class="schedule-session__title">Composição visual para figurinos cênicos</h3>
-              <div class="schedule-item__meta">
-                <span class="modality-tag modality-tag--presencial">Presencial</span>
-                <span class="schedule-item__location">BC 102</span>
-              </div>
-            </article>
-            <article class="schedule-session">
-              <span class="tag tag--blue">OFICINA 2</span>
-              <h3 class="schedule-session__title">Do texto ao têxtil</h3>
-              <div class="schedule-item__meta">
-                <span class="modality-tag modality-tag--presencial">Presencial</span>
-                <span class="schedule-item__location">BC 101</span>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <!-- 19h: Atividade cultural -->
-        <article class="schedule-item">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">19h</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--red">CULTURAL</span>
-            <h3 class="schedule-item__title">Atividade cultural</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--presencial">Presencial</span>
-              <span class="schedule-item__location">Arena</span>
-            </div>
-          </div>
-        </article>
-
+{% for dia in programacao %}
+<section class="section {{ dia.secao }}" aria-labelledby="dia{{ dia.rotulo | replace(' ', '') }}-heading">
+  <div class="container">
+    <div class="schedule-day">
+      <div class="schedule-day__text">
+        <h2 id="dia{{ dia.rotulo | replace(' ', '') }}-heading" class="schedule-day__date">{{ dia.rotulo }}</h2>
+        <p class="schedule-day__weekday">{{ dia.diaSemana }}</p>
       </div>
     </div>
-  </section>
-
-  <!-- P3: Dia 20 de agosto — Quinta-feira -->
-  <section class="section section--ice" aria-labelledby="dia20-heading">
-    <div class="container">
-
-      <div class="schedule-day">
-        <div class="schedule-day__text">
-          <h2 id="dia20-heading" class="schedule-day__date">20 AGO</h2>
-          <p class="schedule-day__weekday">quinta-feira</p>
-        </div>
-        <div class="schedule-day__graphic schedule-day__graphic--20" aria-hidden="true"></div>
-      </div>
-
-      <div class="schedule-list section-content">
-
-        <!-- 9h30: Mediação artística -->
-        <article class="schedule-item">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">9h30</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--blue">MEDIAÇÃO</span>
-            <h3 class="schedule-item__title">Mediação artística</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--presencial">Presencial</span>
-              <span class="schedule-item__location">Hall</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 10–12h: Conferência Mario Barro -->
-        <article class="schedule-item schedule-item--featured">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">10–12h</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--red">CONFERÊNCIA</span>
-            <h3 class="schedule-item__title">Conferência</h3>
-            <p class="schedule-item__speaker">Prof. Dr. Mario Barro Hérnandez · Mônica Fantin (Ufsc)</p>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--hibrido">Presencial + Online</span>
-              <span class="schedule-item__location">Auditório · Zoom</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 13h30: Comunicações orais presencial -->
-        <article class="schedule-item">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">13h30</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--blue">COMUNICAÇÕES ORAIS</span>
-            <h3 class="schedule-item__title">Sessão de Comunicações Orais</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--presencial">Presencial</span>
-              <span class="schedule-item__location">Auditório</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 14–15h: Mostra online -->
-        <article class="schedule-item">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">14–15h</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--blue">MOSTRA</span>
-            <h3 class="schedule-item__title">Mostra Audiovisual — Cinema Universitário e Comunitário Latino-Americano (sessão online)</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--online">Online</span>
-              <span class="schedule-item__location">Zoom</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 15–17h: Duas mesas simultâneas -->
-        <div class="schedule-parallel">
-          <div class="schedule-parallel__slot">
-            <p class="schedule-item__time">15–17h</p>
-          </div>
-          <div class="schedule-parallel__sessions">
-            <article class="schedule-session">
-              <span class="tag tag--blue">MESA TEMÁTICA</span>
-              <h3 class="schedule-session__title">Educação e Complexidade (sessão 3)</h3>
-              <div class="schedule-item__meta">
-                <span class="modality-tag modality-tag--online">Online</span>
-                <span class="schedule-item__location">Zoom</span>
-              </div>
-            </article>
-            <article class="schedule-session">
-              <span class="tag tag--blue">MESA TEMÁTICA</span>
-              <h3 class="schedule-session__title">Modos de criar e [re]existir: processos sensíveis em Arte, Moda e Design (sessão 4)</h3>
-              <div class="schedule-item__meta">
-                <span class="modality-tag modality-tag--presencial">Presencial</span>
-                <span class="schedule-item__location">Auditório</span>
-              </div>
-            </article>
+    <div class="prog-list section-content">
+      {% for a in dia.atividades %}
+        {% if a.paralelas %}
+        <div class="prog-parallel">
+          {% if a.hora %}<div class="prog-parallel__slot"><p class="prog-card__time">{{ a.hora }}</p></div>{% endif %}
+          <div class="prog-parallel__sessions">
+            {% for sub in a.paralelas %}{{ card(sub) }}{% endfor %}
           </div>
         </div>
-
-        <!-- 17–17h30: Apresentação musical -->
-        <article class="schedule-item">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">17–17h30</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--red">CULTURAL</span>
-            <h3 class="schedule-item__title">Apresentação musical</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--presencial">Presencial</span>
-              <span class="schedule-item__location">Auditório</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 17h30–19h: Oficinas 3 e 4 simultâneas -->
-        <div class="schedule-parallel">
-          <div class="schedule-parallel__slot">
-            <p class="schedule-item__time">17h30–19h</p>
-          </div>
-          <div class="schedule-parallel__sessions">
-            <article class="schedule-session">
-              <span class="tag tag--blue">OFICINA 3</span>
-              <h3 class="schedule-session__title">A teia e a trama da paisagem: entrelaçar saberes</h3>
-              <div class="schedule-item__meta">
-                <span class="modality-tag modality-tag--presencial">Presencial</span>
-                <span class="schedule-item__location">BC 101</span>
-              </div>
-            </article>
-            <article class="schedule-session">
-              <span class="tag tag--blue">OFICINA 4</span>
-              <h3 class="schedule-session__title">Desenhando com linhas</h3>
-              <div class="schedule-item__meta">
-                <span class="modality-tag modality-tag--presencial">Presencial</span>
-                <span class="schedule-item__location">BC 102</span>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <!-- 17h30–19h: Sessão de pôster online (simultânea às oficinas) -->
-        <article class="schedule-item">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">17h30–19h</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--blue">PÔSTER DIGITAL</span>
-            <h3 class="schedule-item__title">Sessão de Pôster Digital</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--online">Online</span>
-              <span class="schedule-item__location">Zoom</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
+        {% else %}
+          {{ card(a) }}
+        {% endif %}
+      {% endfor %}
     </div>
-  </section>
-
-  <!-- P4: Dia 21 de agosto — Sexta-feira -->
-  <section class="section section--pink" aria-labelledby="dia21-heading">
-    <div class="container">
-
-      <div class="schedule-day">
-        <div class="schedule-day__text">
-          <h2 id="dia21-heading" class="schedule-day__date">21 AGO</h2>
-          <p class="schedule-day__weekday">sexta-feira</p>
-        </div>
-        <div class="schedule-day__graphic schedule-day__graphic--21" aria-hidden="true"></div>
-      </div>
-
-      <div class="schedule-list section-content">
-
-        <!-- 9h30: Mediação -->
-        <article class="schedule-item">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">9h30</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--blue">MEDIAÇÃO</span>
-            <h3 class="schedule-item__title">Mediação</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--presencial">Presencial</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 10h: Conferência Mónica Faria -->
-        <article class="schedule-item schedule-item--featured">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">10h</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--red">CONFERÊNCIA</span>
-            <h3 class="schedule-item__title">Conferência</h3>
-            <p class="schedule-item__speaker">Prof. Dra. Mónica Faria</p>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--hibrido">Presencial + Online</span>
-              <span class="schedule-item__location">Auditório · Zoom</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 14–15h: Mostra Audiovisual 2ª sessão -->
-        <article class="schedule-item">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">14–15h</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--blue">MOSTRA</span>
-            <h3 class="schedule-item__title">Mostra Audiovisual — Olhares Sensíveis da Escola (3ª sessão)</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--presencial">Presencial</span>
-              <span class="schedule-item__location">Auditório</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 15–17h: Duas mesas simultâneas -->
-        <div class="schedule-parallel">
-          <div class="schedule-parallel__slot">
-            <p class="schedule-item__time">15–17h</p>
-          </div>
-          <div class="schedule-parallel__sessions">
-            <article class="schedule-session">
-              <span class="tag tag--blue">MESA TEMÁTICA</span>
-              <h3 class="schedule-session__title">Do saber ao produto: criatividade, património, cultura e trabalho nas indústrias criativas (sessão 5)</h3>
-              <div class="schedule-item__meta">
-                <span class="modality-tag modality-tag--online">Online</span>
-                <span class="schedule-item__location">Zoom</span>
-              </div>
-            </article>
-            <article class="schedule-session">
-              <span class="tag tag--blue">MESA TEMÁTICA</span>
-              <h3 class="schedule-session__title">Educação e Audiovisual (sessão 6)</h3>
-              <div class="schedule-item__meta">
-                <span class="modality-tag modality-tag--online">Online</span>
-                <span class="schedule-item__location">Zoom</span>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <!-- 17h30: Encerramento presencial -->
-        <article class="schedule-item">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">17h30</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--red">ENCERRAMENTO</span>
-            <h3 class="schedule-item__title">Encerramento das atividades presenciais</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--presencial">Presencial</span>
-              <span class="schedule-item__location">Auditório</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- P5: Dia 22 de agosto — Sábado · Sessão online -->
-  <section class="section section--ice" aria-labelledby="dia22-heading">
-    <div class="container">
-
-      <div class="schedule-day">
-        <div class="schedule-day__text">
-          <h2 id="dia22-heading" class="schedule-day__date">22 AGO</h2>
-          <p class="schedule-day__weekday">sábado · sessão online</p>
-        </div>
-        <div class="schedule-day__graphic schedule-day__graphic--22" aria-hidden="true"></div>
-      </div>
-
-      <div class="schedule-list section-content">
-
-        <!-- 9h30: Atividade de percepção -->
-        <article class="schedule-item">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">9h30</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--blue">MEDIAÇÃO</span>
-            <h3 class="schedule-item__title">Mediação</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--online">Online</span>
-              <span class="schedule-item__location">Zoom</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 10h30: Roda de conversa -->
-        <article class="schedule-item">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">10h30</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--blue">RODA DE CONVERSA</span>
-            <h3 class="schedule-item__title">Roda de conversa com professores da Educação Básica</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--online">Online</span>
-              <span class="schedule-item__location">Zoom</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 14–16h e 14–15h: C.O. e Mostra simultâneas -->
-        <div class="schedule-parallel">
-          <div class="schedule-parallel__slot">
-            <p class="schedule-item__time">14–16h</p>
-          </div>
-          <div class="schedule-parallel__sessions">
-            <article class="schedule-session">
-              <span class="tag tag--blue">COMUNICAÇÕES ORAIS</span>
-              <h3 class="schedule-session__title">Sessão de Comunicações Orais</h3>
-              <div class="schedule-item__meta">
-                <span class="modality-tag modality-tag--online">Online</span>
-                <span class="schedule-item__location">Zoom</span>
-              </div>
-            </article>
-            <article class="schedule-session">
-              <span class="tag tag--blue">MOSTRA</span>
-              <h3 class="schedule-session__title">Mostra Audiovisual — Olhares Sensíveis da Escola (4ª sessão)</h3>
-              <div class="schedule-item__meta">
-                <span class="modality-tag modality-tag--online">Online</span>
-                <span class="schedule-item__location">Zoom</span>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <!-- 21h: Desfile Rotfather -->
-        <article class="schedule-item schedule-item--featured">
-          <div class="schedule-item__slot">
-            <p class="schedule-item__time">21h</p>
-          </div>
-          <div class="schedule-item__content">
-            <span class="tag tag--red">CULTURAL</span>
-            <h3 class="schedule-item__title">Desfile Rotfather</h3>
-            <div class="schedule-item__meta">
-              <span class="modality-tag modality-tag--presencial">Presencial</span>
-              <span class="schedule-item__location">Cervejaria Nefasta</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
+{% endfor %}
 
 </main>

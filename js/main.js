@@ -1,6 +1,13 @@
 // Sinaliza que JS está disponível (habilita animações de entrada via CSS)
 document.documentElement.classList.add("js");
 
+// Programação: com JS, inicia colapsada (sem JS, <details open> mostra tudo)
+window.addEventListener("DOMContentLoaded", () => {
+  document
+    .querySelectorAll(".prog-card[open]")
+    .forEach((d) => d.removeAttribute("open"));
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   // ── Scroll reveal: cards de atuação ────────────────────────
   const cards = document.querySelectorAll(".event-card");
