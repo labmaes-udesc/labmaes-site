@@ -88,25 +88,41 @@ Sem componente novo; apenas um wrapper de ações reaproveitando `.button`.
 
 ## 4. Publicação (deploy)
 
-**Escopo do push (decisão do usuário): mínimo.** Apenas:
-- `assets/editais/Caminhos_edital_03_MA.pdf` (já modificado no working tree)
-- `assets/editais/Caminhos_template_apresentacao.pptx` (novo)
-- `eventos/caminhos-do-contemporaneo/2026/submissoes/index.njk` (card novo)
-- `css/components.css` (regra `.normas-card__actions`)
+**Realidade das branches (verificada em 2026-06-23):**
+- Workspace está em `feat/programacao-rica`; o commit do spec foi feito aqui.
+- `main` == `origin/main` == `11ccbc7` (já publicada), **5 commits à frente** desta
+  branch. Cloudflare Pages serve a partir de `main` (build Eleventy → `_site/`,
+  conforme `wrangler.jsonc`).
+- As mudanças pendentes (edital, `submissoes/index.njk`, `2026/index.njk`, Poppins)
+  estão no **working tree**, soltas.
 
-**Ressalva conhecida:** `submissoes/index.njk` **já continha** alteração pendente
-(remoção do card "Edital 3 — Mostra Audiovisual", de 3 → 2 modalidades). Como o
-`git add` opera por arquivo, essa alteração será incluída no mesmo commit. É
-coerente por si só (a Mostra migrou para página própria) e não quebra a página.
+**Estratégia (decisão do usuário): commitar direto na `main` + push.**
 
-**Deixados de fora deste push** (permanecem no working tree):
-- `eventos/caminhos-do-contemporaneo/2026/index.njk` (callout da Mostra na home do evento)
-- `assets/fonts/Poppins/` (novas)
-- `.claude/` (não versionar)
+Como o edital `.pdf` já está modificado no working tree e o estado de
+`submissoes/index.njk` em `main` pode diferir do estado nesta branch, o plano de
+implementação deve:
+1. Preservar a versão modificada do Edital 03 (copiar para fora antes de trocar de branch).
+2. `git checkout main` (sincronizado com origin).
+3. Aplicar **na `main`**, do zero: copiar o Edital 03 atualizado, copiar o `.pptx`,
+   adicionar o card em `submissoes/index.njk` e a regra em `css/components.css`.
+4. Verificar com `git status` que **apenas** estes caminhos estão modificados/staged:
+   - `assets/editais/Caminhos_edital_03_MA.pdf`
+   - `assets/editais/Caminhos_template_apresentacao.pptx`
+   - `eventos/caminhos-do-contemporaneo/2026/submissoes/index.njk`
+   - `css/components.css`
+5. Commit + `git push origin main`. Cloudflare publica automaticamente.
 
-Sem `git add -A`. Usar `git add` explícito apenas nos 4 caminhos acima.
+**Verificar durante a implementação:** se `submissoes/index.njk` na `main` ainda
+contém o card "Edital 3 — Mostra Audiovisual" (3 modalidades). Se sim, o card de
+template é adicionado de forma independente — **não** mexer na remoção da Mostra
+neste push (essa reestruturação fica para outra entrega).
 
-Commit + `git push origin main`. Cloudflare Pages publica automaticamente.
+**Sem `git add -A`.** Usar `git add` explícito apenas nos 4 caminhos acima.
+
+**Deixados de fora deste push** (permanecem como trabalho separado):
+- Reestruturação da Mostra (`2026/index.njk` e remoção do card em `submissoes`).
+- `assets/fonts/Poppins/` (novas).
+- `.claude/` (não versionar).
 
 ## Verificação
 
