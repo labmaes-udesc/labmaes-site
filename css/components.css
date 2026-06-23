@@ -974,10 +974,26 @@ img {
   color: rgba(48, 42, 102, 0.72);
 }
 
-.normas-card a {
+.normas-card p a {
   color: var(--color-brand-red);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.normas-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: var(--space-16);
+}
+
+.normas-card__actions .button {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  padding: 10px 16px;
+  min-height: 42px;
+  white-space: nowrap;
 }
 
 /* ─── Acessibilidade: sem animações ─────────────────────── */
