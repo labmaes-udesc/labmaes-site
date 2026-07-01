@@ -993,7 +993,8 @@ img {
   font-size: 14px;
   padding: 10px 16px;
   min-height: 42px;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
 }
 
 /* ─── Acessibilidade: sem animações ─────────────────────── */
