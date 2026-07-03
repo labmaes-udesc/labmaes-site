@@ -41,7 +41,7 @@
   "andrei-galkowski": {
     "nome": "Prof. Me. Andrei Galkowski",
     "instituicao": "Udesc",
-    "bio": "Andrei Rafael Galkowski é doutorando em Artes Visuais no Programa de Pós-Graduação em Artes Visuais da Universidade do Estado de Santa Catarina (UDESC), na linha de pesquisa Ensino das Artes Visuais, sob orientação da Prof.ª Dr.ª Mara Rúbia Sant'Anna. É mestre em Educação pela Universidade Estadual do Paraná (UNESPAR), especialista em Fotografia: Processos de Produção da Imagem pela Universidade Tuiuti do Paraná e licenciado em Artes Visuais pela Universidade da Região de Joinville (Univille). Desde 2019, atua como professor efetivo de Arte na Rede Municipal de Ensino de Biguaçu (SC)."
+    "bio": "Andrei Rafael Galkowski é doutorando em Artes Visuais no Programa de Pós-Graduação em Artes Visuais da Universidade do Estado de Santa Catarina (UDESC), na linha de pesquisa Ensino das Artes Visuais, sob orientação da Prof.ª Dr.ª Mara Rúbia Sant'Anna. É mestre em Educação pela Universidade Estadual do Paraná (UNESPAR), especialista em Fotografia: Processos de Produção da Imagem pela Universidade Tuiuti do Paraná e licenciado em Artes Visuais pela Universidade da Região de Joinville (Univille). Desde 2019, atua como professor efetivo de Arte na Rede Municipal de Ensino de Biguaçu (SC), com carga horária de 40 horas semanais."
   },
   "mario-barro": {
     "nome": "Prof. Dr. Mario Barro Hérnandez",
@@ -68,7 +68,9 @@
   },
   "jessica-policarpo": {
     "nome": "Profa. Ma. Jéssica Policarpo",
-    "instituicao": "AAESC"
+    "instituicao": "AAESC",
+    "foto": "jessica-policarpo.webp",
+    "bio": "Ma. em Artes Visuais pela UDESC, na linha de Ensino de Artes, e licenciada em Artes Visuais pela mesma instituição. Professora de Arte da Rede Estadual de Ensino de Santa Catarina. Presidente da Associação de Arte-Educadores de Santa Catarina (AAESC) e Conselheira Municipal de Cultura de Florianópolis."
   },
   "beatriz-sousa": {
     "nome": "Profa. Dra. Beatriz Sousa",
@@ -122,6 +124,7 @@
   },
   "karine-joulie": {
     "nome": "Karine Joulie Martins",
+    "foto": "karine-joulie.webp",
     "bio": "Karine Joulie Martins: Doutora e Mestre em Educação pela Universidade Federal de Santa Catarina (UFSC). Bacharel em Cinema também pela UFSC, licenciada em Artes Visuais pela Uninter e pedagoga em formação. Atualmente desenvolve pesquisa de pós-doutorado na Universidade Federal do Rio de Janeiro (UFRJ). É integrante do Núcleo Infância, Comunicação, Cultura e Arte (NICA, CNPq/UFSC) e do Cinead/Lecav (UFRJ), participando de diversos projetos de pesquisa e extensão."
   },
   "izabel-petraglia": {
@@ -139,15 +142,19 @@
   "felipe-fonseca": {
     "nome": "Felipe Fonseca",
     "instituicao": "Udesc",
+    "foto": "felipe-fonseca.webp",
     "bio": "Mestrando na linha de Ensino das Artes Visuais (PPGAV/Udesc), com pesquisa sobre práticas e processos de criação visual no campo expandido da Moda. É bacharel em Moda e técnico em produção de vestuário."
   },
   "nani-da-fonseca": {
     "nome": "Profa. Dra. Nani da Fonseca",
-    "instituicao": "UFJF"
+    "instituicao": "UFJF",
+    "foto": "nani-da-fonseca.webp",
+    "bio": "Artista, professora e pesquisadora. Atualmente trabalha como professora adjunta do Instituto de Artes e Design (IAD), como docente da Especialização Moda, Arte e Cultura e na Pós-Graduação em Educação, Educação Brasileira: Gestão e Práticas Pedagógicas, ambas na Universidade Federal de Juiz de Fora (UFJF). Doutora em Arte, mestre em Design (2011), bacharel em Moda (2008), bacharel e licenciada em Artes Visuais (2008) e bacharel em Psicologia (2017). Questões recorrentes em sua poética são o cotidiano, o feminismo, a sustentabilidade e a exploração da palavra por meio de técnicas como o bordado e a gravura em uma perspectiva decolonial. Autora do livro \"Criatividade Coletiva\" em parceria com Ana Mae Barbosa."
   },
   "milena-ogushi": {
     "nome": "Profa. Ma. Milena Ogushi",
-    "instituicao": "UFSC"
+    "instituicao": "UFSC",
+    "bio": "Docente do curso de Psicologia da Faculdade CESUSC. Doutoranda no Programa de Pós-Graduação em Psicologia da Universidade Federal de Santa Catarina (PPGP-UFSC), na linha de pesquisa Estética, Processos de Criação e Política. Mestra em Psicologia pelo PPGP-UFSC (2022). Graduada em Psicologia pela Universidade Federal de Santa Catarina (2011) e em Moda pela Universidade do Estado de Santa Catarina (2019)."
   },
   "emanoela-mardula": {
     "nome": "Emanoela Mardula",
@@ -173,27 +180,31 @@
   "fernanda-schulz": {
     "nome": "Profa. Dra. Fernanda Schulz",
     "instituicao": "UMinho",
-    "bio": "Doutoranda no Programa Doutoral em Design de Moda na Universidade do Minho, desenvolve sua investigação com o tema “Design in the feminine: knowledge, textile and fashion design”, com bolsa de investigação da FCT (n.º 2023.04439.BD). Desde 2023, é também investigadora no Centro de Ciência e Tecnologia Têxtil (2C2T), no Departamento de Engenharia Têxtil da mesma instituição. Em 2023, integrou o Projeto Be@t como bolseira de investigação (2C2T) e, em 2022, colaborou como Designer Formadora no Projeto Oficina Criativa, desenvolvido pela Sol do Ave, IDEGUI e IEFP em Guimarães. É Mestre em Design de Comunicação de Moda pela Universidade do Minho/PT (2021), Especialista em Design Estratégico pela Universidade do Vale do Rio dos Sinos/BR (2011) e Licenciada em Moda e Estilo pela Universidade de Caxias do Sul/BR (2009). Com um percurso profissional no design de moda desde 2010, soma experiência na indústria e na docência.",
+    "bio": "Doutoranda no Programa Doutoral em Design de Moda na Universidade do Minho, desenvolve sua investigação com o tema “Design in the feminine: knowledge, textile and fashion design”, com bolsa de investigação da FCT (n.º 2023.04439.BD). Desde 2023, é também investigadora no Centro de Ciência e Tecnologia Têxtil (2C2T), no Departamento de Engenharia Têxtil da mesma instituição. Em 2023, integrou o Projeto Be@t como bolseira de investigação (2C2T) e, em 2022, colaborou como Designer Formadora no Projeto Oficina Criativa, desenvolvido pela Sol do Ave, IDEGUI e IEFP em Guimarães. É Mestre em Design de Comunicação de Moda pela Universidade do Minho/PT (2021), Especialista em Design Estratégico pela Universidade do Vale do Rio dos Sinos/BR (2011) e Licenciada em Moda e Estilo pela Universidade de Caxias do Sul/BR (2009). Com um percurso profissional no design de moda desde 2010, soma experiência na indústria e na docência: atuou como designer com foco em pesquisa de tendências, desenvolvimento de coleções e planeamento estratégico, e entre 2012 e 2017 foi docente e coordenadora dos cursos de Graduação em Design de Produto, Moda e Gráfico nas Faculdades Ftec Bento Gonçalves/BR, período em que também proferiu palestras sobre criatividade, inovação, tendências e design para a comunidade da Serra Gaúcha/BR.",
     "foto": "fernanda-schulz.webp"
   },
   "joao-barata": {
     "nome": "Prof. Dr. João Barata",
     "instituicao": "ULusófona",
-    "bio": "Concluiu o 3.º ciclo de estudos em Design de Moda na Universidade da Beira Interior em parceria com a Universidade do Minho. O doutoramento seguiu-se em linha com a área de estudos do seu Mestrado e Licenciatura, também em Design de Moda. Apresenta uma experiência de uma década a lecionar no Ensino Superior e atualmente é Professor Auxiliar na Universidade Lusófona – Centro de estudos de Lisboa. Esteve envolvido em vários projetos relacionados com a Indústria e a Academia. Tem várias publicações sobre Design de Moda (na sua vertente prática e teórica), Criatividade, Sustentabilidade e Figurinos Cinematográficos e de Media.",
+    "bio": "Concluiu o 3.º ciclo de estudos em Design de Moda na Universidade da Beira Interior em parceria com a Universidade do Minho. O doutoramento seguiu-se em linha com a área de estudos do seu Mestrado e Licenciatura, também em Design de Moda. Apresenta uma experiência de uma década a lecionar no Ensino Superior e atualmente é Professor Auxiliar na Universidade Lusófona – Centro de estudos de Lisboa. Esteve envolvido em vários projetos relacionados com a Indústria e a Academia, como a Digitalização do processo criativo e produtivo da ITV-PT, no Simpósio da ITV com auscultação dos parceiros Industriais e Tecnológico; atualmente colabora no projeto FACTS. Tem várias publicações sobre Design de Moda (na sua vertente prática e teórica), Criatividade, Sustentabilidade e Figurinos Cinematográficos e de Media. Orienta um candidato ao Mestrado de Design e Produção de Moda com o tema \"A fotografia como elemento de comunicação entre o designer e o produtor de moda\" e uma candidata a PhD em Arte dos Media e Comunicação com o tema \"Vestir o cinema português: contextualização da Sétima Arte e da Moda através do Figurino no Séc. XX\".",
     "foto": "joao-barata.webp"
   },
   "cynthia-gomez": {
     "nome": "Profa. Dra. Cynthia Gomez",
     "instituicao": "UMinho",
-    "bio": "Licenciada em Design Têxtil e mestre em Gestão de Empresas, estudou marketing de moda, tendências de estilo de vida, moda sustentável e experimentação têxtil na Central Saint Martins School. Foi reconhecida como uma das 50 mulheres de maior sucesso no México pelo grupo Expansión e pela revista Universal. Fundou seu atelier em 1996, onde desenvolveu sua marca homónima, especializada em têxteis para moda e decoração de interiores. Foi coordenadora do programa de Moda Sustentável e Design Têxtil no Departamento de Design da Universidade IBERO (México), sendo atualmente professora catedrática e investigadora em têxteis de biodesign e biomateriais.",
+    "bio": "Licenciada em Design Têxtil e mestre em Gestão de Empresas, estudou marketing de moda, tendências de estilo de vida, moda sustentável e experimentação têxtil na Central Saint Martins School. Foi reconhecida como a melhor designer e é considerada uma das 50 mulheres de maior sucesso no México pelo grupo Expansión e pela revista Universal. Fundou seu atelier em 1996, onde desenvolveu sua marca homónima, especializada em têxteis para moda e decoração de interiores, com um estilo caracterizado pela riqueza cromática. Participou nas plataformas Fashion Week México, Desfila e Días de Moda durante mais de 10 temporadas. Suas coleções foram expostas no Museu de Arte Carrillo Gil, na exposição \"Boutique\", no Museu Ex Teresa Arte Actual, no \"Modas Terminales\" e na Design Week México, no Espaço Museu da Cidade do México. Foi coordenadora do programa de Moda Sustentável e Design Têxtil no Departamento de Design da Universidade IBERO (México), sendo atualmente professora catedrática e investigadora em têxteis de biodesign e biomateriais, lecionando há mais de 10 anos aulas de design estratégico, design de moda e têxtil e gestão de empresas.",
     "foto": "cynthia-gomez.webp"
   },
   "janaina-cordeiro": {
     "nome": "Janaina Machado Cordeiro",
+    "foto": "janaina-cordeiro.webp",
     "bio": "Artesã, coordenadora e idealizadora do Floripa Quilt, evento que reúne artesãos têxteis anualmente desde 2012."
   },
   "fabiana-heinrich": {
-    "nome": "Prof. Fabiana Oliveira Heinrich"
+    "nome": "Prof. Fabiana Oliveira Heinrich",
+    "instituicao": "EBA-UFRJ",
+    "foto": "fabiana-heinrich.webp",
+    "bio": "Professora Adjunta na Escola de Belas Artes da Universidade Federal do Rio de Janeiro (EBA-UFRJ), atuando no Programa de Pós-Graduação em Design (PPGD), que coordenou de 2023 a 2025, e no curso de Comunicação Visual Design (CVD), que coordenou de 2021 a 2023. É coordenadora do LABCRIT: Laboratório de Produções Críticas em Design, editora associada da Revista Diálogo com a Economia Criativa (ESPM-Rio) e atuou como elaboradora e revisora de itens do ENADE na área de Design (2025). Doutora e Mestre em Design pela Pontifícia Universidade Católica do Rio de Janeiro (PUC-Rio, 2018 e 2013), com financiamento CAPES, e Bacharel em Design Gráfico pela Universidade Federal de Pelotas (UFPEL, 2008). Durante o doutorado, foi pesquisadora visitante no Department of German Studies da Brown University (2015) e realizou doutorado-sanduíche no Department of History of Art + Visual Culture da Rhode Island School of Design (RISD, 2017-2018), pelo programa PDSE-CAPES. Tem interesse nas áreas de Crítica Social do Design, Imagem, Metodologias de Projeto, Tecnologias Digitais, Teoria do Design e Trabalho Digital."
   },
   "pam-ignowski": {
     "nome": "Pam Ignowski",
@@ -207,6 +218,9 @@
   },
   "alice-firmo": {
     "nome": "Alice Firmo"
+  },
+  "vinicius-vicente": {
+    "nome": "Vinicius Vicente"
   },
   "the-rotfather": {
     "nome": "The Rotfather: experimentações têxteis para figurinos anímicos",

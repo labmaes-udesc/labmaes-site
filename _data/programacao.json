@@ -208,7 +208,7 @@
             "titulo": "Educação e Complexidade",
             "modalidade": "online",
             "local": "Zoom – transmissão no Espine",
-            "ementa": "A teoria da Complexidade tem alimentado inúmeras discussões e revisões no campo da pedagogia, propondo uma nova perspectiva para o que ensinamos, como ensinamos e sobre os papeis de todos os sujeitos envolvidos no ato eductivo. Portanto, a mesa proposta ira elucidar essas questões a partir de três abordagens: saberes sensíveis, (izabel) e Wilson)",
+            "ementa": "A teoria da Complexidade tem alimentado inúmeras discussões e revisões no campo da pedagogia, propondo uma nova perspectiva para o que ensinamos, como ensinamos e sobre os papéis de todos os sujeitos envolvidos no ato educativo. Portanto, a mesa proposta irá elucidar essas questões. Investigaremos e analisaremos as limitações da fragmentação do conhecimento na formação humana e social, confrontando-a com a urgência de uma visão integrada e multidimensional da realidade. Diante dos problemas contemporâneos, que se apresentam como nós sistêmicos e transdisciplinares, a mesa propõe o desenvolvimento de um pensamento capaz de articular saberes, incertezas e contextos. A obra e o legado de Edgar Morin fundamentam esta reflexão, oferecendo categorias analíticas para religar ciência, ética, política e existência. Busca-se, assim, reorientar a prática educativa para a compreensão da complexidade como chave epistemológica e metodológica do nosso tempo, a partir de três abordagens: saberes sensíveis, educação e complexidade.",
             "participantes": [
               { "slug": "mara-rubia", "papel": "mediadora", "titulo_fala": "Incertezas e possibilidades de uma estratégia nominada Saberes Sensíveis" },
               { "slug": "izabel-petraglia", "titulo_fala": "Educação e complexidade" },
@@ -237,7 +237,10 @@
         "tag": "tag--red",
         "modalidade": "presencial",
         "local": "Auditório",
-        "participantes": []
+        "participantes": [
+          { "slug": "vinicius-vicente" },
+          { "slug": "alice-firmo" }
+        ]
       },
       {
         "hora": "17h30–19h",
@@ -384,7 +387,9 @@
         "tag": "tag--blue",
         "modalidade": "online",
         "local": "Zoom",
-        "participantes": []
+        "participantes": [
+          { "slug": "ana-hoffmann" }
+        ]
       },
       {
         "hora": "10h30",
