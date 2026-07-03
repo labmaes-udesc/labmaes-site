@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if title and title != 'LabMAES' %}{{ title }} | LabMAES{% else %}LabMAES{% endif %}</title>
   <meta name="description" content="{{ description or site.description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {%- if noindex %}
+  <meta name="robots" content="noindex">
+  {%- endif %}
 
   <!-- Open Graph (preview em redes sociais e WhatsApp) -->
   <meta property="og:title" content="{% if title and title != 'LabMAES' %}{{ title }} | LabMAES{% else %}LabMAES{% endif %}">

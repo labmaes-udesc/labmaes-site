@@ -18,6 +18,9 @@
 
   /* Cores de suporte */
   --color-support-orange: #F44F21;
+  /* Variante escura do laranja: uso como cor de TEXTO em fundo claro
+     (o laranja da marca não atinge contraste AA 4.5:1 como texto) */
+  --color-support-orange-dark: #C23A12;
   --color-support-green: #00523C;
   --color-support-pink: #F4BEBE;
 
