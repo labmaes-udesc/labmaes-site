@@ -33,6 +33,7 @@ Header, footer e navegação do evento ficam em `_includes/` — editar lá afet
 ## Pendências
 
 - **Atualizar o Edital 03 (Mostra Audiovisual)** — `assets/editais/Caminhos_edital_03_MA.pdf`. As cláusulas 2.6 e 2.7 ainda indicam que a inscrição da Mostra é feita pela Even3 ("Modalidade Mostra Audiovisual"). O fluxo mudou para inscrição no evento via Even3 + submissão da obra via Google Forms (refletido na página `/2026/mostra-audiovisual/`). O PDF precisa ser regenerado para evitar novas dúvidas.
+- **Completar bio/instituição/foto de 4 participantes novos** em `_data/pessoas.json` (adicionados em 2026-07-08 a partir da programação atualizada, entraram na mesa "Educação e Audiovisual" de 20/08 10h-12h): `gilka-girardello`, `fabiola-cirimbelli`, `maria-cristina-diederichsen`, `karin-zapelini`. Hoje só têm o campo `nome`.
 
 ### Melhorias mapeadas na análise crítica (2026-07-02)
 
