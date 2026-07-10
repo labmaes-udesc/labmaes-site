@@ -6,23 +6,31 @@
     "secao": "section--pink",
     "atividades": [
       {
-        "hora": "18h30",
+        "hora": "19h",
         "tipo": "Abertura",
         "tag": "tag--red",
         "titulo": "Abertura do evento",
         "modalidade": "presencial",
         "local": "Galeria Jandira Lorenz",
+        "ementa": "Cerimônia de abertura com as autoridades convidadas.",
         "participantes": [
-          { "slug": "mara-rubia" }
+          { "slug": "mara-rubia" },
+          { "slug": "vicente-concilio" },
+          { "slug": "maria-de-fatima" }
         ]
       },
       {
-        "hora": "19h",
+        "hora": "19h15",
         "tipo": "Exposição",
         "tag": "tag--blue",
-        "titulo": "Abertura da exposição coletiva",
+        "titulo": "Abertura da exposição coletiva: (a) “Tramar Saberes, Tecer Coletividades” (Coletivo CROCHÊ.JAR); (b) The Rotfather: experimentações têxteis para figurinos anímicos; (c) Moda em Viés e o Avesso do Glamour (Moda Udesc)",
         "modalidade": "presencial",
-        "local": "Galeria Jandira Lorenz"
+        "local": "Galeria Jandira Lorenz",
+        "participantes": [
+          { "slug": "coletivo-croche-jar" },
+          { "slug": "the-rotfather" },
+          { "slug": "moda-em-vies" }
+        ]
       },
       {
         "hora": "19h30",
@@ -41,21 +49,6 @@
     "secao": "section--pink",
     "atividades": [
       {
-        "hora": "9h",
-        "tipo": "Abertura",
-        "tag": "tag--red",
-        "destaque": true,
-        "titulo": "Cerimônia de Abertura",
-        "modalidade": "presencial",
-        "local": "Auditório do Bloco Amarelo",
-        "ementa": "Cerimônia de abertura com as autoridades convidadas.",
-        "participantes": [
-          { "slug": "mara-rubia" },
-          { "slug": "vicente-concilio" },
-          { "slug": "maria-de-fatima" }
-        ]
-      },
-      {
         "hora": "9h30",
         "tipo": "Conferência",
         "tag": "tag--red",
@@ -67,19 +60,6 @@
         "participantes": [
           { "slug": "myriam-lemonchois" },
           { "slug": "leticia-francez", "papel": "mediadora" }
-        ]
-      },
-      {
-        "hora": "11h15",
-        "tipo": "Exposições",
-        "tag": "tag--blue",
-        "titulo": "(a) “Tramar Saberes, Tecer Coletividades” (Coletivo CROCHÊ.JAR); (b) The Rotfather: experimentações têxteis para figurinos anímicos; (c) Moda em Viés e o Avesso do Glamour (Moda Udesc).",
-        "modalidade": "presencial",
-        "local": "Hall - Básica 02",
-        "participantes": [
-          { "slug": "coletivo-croche-jar" },
-          { "slug": "the-rotfather" },
-          { "slug": "moda-em-vies" }
         ]
       },
       {
@@ -139,13 +119,6 @@
         ]
       },
       {
-        "hora": "17h",
-        "tipo": "Coffee Break",
-        "tag": "tag--blue",
-        "modalidade": "presencial",
-        "expansivel": false
-      },
-      {
         "hora": "17h30–19h",
         "paralelas": [
           {
@@ -186,26 +159,25 @@
     "secao": "section--ice",
     "atividades": [
       {
-        "hora": "9h30",
+        "hora": "9h",
         "tipo": "Mediação",
         "tag": "tag--blue",
         "modalidade": "presencial",
         "local": "Hall",
         "participantes": [
-          { "slug": "ana-hoffmann" },
-          { "slug": "camila-franca" }
+          { "slug": "camila-franca", "papel": "coordenação" }
         ]
       },
       {
-        "hora": "10h–12h",
+        "hora": "9h30–12h",
         "tipo": "Mesa Temática",
         "tag": "tag--blue",
         "titulo": "Educação e Audiovisual",
         "modalidade": "presencial",
         "local": "Auditório",
         "participantes": [
-          { "slug": "andrei-galkowski", "papel": "mediador" },
-          { "slug": "monica-fantin" },
+          { "slug": "andrei-galkowski" },
+          { "slug": "monica-fantin", "papel": "mediadora" },
           { "slug": "jose-douglas" },
           { "slug": "karine-joulie" },
           { "slug": "gilka-girardello" },
@@ -220,7 +192,9 @@
         "tag": "tag--blue",
         "modalidade": "presencial",
         "local": "Auditório",
-        "participantes": []
+        "participantes": [
+          { "slug": "ivis-aguiar", "papel": "coordenação" }
+        ]
       },
       {
         "hora": "14h–15h",
@@ -284,20 +258,6 @@
           {
             "tipo": "Oficina 3",
             "tag": "tag--blue",
-            "titulo": "Desenhando com linhas",
-            "modalidade": "presencial",
-            "local": "BC 102",
-            "ementa": "A oficina-performance “Desenhando com Linhas” propõe uma investigação sensível do desenho a partir do uso de fios, linhas e materiais têxteis como linguagem estética, corporal e afetiva. Por meio de práticas experimentais e coletivas, os participantes serão convidados a explorar o desenho para além da representação, ativando percepções táteis, espaciais e relacionais. A oficina articula referências entre arte, moda, corpo e tessitura, estimulando processos de criação a partir da manipulação intuitiva de diferentes materiais lineares.",
-            "link": { "texto": "Ver inscrição e materiais →", "href": "/eventos/caminhos-do-contemporaneo/2026/oficinas/" },
-            "participantes": [
-              { "slug": "camila-franca" },
-              { "slug": "emanoela-mardula" },
-              { "slug": "valdecir-babinski" }
-            ]
-          },
-          {
-            "tipo": "Oficina 4",
-            "tag": "tag--blue",
             "titulo": "A teia e a trama da paisagem: entrelaçar saberes",
             "modalidade": "presencial",
             "local": "BC 101",
@@ -307,6 +267,23 @@
               { "slug": "monica-faria" },
               { "slug": "joana-sequeira" },
               { "slug": "ivis-aguiar" }
+            ]
+          },
+          {
+            "tipo": "Oficina 4",
+            "tag": "tag--blue",
+            "titulo": "Desenhando com linhas",
+            "modalidade": "presencial",
+            "local": "BC 102",
+            "ementa": "A oficina-performance “Desenhando com Linhas” propõe uma investigação sensível do desenho a partir do uso de fios, linhas e materiais têxteis como linguagem estética, corporal e afetiva. Por meio de práticas experimentais e coletivas, os participantes serão convidados a explorar o desenho para além da representação, ativando percepções táteis, espaciais e relacionais. A oficina articula referências entre arte, moda, corpo e tessitura, estimulando processos de criação a partir da manipulação intuitiva de diferentes materiais lineares.",
+            "link": { "texto": "Ver inscrição e materiais →", "href": "/eventos/caminhos-do-contemporaneo/2026/oficinas/" },
+            "participantes": [
+              { "slug": "camila-franca" },
+              { "slug": "emanoela-mardula" },
+              { "slug": "maria-eduarda-goncalves" },
+              { "slug": "maria-helena-garbin" },
+              { "slug": "geovana-martines" },
+              { "slug": "valdecir-babinski" }
             ]
           }
         ]
@@ -320,8 +297,7 @@
         "ementa": "A Sessão de Apresentação de Pôster do 7º Seminário Caminhos do Contemporâneo constitui um espaço de diálogo e difusão científica sob a temática central “Criação, Tessituras Sensíveis, Narrativas em Movimento”. Destinada a estudantes, pesquisadores e profissionais do setor do vestuário e das manualidades, a atividade ocorre inteiramente em formato online no dia 20 de agosto de 2026. A dinâmica compreende a socialização de pesquisas e experiências por meio de vídeos de até 5 minutos (slides e narração em áudio), seguidos por um debate mediado com o público. Os resumos expandidos aprovados são publicados nos Anais eletrônicos do evento, com registro ISBN.",
         "participantes": [
           { "slug": "pam-ignowski", "papel": "coordenação" },
-          { "slug": "beatriz-monteiro", "papel": "coordenação" },
-          { "slug": "alice-firmo", "papel": "coordenação" }
+          { "slug": "beatriz-monteiro", "papel": "coordenação" }
         ]
       }
     ]
@@ -359,7 +335,7 @@
         "tag": "tag--blue",
         "titulo": "Olhares sensíveis da escola",
         "modalidade": "online",
-        "local": "Auditório",
+        "local": "Auditório – projeção e debate pelo Zoom",
         "link": { "texto": "Ver programação completa →", "href": "/eventos/caminhos-do-contemporaneo/2026/mostra-audiovisual/" },
         "participantes": [
           { "slug": "monica-rodrigues", "papel": "coordenação" },
@@ -368,18 +344,33 @@
       },
       {
         "hora": "15h–17h",
-        "tipo": "Mesa Temática",
-        "tag": "tag--blue",
-        "titulo": "Do saber ao produto: criatividade, património, cultura e trabalho nas indústrias criativas",
-        "modalidade": "online",
-        "local": "Zoom – Transmissão no Auditório",
-        "ementa": "Partindo da premissa de que o saber — particularmente quando ancorado em práticas culturais e patrimoniais — não é um dado estático, mas uma força motriz em permanente transformação, esta mesa-redonda propõe um diálogo transdisciplinar sobre os processos que convertem conhecimentos tradicionais, técnicos, históricos e experimentais em produtos culturais criativos. Ao fazê-lo, tensiona as fronteiras entre passado e futuro, memória e inovação, artesanato e indústria. Mais do que evidenciar o património como fonte de criatividade, o debate interroga o papel mediador do design, da indústria e das políticas culturais na tradução material, económica e simbólica desses saberes. Num momento em que as indústrias criativas buscam caminhos mais sustentáveis e significativos, esta conversa revela-se essencial para repensar o futuro do trabalho, da produção e da criatividade.",
-        "participantes": [
-          { "slug": "ivis-aguiar", "papel": "mediador" },
-          { "slug": "fabiana-heinrich" },
-          { "slug": "fernanda-schulz", "titulo_fala": "Quem teceu a indústria? Saberes femininos entre patrimônio, criatividade e trabalho" },
-          { "slug": "joao-barata", "titulo_fala": "O figurino e o contexto cultural – Exemplos de Portugal" },
-          { "slug": "cynthia-gomez", "titulo_fala": "Projetar após o extrativismo: novas materialidades e futuros regenerativos" }
+        "paralelas": [
+          {
+            "tipo": "Mesa Temática",
+            "tag": "tag--blue",
+            "modalidade": "presencial",
+            "local": "Auditório",
+            "participantes": [
+              { "slug": "karine-joulie" },
+              { "slug": "andrei-galkowski" },
+              { "slug": "monica-rodrigues" }
+            ]
+          },
+          {
+            "tipo": "Mesa Temática",
+            "tag": "tag--blue",
+            "titulo": "Do saber ao produto: criatividade, património, cultura e trabalho nas indústrias criativas",
+            "modalidade": "online",
+            "local": "Zoom – Transmissão no Auditório",
+            "ementa": "Partindo da premissa de que o saber — particularmente quando ancorado em práticas culturais e patrimoniais — não é um dado estático, mas uma força motriz em permanente transformação, esta mesa-redonda propõe um diálogo transdisciplinar sobre os processos que convertem conhecimentos tradicionais, técnicos, históricos e experimentais em produtos culturais criativos. Ao fazê-lo, tensiona as fronteiras entre passado e futuro, memória e inovação, artesanato e indústria. Mais do que evidenciar o património como fonte de criatividade, o debate interroga o papel mediador do design, da indústria e das políticas culturais na tradução material, económica e simbólica desses saberes. Num momento em que as indústrias criativas buscam caminhos mais sustentáveis e significativos, esta conversa revela-se essencial para repensar o futuro do trabalho, da produção e da criatividade.",
+            "participantes": [
+              { "slug": "ivis-aguiar", "papel": "mediador" },
+              { "slug": "fabiana-heinrich" },
+              { "slug": "fernanda-schulz", "titulo_fala": "Quem teceu a indústria? Saberes femininos entre patrimônio, criatividade e trabalho" },
+              { "slug": "joao-barata", "titulo_fala": "O figurino e o contexto cultural – Exemplos de Portugal" },
+              { "slug": "cynthia-gomez", "titulo_fala": "Projetar após o extrativismo: novas materialidades e futuros regenerativos" }
+            ]
+          }
         ]
       },
       {
@@ -424,28 +415,25 @@
       },
       {
         "hora": "14h–16h",
-        "paralelas": [
-          {
-            "tipo": "Comunicações Orais",
-            "tag": "tag--blue",
-            "modalidade": "online",
-            "local": "Zoom",
-            "participantes": [
-              { "slug": "janaina-nascimento", "papel": "mediadora" }
-            ]
-          },
-          {
-            "tipo": "Mostra",
-            "tag": "tag--blue",
-            "titulo": "Olhares Sensíveis da Escola",
-            "modalidade": "online",
-            "local": "Zoom",
-            "link": { "texto": "Ver programação completa →", "href": "/eventos/caminhos-do-contemporaneo/2026/mostra-audiovisual/" },
-            "participantes": [
-              { "slug": "monica-rodrigues", "papel": "coordenação" },
-              { "slug": "karine-joulie", "papel": "curadoria" }
-            ]
-          }
+        "tipo": "Comunicações Orais",
+        "tag": "tag--blue",
+        "modalidade": "online",
+        "local": "Zoom",
+        "participantes": [
+          { "slug": "janaina-nascimento", "papel": "mediadora" }
+        ]
+      },
+      {
+        "hora": "14h–15h",
+        "tipo": "Mostra",
+        "tag": "tag--blue",
+        "titulo": "Olhares Sensíveis da Escola",
+        "modalidade": "online",
+        "local": "Zoom",
+        "link": { "texto": "Ver programação completa →", "href": "/eventos/caminhos-do-contemporaneo/2026/mostra-audiovisual/" },
+        "participantes": [
+          { "slug": "monica-rodrigues", "papel": "coordenação" },
+          { "slug": "karine-joulie", "papel": "curadoria" }
         ]
       },
       {
