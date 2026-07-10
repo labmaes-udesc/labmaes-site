@@ -240,15 +240,27 @@
     "bio": "Professora efetiva da Universidade Federal de Santa Catarina (UFSC) dos cursos de Design e Animação. Docente do Programa de Pós-Graduação em Gestão do Cuidado em Enfermagem. Coordenadora do projeto The RotFather e integra o grupo de pesquisa G2E-UFSC (Grupo de Educação e Entretenimento)."
   },
   "gilka-girardello": {
-    "nome": "Gilka Girardello"
+    "nome": "Gilka Girardello",
+    "instituicao": "Ufsc",
+    "foto": "gilka-girardello.webp",
+    "bio": "Professora Titular da Universidade Federal de Santa Catarina, onde atua no Programa de Pós-Graduação em Educação. Possui graduação em Comunicação pela Universidade Federal do Rio Grande do Sul, mestrado interdisciplinar em Ciências Humanas pela New School for Social Research de Nova York e doutorado em Ciências da Comunicação pela Universidade de São Paulo. Foi pesquisadora visitante na City University of New York (Fulbright/CAPES, 2010) e na Universidade de Brasília (CNPq, 2024). Pesquisa principalmente os temas ligados a infância, comunicação, cultura, imaginação, narrativa e formação de professores. É uma das coordenadoras do Núcleo Infância, Comunicação, Cultura e Arte (UFSC/CNPq)."
   },
   "fabiola-cirimbelli": {
-    "nome": "Fabíola Cirimbelli Búrigo Costa"
+    "nome": "Fabíola Cirimbelli Búrigo Costa",
+    "instituicao": "Ufsc",
+    "foto": "fabiola-cirimbelli.webp",
+    "bio": "Professora, ceramista, pesquisadora. Licenciada em Educação Artística - Artes Plásticas e Especialista em Arte-Educação - Artes Plásticas pela UDESC, Mestra em Psicologia e Doutora em Educação pela UFSC. Trabalhou na Rede Estadual de Ensino; na Escolinha de Arte de Florianópolis e no Colégio de Aplicação da UFSC, onde ministrou aulas de Artes Visuais no Ensino Fundamental e Médio, supervisionou atividades de Observação e Prática de Ensino, do Estágio Supervisionado de alunos do Curso de Licenciatura em Artes Plásticas do CEART/UDESC; criou e coordenou o Espaço Estético - CA/UFSC e atuou na Rede Arte na Escola. Foi membro da diretoria da Associação de Arte Educadores do Estado de SC, membro fundador do Comitê do Programa Arte Sem Barreira SC e integrante do Grupo de Pesquisa Núcleo Infância Comunicação, Cultura e Arte - NICA (CNPq)/UFSC. Possui diversas publicações sobre Arte e seu Ensino."
   },
   "maria-cristina-diederichsen": {
-    "nome": "Maria Cristina Diederichsen"
+    "nome": "Maria Cristina Diederichsen",
+    "instituicao": "Ufsc",
+    "foto": "maria-cristina-diederichsen.webp",
+    "bio": "Doutora em Educação pelo CED/UFSC, e licenciada em Artes Visuais pelo CEART/UDESC, foi professora de Artes Visuais por mais de 30 anos, em diversas escolas, em São Paulo e em Florianópolis. Trabalhou com crianças e adolescentes, enfatizando a criação de uma ética e uma poética da existência e o processo de se \"fazer da vida uma obra de arte\". Dedica-se, atualmente, a atividades artísticas, em cerâmica, papel machê e aquarela."
   },
   "karin-zapelini": {
-    "nome": "Karin Zapelini Orofino"
+    "nome": "Karin Zapelini Orofino",
+    "instituicao": "Ufsc",
+    "foto": "karin-zapelini.webp",
+    "bio": "Doutora em Educação pela Universidade Federal de Santa Catarina (UFSC), mestre em Artes Visuais pela Universidade do Estado de Santa Catarina (UDESC), licenciada em Artes Visuais (UDESC) e bacharel em Design Gráfico (UFSC). Atua na interface entre arte, educação e formação docente, com especial interesse em infância, estética e processos criativos. Atualmente é cofundadora da Revoada, iniciativa dedicada à formação e mentoria de educadoras da infância."
   }
 }
