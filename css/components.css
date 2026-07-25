@@ -598,6 +598,10 @@ img {
   color: rgba(240, 240, 255, 0.84);
 }
 
+.section--red .section-body {
+  color: rgba(240, 240, 255, 0.84);
+}
+
 /* ─── Botão outline em fundo escuro ─────────────────────── */
 .button--outline-ice {
   background: transparent;
