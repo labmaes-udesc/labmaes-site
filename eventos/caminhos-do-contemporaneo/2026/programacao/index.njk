@@ -49,7 +49,7 @@ description: Programação completa do 7º Seminário Caminhos do Contemporâneo
     </div>
   </article>
   {% else %}
-  <details class="prog-card{% if a.destaque %} prog-card--destaque{% endif %}" open>
+  <details class="prog-card{% if a.destaque %} prog-card--destaque{% endif %}{% if a.aninhado %} prog-card--aninhado{% endif %}" open>
     <summary class="prog-card__summary">
       <div class="prog-card__slot">{% if a.hora %}<p class="prog-card__time">{{ a.hora }}</p>{% endif %}</div>
       <div class="prog-card__head">
@@ -71,6 +71,23 @@ description: Programação completa do 7º Seminário Caminhos do Contemporâneo
         {% for p in a.participantes %}{{ participante(p) }}{% endfor %}
       </ul>
       {% endif %}
+      {% if a.programa and a.programa | length %}
+      <div class="prog-programa">
+        <p class="prog-programa__cab">Apresentações</p>
+        <ol class="prog-programa__lista">
+          {% for it in a.programa %}
+          <li class="prog-programa__item">
+            <span class="prog-programa__hora">{{ it.hora }}</span>
+            <span class="prog-programa__txt">
+              <span class="prog-programa__titulo">{{ it.titulo }}</span>
+              {% if it.autores %}<span class="prog-programa__autores">{{ it.autores }}</span>{% endif %}
+            </span>
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+      {% endif %}
+      {% if a.grupoNota %}<p class="prog-card__gruponota">{{ a.grupoNota }}</p>{% endif %}
     </div>
   </details>
   {% endif %}

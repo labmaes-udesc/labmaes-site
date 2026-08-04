@@ -161,7 +161,7 @@
     "bio": "Mestrando na linha de Ensino das Artes Visuais (PPGAV/Udesc), com pesquisa sobre práticas e processos de criação visual no campo expandido da Moda. É bacharel em Moda e técnico em produção de vestuário."
   },
   "nani-da-fonseca": {
-    "nome": "Profa. Dra. Nani da Fonseca",
+    "nome": "Profa. Dra. Annelise Nani da Fonseca",
     "instituicao": "UFJF",
     "foto": "nani-da-fonseca.webp",
     "bio": "Artista, professora e pesquisadora. Atualmente trabalha como professora adjunta do Instituto de Artes e Design (IAD), como docente da Especialização Moda, Arte e Cultura e na Pós-Graduação em Educação, Educação Brasileira: Gestão e Práticas Pedagógicas, ambas na Universidade Federal de Juiz de Fora (UFJF). Doutora em Arte, mestre em Design (2011), bacharel em Moda (2008), bacharel e licenciada em Artes Visuais (2008) e bacharel em Psicologia (2017). Questões recorrentes em sua poética são o cotidiano, o feminismo, a sustentabilidade e a exploração da palavra por meio de técnicas como o bordado e a gravura em uma perspectiva decolonial. Autora do livro \"Criatividade Coletiva\" em parceria com Ana Mae Barbosa."
@@ -277,5 +277,22 @@
     "instituicao": "Ufsc",
     "foto": "karin-zapelini.webp",
     "bio": "Doutora em Educação pela Universidade Federal de Santa Catarina (UFSC), mestre em Artes Visuais pela Universidade do Estado de Santa Catarina (UDESC), licenciada em Artes Visuais (UDESC) e bacharel em Design Gráfico (UFSC). Atua na interface entre arte, educação e formação docente, com especial interesse em infância, estética e processos criativos. Atualmente é cofundadora da Revoada, iniciativa dedicada à formação e mentoria de educadoras da infância."
+  },
+  "nara-guichon": {
+    "nome": "Nara Guichon"
+  },
+  "trajes-acorianos": {
+    "nome": "Trajes Açorianos: quando o tecido, a forma e a cor nos fazem pensar",
+    "instituicao": "Grupo Arcos · Museu Etnográfico Casa dos Açores",
+    "bio": "Exposição dos 8 trajes açorianos do Grupo Arcos, salvaguardados pelo Museu Etnográfico Casa dos Açores (Fundação Catarinense de Cultura). A partir da história da ocupação açoriana da Ilha de Santa Catarina — antiga Desterro —, os trajes convocam à reflexão sobre memória e identidade: mulheres que fiavam, teciam e cantavam permanecem em reminiscências nestes referentes construídos em tecido, modelagem e cor, entre tradições inventadas e uma identidade local formulada entre interesses turísticos, nostalgias e vontades de pertencimento."
+  },
+  "adriana-fresquet": {
+    "nome": "Profa. Dra. Adriana Fresquet",
+    "instituicao": "UFRJ",
+    "bio": "Organizadora da Coleção Cinemas e Educações."
+  },
+  "maira-norton": {
+    "nome": "Dra. Maíra Norton",
+    "bio": "Realizadora e educadora audiovisual. Desde 2008 trabalha com oficinas de cinema em escolas públicas e espaços comunitários, buscando contribuir com a produção de narrativas autônomas. Coordenadora do projeto Cine Mulher Paraty e da Enciclopédia Audiovisual de Mulheres em Paraty. Autora dos livros Cinemas Comunitários Feministas na América Latina (Multifoco, 2023) e Cinema Oficina: técnica e criatividade no ensino do audiovisual (Eduff, 2011). Graduada em Comunicação Social pela UFRJ, mestre em Artes pela UFF e doutora em Educação pela UFRJ. Integrante do CINEAD/UFRJ e da Rede Kino."
   }
 }
