@@ -28,6 +28,17 @@ export default function (eleventyConfig) {
     return (primeira + ultima).toUpperCase();
   });
 
+  // Ordena participantes de um card colocando mediadores/mediadoras por último
+  eleventyConfig.addFilter("ordenarParticipantes", (participantes) => {
+    if (!Array.isArray(participantes)) return participantes;
+    const ehMediador = (p) =>
+      typeof p.papel === "string" && /media/i.test(p.papel);
+    return [
+      ...participantes.filter((p) => !ehMediador(p)),
+      ...participantes.filter((p) => ehMediador(p)),
+    ];
+  });
+
   // Índice de cor 1..6 derivado de forma estável do slug
   eleventyConfig.addFilter("corAvatar", (slug) => {
     if (!slug) return 1;

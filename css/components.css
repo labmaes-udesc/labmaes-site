@@ -2176,8 +2176,7 @@ img {
 /* Card recuado: atividade que integra um bloco maior (ex.: noite de abertura) */
 .prog-card--aninhado {
   margin-left: var(--space-24);
-  border-left: 3px solid rgba(48, 42, 102, 0.18);
-  background: rgba(48, 42, 102, 0.02);
+  border-left: 3px solid var(--color-brand-blue);
 }
 .prog-card__gruponota {
   margin: var(--space-8) 0 0;
