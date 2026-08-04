@@ -977,6 +977,50 @@ img {
   white-space: nowrap;
 }
 
+/* ─── Lista de etapas numeradas (próximas etapas CO/PO) ──── */
+.etapas-list {
+  list-style: none;
+  counter-reset: etapa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  flex-grow: 1;
+}
+.etapas-list > li {
+  counter-increment: etapa;
+  position: relative;
+  padding-left: 40px;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  color: rgba(48, 42, 102, 0.82);
+}
+.etapas-list > li::before {
+  content: counter(etapa);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  background: var(--color-brand-red);
+  color: var(--color-white);
+  font-family: var(--font-event);
+  font-size: 13px;
+  font-weight: 700;
+}
+.etapas-list strong { color: var(--color-brand-blue); }
+.etapa-hint {
+  margin: 2px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(48, 42, 102, 0.62);
+}
+
 /* ─── Grid de normas gerais (2 colunas) ──────────────────── */
 .normas-grid {
   display: grid;
