@@ -241,7 +241,7 @@
             "tag": "tag--blue",
             "titulo": "Do texto ao têxtil",
             "modalidade": "presencial",
-            "local": "BC 101",
+            "local": "Sala Maker BU",
             "ementa": "A oficina propõe experimentações para investigar as relações entre a palavra escrita e a materialidade têxtil. Tendo como partida a raiz etimológica que une texto e têxtil, a proposição convida os participantes a ativar a sensibilidade visual e tátil a partir da leitura e despedaçamento das palavras poéticas. Consideram-se práticas artísticas contemporâneas para que a palavra deixe de ocupar um lugar de escrita verbal, ganhando sentido pelo corpo, textura, dimensionalidade, ritmo etc., e acionando as relações integradoras entre fazer textual e fazer manual.",
             "link": {
               "texto": "Ver inscrição e materiais →",
@@ -264,7 +264,7 @@
     "secao": "section--ice",
     "atividades": [
       {
-        "hora": "9h30",
+        "hora": "9h",
         "tipo": "Mediação",
         "tag": "tag--blue",
         "modalidade": "presencial",
@@ -277,7 +277,7 @@
         ]
       },
       {
-        "hora": "10h–12h",
+        "hora": "9h30–12h",
         "tipo": "Mesa Temática",
         "tag": "tag--blue",
         "titulo": "Olhares e reflexões sobre a pesquisa e a formação em cinema, arte e educação",
@@ -286,7 +286,8 @@
         "ementa": "A mesa propõe uma articulação com as discussões desenvolvidas pelo Grupo de Pesquisa Núcleo Infância, Comunicação, Cultura e Arte (NICA/UFSC/CNPq), especialmente no campo das relações entre cinema, educação e mídia-educação. Nesse contexto, serão apresentadas reflexões e experiências reunidas na temática “Cinema e educação na escola, na pesquisa e na formação docente: experiências e desafios de pensar e praticar cinema na perspectiva da mídia-educação”, evidenciando aproximações entre processos formativos e a construção de experiências educativas mediadas pelo audiovisual. Ao promover o diálogo entre pesquisa, ensino e extensão, a mesa busca contribuir para o debate sobre formas alternativas de produção, circulação e apropriação do cinema, enfatizando a relevância das práticas comunitárias e educativas para a construção de uma cultura audiovisual crítica e participativa no cenário contemporâneo.",
         "participantes": [
           {
-            "slug": "monica-fantin"
+            "slug": "monica-fantin",
+            "papel": "mediadora"
           },
           {
             "slug": "jose-douglas"
@@ -316,7 +317,7 @@
         "hora": "13h30–15h",
         "tipo": "Comunicações Orais",
         "tag": "tag--blue",
-        "titulo": "1ª Sessão de C.O. (1A) — Tecendo entre design e artes",
+        "titulo": "1ª Sessão de C.O. — Tecendo entre design e artes",
         "modalidade": "presencial",
         "local": "Auditório",
         "ementa": "Sessão dedicada aos processos de criação, ensino e metodologia nas artes, no design e na moda. As comunicações abordam a criação e a avaliação no ensino obrigatório das artes, a crítica ao “projetiquês” no ensino de moda, uma experiência de design têxtil na indústria de malharia centrada em relevos de superfície e a construção recursiva do método em pesquisa sobre criação em Moda. O debate final articula as tensões entre método, criatividade e prática projetual no ensino e na indústria.",
@@ -434,42 +435,10 @@
         "titulo": "Blue Moon",
         "modalidade": "presencial",
         "local": "Auditório da Música",
-        "ementa": "A banda Blue Moon participa da programação do 7º Seminário Caminhos do Contemporâneo com uma apresentação musical que propõe um momento de integração entre arte, cultura e convivência, valorizando a música como linguagem artística e como espaço de encontro, troca e aproximação entre participantes, convidados e comunidade."
-      },
-      {
-        "hora": "17h30–19h",
-        "tipo": "Comunicações Orais",
-        "tag": "tag--blue",
-        "titulo": "1ª Sessão de C.O. (1B) — Tecendo entre design e artes",
-        "modalidade": "presencial",
-        "local": "Auditório",
-        "ementa": "Sessão centrada na educação do olhar, na mediação cultural e nas práticas extensionistas em contextos escolares e artísticos. Os trabalhos tratam da alfabetização audiovisual na escola, da educomunicação e formação docente, da mediação entre o livro ilustrado e as exposições, e de uma experiência extensionista de confecção de figurinos para teatro infantil. O debate final promove o diálogo entre educação, imagem e materialidade têxtil como formas de mediação.",
+        "ementa": "A banda Blue Moon participa da programação do 7º Seminário Caminhos do Contemporâneo com uma apresentação musical que propõe um momento de integração entre arte, cultura e convivência, valorizando a música como linguagem artística e como espaço de encontro, troca e aproximação entre participantes, convidados e comunidade.",
         "participantes": [
           {
-            "slug": "ivis-aguiar",
-            "papel": "mediação"
-          }
-        ],
-        "programa": [
-          {
-            "hora": "17h40",
-            "autores": "Monica Rodrigues",
-            "titulo": "Leituras de mundo por imagens em movimento: educação do olhar e alfabetização audiovisual na escola"
-          },
-          {
-            "hora": "17h55",
-            "autores": "Andrei Galkowski",
-            "titulo": "Educomunicação, audiovisual e formação docente na rede municipal de educação de São Paulo"
-          },
-          {
-            "hora": "18h10",
-            "autores": "Leticia Lidia Voltolini; Marilia Goldschmidt Labes",
-            "titulo": "Lá Longe, onde tudo começa: pensando um percurso de mediação entre livro ilustrado e exposições"
-          },
-          {
-            "hora": "18h25",
-            "autores": "Paula Piva Linke; Valdecir Babinski Junior; Geovana Nascimento Martins",
-            "titulo": "A confecção de figurinos alegóricos para uma peça de teatro infantil: uma experiência extensionista"
+            "slug": "vinicius-vicente"
           }
         ]
       },
@@ -478,29 +447,6 @@
         "paralelas": [
           {
             "tipo": "Oficina 3",
-            "tag": "tag--blue",
-            "titulo": "Desenhando com linhas",
-            "modalidade": "presencial",
-            "local": "BC 102",
-            "ementa": "A oficina-performance “Desenhando com Linhas” propõe uma investigação sensível do desenho a partir do uso de fios, linhas e materiais têxteis como linguagem estética, corporal e afetiva. Por meio de práticas experimentais e coletivas, os participantes serão convidados a explorar o desenho para além da representação, ativando percepções táteis, espaciais e relacionais. A oficina articula referências entre arte, moda, corpo e tessitura, estimulando processos de criação a partir da manipulação intuitiva de diferentes materiais lineares.",
-            "link": {
-              "texto": "Ver inscrição e materiais →",
-              "href": "/eventos/caminhos-do-contemporaneo/2026/oficinas/"
-            },
-            "participantes": [
-              {
-                "slug": "camila-franca"
-              },
-              {
-                "slug": "emanoela-mardula"
-              },
-              {
-                "slug": "valdecir-babinski"
-              }
-            ]
-          },
-          {
-            "tipo": "Oficina 4",
             "tag": "tag--blue",
             "titulo": "A teia e a trama da paisagem: entrelaçar saberes",
             "modalidade": "presencial",
@@ -519,6 +465,38 @@
               },
               {
                 "slug": "ivis-aguiar"
+              }
+            ]
+          },
+          {
+            "tipo": "Oficina 4",
+            "tag": "tag--blue",
+            "titulo": "Desenhando com linhas",
+            "modalidade": "presencial",
+            "local": "BC 102 e ESPINE",
+            "ementa": "A oficina-performance “Desenhando com Linhas” propõe uma investigação sensível do desenho a partir do uso de fios, linhas e materiais têxteis como linguagem estética, corporal e afetiva. Por meio de práticas experimentais e coletivas, os participantes serão convidados a explorar o desenho para além da representação, ativando percepções táteis, espaciais e relacionais. A oficina articula referências entre arte, moda, corpo e tessitura, estimulando processos de criação a partir da manipulação intuitiva de diferentes materiais lineares.",
+            "link": {
+              "texto": "Ver inscrição e materiais →",
+              "href": "/eventos/caminhos-do-contemporaneo/2026/oficinas/"
+            },
+            "participantes": [
+              {
+                "slug": "camila-franca"
+              },
+              {
+                "slug": "emanoela-mardula"
+              },
+              {
+                "slug": "maria-eduarda-goncalves"
+              },
+              {
+                "slug": "maria-helena-garbin"
+              },
+              {
+                "slug": "geovana-martines"
+              },
+              {
+                "slug": "valdecir-babinski"
               }
             ]
           }
@@ -669,8 +647,7 @@
             "ementa": "A mesa propõe um diálogo a partir dos curtas-metragens selecionados para a Mostra Audiovisual Narrativas em Movimento, tomando como eixo as relações entre cinema, território, trabalho, memórias, ancestralidade e os olhares sensíveis produzidos no contexto escolar. A partir do percurso curatorial da mostra, serão apresentadas as aproximações, recorrências e problematizações que atravessam as obras selecionadas, evidenciando como diferentes experiências audiovisuais constroem narrativas enraizadas em seus contextos socioculturais.",
             "participantes": [
               {
-                "slug": "andrei-galkowski",
-                "papel": "mediador"
+                "slug": "andrei-galkowski"
               },
               {
                 "slug": "karine-joulie"
@@ -689,7 +666,7 @@
             "tag": "tag--blue",
             "titulo": "Do saber ao produto: criatividade, património, cultura e trabalho nas indústrias criativas",
             "modalidade": "online",
-            "local": "Zoom – transmissão no Auditório",
+            "local": "Zoom – transmissão no ESPINE",
             "ementa": "Partindo da premissa de que o saber — particularmente quando ancorado em práticas culturais e patrimoniais — não é um dado estático, mas uma força motriz em permanente transformação, esta mesa-redonda propõe um diálogo transdisciplinar sobre os processos que convertem conhecimentos tradicionais, técnicos, históricos e experimentais em produtos culturais criativos. Ao fazê-lo, tensiona as fronteiras entre passado e futuro, memória e inovação, artesanato e indústria. Mais do que evidenciar o património como fonte de criatividade, o debate interroga o papel mediador do design, da indústria e das políticas culturais na tradução material, económica e simbólica desses saberes. Num momento em que as indústrias criativas buscam caminhos mais sustentáveis e significativos, esta conversa revela-se essencial para repensar o futuro do trabalho, da produção e da criatividade.",
             "participantes": [
               {
@@ -713,6 +690,43 @@
                 "titulo_fala": "Projetar após o extrativismo: novas materialidades e futuros regenerativos"
               }
             ]
+          }
+        ]
+      },
+      {
+        "hora": "17h30–19h",
+        "tipo": "Comunicações Orais",
+        "tag": "tag--blue",
+        "titulo": "2ª Sessão de C.O. — Tecendo entre design e artes",
+        "modalidade": "presencial",
+        "local": "Auditório",
+        "ementa": "Sessão centrada na educação do olhar, na mediação cultural e nas práticas extensionistas em contextos escolares e artísticos. Os trabalhos tratam da alfabetização audiovisual na escola, da educomunicação e formação docente, da mediação entre o livro ilustrado e as exposições, e de uma experiência extensionista de confecção de figurinos para teatro infantil. O debate final promove o diálogo entre educação, imagem e materialidade têxtil como formas de mediação.",
+        "participantes": [
+          {
+            "slug": "ivis-aguiar",
+            "papel": "coordenação"
+          }
+        ],
+        "programa": [
+          {
+            "hora": "17h40",
+            "autores": "Monica Rodrigues",
+            "titulo": "Leituras de mundo por imagens em movimento: educação do olhar e alfabetização audiovisual na escola"
+          },
+          {
+            "hora": "17h55",
+            "autores": "Andrei Galkowski",
+            "titulo": "Educomunicação, audiovisual e formação docente na rede municipal de educação de São Paulo"
+          },
+          {
+            "hora": "18h10",
+            "autores": "Leticia Lidia Voltolini; Marilia Goldschmidt Labes",
+            "titulo": "Lá Longe, onde tudo começa: pensando um percurso de mediação entre livro ilustrado e exposições"
+          },
+          {
+            "hora": "18h25",
+            "autores": "Paula Piva Linke; Valdecir Babinski Junior; Geovana Nascimento Martins",
+            "titulo": "A confecção de figurinos alegóricos para uma peça de teatro infantil: uma experiência extensionista"
           }
         ]
       }
@@ -752,10 +766,10 @@
         ]
       },
       {
-        "hora": "14h–16h10",
+        "hora": "14h–16h",
         "tipo": "Comunicações Orais",
         "tag": "tag--blue",
-        "titulo": "2ª Sessão de C.O. — Olhares em trânsito: arte, identidade e vestuário marginais",
+        "titulo": "3ª Sessão de C.O. — Olhares em trânsito: arte, identidade e vestuário marginais",
         "modalidade": "online",
         "local": "Zoom",
         "ementa": "Esta sessão reúne pesquisas interdisciplinares que discutem experiências e processos para desvelar narrativas locais e globais. Articulam o corpo, o vestir, a arte e os espaços como possibilidades de investigação crítica e sensível, captando fragmentos do contemporâneo e provocando debates urgentes sobre identidade e protagonismo, relações ecossistêmicas, ensino, cultura e sociedade.",
@@ -873,13 +887,12 @@
     "atividades": [
       {
         "hora": "18h",
-        "tipo": "Encerramento",
-        "tag": "tag--red",
-        "destaque": true,
-        "titulo": "Encerramento do evento presencial e Mostra Especial Audiovisual — Sessão 5: Percepções Conectadas",
+        "tipo": "Mostra",
+        "tag": "tag--blue",
+        "titulo": "Mostra Narrativas em Movimento — Sessão Especial: Percepções Conectadas",
         "modalidade": "presencial",
         "local": "Cinema Paradigma",
-        "ementa": "“Hora de dizer até breve.” Encerramento presencial do evento seguido da Mostra Especial Audiovisual Narrativas em Movimento — Sessão 5: Percepções Conectadas: produções audiovisuais que investigam a forma como percebemos o mundo, as escutas e a visibilidade de realidades muitas vezes estigmatizadas.",
+        "ementa": "Sessão especial de encerramento da Mostra Audiovisual Narrativas em Movimento: produções que investigam a forma como percebemos o mundo, as escutas e a visibilidade de realidades muitas vezes estigmatizadas.",
         "link": {
           "texto": "Ver programação completa →",
           "href": "/eventos/caminhos-do-contemporaneo/2026/mostra-audiovisual/"
@@ -889,6 +902,22 @@
             "slug": "monica-rodrigues",
             "papel": "coordenação"
           },
+          {
+            "slug": "andrei-galkowski",
+            "papel": "coordenação"
+          }
+        ]
+      },
+      {
+        "hora": "19h",
+        "tipo": "Encerramento",
+        "tag": "tag--red",
+        "destaque": true,
+        "titulo": "Encerramento do evento",
+        "modalidade": "presencial",
+        "local": "Cinema Paradigma",
+        "ementa": "“Hora de dizer até breve.” Encerramento do 7º Seminário Caminhos do Contemporâneo, após a sessão especial da Mostra Audiovisual.",
+        "participantes": [
           {
             "slug": "mara-rubia"
           }
