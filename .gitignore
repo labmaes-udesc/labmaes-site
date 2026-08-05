@@ -16,3 +16,7 @@ node_modules/
 
 # Artefatos internos do Claude Code (worktrees, config local)
 .claude/
+
+# Python (scripts de preparação de assets em tools/)
+__pycache__/
+*.pyc
