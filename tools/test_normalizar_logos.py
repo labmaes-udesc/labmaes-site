@@ -15,9 +15,11 @@ from normalizar_logos import (
     caixa_de_tinta,
     remover_fundo,
     dimensoes_por_area,
+    normalizar,
     AREA_ALVO,
     ALTURA_MAX,
     LARGURA_MAX,
+    CAIXA,
 )
 
 
@@ -111,6 +113,64 @@ class TestDimensoesPorArea(unittest.TestCase):
 
         self.assertGreaterEqual(largura, 1)
         self.assertGreaterEqual(altura, 1)
+
+
+class TestNormalizar(unittest.TestCase):
+    def _marca_deitada(self):
+        im = Image.new("RGB", (800, 600), (255, 255, 255))
+        ImageDraw.Draw(im).rectangle([100, 250, 639, 349], fill=(0, 80, 160))
+        return im
+
+    def _marca_quadrada(self):
+        im = Image.new("RGB", (400, 400), (255, 255, 255))
+        ImageDraw.Draw(im).ellipse([50, 50, 349, 349], fill=(160, 0, 0))
+        return im
+
+    def test_saida_tem_sempre_a_mesma_caixa(self):
+        """Duas marcas de proporções opostas saem no mesmo canvas."""
+        a = normalizar(self._marca_deitada())
+        b = normalizar(self._marca_quadrada())
+
+        self.assertEqual(a.size, CAIXA)
+        self.assertEqual(b.size, CAIXA)
+
+    def test_saida_e_rgba(self):
+        self.assertEqual(normalizar(self._marca_deitada()).mode, "RGBA")
+
+    def test_desenho_fica_centrado_na_caixa(self):
+        saida = normalizar(self._marca_quadrada())
+        caixa = caixa_de_tinta(saida)
+
+        folga_esquerda = caixa[0]
+        folga_direita = CAIXA[0] - caixa[2]
+        folga_topo = caixa[1]
+        folga_base = CAIXA[1] - caixa[3]
+
+        self.assertLessEqual(abs(folga_esquerda - folga_direita), 2)
+        self.assertLessEqual(abs(folga_topo - folga_base), 2)
+
+    def test_cantos_da_caixa_sao_transparentes(self):
+        saida = normalizar(self._marca_deitada())
+
+        self.assertEqual(saida.getpixel((0, 0))[3], 0)
+        self.assertEqual(saida.getpixel((CAIXA[0] - 1, CAIXA[1] - 1))[3], 0)
+
+    def test_proporcao_da_marca_nao_muda(self):
+        """A regra inegociável: nenhuma logo pode distorcer."""
+        original = self._marca_deitada()
+        caixa_original = caixa_de_tinta(original)
+        proporcao_original = (
+            (caixa_original[2] - caixa_original[0])
+            / (caixa_original[3] - caixa_original[1])
+        )
+
+        saida = normalizar(original)
+        caixa_saida = caixa_de_tinta(saida)
+        proporcao_saida = (
+            (caixa_saida[2] - caixa_saida[0]) / (caixa_saida[3] - caixa_saida[1])
+        )
+
+        self.assertAlmostEqual(proporcao_saida, proporcao_original, delta=0.08)
 
 
 if __name__ == "__main__":

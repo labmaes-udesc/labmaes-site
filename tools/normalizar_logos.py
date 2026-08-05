@@ -106,3 +106,40 @@ def dimensoes_por_area(largura_tinta: int, altura_tinta: int) -> tuple:
         largura = LARGURA_MAX
 
     return max(1, round(largura)), max(1, round(altura))
+
+
+# Fator de densidade da saída: 2x para telas retina.
+ESCALA = 2
+# Caixa uniforme de todos os arquivos gerados, em px reais.
+CAIXA = (LARGURA_MAX * ESCALA, ALTURA_MAX * ESCALA)
+
+
+def normalizar(im: Image.Image, upscale: int = 1) -> Image.Image:
+    """Pipeline completo: recorte, alfa, escala por área e caixa uniforme.
+
+    `upscale` amplia a origem antes de tudo, para marcas cuja resolução
+    de partida é insuficiente. Use com parcimônia e confira o resultado
+    a olho: ampliação não cria detalhe que não existe.
+    """
+    if upscale > 1:
+        im = im.resize(
+            (im.size[0] * upscale, im.size[1] * upscale), Image.LANCZOS
+        )
+
+    sem_fundo = remover_fundo(im)
+    recortada = sem_fundo.crop(caixa_de_tinta(sem_fundo))
+
+    largura, altura = dimensoes_por_area(recortada.size[0], recortada.size[1])
+    redimensionada = recortada.resize(
+        (largura * ESCALA, altura * ESCALA), Image.LANCZOS
+    )
+
+    tela = Image.new("RGBA", CAIXA, (0, 0, 0, 0))
+    tela.paste(
+        redimensionada,
+        (
+            (CAIXA[0] - redimensionada.size[0]) // 2,
+            (CAIXA[1] - redimensionada.size[1]) // 2,
+        ),
+    )
+    return tela
