@@ -71,6 +71,33 @@ class TestRemoverFundo(unittest.TestCase):
 
         self.assertEqual(saida.getpixel((25, 50))[3], 255)
 
+    def test_traco_fino_escuro_sobrevive(self):
+        """Regressão: a erosão do halo apagava texto fino de 1px.
+
+        Um traço de 1 px em cinza médio é o que sobra de uma letra de
+        texto secundário num original de ~150 px.
+        """
+        im = Image.new("RGB", (100, 100), (255, 255, 255))
+        ImageDraw.Draw(im).line([(10, 50), (89, 50)], fill=(150, 150, 150), width=1)
+
+        saida = remover_fundo(im)
+
+        self.assertGreater(saida.getpixel((50, 50))[3], 128)
+
+    def test_cinza_claro_nao_e_absorvido_pelo_fundo(self):
+        """Regressão: tolerância 40 no floodfill engolia cinza-claro.
+
+        O floodfill do PIL compara pela SOMA das diferenças por canal
+        contra o pixel semente. (245,245,245) soma 30: passava com
+        tolerância 40 e é barrado com 16.
+        """
+        im = Image.new("RGB", (100, 100), (255, 255, 255))
+        ImageDraw.Draw(im).rectangle([40, 40, 59, 59], fill=(245, 245, 245))
+
+        saida = remover_fundo(im)
+
+        self.assertGreater(saida.getpixel((50, 50))[3], 128)
+
     def test_imagem_que_ja_tem_alfa_passa_intacta(self):
         im = Image.new("RGBA", (50, 50), (0, 0, 0, 0))
         ImageDraw.Draw(im).rectangle([10, 10, 39, 39], fill=(10, 20, 30, 255))

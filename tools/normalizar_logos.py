@@ -34,8 +34,10 @@ def caixa_de_tinta(im: Image.Image) -> tuple:
 
 # Cor sentinela usada no preenchimento por inundação. Improvável em logo.
 SENTINELA = (255, 0, 254)
-# Tolerância do preenchimento: absorve o degradê de compressão JPEG.
-TOLERANCIA_FLOOD = 40
+# Tolerância do preenchimento: baixa de propósito. O floodfill do PIL
+# compara cada candidato com o pixel semente, então tolerância alta
+# absorve texto cinza-claro junto com o fundo.
+TOLERANCIA_FLOOD = 16
 
 
 def remover_fundo(im: Image.Image) -> Image.Image:
@@ -66,10 +68,21 @@ def remover_fundo(im: Image.Image) -> Image.Image:
         igual_sentinela = ImageChops.lighter(igual_sentinela, ImageChops.invert(proximo))
     frente = igual_sentinela
 
-    # Come 1px do contorno para eliminar o halo de compressão JPEG, e
-    # suaviza a borda para o reescalonamento posterior não serrilhar.
-    frente = frente.filter(ImageFilter.MinFilter(3))
-    frente = frente.filter(ImageFilter.GaussianBlur(0.6))
+    # Come 1px do contorno para eliminar o halo de compressão JPEG, mas
+    # só onde o pixel é quase-branco: o halo é claro por definição, e
+    # erodir tudo apagava traços finos de texto nos originais pequenos.
+    branco = Image.new("RGB", rgb.size, (255, 255, 255))
+    distancia = ImageChops.difference(rgb, branco).convert("L")
+    nao_branco = distancia.point(lambda v: 255 if v > LIMIAR_BRANCO else 0)
+    erodida = frente.filter(ImageFilter.MinFilter(3))
+    frente = ImageChops.lighter(erodida, ImageChops.multiply(frente, nao_branco))
+
+    # Suaviza a borda para o reescalonamento posterior não serrilhar,
+    # mas só para DENTRO: multiplicar pela máscara dura impede que o
+    # alfa suave ultrapasse o limite real da tinta. Sem isso o desfoque
+    # engorda a caixa ~1px em cada lado, o que distorce a proporção
+    # medida de marcas muito alongadas e deixa um halo fantasma.
+    frente = ImageChops.multiply(frente.filter(ImageFilter.GaussianBlur(0.5)), frente)
 
     saida = rgb.convert("RGBA")
     saida.putalpha(frente)
