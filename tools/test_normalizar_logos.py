@@ -11,7 +11,14 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from PIL import Image, ImageDraw
 
-from normalizar_logos import caixa_de_tinta, remover_fundo
+from normalizar_logos import (
+    caixa_de_tinta,
+    remover_fundo,
+    dimensoes_por_area,
+    AREA_ALVO,
+    ALTURA_MAX,
+    LARGURA_MAX,
+)
 
 
 class TestCaixaDeTinta(unittest.TestCase):
@@ -70,6 +77,40 @@ class TestRemoverFundo(unittest.TestCase):
 
         self.assertEqual(saida.getpixel((2, 2))[3], 0)
         self.assertEqual(saida.getpixel((25, 25)), (10, 20, 30, 255))
+
+
+class TestDimensoesPorArea(unittest.TestCase):
+    def test_marca_larga_atinge_a_area_alvo(self):
+        """Proporção 2,7:1 (como a CAME) não bate em nenhum teto."""
+        largura, altura = dimensoes_por_area(2700, 1000)
+
+        self.assertAlmostEqual(largura * altura, AREA_ALVO, delta=AREA_ALVO * 0.02)
+        self.assertLessEqual(altura, ALTURA_MAX)
+        self.assertLessEqual(largura, LARGURA_MAX)
+
+    def test_proporcao_e_preservada(self):
+        largura, altura = dimensoes_por_area(2700, 1000)
+
+        self.assertAlmostEqual(largura / altura, 2.7, delta=0.05)
+
+    def test_marca_quadrada_e_limitada_pela_altura(self):
+        """Selos e brasões param no teto de altura — é o comportamento correto."""
+        largura, altura = dimensoes_por_area(500, 500)
+
+        self.assertEqual(altura, ALTURA_MAX)
+        self.assertEqual(largura, ALTURA_MAX)
+
+    def test_marca_muito_deitada_e_limitada_pela_largura(self):
+        largura, altura = dimensoes_por_area(4000, 300)
+
+        self.assertEqual(largura, LARGURA_MAX)
+        self.assertLess(altura, ALTURA_MAX)
+
+    def test_nunca_devolve_zero(self):
+        largura, altura = dimensoes_por_area(1, 1)
+
+        self.assertGreaterEqual(largura, 1)
+        self.assertGreaterEqual(altura, 1)
 
 
 if __name__ == "__main__":

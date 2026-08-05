@@ -4,6 +4,8 @@ Recorte, remoção de fundo, escala por área de tinta e caixa uniforme.
 Nenhuma etapa distorce marca: só recorte, escala proporcional e margem
 transparente. Proporções e cores permanecem intactas.
 """
+import math
+
 from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 # Limiar de "quase branco" para detectar fundo em imagens sem alfa.
@@ -72,3 +74,35 @@ def remover_fundo(im: Image.Image) -> Image.Image:
     saida = rgb.convert("RGBA")
     saida.putalpha(frente)
     return saida
+
+
+# Área de tinta alvo, em px² a 1x. Calibrada para que uma marca de
+# proporção 2:1 chegue a 44 px de altura.
+AREA_ALVO = 3872
+ALTURA_MAX = 44
+LARGURA_MAX = 150
+
+
+def dimensoes_por_area(largura_tinta: int, altura_tinta: int) -> tuple:
+    """Dimensões de destino que igualam a área de tinta entre marcas.
+
+    Escala pela raiz da razão entre a área atual e a área alvo, e depois
+    aplica os tetos de altura e largura. Na prática marcas quadradas e
+    verticais batem no teto de altura — correto, porque um selo denso de
+    44x44 já pesa mais no olho que um letreiro fino da mesma área.
+
+    A proporção original é sempre preservada.
+    """
+    proporcao = largura_tinta / altura_tinta
+
+    altura = math.sqrt(AREA_ALVO / proporcao)
+    largura = altura * proporcao
+
+    if altura > ALTURA_MAX:
+        largura *= ALTURA_MAX / altura
+        altura = ALTURA_MAX
+    if largura > LARGURA_MAX:
+        altura *= LARGURA_MAX / largura
+        largura = LARGURA_MAX
+
+    return max(1, round(largura)), max(1, round(altura))
