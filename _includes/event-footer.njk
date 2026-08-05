@@ -1,0 +1,30 @@
+<section class="section section--ice event-support" aria-labelledby="creditos-heading">
+  <div class="container">
+    <h2 id="creditos-heading" class="visually-hidden">Realização e apoio</h2>
+
+    <div class="event-support__group">
+      <span class="tag tag--blue">REALIZAÇÃO</span>
+      <ul class="event-support__row">
+        {% for org in apoiadores.realizacao %}
+        <li class="event-support__realizador">
+          <img src="{{ org.arquivo }}" alt="{{ org.nome }}" loading="lazy">
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <hr class="event-support__divisor">
+
+    <div class="event-support__group">
+      <span class="tag tag--red">APOIO</span>
+      <ul class="event-support__grid">
+        {% for org in apoiadores.apoio %}
+        <li class="event-support__celula">
+          <img src="{{ org.arquivo }}" alt="{{ org.nome }}"
+               width="300" height="88" loading="lazy">
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
