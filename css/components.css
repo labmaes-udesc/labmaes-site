@@ -537,42 +537,6 @@ img {
   color: rgba(48, 42, 102, 0.75);
 }
 
-.event-about__realization {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-12);
-  padding: 20px 24px;
-  background: var(--color-white);
-  border: 1px solid rgba(48, 42, 102, 0.12);
-  border-radius: var(--radius-lg);
-}
-
-.event-about__logos {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-12);
-  align-self: flex-start; /* encolhe ao conteúdo — largura = LabMAES */
-}
-
-.event-about__logos-row {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-16);
-}
-
-.event-about__logos-row:first-child img {
-  height: 38px;
-  width: auto;
-  display: block;
-}
-
-/* Divide a largura da linha 1 igualmente entre as duas logos */
-.event-about__logos-row:last-child img {
-  flex: 1;
-  min-width: 0;
-  height: auto;
-}
-
 /* ─── Tag variante ice (fundos escuros) ──────────────────── */
 .tag--ice {
   color: var(--color-brand-ice);
