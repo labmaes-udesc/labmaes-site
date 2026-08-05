@@ -435,12 +435,7 @@
         "titulo": "Blue Moon",
         "modalidade": "presencial",
         "local": "Auditório da Música",
-        "ementa": "A banda Blue Moon participa da programação do 7º Seminário Caminhos do Contemporâneo com uma apresentação musical que propõe um momento de integração entre arte, cultura e convivência, valorizando a música como linguagem artística e como espaço de encontro, troca e aproximação entre participantes, convidados e comunidade.",
-        "participantes": [
-          {
-            "slug": "vinicius-vicente"
-          }
-        ]
+        "ementa": "A banda Blue Moon participa da programação do 7º Seminário Caminhos do Contemporâneo com uma apresentação musical que propõe um momento de integração entre arte, cultura e convivência, valorizando a música como linguagem artística e como espaço de encontro, troca e aproximação entre participantes, convidados e comunidade."
       },
       {
         "hora": "17h30–19h",
