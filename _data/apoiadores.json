@@ -1,0 +1,131 @@
+{
+  "realizacao": [
+    {
+      "slug": "labmaes",
+      "nome": "LabMAES",
+      "arquivo": "/assets/logos/logo-labmaes-vermelho.svg"
+    },
+    {
+      "slug": "udesc-ceart",
+      "nome": "UDESC CEART",
+      "arquivo": "/assets/logos/logo-ceart.svg"
+    },
+    {
+      "slug": "fapesc",
+      "nome": "Fapesc",
+      "arquivo": "/assets/logos/logo-fapesc.svg"
+    }
+  ],
+  "apoio": [
+    {
+      "slug": "abepem",
+      "nome": "ABEPEM",
+      "arquivo": "/assets/logos/logo-abepem.svg"
+    },
+    {
+      "slug": "ufsc",
+      "nome": "Universidade Federal de Santa Catarina",
+      "arquivo": "/assets/logos/apoio/ufsc.webp"
+    },
+    {
+      "slug": "ufrj",
+      "nome": "Universidade Federal do Rio de Janeiro",
+      "arquivo": "/assets/logos/apoio/ufrj.webp"
+    },
+    {
+      "slug": "ifsc",
+      "nome": "Instituto Federal de Santa Catarina",
+      "arquivo": "/assets/logos/apoio/ifsc.webp"
+    },
+    {
+      "slug": "uem",
+      "nome": "Universidade Estadual de Maringá",
+      "arquivo": "/assets/logos/apoio/uem.webp"
+    },
+    {
+      "slug": "feevale",
+      "nome": "Universidade Feevale",
+      "arquivo": "/assets/logos/apoio/feevale.webp"
+    },
+    {
+      "slug": "cesusc",
+      "nome": "Faculdade CESUSC",
+      "arquivo": "/assets/logos/apoio/cesusc.webp"
+    },
+    {
+      "slug": "uniban",
+      "nome": "Universidade Bandeirante de São Paulo",
+      "arquivo": "/assets/logos/apoio/uniban.webp"
+    },
+    {
+      "slug": "mackenzie",
+      "nome": "Universidade Presbiteriana Mackenzie",
+      "arquivo": "/assets/logos/apoio/mackenzie.webp"
+    },
+    {
+      "slug": "umontreal",
+      "nome": "Université de Montréal",
+      "arquivo": "/assets/logos/apoio/umontreal.webp"
+    },
+    {
+      "slug": "uminho",
+      "nome": "Universidade do Minho",
+      "arquivo": "/assets/logos/apoio/uminho.webp"
+    },
+    {
+      "slug": "lusofona",
+      "nome": "Universidade Lusófona",
+      "arquivo": "/assets/logos/apoio/lusofona.webp"
+    },
+    {
+      "slug": "ibero",
+      "nome": "Universidad Iberoamericana",
+      "arquivo": "/assets/logos/apoio/ibero.webp"
+    },
+    {
+      "slug": "moura-lacerda",
+      "nome": "Instituição Universitária Moura Lacerda",
+      "arquivo": "/assets/logos/apoio/moura-lacerda.webp"
+    },
+    {
+      "slug": "belas-artes",
+      "nome": "Centro Universitário Belas Artes de São Paulo",
+      "arquivo": "/assets/logos/apoio/belas-artes.webp"
+    },
+    {
+      "slug": "faeb",
+      "nome": "Federação de Arte Educadores do Brasil",
+      "arquivo": "/assets/logos/apoio/faeb.webp"
+    },
+    {
+      "slug": "aaesc",
+      "nome": "Associação dos Arte Educadores de Santa Catarina",
+      "arquivo": "/assets/logos/apoio/aaesc.webp"
+    },
+    {
+      "slug": "amae",
+      "nome": "AMAE",
+      "arquivo": "/assets/logos/apoio/amae.webp"
+    },
+    {
+      "slug": "came",
+      "nome": "Casa dos Açores — Museu Etnográfico",
+      "arquivo": "/assets/logos/apoio/came.webp"
+    },
+    {
+      "slug": "iema",
+      "nome": "Instituto de Educação, Ciência e Tecnologia do Maranhão",
+      "arquivo": "/assets/logos/apoio/iema.webp"
+    },
+    {
+      "slug": "seduc-bc",
+      "nome": "Secretaria de Educação de Balneário Camboriú",
+      "arquivo": "/assets/logos/apoio/seduc-bc.webp"
+    },
+    {
+      "slug": "cep-edgar-morin",
+      "nome": "Centro de Estudos e Pesquisas Edgar Morin",
+      "arquivo": "/assets/logos/apoio/cep-edgar-morin.webp"
+    }
+  ]
+}
