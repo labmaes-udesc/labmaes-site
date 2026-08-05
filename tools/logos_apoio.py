@@ -22,7 +22,7 @@ APOIO = {
     "uniban":          ("Universidade Bandeirante de São Paulo", "uniban.png"),
     "mackenzie":       ("Universidade Presbiteriana Mackenzie", "mkz.webp"),
     "umontreal":       ("Université de Montréal", "umontreal.webp"),
-    "uminho":          ("Universidade do Minho", "uminho.jfif"),
+    "uminho":          ("Universidade do Minho", "uminho.png"),
     "lusofona":        ("Universidade Lusófona", "uluso.png"),
     "ibero":           ("Universidad Iberoamericana",
                         "universidad-iberoamericana-ibero-logo-vector.png"),
