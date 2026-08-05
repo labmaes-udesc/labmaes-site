@@ -64,8 +64,12 @@ linha centralizada, altura óptica ~56 px, espaçamento `--space-48`.
 **Apoio** — rótulo `.tag.tag--red`; grade CSS:
 
 ```css
-grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
 ```
+
+O mínimo de 156 px vem da caixa uniforme de saída do pipeline: 150 px de largura a 1×,
+mais folga. Uma coluna mais estreita que a caixa faria o `max-width: 100%` encolher a
+logo, quebrando o alinhamento óptico que a caixa uniforme existe para garantir.
 
 Cada célula tem **altura fixa de 72 px** com `place-items: center`; cada logo é limitado a
 `max-height: 44px` e `max-width: 100%`. As colunas refluem sozinhas: ~7 no desktop, 4 no
