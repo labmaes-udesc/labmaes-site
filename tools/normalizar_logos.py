@@ -143,3 +143,37 @@ def normalizar(im: Image.Image, upscale: int = 1) -> Image.Image:
         ),
     )
     return tela
+
+
+def main():
+    import os
+    import sys
+
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from logos_apoio import APOIO, PASTA_ORIGEM, UPSCALE
+
+    raiz = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    destino = os.path.join(raiz, "assets", "logos", "apoio")
+    os.makedirs(destino, exist_ok=True)
+
+    gerados = 0
+    for slug, (nome, arquivo) in APOIO.items():
+        if arquivo is None:
+            print(f"  pulando {slug:<16} (usa SVG versionado)")
+            continue
+
+        origem = os.path.join(PASTA_ORIGEM, arquivo)
+        saida = normalizar(Image.open(origem), upscale=UPSCALE.get(slug, 1))
+        caminho = os.path.join(destino, f"{slug}.webp")
+        saida.save(caminho, "WEBP", quality=92, method=6)
+
+        peso = os.path.getsize(caminho) // 1024
+        marca = " [UPSCALE]" if slug in UPSCALE else ""
+        print(f"  {slug:<16} {saida.size[0]}x{saida.size[1]}  {peso:>3} KB{marca}")
+        gerados += 1
+
+    print(f"\n{gerados} arquivos gravados em assets/logos/apoio/")
+
+
+if __name__ == "__main__":
+    main()
