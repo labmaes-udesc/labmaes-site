@@ -32,6 +32,8 @@ Header, footer e navegação do evento ficam em `_includes/` — editar lá afet
 
 ## Pendências
 
+- **Substituir a logo da AMAE** — `assets/logos/apoio/amae.webp`. O arquivo de origem disponível tem só 98×99 px de tinta, contra os 88 px de altura que a faixa exige em tela retina; foi preciso ampliá-lo em 4×. Ao receber um vetor ou um arquivo maior, coloque-o na pasta de origem, ajuste o nome em `tools/logos_apoio.py`, remova a entrada de `UPSCALE` e rode `python tools/normalizar_logos.py`. Falta também o nome por extenso da instituição para o `alt` (hoje consta só "AMAE").
+- **Corrigir o estouro horizontal do menu do evento** — em telas de 375 a 800 px, `.event-nav__link`, `.event-nav__inscricoes` e `.oficina-card` ultrapassam a largura da janela e provocam rolagem lateral. Defeito preexistente, identificado durante a implementação da faixa de créditos (2026-08-05); a faixa em si não estoura em nenhuma largura testada.
 - **Atualizar o Edital 03 (Mostra Audiovisual)** — `assets/editais/Caminhos_edital_03_MA.pdf`. As cláusulas 2.6 e 2.7 ainda indicam que a inscrição da Mostra é feita pela Even3 ("Modalidade Mostra Audiovisual"). O fluxo mudou para inscrição no evento via Even3 + submissão da obra via Google Forms (refletido na página `/2026/mostra-audiovisual/`). O PDF precisa ser regenerado para evitar novas dúvidas.
 
 ### Melhorias mapeadas na análise crítica (2026-07-02)
