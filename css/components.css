@@ -2261,8 +2261,11 @@ img {
   .event-support__row { gap: var(--space-24); }
   .event-support__realizador img { height: 40px; }
   .event-support__divisor { margin-block: var(--space-32); }
+  /* 96px + vão de 8px cabe 3 colunas em 375px de tela, contra 2 com
+     104px + 16px — corta a faixa de 11 fileiras para 8 no celular. */
   .event-support__grid {
-    grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    gap: var(--space-16) var(--space-8);
   }
   .event-support__celula { height: 56px; }
   .event-support__celula img { max-height: 34px; }
