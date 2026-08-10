@@ -25,34 +25,65 @@ class CabecalhoInvalido(Exception):
 
 
 def classificar_imagens(doc):
-    """Devolve (xrefs de cabeçalho, xrefs de rodapé, {xref: páginas em que ocorre})."""
+    """Devolve (xrefs de cabeçalho, xrefs de rodapé, {xref: páginas em que ocorre}).
+
+    Usa `get_image_info(xrefs=True)`, que reporta apenas as imagens
+    efetivamente desenhadas no stream de conteúdo da página — ao contrário de
+    `get_images(full=True)`, que também lista entradas órfãs do dicionário de
+    recursos (por exemplo, sobras deixadas por `Page.replace_image` depois de
+    `garbage=4`, que trocam o xref desenhado sem remover o antigo dos
+    recursos). Sem esse filtro, um cabeçalho já corrigido pode parecer ter
+    dois xrefs distintos quando na verdade só um está de fato na página.
+    """
     cabecalho = set()
     rodape = set()
     ocorrencias = {}
     for numero, pagina in enumerate(doc):
-        for informacao in pagina.get_images(full=True):
-            xref, largura, altura = informacao[0], informacao[2], informacao[3]
-            if (largura, altura) != (LARGURA_CABECALHO, ALTURA_CABECALHO):
+        for informacao in pagina.get_image_info(xrefs=True):
+            xref = informacao.get("xref")
+            largura, altura = informacao.get("width"), informacao.get("height")
+            if not xref or (largura, altura) != (LARGURA_CABECALHO, ALTURA_CABECALHO):
                 continue
-            for retangulo in pagina.get_image_rects(xref):
-                if retangulo.y0 < Y_MAXIMO_CABECALHO:
-                    cabecalho.add(xref)
-                    ocorrencias.setdefault(xref, set()).add(numero)
-                elif retangulo.y0 > Y_MINIMO_RODAPE:
-                    rodape.add(xref)
+            y0 = informacao["bbox"][1]
+            if y0 < Y_MAXIMO_CABECALHO:
+                cabecalho.add(xref)
+                ocorrencias.setdefault(xref, set()).add(numero)
+            elif y0 > Y_MINIMO_RODAPE:
+                rodape.add(xref)
     return cabecalho, rodape, ocorrencias
+
+
+def _resolver_cabecalho_unico(doc, cabecalho):
+    """Reduz o conjunto de xrefs candidatos a cabeçalho a um único xref.
+
+    `Page.replace_image` altera o objeto do xref globalmente, mas em alguns
+    PDFs reais (exportados de PowerPoint/Word) ele também grava, só na
+    página onde foi chamado, um xref novo com o MESMO conteúdo, deixando o
+    xref antigo como entrada órfã (não desenhada) nos recursos das outras
+    páginas — nunca removida pelo `garbage=4` porque a página ainda a
+    referencia. Isso faz `classificar_imagens` enxergar xrefs distintos que,
+    pixel a pixel, são o mesmo cabeçalho. Só é um cabeçalho "distinto" de
+    verdade quando o conteúdo dos pixels difere.
+    """
+    candidatos = sorted(cabecalho)
+    referencia = amostras(doc, candidatos[0])
+    for outro in candidatos[1:]:
+        if amostras(doc, outro) != referencia:
+            raise CabecalhoInvalido(
+                "%d imagens distintas de cabeçalho: %s" % (len(cabecalho), candidatos)
+            )
+    return candidatos[0]
 
 
 def validar(doc, cabecalho, rodape, ocorrencias):
     """Confere as invariantes e devolve o único xref de cabeçalho."""
     if not cabecalho:
         raise CabecalhoInvalido("nenhuma imagem 794x113 no topo das páginas")
-    if len(cabecalho) > 1:
-        raise CabecalhoInvalido(
-            "%d imagens distintas de cabeçalho: %s" % (len(cabecalho), sorted(cabecalho))
-        )
-    xref = next(iter(cabecalho))
-    faltando = sorted(set(range(len(doc))) - ocorrencias[xref])
+    xref = _resolver_cabecalho_unico(doc, cabecalho)
+    paginas_cobertas = set()
+    for candidato in cabecalho:
+        paginas_cobertas |= ocorrencias.get(candidato, set())
+    faltando = sorted(set(range(len(doc))) - paginas_cobertas)
     if faltando:
         raise CabecalhoInvalido("cabeçalho ausente nas páginas %s" % faltando)
     if not rodape:
@@ -78,11 +109,24 @@ def amostras_do_arquivo(caminho):
 
 
 def corrigir(entrada, saida, mestre):
-    """Grava em `saida` uma cópia de `entrada` com o cabeçalho substituído."""
+    """Grava em `saida` uma cópia de `entrada` com o cabeçalho substituído.
+
+    Alguns resumos guardam o cabeçalho como mais de um objeto de imagem
+    distinto (mesmo conteúdo de pixels, xrefs diferentes) — por exemplo
+    quando o documento foi montado a partir de blocos de páginas de origens
+    diferentes. `Page.replace_image` só altera o objeto identificado pelo
+    xref informado, então é preciso repetir a troca para CADA xref
+    candidato a cabeçalho aceito por `validar`, não só para o canônico —
+    senão as páginas cujo cabeçalho vive num objeto diferente ficam com a
+    data antiga.
+    """
     doc = fitz.open(entrada)
     try:
-        xref = validar(doc, *classificar_imagens(doc))
-        doc[0].replace_image(xref, filename=str(mestre))
+        cabecalho, rodape, ocorrencias = classificar_imagens(doc)
+        xref = validar(doc, cabecalho, rodape, ocorrencias)
+        for candidato in sorted(cabecalho):
+            pagina = next(iter(ocorrencias[candidato]))
+            doc[pagina].replace_image(candidato, filename=str(mestre))
         doc.save(str(saida), garbage=4, deflate=True)
     finally:
         doc.close()
@@ -101,3 +145,51 @@ def conferir(caminho, mestre):
     esperado = amostras_do_arquivo(mestre)
     if obtido != esperado:
         raise CabecalhoInvalido("o cabeçalho de %s não é o mestre" % os.path.basename(caminho))
+
+
+def corrigir_pasta(origem, destino, mestre):
+    """Corrige todos os PDFs de `origem`, preservando os nomes. Devolve (ok, falhas)."""
+    os.makedirs(destino, exist_ok=True)
+    ok = []
+    falhas = []
+    for nome in sorted(os.listdir(origem)):
+        if not nome.lower().endswith(".pdf"):
+            continue
+        entrada = os.path.join(origem, nome)
+        saida = os.path.join(destino, nome)
+        try:
+            texto_antes = [pagina.get_text() for pagina in fitz.open(entrada)]
+            paginas_antes = len(texto_antes)
+            corrigir(entrada, saida, mestre)
+            conferir(saida, mestre)
+            doc = fitz.open(saida)
+            texto_depois = [pagina.get_text() for pagina in doc]
+            doc.close()
+            if texto_depois != texto_antes:
+                raise CabecalhoInvalido("o texto extraído mudou")
+            if len(texto_depois) != paginas_antes:
+                raise CabecalhoInvalido("a contagem de páginas mudou")
+            ok.append(nome)
+            print("OK      %s" % nome)
+        except CabecalhoInvalido as erro:
+            if os.path.exists(saida):
+                os.remove(saida)
+            falhas.append((nome, str(erro)))
+            print("FALHOU  %s — %s" % (nome, erro))
+    return ok, falhas
+
+
+def main(argumentos):
+    if len(argumentos) != 2:
+        print(__doc__)
+        return 2
+    origem, destino = argumentos
+    raiz = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    mestre = os.path.join(raiz, "assets", "graphics", "cabecalho-caminhos-2026.png")
+    ok, falhas = corrigir_pasta(origem, destino, mestre)
+    print("\n%d corrigidos, %d falhas" % (len(ok), len(falhas)))
+    return 1 if falhas else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))
