@@ -16,7 +16,11 @@ from PIL import Image
 
 from corrigir_cabecalho import (
     CabecalhoInvalido,
+    amostras,
+    amostras_do_arquivo,
     classificar_imagens,
+    conferir,
+    corrigir,
     validar,
 )
 
@@ -120,6 +124,70 @@ class TestValidar(unittest.TestCase):
             validar(doc, *classificar_imagens(doc))
 
         self.assertIn("rodapé", str(erro.exception))
+
+
+class TestCorrigir(unittest.TestCase):
+    def setUp(self):
+        self.pasta = tempfile.mkdtemp()
+        self.mestre = os.path.join(self.pasta, "mestre.png")
+        Image.new("RGB", (794, 113), (250, 240, 230)).save(self.mestre)
+
+    def _gravar(self, doc):
+        caminho = os.path.join(self.pasta, "entrada.pdf")
+        doc.save(caminho)
+        return caminho
+
+    def test_troca_o_cabecalho_e_preserva_o_rodape(self):
+        entrada = self._gravar(pdf_sintetico(paginas=3))
+        saida = os.path.join(self.pasta, "saida.pdf")
+
+        corrigir(entrada, saida, self.mestre)
+
+        doc = fitz.open(saida)
+        cabecalho, rodape, ocorrencias = classificar_imagens(doc)
+        xref_cabecalho = validar(doc, cabecalho, rodape, ocorrencias)
+        self.assertEqual(amostras(doc, xref_cabecalho), amostras_do_arquivo(self.mestre))
+        xref_rodape = next(iter(rodape))
+        self.assertEqual(fitz.Pixmap(doc, xref_rodape).pixel(10, 10), (200, 200, 200))
+
+    def test_texto_extraido_nao_muda(self):
+        entrada = self._gravar(pdf_sintetico(paginas=3))
+        saida = os.path.join(self.pasta, "saida.pdf")
+        antes = [p.get_text() for p in fitz.open(entrada)]
+
+        corrigir(entrada, saida, self.mestre)
+
+        self.assertEqual([p.get_text() for p in fitz.open(saida)], antes)
+
+    def test_contagem_de_paginas_nao_muda(self):
+        entrada = self._gravar(pdf_sintetico(paginas=4))
+        saida = os.path.join(self.pasta, "saida.pdf")
+
+        corrigir(entrada, saida, self.mestre)
+
+        self.assertEqual(len(fitz.open(saida)), 4)
+
+    def test_nao_grava_saida_quando_o_documento_e_invalido(self):
+        entrada = self._gravar(pdf_sintetico(paginas=2, rodape=False))
+        saida = os.path.join(self.pasta, "saida.pdf")
+
+        with self.assertRaises(CabecalhoInvalido):
+            corrigir(entrada, saida, self.mestre)
+
+        self.assertFalse(os.path.exists(saida))
+
+    def test_conferir_recusa_arquivo_nao_corrigido(self):
+        entrada = self._gravar(pdf_sintetico(paginas=2))
+
+        with self.assertRaises(CabecalhoInvalido):
+            conferir(entrada, self.mestre)
+
+    def test_conferir_aceita_arquivo_corrigido(self):
+        entrada = self._gravar(pdf_sintetico(paginas=2))
+        saida = os.path.join(self.pasta, "saida.pdf")
+        corrigir(entrada, saida, self.mestre)
+
+        conferir(saida, self.mestre)
 
 
 if __name__ == "__main__":

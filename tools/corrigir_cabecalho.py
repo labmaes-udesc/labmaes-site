@@ -60,3 +60,43 @@ def validar(doc, cabecalho, rodape, ocorrencias):
     if xref in rodape:
         raise CabecalhoInvalido("o xref %d aparece como cabeçalho e como rodapé" % xref)
     return xref
+
+
+def amostras(doc, xref):
+    """Bytes decodificados da imagem, sem canal alfa."""
+    pixmap = fitz.Pixmap(doc, xref)
+    if pixmap.alpha:
+        pixmap = fitz.Pixmap(pixmap, 0)
+    return pixmap.samples
+
+
+def amostras_do_arquivo(caminho):
+    pixmap = fitz.Pixmap(caminho)
+    if pixmap.alpha:
+        pixmap = fitz.Pixmap(pixmap, 0)
+    return pixmap.samples
+
+
+def corrigir(entrada, saida, mestre):
+    """Grava em `saida` uma cópia de `entrada` com o cabeçalho substituído."""
+    doc = fitz.open(entrada)
+    try:
+        xref = validar(doc, *classificar_imagens(doc))
+        doc[0].replace_image(xref, filename=str(mestre))
+        doc.save(str(saida), garbage=4, deflate=True)
+    finally:
+        doc.close()
+    return xref
+
+
+def conferir(caminho, mestre):
+    """Levanta CabecalhoInvalido se o PDF não estiver com o cabeçalho mestre."""
+    doc = fitz.open(caminho)
+    try:
+        xref = validar(doc, *classificar_imagens(doc))
+        obtido = amostras(doc, xref)
+    finally:
+        doc.close()
+    esperado = amostras_do_arquivo(mestre)
+    if obtido != esperado:
+        raise CabecalhoInvalido("o cabeçalho de %s não é o mestre" % os.path.basename(caminho))
