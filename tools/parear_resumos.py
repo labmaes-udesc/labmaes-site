@@ -4,8 +4,9 @@ A heurística roda UMA vez, é revisada por gente e o resultado aprovado vira fo
 de verdade. Depois disso o gerador do caderno lê o JSON, nunca a heurística.
 
 Uso (a partir da raiz do repositório):
-    python tools/parear_resumos.py CORRIGIDOS         # só mostra a tabela
-    python tools/parear_resumos.py CORRIGIDOS --gravar  # grava JSON e copia PDFs
+    python tools/parear_resumos.py CORRIGIDOS                    # só mostra a tabela
+    python tools/parear_resumos.py CORRIGIDOS --gravar            # grava JSON e copia PDFs
+    python tools/parear_resumos.py CORRIGIDOS --gravar --forcar   # sobrescreve _data/caderno.json existente
 
 Testes:
     python -m unittest discover -s tools -p "test_*.py" -v
@@ -127,6 +128,8 @@ def arquivos_por_modalidade(pasta_corrigidos):
 
 
 def montar(pasta_corrigidos):
+    # Importado aqui, não no topo do módulo: mantém as funções puras acima
+    # importáveis (e testáveis) em qualquer máquina, mesmo sem PyMuPDF instalado.
     import fitz
 
     programacao = json.load(open(PROGRAMACAO, encoding="utf-8"))
@@ -136,6 +139,14 @@ def montar(pasta_corrigidos):
 
     registros = []
     for indice, item in enumerate(itens):
+        if indice not in escolhido:
+            raise ValueError(
+                "nenhum arquivo disponível para o item %d (modalidade %s, autores %r, "
+                "título %r) — a pasta de corrigidos tem menos arquivos dessa modalidade "
+                "do que a programação exige" % (
+                    item["ordem"], item["modalidade"], item["autores"], item["titulo"],
+                )
+            )
         arquivo, nota = escolhido[indice]
         doc = fitz.open(arquivo)
         paginas = len(doc)
@@ -154,29 +165,42 @@ def montar(pasta_corrigidos):
 
 def imprimir_tabela(registros):
     """Menor confiança primeiro — é onde a revisão humana precisa olhar."""
-    print("%-5s %-6s %-4s %-42s %s" % ("NOTA", "MODAL", "ORD", "PROGRAMAÇÃO (autores)", "ARQUIVO"))
+    largura_autores = max([len("PROGRAMAÇÃO (autores)")] + [len(r["autores"]) for r in registros])
+    formato = "%%-5s %%-6s %%-4s %%-%ds %%s" % largura_autores
+    print(formato % ("NOTA", "MODAL", "ORD", "PROGRAMAÇÃO (autores)", "ARQUIVO"))
+    formato = "%%-5.2f %%-6s %%-4d %%-%ds %%s" % largura_autores
     for registro in sorted(registros, key=lambda r: r["_nota"]):
-        print("%-5.2f %-6s %-4d %-42s %s" % (
+        print(formato % (
             registro["_nota"],
             registro["modalidade"],
             registro["ordem"],
-            registro["autores"][:42],
+            registro["autores"],
             registro["origem"],
         ))
 
 
-def gravar(registros):
-    os.makedirs(DESTINO_RESUMOS, exist_ok=True)
+def gravar(registros, forcar=False, caderno=CADERNO, destino_resumos=DESTINO_RESUMOS, raiz=RAIZ):
+    if os.path.exists(caderno) and not forcar:
+        print(
+            "%s já existe e é a fonte de verdade depois da revisão humana — pode conter "
+            "correções manuais que a heurística não reproduziria. Para não perder essas "
+            "correções, gravar() recusou sobrescrevê-lo. Rode de novo com --forcar se "
+            "tiver certeza de que quer substituir o arquivo." % os.path.relpath(caderno, raiz)
+        )
+        return False
+
+    os.makedirs(destino_resumos, exist_ok=True)
     limpos = []
     for registro in registros:
-        shutil.copyfile(registro["_caminho_origem"], os.path.join(RAIZ, registro["arquivo"]))
+        shutil.copyfile(registro["_caminho_origem"], os.path.join(raiz, registro["arquivo"]))
         limpo = {c: registro[c] for c in registro if not c.startswith("_")}
         limpos.append(limpo)
-    with open(CADERNO, "w", encoding="utf-8", newline="\n") as saida:
+    with open(caderno, "w", encoding="utf-8", newline="\n") as saida:
         json.dump({"itens": limpos}, saida, ensure_ascii=False, indent=2)
         saida.write("\n")
-    print("gravados %d PDFs em %s" % (len(limpos), os.path.relpath(DESTINO_RESUMOS, RAIZ)))
-    print("gravado %s" % os.path.relpath(CADERNO, RAIZ))
+    print("gravados %d PDFs em %s" % (len(limpos), os.path.relpath(destino_resumos, raiz)))
+    print("gravado %s" % os.path.relpath(caderno, raiz))
+    return True
 
 
 def main(argumentos):
@@ -186,7 +210,7 @@ def main(argumentos):
     registros = montar(argumentos[0])
     imprimir_tabela(registros)
     if "--gravar" in argumentos:
-        gravar(registros)
+        gravar(registros, forcar="--forcar" in argumentos)
     return 0
 
 
