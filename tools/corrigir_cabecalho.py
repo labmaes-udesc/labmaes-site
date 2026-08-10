@@ -100,8 +100,17 @@ def validar(doc, cabecalho, rodape, ocorrencias):
     faltando = sorted(set(range(len(doc))) - paginas_cobertas)
     if faltando:
         raise CabecalhoInvalido("cabeçalho ausente nas páginas %s" % faltando)
-    if xref in rodape:
-        raise CabecalhoInvalido("o xref %d aparece como cabeçalho e como rodapé" % xref)
+    # `corrigir` substitui TODOS os xrefs de `cabecalho`, não só o canônico
+    # `xref` (ver `_resolver_cabecalho_unico`/`corrigir`). Por isso a checagem
+    # de colisão com o rodapé precisa cobrir o conjunto inteiro: se checássemos
+    # só `xref`, um candidato pixel-idêntico que também fosse desenhado como
+    # rodapé passaria batido aqui e teria o rodapé sobrescrito pelo mestre
+    # em `corrigir`.
+    colisoes = sorted(cabecalho & rodape)
+    if colisoes:
+        raise CabecalhoInvalido(
+            "o(s) xref(s) %s aparece(m) como cabeçalho e como rodapé" % colisoes
+        )
     return xref
 
 
@@ -178,10 +187,10 @@ def corrigir_pasta(origem, destino, mestre):
             doc = fitz.open(saida)
             texto_depois = [pagina.get_text() for pagina in doc]
             doc.close()
-            if texto_depois != texto_antes:
-                raise CabecalhoInvalido("o texto extraído mudou")
             if len(texto_depois) != paginas_antes:
                 raise CabecalhoInvalido("a contagem de páginas mudou")
+            if texto_depois != texto_antes:
+                raise CabecalhoInvalido("o texto extraído mudou")
             ok.append(nome)
             doc_saida = fitz.open(saida)
             _, rodape_saida, _ = classificar_imagens(doc_saida)
