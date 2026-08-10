@@ -117,8 +117,26 @@ class TestValidar(unittest.TestCase):
 
         self.assertIn("[1]", str(erro.exception))
 
-    def test_recusa_documento_sem_rodape(self):
+    def test_aceita_documento_sem_rodape(self):
+        # Alguns resumos reais (ex.: karine daniela silvana - upcycling.pdf) não
+        # têm nenhuma imagem 794x113 no rodapé. Isso não é motivo para recusar
+        # o documento: a posição já separa cabeçalho de rodapé, então a
+        # ausência de rodapé não cria risco de trocar a imagem errada.
         doc = pdf_sintetico(paginas=2, rodape=False)
+
+        xref = validar(doc, *classificar_imagens(doc))
+
+        self.assertIn(xref, classificar_imagens(doc)[0])
+
+    def test_recusa_cabecalho_que_tambem_aparece_como_rodape(self):
+        # A imagem do cabeçalho não pode também estar desenhada na posição de
+        # rodapé — essa é a checagem que efetivamente protege o rodapé de ser
+        # trocado por engano, já que não exigimos mais que o rodapé exista.
+        doc = fitz.open()
+        pagina = doc.new_page(width=LARGURA_PAGINA, height=ALTURA_PAGINA)
+        imagem = png_solido((10, 20, 30))
+        pagina.insert_image(fitz.Rect(1.3, 0.7, 596.3, 85.3), stream=imagem)
+        pagina.insert_image(fitz.Rect(0, 769, 595, 842), stream=imagem)
 
         with self.assertRaises(CabecalhoInvalido) as erro:
             validar(doc, *classificar_imagens(doc))
@@ -168,7 +186,7 @@ class TestCorrigir(unittest.TestCase):
         self.assertEqual(len(fitz.open(saida)), 4)
 
     def test_nao_grava_saida_quando_o_documento_e_invalido(self):
-        entrada = self._gravar(pdf_sintetico(paginas=2, rodape=False))
+        entrada = self._gravar(pdf_sintetico(paginas=2, pular_cabecalho_em=(1,)))
         saida = os.path.join(self.pasta, "saida.pdf")
 
         with self.assertRaises(CabecalhoInvalido):

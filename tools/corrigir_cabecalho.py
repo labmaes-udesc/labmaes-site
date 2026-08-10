@@ -56,14 +56,16 @@ def classificar_imagens(doc):
 def _resolver_cabecalho_unico(doc, cabecalho):
     """Reduz o conjunto de xrefs candidatos a cabeçalho a um único xref.
 
-    `Page.replace_image` altera o objeto do xref globalmente, mas em alguns
-    PDFs reais (exportados de PowerPoint/Word) ele também grava, só na
-    página onde foi chamado, um xref novo com o MESMO conteúdo, deixando o
-    xref antigo como entrada órfã (não desenhada) nos recursos das outras
-    páginas — nunca removida pelo `garbage=4` porque a página ainda a
-    referencia. Isso faz `classificar_imagens` enxergar xrefs distintos que,
-    pixel a pixel, são o mesmo cabeçalho. Só é um cabeçalho "distinto" de
-    verdade quando o conteúdo dos pixels difere.
+    Em alguns resumos reais, o mesmo cabeçalho já vem duplicado em mais de
+    um objeto de imagem no PDF original — por exemplo `jessica ana cleia -
+    Arte vestível.pdf` guarda o cabeçalho nos xrefs 5 e 44, e `Maria Ivis
+    Valdecir - O design têxtil na indústria.pdf` nos xrefs 5 e 72, os dois
+    casos com conteúdo de pixels idêntico. O motivo mais provável é que
+    esses documentos foram montados juntando páginas de origens diferentes,
+    cada uma trazendo sua própria cópia da mesma imagem de cabeçalho. Isso
+    faz `classificar_imagens` enxergar xrefs distintos que, pixel a pixel,
+    são o mesmo cabeçalho. Só é um cabeçalho "distinto" de verdade quando o
+    conteúdo dos pixels difere.
     """
     candidatos = sorted(cabecalho)
     referencia = amostras(doc, candidatos[0])
@@ -76,7 +78,19 @@ def _resolver_cabecalho_unico(doc, cabecalho):
 
 
 def validar(doc, cabecalho, rodape, ocorrencias):
-    """Confere as invariantes e devolve o único xref de cabeçalho."""
+    """Confere as invariantes e devolve o único xref de cabeçalho.
+
+    Um rodapé de fato presente não é exigido: alguns resumos legítimos não
+    têm nenhuma imagem 794x113 no rodapé (`karine daniela silvana -
+    upcycling.pdf`) ou têm uma imagem de rodapé com outra resolução, como
+    1639x260 (`Beatriz Mara - Narrativas compartilhadas.pdf`) — nenhum dos
+    dois casos corre risco de ter o rodapé trocado por engano, porque a
+    posição (`Y_MAXIMO_CABECALHO` / `Y_MINIMO_RODAPE`) já separa cabeçalho
+    de rodapé, e a checagem abaixo garante que o xref do cabeçalho nunca
+    também apareça como rodapé. Exigir um rodapé 794x113 para aceitar o
+    documento não protegia nada além disso, e rejeitava esses dois PDFs
+    válidos.
+    """
     if not cabecalho:
         raise CabecalhoInvalido("nenhuma imagem 794x113 no topo das páginas")
     xref = _resolver_cabecalho_unico(doc, cabecalho)
@@ -86,8 +100,6 @@ def validar(doc, cabecalho, rodape, ocorrencias):
     faltando = sorted(set(range(len(doc))) - paginas_cobertas)
     if faltando:
         raise CabecalhoInvalido("cabeçalho ausente nas páginas %s" % faltando)
-    if not rodape:
-        raise CabecalhoInvalido("nenhuma imagem de rodapé encontrada")
     if xref in rodape:
         raise CabecalhoInvalido("o xref %d aparece como cabeçalho e como rodapé" % xref)
     return xref
@@ -112,13 +124,14 @@ def corrigir(entrada, saida, mestre):
     """Grava em `saida` uma cópia de `entrada` com o cabeçalho substituído.
 
     Alguns resumos guardam o cabeçalho como mais de um objeto de imagem
-    distinto (mesmo conteúdo de pixels, xrefs diferentes) — por exemplo
-    quando o documento foi montado a partir de blocos de páginas de origens
-    diferentes. `Page.replace_image` só altera o objeto identificado pelo
-    xref informado, então é preciso repetir a troca para CADA xref
-    candidato a cabeçalho aceito por `validar`, não só para o canônico —
-    senão as páginas cujo cabeçalho vive num objeto diferente ficam com a
-    data antiga.
+    distinto no PDF original (mesmo conteúdo de pixels, xrefs diferentes) —
+    provavelmente porque o documento foi montado juntando páginas de
+    origens diferentes, cada uma com sua própria cópia da mesma imagem de
+    cabeçalho (ver `_resolver_cabecalho_unico`). `Page.replace_image` só
+    altera o objeto identificado pelo xref informado, então é preciso
+    repetir a troca para CADA xref candidato a cabeçalho aceito por
+    `validar`, não só para o canônico — senão as páginas cujo cabeçalho
+    vive num objeto diferente ficam com a data antiga.
     """
     doc = fitz.open(entrada)
     try:
@@ -170,7 +183,13 @@ def corrigir_pasta(origem, destino, mestre):
             if len(texto_depois) != paginas_antes:
                 raise CabecalhoInvalido("a contagem de páginas mudou")
             ok.append(nome)
-            print("OK      %s" % nome)
+            doc_saida = fitz.open(saida)
+            _, rodape_saida, _ = classificar_imagens(doc_saida)
+            doc_saida.close()
+            if not rodape_saida:
+                print("OK (sem rodapé) %s" % nome)
+            else:
+                print("OK      %s" % nome)
         except CabecalhoInvalido as erro:
             if os.path.exists(saida):
                 os.remove(saida)
