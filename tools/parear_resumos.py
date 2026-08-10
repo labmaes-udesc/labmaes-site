@@ -112,3 +112,83 @@ def itens_da_programacao(programacao):
                         "titulo": trabalho["titulo"],
                     })
     return itens
+
+
+def arquivos_por_modalidade(pasta_corrigidos):
+    mapa = {}
+    for modalidade in ("PO", "CO"):
+        pasta = os.path.join(pasta_corrigidos, modalidade)
+        mapa[modalidade] = sorted(
+            os.path.join(pasta, nome)
+            for nome in os.listdir(pasta)
+            if nome.lower().endswith(".pdf")
+        )
+    return mapa
+
+
+def montar(pasta_corrigidos):
+    import fitz
+
+    programacao = json.load(open(PROGRAMACAO, encoding="utf-8"))
+    itens = itens_da_programacao(programacao)
+    mapa = arquivos_por_modalidade(pasta_corrigidos)
+    escolhido = parear(itens, mapa)
+
+    registros = []
+    for indice, item in enumerate(itens):
+        arquivo, nota = escolhido[indice]
+        doc = fitz.open(arquivo)
+        paginas = len(doc)
+        doc.close()
+        registro = dict(item)
+        registro["origem"] = os.path.basename(arquivo)
+        registro["arquivo"] = "assets/anais/2026/resumos/" + nome_destino(
+            item["ordem"], item["autores"], item["titulo"]
+        )
+        registro["paginas"] = paginas
+        registro["_nota"] = round(nota, 3)
+        registro["_caminho_origem"] = arquivo
+        registros.append(registro)
+    return registros
+
+
+def imprimir_tabela(registros):
+    """Menor confiança primeiro — é onde a revisão humana precisa olhar."""
+    print("%-5s %-6s %-4s %-42s %s" % ("NOTA", "MODAL", "ORD", "PROGRAMAÇÃO (autores)", "ARQUIVO"))
+    for registro in sorted(registros, key=lambda r: r["_nota"]):
+        print("%-5.2f %-6s %-4d %-42s %s" % (
+            registro["_nota"],
+            registro["modalidade"],
+            registro["ordem"],
+            registro["autores"][:42],
+            registro["origem"],
+        ))
+
+
+def gravar(registros):
+    os.makedirs(DESTINO_RESUMOS, exist_ok=True)
+    limpos = []
+    for registro in registros:
+        shutil.copyfile(registro["_caminho_origem"], os.path.join(RAIZ, registro["arquivo"]))
+        limpo = {c: registro[c] for c in registro if not c.startswith("_")}
+        limpos.append(limpo)
+    with open(CADERNO, "w", encoding="utf-8", newline="\n") as saida:
+        json.dump({"itens": limpos}, saida, ensure_ascii=False, indent=2)
+        saida.write("\n")
+    print("gravados %d PDFs em %s" % (len(limpos), os.path.relpath(DESTINO_RESUMOS, RAIZ)))
+    print("gravado %s" % os.path.relpath(CADERNO, RAIZ))
+
+
+def main(argumentos):
+    if not argumentos:
+        print(__doc__)
+        return 2
+    registros = montar(argumentos[0])
+    imprimir_tabela(registros)
+    if "--gravar" in argumentos:
+        gravar(registros)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))
