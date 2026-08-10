@@ -94,6 +94,7 @@ def conferir(caminho, mestre):
     doc = fitz.open(caminho)
     try:
         xref = validar(doc, *classificar_imagens(doc))
+        # amostras precisa do doc aberto: um Pixmap de documento fechado é inválido
         obtido = amostras(doc, xref)
     finally:
         doc.close()
