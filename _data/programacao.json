@@ -58,10 +58,10 @@
         "tipo": "Lançamento",
         "tag": "tag--blue",
         "aninhado": true,
-        "titulo": "Lançamento de livros: Tecendo novas leituras",
+        "titulo": "Tecendo novas leituras",
         "modalidade": "presencial",
         "local": "Hall do Bloco Amarelo e Básica 02",
-        "ementa": "Lançamento de livros: Coleção Saberes Sensíveis, Educação Estética em Perspectiva e Coleção Cinemas e Educações.",
+        "ementa": "Educação Estética em Perspectiva, Coleção Saberes Sensíveis e Coleção Cinemas e Educações.",
         "livros": {
           "colecoes": [
             {
