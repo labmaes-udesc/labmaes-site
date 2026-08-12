@@ -2208,6 +2208,28 @@ img {
 .prog-programa__titulo { font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--color-brand-blue); }
 .prog-programa__autores { margin-top: 2px; font-size: 13px; color: rgba(48, 42, 102, 0.72); }
 
+/* Lista de livros lançados (card de Lançamento) */
+.prog-livros { margin-top: var(--space-16); }
+.prog-livros__cab {
+  margin: 0 0 var(--space-8);
+  font-family: var(--font-event); font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  color: rgba(48, 42, 102, 0.60);
+}
+.prog-livros__lista { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-16); }
+.prog-livro { padding-left: var(--space-12); border-left: 2px solid rgba(48, 42, 102, 0.12); }
+.prog-livro__titulo { margin: 0; font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--color-brand-blue); }
+.prog-livro__autores { margin: 2px 0 0; font-size: 13px; font-style: italic; color: rgba(48, 42, 102, 0.72); }
+.prog-livro__sinopse { margin: var(--space-8) 0 0; font-size: 14px; line-height: 1.55; color: rgba(48, 42, 102, 0.78); }
+.prog-livro__bios { margin-top: var(--space-8); }
+.prog-livro__bios summary {
+  font-family: var(--font-event); font-size: 13px; font-weight: 700;
+  color: var(--color-brand-red); cursor: pointer;
+}
+.prog-livro__bios-lista { list-style: none; margin: var(--space-8) 0 0; padding: 0; display: grid; gap: var(--space-8); }
+.prog-livro__bios-lista li { font-size: 13px; line-height: 1.55; color: rgba(48, 42, 102, 0.78); }
+.prog-livro__bio-nome { font-weight: 600; color: var(--color-brand-blue); }
+
 .prog-parallel { display: grid; grid-template-columns: 116px 1fr; gap: var(--space-24); align-items: start; }
 .prog-parallel__sessions { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); }
 .prog-parallel__sessions .prog-card__summary { grid-template-columns: 1fr auto; padding: 20px 24px; }

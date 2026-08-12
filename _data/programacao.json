@@ -78,6 +78,68 @@
           {
             "slug": "adriana-fresquet"
           }
+        ],
+        "livros": [
+          {
+            "titulo": "Educação, Cinema e Extensão: reflexões e experiências mídia-educativas em diálogo",
+            "autores": "Monica Fantin, José Douglas Alves dos Santos e Lizyane F. S. Santos Locatelli",
+            "sinopse": "Este livro dialoga sobre perspectivas que definem o cinema como arte, linguagem, mídia, indústria e dispositivo. Reafirma sua relevância como um meio de cultura, comunicação e arte, por meio de propostas mídia-educativas que oferecem uma experiência ética, estética e formativa. Os Projetos de Extensão universitária apresentados revelam o potencial educativo e transformador da linguagem cinematográfica, permitindo a troca de experiências, memórias, sensibilidades e diversas aprendizagens de estudantes e docentes. As propostas educativas, artísticas e culturais com e sobre os filmes são referências que ampliam o repertório cultural, a percepção do mundo, de si e dos outros no âmbito da formação.",
+            "bios": [
+              {
+                "nome": "Monica Fantin",
+                "bio": "Professora Titular no Programa de Pós-Graduação em Educação, da Universidade Federal de Santa Catarina, UFSC. Doutora em Educação pela UFSC com Estágio no Exterior na Università Cattolica del Sacro Cuore, USCS, Milano. Pós-Doutorado em Estética na USCS, Itália em 2016 e na Universitat de Lleida, Espanha em 2022. Líder do Grupo de Pesquisa Núcleo Infância, Comunicação, Cultura e Arte, NICA, UFSC/CNPq. Articula Ensino, Pesquisa e Extensão a partir dos temas da Infância, Cinema e Educação, Cultura Digital, Mídia Educação, Formação Docente e Dimensões Estéticas na Formação."
+              },
+              {
+                "nome": "José Douglas Alves dos Santos",
+                "bio": "Pedagogo e mestre em Educação pela Universidade Federal de Sergipe (UFS). Doutor em Educação pela Universidade Federal de Santa Catarina (UFSC). Pesquisador do Núcleo Infância, Comunicação, Cultura e Arte (NICA, UFSC/CNPq). Tem abordado, no âmbito da pesquisa, a relação das infâncias em diferentes contextos; a experiência estética possibilitada pelos filmes; o cinema no processo formativo (escolar e não-escolar); e a leitura pedagógica de imagens."
+              },
+              {
+                "nome": "Lizyane F. S. Santos Locatelli",
+                "bio": "Doutoranda e mestra em educação (PPGE/UFSC). Especialista em Gestão e Metodologia do Ensino pela Faculdade Dom Bosco, em Educação Infantil pela UFSC, e em Tecnologias da Informação e Comunicação e técnicas de Ensino pela UTFPR. Graduada em Pedagogia pela UFSC (2009). Membro do grupo de Pesquisa Núcleo Infância, Comunicação, Cultura e Arte (NICA, UFSC/CNPq). Professora efetiva da Educação Infantil na Prefeitura Municipal de Florianópolis."
+              }
+            ]
+          },
+          {
+            "titulo": "Matava aula, ia pro cinema: Agnès Varda e o ensaio com as imagens na docência",
+            "autores": "Karine Joulie Martins",
+            "sinopse": "E se Agnès Varda desse aulas para professoras que experimentam o cinema na sala de aula? A experiência, a memória e as imagens que Varda “catava” foram matéria-prima para seus filmes, que ensaiam conexões entre si e o mundo. Suas obras compõem uma pedagogia que, em uma oficina de cinema, dão a ver o que constitui a docência que se desafia a trabalhar com as imagens. Esse encontro inspirou expressões subjetivas que, de certa forma, atuam na restauração do controle estético-político em nossa sociedade. Além disso, contribui para uma compreensão da sala de aula como lugar de ensaio, de curadorias e montagens para criar sentidos com o outro.",
+            "bios": [
+              {
+                "nome": "Karine Joulie Martins",
+                "bio": "Doutora e mestra em Educação e Bacharel em Cinema pela Universidade Federal de Santa Catarina (UFSC). Atua em iniciativas que articulam arte, cinema e educação junto às universidades, produtoras culturais e redes de ensino, desenvolvendo cursos livres, oficinas e mostras. Integrante do Núcleo Infância, Comunicação, Cultura e Arte (NICA, UFSC/CNPq) e do Cinead/Lecav da UFRJ. Atualmente realiza pesquisa de pós-doutorado no Programa de Pós-Graduação em Educação da UFRJ, junto ao CINEAD/LECAV, com financiamento do CNPq."
+              }
+            ]
+          },
+          {
+            "titulo": "Cinemas e educações: práticas, metodologias e aprendizagens na escola e outros espaços — Vol. 1",
+            "autores": "Organizadoras: Adriana Fresquet e Karine Joulie Martins",
+            "sinopse": "Este livro surge a partir do curso de extensão oferecido pelo Grupo de Pesquisa CINEAD/LECAV: Laboratório de Educação, Cinema e Audiovisual, vinculado à Faculdade de Educação da Universidade Federal do Rio de Janeiro (UFRJ), em diálogo com os autores dos livros da coleção Cinemas e Educações, da Editora Multifoco. Os textos são fruto de relatos, reflexões e proposições que emergiram desse encontro com docentes, estudantes e pesquisadores do país e do exterior. O primeiro volume reúne 14 artigos e ensaios que refletem sobre práticas com cinema desenvolvidas em contextos de educação formal e não formal, apostando no cinema como expressão crítica e criativa em debates éticos, étnicos e sociais. A obra apresenta projetos realizados ou em andamento, da educação infantil à formação continuada de professores, envolvendo apreciação e criação cinematográfica em diálogo com ensino, pesquisa e extensão.",
+            "bios": [
+              {
+                "nome": "Adriana Fresquet",
+                "bio": "Professora Titular da Universidade Federal do Rio de Janeiro (UFRJ), coordena o Grupo CINEAD/LECAV e atua na interface entre audiovisual, arte, mídia e educação, afirmando o cinema como experiência de aprender, desaprender e reaprender. Como uma das fundadoras da Rede Kino, contribui para políticas públicas no Brasil e para a integração de projetos latino-americanos de cinema e educação."
+              },
+              {
+                "nome": "Karine Joulie Martins",
+                "bio": "Doutora e mestra em Educação e Bacharel em Cinema pela Universidade Federal de Santa Catarina (UFSC). Atua em iniciativas que articulam arte, cinema e educação junto às universidades, produtoras culturais e redes de ensino, desenvolvendo cursos livres, oficinas e mostras. Atualmente realiza pesquisa de pós-doutorado no Programa de Pós-Graduação em Educação da UFRJ, junto ao CINEAD/LECAV, com financiamento do CNPq."
+              }
+            ]
+          },
+          {
+            "titulo": "Cinemas e educações: reflexões e práticas de territórios, políticas, acervos e resistências — Vol. 2",
+            "autores": "Organizadoras: Adriana Fresquet e Karine Joulie Martins",
+            "sinopse": "Este livro surge a partir do curso de extensão oferecido pelo Grupo de Pesquisa CINEAD/LECAV: Laboratório de Educação, Cinema e Audiovisual, vinculado à Faculdade de Educação da Universidade Federal do Rio de Janeiro (UFRJ), em diálogo com os autores dos livros da coleção Cinemas e Educações, da Editora Multifoco. Os textos são fruto de relatos, reflexões e proposições que emergiram desse encontro com docentes, estudantes e pesquisadores do país e do exterior. O segundo volume reúne 14 textos, incluindo relatos de experiência, ensaios e outros formatos que exploram processos de pesquisa, extensão e análises fílmicas, propondo diálogos com cinematografias diversas. Em ações com cinema no território, a dimensão pessoal e a memória individual são atravessadas pela alteridade.",
+            "bios": [
+              {
+                "nome": "Adriana Fresquet",
+                "bio": "Professora Titular da Universidade Federal do Rio de Janeiro (UFRJ), coordena o Grupo CINEAD/LECAV e atua na interface entre audiovisual, arte, mídia e educação, afirmando o cinema como experiência de aprender, desaprender e reaprender. Como uma das fundadoras da Rede Kino, contribui para políticas públicas no Brasil e para a integração de projetos latino-americanos de cinema e educação."
+              },
+              {
+                "nome": "Karine Joulie Martins",
+                "bio": "Doutora e mestra em Educação e Bacharel em Cinema pela Universidade Federal de Santa Catarina (UFSC). Atua em iniciativas que articulam arte, cinema e educação junto às universidades, produtoras culturais e redes de ensino, desenvolvendo cursos livres, oficinas e mostras. Atualmente realiza pesquisa de pós-doutorado no Programa de Pós-Graduação em Educação da UFRJ, junto ao CINEAD/LECAV, com financiamento do CNPq."
+              }
+            ]
+          }
         ]
       },
       {
