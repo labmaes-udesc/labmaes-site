@@ -88,28 +88,56 @@ description: Programação completa do 7º Seminário Caminhos do Contemporâneo
         </ol>
       </div>
       {% endif %}
-      {% if a.livros and a.livros | length %}
+      {% if a.livros %}
       <div class="prog-livros">
         <p class="prog-livros__cab">Livros lançados</p>
-        <ul class="prog-livros__lista" role="list">
-          {% for livro in a.livros %}
-          <li class="prog-livro">
-            <h4 class="prog-livro__titulo">{{ livro.titulo }}</h4>
-            <p class="prog-livro__autores">{{ livro.autores }}</p>
-            <p class="prog-livro__sinopse">{{ livro.sinopse }}</p>
-            {% if livro.bios and livro.bios | length %}
-            <details class="prog-livro__bios">
-              <summary>Sobre os autores</summary>
-              <ul class="prog-livro__bios-lista" role="list">
-                {% for b in livro.bios %}
-                <li><span class="prog-livro__bio-nome">{{ b.nome }}</span> — {{ b.bio }}</li>
-                {% endfor %}
-              </ul>
-            </details>
-            {% endif %}
-          </li>
-          {% endfor %}
-        </ul>
+        {% for colecao in a.livros.colecoes %}
+        <div class="prog-livros__grupo">
+          <p class="prog-livros__colecao">{{ colecao.nome }}</p>
+          <ul class="prog-livros__lista" role="list">
+            {% for livro in colecao.titulos %}
+            <li class="prog-livro">
+              <h4 class="prog-livro__titulo">{{ livro.titulo }}</h4>
+              <p class="prog-livro__autores">{{ livro.autores }}</p>
+              <p class="prog-livro__sinopse">{{ livro.sinopse }}</p>
+              {% if livro.bios and livro.bios | length %}
+              <details class="prog-livro__bios">
+                <summary>Sobre os autores</summary>
+                <ul class="prog-livro__bios-lista" role="list">
+                  {% for b in livro.bios %}
+                  <li><span class="prog-livro__bio-nome">{{ b.nome }}</span> — {{ b.bio }}</li>
+                  {% endfor %}
+                </ul>
+              </details>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+        {% if a.livros.avulsos and a.livros.avulsos | length %}
+        <div class="prog-livros__grupo">
+          <ul class="prog-livros__lista" role="list">
+            {% for livro in a.livros.avulsos %}
+            <li class="prog-livro">
+              <h4 class="prog-livro__titulo">{{ livro.titulo }}</h4>
+              <p class="prog-livro__autores">{{ livro.autores }}</p>
+              <p class="prog-livro__sinopse">{{ livro.sinopse }}</p>
+              {% if livro.bios and livro.bios | length %}
+              <details class="prog-livro__bios">
+                <summary>Sobre os autores</summary>
+                <ul class="prog-livro__bios-lista" role="list">
+                  {% for b in livro.bios %}
+                  <li><span class="prog-livro__bio-nome">{{ b.nome }}</span> — {{ b.bio }}</li>
+                  {% endfor %}
+                </ul>
+              </details>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
       </div>
       {% endif %}
       {% if a.grupoNota %}<p class="prog-card__gruponota">{{ a.grupoNota }}</p>{% endif %}

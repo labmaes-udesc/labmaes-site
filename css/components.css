@@ -2216,6 +2216,13 @@ img {
   text-transform: uppercase; letter-spacing: 0.04em;
   color: rgba(48, 42, 102, 0.60);
 }
+.prog-livros__grupo { margin-top: var(--space-16); }
+.prog-livros__grupo:first-child { margin-top: 0; }
+.prog-livros__colecao {
+  margin: 0 0 var(--space-8);
+  font-family: var(--font-event); font-size: 13px; font-weight: 700;
+  color: var(--color-brand-blue);
+}
 .prog-livros__lista { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-16); }
 .prog-livro { padding-left: var(--space-12); border-left: 2px solid rgba(48, 42, 102, 0.12); }
 .prog-livro__titulo { margin: 0; font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--color-brand-blue); }
