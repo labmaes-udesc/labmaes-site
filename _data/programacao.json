@@ -62,23 +62,6 @@
         "modalidade": "presencial",
         "local": "Hall do Bloco Amarelo e Básica 02",
         "ementa": "Lançamento de livros: Coleção Saberes Sensíveis, Educação Estética em Perspectiva e Coleção Cinemas e Educações.",
-        "participantes": [
-          {
-            "slug": "mara-rubia"
-          },
-          {
-            "slug": "myriam-lemonchois"
-          },
-          {
-            "slug": "leticia-francez"
-          },
-          {
-            "slug": "karine-joulie"
-          },
-          {
-            "slug": "adriana-fresquet"
-          }
-        ],
         "livros": {
           "colecoes": [
             {
