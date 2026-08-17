@@ -15,7 +15,9 @@ APOIO = {
     "abepem":          ("ABEPEM", None),
     "ufsc":            ("Universidade Federal de Santa Catarina", "ufsc.jfif"),
     "ufrj":            ("Universidade Federal do Rio de Janeiro", "ufrj.png"),
-    "ifsc":            ("Instituto Federal de Santa Catarina", "ifsc.png"),
+    "ifsc":            ("Instituto Federal de Santa Catarina — "
+                        "Câmpus Jaraguá do Sul – Centro",
+                        "ifsc-jaragua-centro.png"),
     "uem":             ("Universidade Estadual de Maringá", "uem.png"),
     "feevale":         ("Universidade Feevale", "feevale.jfif"),
     "cesusc":          ("Faculdade CESUSC", "cesusc.png"),
