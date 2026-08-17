@@ -12,6 +12,8 @@ PASTA_ORIGEM = r"C:\Users\Windows 10\Downloads\Logos-20260805T212938Z-1-001\Logo
 # `arquivo` None significa que a marca não passa pelo pipeline raster
 # (usa um SVG já versionado em assets/logos/).
 APOIO = {
+    "fapesc":          ("Fapesc — Fundação de Amparo à Pesquisa e Inovação "
+                        "do Estado de Santa Catarina", "fapesc.png"),
     "abepem":          ("ABEPEM", None),
     "ufsc":            ("Universidade Federal de Santa Catarina", "ufsc.jfif"),
     "ufrj":            ("Universidade Federal do Rio de Janeiro", "ufrj.png"),
@@ -33,7 +35,7 @@ APOIO = {
     "belas-artes":     ("Centro Universitário Belas Artes de São Paulo", "ba.png"),
     "faeb":            ("Federação de Arte Educadores do Brasil", "faeb.png"),
     "aaesc":           ("Associação dos Arte Educadores de Santa Catarina", "aaesc.jfif"),
-    "amae":            ("AMAE", "logo-amae.webp"),
+    "amae":            ("Associação Maranhense de Arte/Educação", "logo-amae.webp"),
     "came":            ("Casa dos Açores — Museu Etnográfico", "came.jfif"),
     "iema":            ("Instituto de Educação, Ciência e Tecnologia do Maranhão", "iema.png"),
     "seduc-bc":        ("Secretaria de Educação de Balneário Camboriú", "seduc bc.jfif"),
@@ -56,7 +58,6 @@ DESTINO_ESPECIAL = {
 REALIZACAO = [
     ("labmaes", "LabMAES", "/assets/logos/logo-labmaes-vermelho.svg"),
     ("udesc-ceart", "UDESC CEART", "/assets/logos/logo-ceart.svg"),
-    ("fapesc", "Fapesc", "/assets/logos/logo-fapesc.svg"),
 ]
 
 

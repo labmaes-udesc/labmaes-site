@@ -9,14 +9,14 @@
       "slug": "udesc-ceart",
       "nome": "UDESC CEART",
       "arquivo": "/assets/logos/logo-ceart.svg"
-    },
-    {
-      "slug": "fapesc",
-      "nome": "Fapesc",
-      "arquivo": "/assets/logos/logo-fapesc.svg"
     }
   ],
   "apoio": [
+    {
+      "slug": "fapesc",
+      "nome": "Fapesc — Fundação de Amparo à Pesquisa e Inovação do Estado de Santa Catarina",
+      "arquivo": "/assets/logos/apoio/fapesc.webp"
+    },
     {
       "slug": "abepem",
       "nome": "ABEPEM",
@@ -104,7 +104,7 @@
     },
     {
       "slug": "amae",
-      "nome": "AMAE",
+      "nome": "Associação Maranhense de Arte/Educação",
       "arquivo": "/assets/logos/apoio/amae.webp"
     },
     {
