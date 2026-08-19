@@ -32,7 +32,7 @@
         "tipo": "Exposição",
         "tag": "tag--blue",
         "aninhado": true,
-        "titulo": "Abertura das exposições: (a) “Tramar Saberes, Tecer Coletividades” (Coletivo CROCHÊ.JAR); (b) The Rotfather: experimentações têxteis para figurinos anímicos; (c) Moda em Viés e o Avesso do Glamour (Moda Udesc); (d) Nara Guichon; (e) Trajes Açorianos",
+        "titulo": "Abertura das exposições: (a) “Tramar Saberes, Tecer Coletividades” (Coletivo CROCHÊ.JAR); (b) The Rotfather: experimentações têxteis para figurinos anímicos; (c) Nara Guichon; (d) Trajes Açorianos; (e) Vestes Falantes (Solange Gonçalves Luciano)",
         "modalidade": "presencial",
         "local": "Hall do Bloco Central, Hall de entrada e Básica 02",
         "participantes": [
@@ -43,13 +43,13 @@
             "slug": "the-rotfather"
           },
           {
-            "slug": "moda-em-vies"
-          },
-          {
             "slug": "nara-guichon"
           },
           {
             "slug": "trajes-acorianos"
+          },
+          {
+            "slug": "vestes-falantes"
           }
         ]
       },

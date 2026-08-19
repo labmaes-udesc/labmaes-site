@@ -241,11 +241,6 @@
     "nome": "The Rotfather: experimentações têxteis para figurinos anímicos",
     "bio": "A exposição apresenta o resultado de uma parceria entre o curso de bacharelado em Moda da Universidade Estadual de Maringá (UEM) e o curso de bacharelado em Animação da Universidade Federal de Santa Catarina (UFSC). Trata-se de uma coleção de figurinos realizados a partir de experimentações têxteis inspiradas pelo universo animado do projeto The RotFather, conduzido pela Prof.ª Dr.ª Mônica Stein. Cada traje de cena conta a narrativa de um personagem que reúne concepções de alunos de ambos os cursos, sendo um trabalho metodologicamente híbrido e criativamente compartilhado."
   },
-  "moda-em-vies": {
-    "nome": "Moda em Viés e o Avesso do Glamour",
-    "instituicao": "Moda Udesc",
-    "bio": "Exame crítico das condições de atuação, remuneração, visibilidade e reconhecimento no sistema de moda, deslocando o olhar do brilho do desfile para o cotidiano do trabalho criativo e suas contradições. A proposta articula prática, reflexão e partilha: parte de um roteiro didático que convidou as alunas a relacionar dados, experiências e relatos do campo, para então transpor essa síntese a uma linguagem visual e tátil. O brilho e o bruto se encostam, e é nesse atrito que a moda se reconhece como trabalho, linguagem e mundo."
-  },
   "estudantes-unam": {
     "nome": "Estudantes da UNAM"
   },
@@ -279,12 +274,18 @@
     "bio": "Doutora em Educação pela Universidade Federal de Santa Catarina (UFSC), mestre em Artes Visuais pela Universidade do Estado de Santa Catarina (UDESC), licenciada em Artes Visuais (UDESC) e bacharel em Design Gráfico (UFSC). Atua na interface entre arte, educação e formação docente, com especial interesse em infância, estética e processos criativos. Atualmente é cofundadora da Revoada, iniciativa dedicada à formação e mentoria de educadoras da infância."
   },
   "nara-guichon": {
-    "nome": "Nara Guichon"
+    "nome": "Nara Guichon",
+    "bio": "Redes de pesca descartadas são transmutadas pelas mãos de Nara Guichon em estruturas orgânicas de médio a grande porte, na tentativa de trazer à tona a dimensão do problema das redes fantasmas submersas em todos os oceanos. Suspensa no espaço, “Roda da Vida” aproxima correntes marinhas e sistemas orgânicos para revelar uma trama em permanente transformação: desloca um resíduo para o campo da arte e propõe uma reflexão sobre os ciclos da matéria, da natureza e da existência. Cada fio deixa de aprisionar para conectar, sugerindo que regeneração e cuidado são práticas coletivas. Ao reunir fazer têxtil, reaproveitamento de materiais e consciência ecológica, a obra reafirma uma pesquisa em que arte e vida são indissociáveis."
   },
   "trajes-acorianos": {
     "nome": "Trajes Açorianos: quando o tecido, a forma e a cor nos fazem pensar",
     "instituicao": "Grupo Arcos · Museu Etnográfico Casa dos Açores",
     "bio": "Exposição dos 8 trajes açorianos do Grupo Arcos, salvaguardados pelo Museu Etnográfico Casa dos Açores (Fundação Catarinense de Cultura). A partir da história da ocupação açoriana da Ilha de Santa Catarina — antiga Desterro —, os trajes convocam à reflexão sobre memória e identidade: mulheres que fiavam, teciam e cantavam permanecem em reminiscências nestes referentes construídos em tecido, modelagem e cor, entre tradições inventadas e uma identidade local formulada entre interesses turísticos, nostalgias e vontades de pertencimento."
+  },
+  "vestes-falantes": {
+    "nome": "Vestes Falantes",
+    "instituicao": "Solange Gonçalves Luciano · Oficina de Criatividade do Hospital Psiquiátrico São Pedro",
+    "bio": "Solange Gonçalves Luciano é uma mulher negra, artista plástica, pintora, bordadeira e poeta, frequentadora da Oficina de Criatividade do Hospital Psiquiátrico São Pedro, em Porto Alegre, desde 2014. Autodenomina-se “uma sobrevivente dos escombros manicomiais e labirintos psiquiatrais, o próprio resgate da saúde mental”: após diversas internações em instituições distintas, passou a usar a escrita e, depois, o desenho como formas de expressão terapêutica. Dessas práticas emergem as Vestes Falantes, artes vestíveis batizadas a partir de um episódio de seu processo criativo: ao preparar a roupa (tela) para receber a tinta — procedimento que associa à trama e ao urdume —, as peças, depois de secarem no varal, aderiram entre si e, ao serem separadas, emitiram um som semelhante a um gemido, interpretado pela artista como a fala da veste. No contexto hospitalar, onde as roupas são compartilhadas, Solange escolhe camisolas, jalecos e vestidos para evocar o internamento e discutir a reforma psiquiátrica: “através das peças de vestuário enviamos uma mensagem cultural e social, porque elas falam por si”. A pintura e o bordado atravessam instâncias corpóreas, psíquicas, imaginárias e sociais de sua subjetividade; em suas “pinturas de si”, a artista reflete sobre a reforma psiquiátrica, a liberdade e sua luta contra o racismo, fazendo de sua vida uma obra de arte."
   },
   "adriana-fresquet": {
     "nome": "Profa. Dra. Adriana Fresquet",
