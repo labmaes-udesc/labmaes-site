@@ -3,6 +3,8 @@ export default function (eleventyConfig) {
   eleventyConfig.ignores.add("docs/**");
   eleventyConfig.ignores.add("README.md");
   eleventyConfig.ignores.add("tools/**");
+  // Fundação de conteúdo do Pages CMS (Fase 1) — ainda não integrada ao build do Eleventy
+  eleventyConfig.ignores.add("src/**");
 
   // Copiar assets estáticos para _site/ sem processar
   eleventyConfig.addPassthroughCopy("assets");
