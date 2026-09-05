@@ -6,40 +6,46 @@
 ## Pré-condição
 
 A branch da Fase 1 deve conter a documentação final da Fase 0 (ADRs + spec + plan).
-Como a branch `redesign/fase-1-content-foundation` foi criada originalmente a partir de
-`main`, ela deve receber a Fase 0 antes de novos commits de implementação.
+
+**Status: concluído.**
 
 ## Etapas
 
-### 1. Reconciliar histórico
+### 1. Reconciliar histórico — CONCLUÍDA
 
-Incorporar `redesign/fase-0-arquitetura-conteudo` à branch da Fase 1.
+`redesign/fase-1-content-foundation` contém a Fase 0 e não há mais linhas arquiteturais paralelas.
 
-Resultado:
-- Fase 1 contém os insumos e documentos normativos da Fase 0;
-- não existem duas linhas arquiteturais paralelas.
+### 2. Formalizar documentação — CONCLUÍDA
 
-### 2. Formalizar documentação
-
-Adicionar:
+Presentes:
 - ADRs 0001–0006;
 - spec e plan da Fase 0;
 - spec e plan da Fase 1;
 - índice `docs/architecture/README.md`.
 
-### 3. Validar foundation existente
+### 3. Validar foundation existente — AUDITADA; CORREÇÃO 01 PENDENTE DE COMMIT
 
-Revisar:
+Auditados:
 - `.pages.yml`;
 - `src/content/*`;
 - `src/assets/uploads/*`;
 - `tools/validate-content-foundation.mjs`;
-- alterações em `package.json`;
+- `package.json`;
 - `eleventy.config.js`.
 
-### 4. Criar fixtures
+Correções da Auditoria 01:
+- tokens explícitos `{fields.slug}` / `{fields.year}`;
+- `editorialStatus` padronizado;
+- operações destrutivas bloqueadas durante piloto;
+- campos de texto alternativo;
+- SVG removido dos uploads via CMS.
 
-Adicionar somente em branch/pasta de teste ou com garantia de não publicação:
+Ver:
+`docs/superpowers/reviews/2026-09-04-fase-1-content-foundation-auditoria-01.md`.
+
+### 4. Criar fixtures — PRÓXIMA ETAPA
+
+Adicionar com garantia de não publicação:
 - integrante atual;
 - egresso;
 - instituição;
@@ -58,9 +64,8 @@ Testar referências, edição, mídia, traduções, erros e operações permitid
 
 ### 6. Evoluir validação
 
-Substituir o validador estrutural mínimo por validação real do frontmatter/schema.
+Substituir o validador estrutural mínimo por validação real de frontmatter/schema.
 
 ### 7. Gate de saída
 
-Não conectar `src/content` ao Eleventy público até os critérios da spec da Fase 1 serem
-atendidos.
+Não conectar `src/content` ao Eleventy público até os critérios da spec da Fase 1 serem atendidos.

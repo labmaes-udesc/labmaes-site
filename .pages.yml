@@ -11,7 +11,6 @@ media:
   - png
   - webp
   - avif
-  - svg
   rename: safe
 - name: documents
   label: Documentos
@@ -71,6 +70,9 @@ components:
       type: image
       options:
         media: images
+    - name: ogImageAlt
+      label: Texto alternativo da imagem de compartilhamento
+      type: string
   translations_longform:
     type: object
     label: Traduções
@@ -164,16 +166,16 @@ content:
     path: src/content/pages
     format: yaml-frontmatter
     filename:
-      template: '{slug}.md'
-      field: create
+      template: '{fields.slug}.md'
+      field: false
     view:
       fields:
       - title
-      - status
+      - editorialStatus
       primary: title
       sort:
       - title
-      - status
+      - editorialStatus
       search:
       - title
       - summary
@@ -185,7 +187,8 @@ content:
       pattern:
         regex: ^[a-z0-9-]+$
         message: Use apenas letras minúsculas, números e hífens.
-    - name: status
+      description: Identificador estável usado em URLs e relações. Use minúsculas, números e hífens; não altere depois de publicado.
+    - name: editorialStatus
       component: editorial_status
     - name: title
       label: Título
@@ -207,23 +210,28 @@ content:
       component: translations_longform
     - name: seo
       component: seo
+    operations:
+      create: true
+      rename: false
+      delete: false
   - name: news
     label: Notícias
     type: collection
     path: src/content/news
     format: yaml-frontmatter
     filename:
-      template: '{year}-{month}-{day}-{slug}.md'
-      field: create
+      template: '{fields.date}-{fields.slug}.md'
+      field: false
     view:
       fields:
       - title
       - date
-      - status
+      - editorialStatus
       primary: title
       sort:
       - date
       - title
+      - editorialStatus
       search:
       - title
       - summary
@@ -236,7 +244,8 @@ content:
       type: string
       required: true
       pattern: ^[a-z0-9-]+$
-    - name: status
+      description: Identificador estável usado em URLs e relações. Use minúsculas, números e hífens; não altere depois de publicado.
+    - name: editorialStatus
       component: editorial_status
     - name: title
       label: Título
@@ -255,6 +264,10 @@ content:
       type: image
       options:
         media: images
+    - name: coverAlt
+      label: Texto alternativo da imagem de capa
+      type: string
+      description: Descreva a informação relevante da imagem. Se for puramente decorativa, registre isso na revisão editorial.
     - name: body
       label: Conteúdo
       type: rich-text
@@ -285,6 +298,10 @@ content:
       component: translations_longform
     - name: seo
       component: seo
+    operations:
+      create: true
+      rename: false
+      delete: false
 - name: people_networks
   label: Pessoas e redes
   type: group
@@ -295,17 +312,19 @@ content:
     path: src/content/people
     format: yaml-frontmatter
     filename:
-      template: '{slug}.md'
-      field: create
+      template: '{fields.slug}.md'
+      field: false
     view:
       fields:
       - name
       - status
       - institution
+      - editorialStatus
       primary: name
       sort:
       - name
       - status
+      - editorialStatus
       search:
       - name
       - preferredName
@@ -316,6 +335,9 @@ content:
       type: string
       required: true
       pattern: ^[a-z0-9-]+$
+      description: Identificador estável usado em URLs e relações. Use minúsculas, números e hífens; não altere depois de publicado.
+    - name: editorialStatus
+      component: editorial_status
     - name: name
       label: Nome completo
       type: string
@@ -347,6 +369,10 @@ content:
       type: image
       options:
         media: images
+    - name: photoAlt
+      label: Texto alternativo da foto
+      type: string
+      description: Descrição breve e objetiva da pessoa na imagem.
     - name: institution
       label: Instituição principal
       type: reference
@@ -388,17 +414,19 @@ content:
     path: src/content/institutions
     format: yaml-frontmatter
     filename:
-      template: '{slug}.md'
-      field: create
+      template: '{fields.slug}.md'
+      field: false
     view:
       fields:
       - name
       - shortName
       - kind
+      - editorialStatus
       primary: name
       sort:
       - name
       - kind
+      - editorialStatus
       search:
       - name
       - shortName
@@ -408,6 +436,9 @@ content:
       type: string
       required: true
       pattern: ^[a-z0-9-]+$
+      description: Identificador estável usado em URLs e relações. Use minúsculas, números e hífens; não altere depois de publicado.
+    - name: editorialStatus
+      component: editorial_status
     - name: name
       label: Nome
       type: string
@@ -437,6 +468,7 @@ content:
       type: image
       options:
         media: images
+      description: O template público deverá usar o nome da instituição como texto alternativo.
     - name: url
       label: Site
       type: string
@@ -457,18 +489,20 @@ content:
     path: src/content/projects
     format: yaml-frontmatter
     filename:
-      template: '{slug}.md'
-      field: create
+      template: '{fields.slug}.md'
+      field: false
     view:
       fields:
       - title
       - projectType
       - status
+      - editorialStatus
       primary: title
       sort:
       - title
       - projectType
       - status
+      - editorialStatus
       search:
       - title
       - acronym
@@ -479,6 +513,7 @@ content:
       type: string
       required: true
       pattern: ^[a-z0-9-]+$
+      description: Identificador estável usado em URLs e relações. Use minúsculas, números e hífens; não altere depois de publicado.
     - name: editorialStatus
       component: editorial_status
     - name: title
@@ -574,8 +609,8 @@ content:
     path: src/content/productions
     format: yaml-frontmatter
     filename:
-      template: '{year}-{slug}.md'
-      field: create
+      template: '{fields.year}-{fields.slug}.md'
+      field: false
     view:
       fields:
       - title
@@ -583,12 +618,14 @@ content:
       - productionCategory
       - productionType
       - catalogStatus
+      - editorialStatus
       primary: title
       sort:
       - year
       - title
       - productionCategory
       - catalogStatus
+      - editorialStatus
       search:
       - title
       - authors
@@ -602,6 +639,7 @@ content:
       type: string
       required: true
       pattern: ^[a-z0-9-]+$
+      description: Identificador estável usado em URLs e relações. Use minúsculas, números e hífens; não altere depois de publicado.
     - name: editorialStatus
       component: editorial_status
     - name: title
@@ -740,6 +778,10 @@ content:
       type: image
       options:
         media: images
+    - name: coverAlt
+      label: Texto alternativo da capa/miniatura
+      type: string
+      description: Descreva a informação visual relevante; não repita apenas o título.
     - name: license
       label: Licença
       type: string
@@ -780,18 +822,20 @@ content:
     path: src/content/documents
     format: yaml-frontmatter
     filename:
-      template: '{year}-{slug}.md'
-      field: create
+      template: '{fields.slug}.md'
+      field: false
     view:
       fields:
       - title
       - date
       - documentType
+      - editorialStatus
       primary: title
       sort:
       - date
       - title
       - documentType
+      - editorialStatus
       search:
       - title
       - summary
@@ -801,6 +845,9 @@ content:
       type: string
       required: true
       pattern: ^[a-z0-9-]+$
+      description: Identificador estável usado em URLs e relações. Use minúsculas, números e hífens; não altere depois de publicado.
+    - name: editorialStatus
+      component: editorial_status
     - name: title
       label: Título
       type: string
@@ -856,20 +903,26 @@ content:
       label: Notas de acessibilidade
       type: text
       description: 'Ex.: PDF etiquetado, versão HTML disponível, limitações conhecidas.'
+    operations:
+      create: true
+      rename: false
+      delete: false
   - name: collections
     label: Coleções / acervos
     type: collection
     path: src/content/collections
     format: yaml-frontmatter
     filename:
-      template: '{slug}.md'
-      field: create
+      template: '{fields.slug}.md'
+      field: false
     view:
       fields:
       - title
+      - editorialStatus
       primary: title
       sort:
       - title
+      - editorialStatus
       search:
       - title
       - summary
@@ -879,6 +932,9 @@ content:
       type: string
       required: true
       pattern: ^[a-z0-9-]+$
+      description: Identificador estável usado em URLs e relações. Use minúsculas, números e hífens; não altere depois de publicado.
+    - name: editorialStatus
+      component: editorial_status
     - name: title
       label: Título
       type: string
@@ -898,6 +954,14 @@ content:
       type: image
       options:
         media: images
+    - name: coverAlt
+      label: Texto alternativo da capa
+      type: string
+      description: Descreva a informação visual relevante da imagem.
+    operations:
+      create: true
+      rename: false
+      delete: false
 - name: events_group
   label: Eventos
   type: group
@@ -908,15 +972,17 @@ content:
     path: src/content/events
     format: yaml-frontmatter
     filename:
-      template: '{slug}.md'
-      field: create
+      template: '{fields.slug}.md'
+      field: false
     view:
       fields:
       - name
       - shortName
+      - editorialStatus
       primary: name
       sort:
       - name
+      - editorialStatus
       search:
       - name
       - shortName
@@ -926,6 +992,9 @@ content:
       type: string
       required: true
       pattern: ^[a-z0-9-]+$
+      description: Identificador estável usado em URLs e relações. Use minúsculas, números e hífens; não altere depois de publicado.
+    - name: editorialStatus
+      component: editorial_status
     - name: name
       label: Nome
       type: string
@@ -950,18 +1019,20 @@ content:
     path: src/content/event-editions
     format: yaml-frontmatter
     filename:
-      template: '{year}-{slug}.md'
-      field: create
+      template: '{fields.year}-{fields.slug}.md'
+      field: false
     view:
       fields:
       - title
       - year
       - status
+      - editorialStatus
       primary: title
       sort:
       - year
       - title
       - status
+      - editorialStatus
       search:
       - title
       - theme
@@ -974,6 +1045,9 @@ content:
       type: string
       required: true
       pattern: ^[a-z0-9-]+$
+      description: Identificador estável usado em URLs e relações. Use minúsculas, números e hífens; não altere depois de publicado.
+    - name: editorialStatus
+      component: editorial_status
     - name: event
       label: Evento
       type: reference
