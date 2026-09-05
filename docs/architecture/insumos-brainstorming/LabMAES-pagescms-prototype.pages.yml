@@ -1,0 +1,953 @@
+# LabMAES — Pages CMS prototype
+# Fase 0 / schema editorial v1 (protótipo)
+# Não publicar em main antes da implementação das pastas src/content/*
+# e da validação do fluxo de escrita/preview.
+
+media:
+  - name: images
+    label: Imagens
+    input: src/assets/uploads/images
+    output: /assets/uploads/images
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp, avif, svg]
+    rename: safe
+
+  - name: documents
+    label: Documentos
+    input: src/assets/uploads/documents
+    output: /assets/uploads/documents
+    categories: [document]
+    extensions: [pdf, doc, docx, odt, xls, xlsx, ods, ppt, pptx]
+    rename: safe
+
+settings:
+  commit:
+    identity: user
+    templates:
+      create: "content(create): {path}"
+      update: "content(update): {path}"
+      delete: "content(delete): {path}"
+      rename: "content(rename): {oldPath} -> {newPath}"
+
+components:
+  editorial_status:
+    type: select
+    label: Status editorial
+    required: true
+    options:
+      values:
+        - name: draft
+          label: Rascunho
+        - name: review
+          label: Em revisão
+        - name: published
+          label: Publicado
+
+  seo:
+    type: object
+    label: SEO e compartilhamento
+    fields:
+      - name: title
+        label: Título para buscadores
+        type: string
+        description: Opcional. Se vazio, será usado o título principal.
+      - name: description
+        label: Descrição para buscadores
+        type: text
+        options:
+          maxlength: 180
+      - name: ogImage
+        label: Imagem de compartilhamento
+        type: image
+        options:
+          media: images
+
+  translations_longform:
+    type: object
+    label: Traduções
+    description: Preencher somente quando a tradução estiver efetivamente revisada.
+    fields:
+      - name: en
+        label: English
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: summary
+            label: Summary
+            type: text
+          - name: body
+            label: Body
+            type: rich-text
+            options:
+              format: markdown
+              media: images
+              rename: safe
+      - name: es
+        label: Español
+        type: object
+        fields:
+          - name: title
+            label: Título
+            type: string
+          - name: summary
+            label: Resumen
+            type: text
+          - name: body
+            label: Contenido
+            type: rich-text
+            options:
+              format: markdown
+              media: images
+              rename: safe
+      - name: fr
+        label: Français
+        type: object
+        fields:
+          - name: title
+            label: Titre
+            type: string
+          - name: summary
+            label: Résumé
+            type: text
+          - name: body
+            label: Contenu
+            type: rich-text
+            options:
+              format: markdown
+              media: images
+              rename: safe
+
+  translations_short:
+    type: object
+    label: Traduções
+    description: Traduções de apresentação; títulos oficiais de obras não precisam ser traduzidos.
+    fields:
+      - name: en
+        label: English
+        type: object
+        fields:
+          - name: summary
+            label: Summary
+            type: text
+      - name: es
+        label: Español
+        type: object
+        fields:
+          - name: summary
+            label: Resumen
+            type: text
+      - name: fr
+        label: Français
+        type: object
+        fields:
+          - name: summary
+            label: Résumé
+            type: text
+
+content:
+  - name: institutional
+    label: Institucional
+    type: group
+    items:
+      - name: pages
+        label: Páginas
+        type: collection
+        path: src/content/pages
+        format: yaml-frontmatter
+        filename:
+          template: "{slug}.md"
+          field: create
+        view:
+          fields: [title, status]
+          primary: title
+          sort: [title, status]
+          search: [title, summary]
+        fields:
+          - name: slug
+            label: Slug
+            type: string
+            required: true
+            pattern:
+              regex: "^[a-z0-9-]+$"
+              message: "Use apenas letras minúsculas, números e hífens."
+          - name: status
+            component: editorial_status
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: summary
+            label: Resumo
+            type: text
+            required: true
+          - name: body
+            label: Conteúdo
+            type: rich-text
+            required: true
+            options:
+              format: markdown
+              media: images
+              rename: safe
+          - name: translations
+            component: translations_longform
+          - name: seo
+            component: seo
+
+      - name: news
+        label: Notícias
+        type: collection
+        path: src/content/news
+        format: yaml-frontmatter
+        filename:
+          template: "{year}-{month}-{day}-{slug}.md"
+          field: create
+        view:
+          fields: [title, date, status]
+          primary: title
+          sort: [date, title]
+          search: [title, summary]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: slug
+            label: Slug
+            type: string
+            required: true
+            pattern: "^[a-z0-9-]+$"
+          - name: status
+            component: editorial_status
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: date
+            label: Data
+            type: date
+            required: true
+          - name: summary
+            label: Resumo
+            type: text
+            required: true
+          - name: cover
+            label: Imagem de capa
+            type: image
+            options:
+              media: images
+          - name: body
+            label: Conteúdo
+            type: rich-text
+            required: true
+            options:
+              format: markdown
+              media: images
+              rename: safe
+          - name: relatedPeople
+            label: Pessoas relacionadas
+            type: reference
+            options:
+              collection: people
+              multiple: true
+              search: "name,preferredName"
+              value: "{slug}"
+              label: "{name}"
+          - name: relatedProjects
+            label: Projetos relacionados
+            type: reference
+            options:
+              collection: projects
+              multiple: true
+              search: "title,acronym"
+              value: "{slug}"
+              label: "{title}"
+          - name: translations
+            component: translations_longform
+          - name: seo
+            component: seo
+
+  - name: people_networks
+    label: Pessoas e redes
+    type: group
+    items:
+      - name: people
+        label: Pessoas
+        type: collection
+        path: src/content/people
+        format: yaml-frontmatter
+        filename:
+          template: "{slug}.md"
+          field: create
+        view:
+          fields: [name, status, institution]
+          primary: name
+          sort: [name, status]
+          search: [name, preferredName, institution]
+        fields:
+          - name: slug
+            label: Slug
+            type: string
+            required: true
+            pattern: "^[a-z0-9-]+$"
+          - name: name
+            label: Nome completo
+            type: string
+            required: true
+          - name: preferredName
+            label: Nome de exibição
+            type: string
+          - name: status
+            label: Vínculo com o LabMAES
+            type: select
+            required: true
+            options:
+              values:
+                - name: current
+                  label: Integrante atual
+                - name: alumnus
+                  label: Egresso/a
+                - name: collaborator
+                  label: Colaborador/a
+          - name: membershipStart
+            label: Início do vínculo
+            type: date
+          - name: membershipEnd
+            label: Fim do vínculo
+            type: date
+            description: Preencher para egressos quando a informação for conhecida.
+          - name: photo
+            label: Foto
+            type: image
+            options:
+              media: images
+          - name: institution
+            label: Instituição principal
+            type: reference
+            options:
+              collection: institutions
+              search: "name,shortName"
+              value: "{slug}"
+              label: "{name}"
+          - name: roles
+            label: Papéis / funções
+            type: string
+            list: true
+          - name: bio
+            label: Biografia
+            type: rich-text
+            options:
+              format: markdown
+              media: false
+          - name: lattes
+            label: Currículo Lattes
+            type: string
+          - name: orcid
+            label: ORCID
+            type: string
+          - name: website
+            label: Site pessoal/profissional
+            type: string
+          - name: researchTopics
+            label: Temas de atuação
+            type: string
+            list: true
+
+      - name: institutions
+        label: Instituições
+        type: collection
+        path: src/content/institutions
+        format: yaml-frontmatter
+        filename:
+          template: "{slug}.md"
+          field: create
+        view:
+          fields: [name, shortName, kind]
+          primary: name
+          sort: [name, kind]
+          search: [name, shortName]
+        fields:
+          - name: slug
+            label: Slug
+            type: string
+            required: true
+            pattern: "^[a-z0-9-]+$"
+          - name: name
+            label: Nome
+            type: string
+            required: true
+          - name: shortName
+            label: Sigla / nome curto
+            type: string
+          - name: kind
+            label: Tipo
+            type: select
+            options:
+              values:
+                - name: university
+                  label: Universidade
+                - name: research-group
+                  label: Grupo/laboratório
+                - name: funder
+                  label: Fomento
+                - name: partner
+                  label: Parceiro
+                - name: cultural
+                  label: Instituição cultural
+                - name: other
+                  label: Outro
+          - name: logo
+            label: Logo
+            type: image
+            options:
+              media: images
+          - name: url
+            label: Site
+            type: string
+          - name: country
+            label: País
+            type: string
+
+  - name: research_outputs
+    label: Pesquisa e produções
+    type: group
+    items:
+      - name: projects
+        label: Projetos
+        type: collection
+        path: src/content/projects
+        format: yaml-frontmatter
+        filename:
+          template: "{slug}.md"
+          field: create
+        view:
+          fields: [title, projectType, status]
+          primary: title
+          sort: [title, projectType, status]
+          search: [title, acronym, summary]
+        fields:
+          - name: slug
+            label: Slug
+            type: string
+            required: true
+            pattern: "^[a-z0-9-]+$"
+          - name: editorialStatus
+            component: editorial_status
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: acronym
+            label: Sigla
+            type: string
+          - name: projectType
+            label: Tipo de projeto
+            type: select
+            required: true
+            options:
+              values:
+                - name: research
+                  label: Pesquisa
+                - name: teaching
+                  label: Ensino
+                - name: extension
+                  label: Extensão
+                - name: transversal
+                  label: Transversal
+                - name: other
+                  label: Outro
+          - name: status
+            label: Situação
+            type: select
+            required: true
+            options:
+              values:
+                - name: planned
+                  label: Planejado
+                - name: active
+                  label: Em andamento
+                - name: completed
+                  label: Concluído
+          - name: startDate
+            label: Início
+            type: date
+          - name: endDate
+            label: Término
+            type: date
+          - name: summary
+            label: Resumo
+            type: text
+            required: true
+          - name: body
+            label: Apresentação
+            type: rich-text
+            options:
+              format: markdown
+              media: images
+              rename: safe
+          - name: coordinators
+            label: Coordenação
+            type: reference
+            options:
+              collection: people
+              multiple: true
+              search: "name,preferredName"
+              value: "{slug}"
+              label: "{name}"
+          - name: participants
+            label: Participantes
+            type: reference
+            options:
+              collection: people
+              multiple: true
+              search: "name,preferredName"
+              value: "{slug}"
+              label: "{name}"
+          - name: institutions
+            label: Instituições
+            type: reference
+            options:
+              collection: institutions
+              multiple: true
+              search: "name,shortName"
+              value: "{slug}"
+              label: "{name}"
+          - name: translations
+            component: translations_longform
+          - name: seo
+            component: seo
+
+      - name: productions
+        label: Produções
+        type: collection
+        path: src/content/productions
+        format: yaml-frontmatter
+        filename:
+          template: "{year}-{slug}.md"
+          field: create
+        view:
+          fields: [title, year, productionCategory, productionType, catalogStatus]
+          primary: title
+          sort: [year, title, productionCategory, catalogStatus]
+          search: [title, authors, keywords]
+          default:
+            sort: year
+            order: desc
+        fields:
+          - name: slug
+            label: Slug
+            type: string
+            required: true
+            pattern: "^[a-z0-9-]+$"
+          - name: editorialStatus
+            component: editorial_status
+          - name: title
+            label: Título oficial
+            type: string
+            required: true
+          - name: productionCategory
+            label: Macro categoria
+            type: select
+            required: true
+            options:
+              values:
+                - name: bibliographic
+                  label: Bibliográfica
+                - name: artistic
+                  label: Artística
+                - name: audiovisual
+                  label: Audiovisual
+                - name: educational
+                  label: Educacional
+                - name: documentary
+                  label: Documental
+                - name: other
+                  label: Outros
+          - name: productionType
+            label: Tipo específico
+            type: select
+            required: true
+            options:
+              values:
+                - name: article
+                  label: Artigo
+                - name: book
+                  label: Livro
+                - name: book-chapter
+                  label: Capítulo de livro
+                - name: edited-book
+                  label: Organização de livro
+                - name: conference-paper
+                  label: Trabalho em evento
+                - name: thesis-dissertation-tcc
+                  label: Tese / dissertação / TCC
+                - name: audiovisual
+                  label: Produção audiovisual
+                - name: artistic
+                  label: Produção artística
+                - name: exhibition
+                  label: Exposição
+                - name: teaching-material
+                  label: Material didático
+                - name: technical-document
+                  label: Relatório / documento técnico
+                - name: catalog
+                  label: Catálogo
+                - name: podcast-audio
+                  label: Podcast / áudio
+                - name: software-digital
+                  label: Software / recurso digital
+                - name: other
+                  label: Outro
+          - name: otherTypeLabel
+            label: Se “Outro”, qual?
+            type: string
+            description: Obrigatório quando o tipo específico for “Outro”. A validação condicional será feita no CI.
+          - name: year
+            label: Ano
+            type: number
+            required: true
+          - name: date
+            label: Data completa
+            type: date
+          - name: authors
+            label: Autoria
+            type: reference
+            required: true
+            options:
+              collection: people
+              multiple: true
+              min: 1
+              search: "name,preferredName"
+              value: "{slug}"
+              label: "{name}"
+          - name: summary
+            label: Resumo de apresentação
+            type: text
+          - name: abstract
+            label: Resumo/abstract da obra
+            type: text
+          - name: keywords
+            label: Palavras-chave
+            type: string
+            list: true
+          - name: language
+            label: Idioma original
+            type: select
+            options:
+              values:
+                - name: pt-BR
+                  label: Português (Brasil)
+                - name: en
+                  label: Inglês
+                - name: es
+                  label: Espanhol
+                - name: fr
+                  label: Francês
+                - name: other
+                  label: Outro
+          - name: projects
+            label: Projetos relacionados
+            type: reference
+            options:
+              collection: projects
+              multiple: true
+              search: "title,acronym"
+              value: "{slug}"
+              label: "{title}"
+          - name: doi
+            label: DOI
+            type: string
+          - name: isbn
+            label: ISBN
+            type: string
+          - name: issn
+            label: ISSN
+            type: string
+          - name: externalUrl
+            label: Link externo
+            type: string
+          - name: file
+            label: Arquivo
+            type: file
+            options:
+              media: documents
+          - name: cover
+            label: Capa / miniatura
+            type: image
+            options:
+              media: images
+          - name: license
+            label: Licença
+            type: string
+          - name: featured
+            label: Destaque
+            type: boolean
+            default: false
+          - name: catalogStatus
+            label: Estado de catalogação
+            type: select
+            required: true
+            options:
+              values:
+                - name: identified
+                  label: Identificado
+                - name: verified
+                  label: Verificado
+                - name: complete
+                  label: Completo
+          - name: sourceNotes
+            label: Notas de proveniência
+            type: text
+            description: Campo interno. Registrar onde os dados foram conferidos.
+          - name: lastVerifiedAt
+            label: Última verificação
+            type: date
+          - name: translations
+            component: translations_short
+          - name: seo
+            component: seo
+
+      - name: documents
+        label: Documentos
+        type: collection
+        path: src/content/documents
+        format: yaml-frontmatter
+        filename:
+          template: "{year}-{slug}.md"
+          field: create
+        view:
+          fields: [title, date, documentType]
+          primary: title
+          sort: [date, title, documentType]
+          search: [title, summary]
+        fields:
+          - name: slug
+            label: Slug
+            type: string
+            required: true
+            pattern: "^[a-z0-9-]+$"
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: documentType
+            label: Tipo
+            type: select
+            required: true
+            options:
+              values:
+                - name: call
+                  label: Edital / chamada
+                - name: regulation
+                  label: Regulamento
+                - name: report
+                  label: Relatório
+                - name: template
+                  label: Formulário / modelo
+                - name: program
+                  label: Programa
+                - name: minutes
+                  label: Ata
+                - name: support-material
+                  label: Material de apoio
+                - name: other
+                  label: Outro
+          - name: date
+            label: Data
+            type: date
+          - name: summary
+            label: Resumo
+            type: text
+          - name: file
+            label: Arquivo
+            type: file
+            required: true
+            options:
+              media: documents
+          - name: version
+            label: Versão
+            type: string
+          - name: language
+            label: Idioma
+            type: select
+            options:
+              values: [pt-BR, en, es, fr, other]
+          - name: accessibilityNotes
+            label: Notas de acessibilidade
+            type: text
+            description: "Ex.: PDF etiquetado, versão HTML disponível, limitações conhecidas."
+
+      - name: collections
+        label: Coleções / acervos
+        type: collection
+        path: src/content/collections
+        format: yaml-frontmatter
+        filename:
+          template: "{slug}.md"
+          field: create
+        view:
+          fields: [title]
+          primary: title
+          sort: [title]
+          search: [title, summary]
+        fields:
+          - name: slug
+            label: Slug
+            type: string
+            required: true
+            pattern: "^[a-z0-9-]+$"
+          - name: title
+            label: Título
+            type: string
+            required: true
+          - name: summary
+            label: Resumo
+            type: text
+            required: true
+          - name: body
+            label: Apresentação
+            type: rich-text
+            options:
+              format: markdown
+              media: images
+          - name: cover
+            label: Capa
+            type: image
+            options:
+              media: images
+
+  - name: events_group
+    label: Eventos
+    type: group
+    items:
+      - name: events
+        label: Eventos
+        type: collection
+        path: src/content/events
+        format: yaml-frontmatter
+        filename:
+          template: "{slug}.md"
+          field: create
+        view:
+          fields: [name, shortName]
+          primary: name
+          sort: [name]
+          search: [name, shortName]
+        fields:
+          - name: slug
+            label: Slug
+            type: string
+            required: true
+            pattern: "^[a-z0-9-]+$"
+          - name: name
+            label: Nome
+            type: string
+            required: true
+          - name: shortName
+            label: Nome curto
+            type: string
+          - name: description
+            label: Descrição
+            type: text
+          - name: translations
+            component: translations_short
+          - name: seo
+            component: seo
+
+      - name: event_editions
+        label: Edições de eventos
+        type: collection
+        path: src/content/event-editions
+        format: yaml-frontmatter
+        filename:
+          template: "{year}-{slug}.md"
+          field: create
+        view:
+          fields: [title, year, status]
+          primary: title
+          sort: [year, title, status]
+          search: [title, theme]
+          default:
+            sort: year
+            order: desc
+        fields:
+          - name: slug
+            label: Slug
+            type: string
+            required: true
+            pattern: "^[a-z0-9-]+$"
+          - name: event
+            label: Evento
+            type: reference
+            required: true
+            options:
+              collection: events
+              search: "name,shortName"
+              value: "{slug}"
+              label: "{name}"
+          - name: year
+            label: Ano
+            type: number
+            required: true
+          - name: title
+            label: Título da edição
+            type: string
+            required: true
+          - name: theme
+            label: Tema
+            type: string
+          - name: startDate
+            label: Início
+            type: date
+          - name: endDate
+            label: Término
+            type: date
+          - name: format
+            label: Formato
+            type: select
+            options:
+              values:
+                - name: in-person
+                  label: Presencial
+                - name: online
+                  label: Online
+                - name: hybrid
+                  label: Híbrido
+          - name: status
+            label: Situação
+            type: select
+            required: true
+            options:
+              values:
+                - name: planned
+                  label: Planejada
+                - name: current
+                  label: Atual
+                - name: archived
+                  label: Arquivada
+          - name: summary
+            label: Resumo
+            type: text
+          - name: organizers
+            label: Organização
+            type: reference
+            options:
+              collection: people
+              multiple: true
+              search: "name,preferredName"
+              value: "{slug}"
+              label: "{name}"
+          - name: institutions
+            label: Instituições relacionadas
+            type: reference
+            options:
+              collection: institutions
+              multiple: true
+              search: "name,shortName"
+              value: "{slug}"
+              label: "{name}"
+          - name: translations
+            component: translations_longform
+          - name: seo
+            component: seo
