@@ -1,2 +1,7 @@
 /eventos  /eventos/caminhos-do-contemporaneo/2026/  302
 /eventos/caminhos-do-contemporaneo  /eventos/caminhos-do-contemporaneo/2026/  302
+
+# QR do zine impresso do artigo "Entre currículo, criação e educação" (CIPA II, 2026).
+# Endereço fixo: o QR já impresso aponta para cá. Trocar só o destino desta linha
+# quando os anais saírem. Manter 302: o 301 fica em cache no navegador e quebra a troca.
+/cipaii  /  302
