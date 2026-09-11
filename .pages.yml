@@ -360,9 +360,11 @@ content:
     - name: membershipStart
       label: Início do vínculo
       type: date
+      default: ''
     - name: membershipEnd
       label: Fim do vínculo
       type: date
+      default: ''
       description: Preencher para egressos quando a informação for conhecida.
     - name: photo
       label: Foto
@@ -554,9 +556,11 @@ content:
     - name: startDate
       label: Início
       type: date
+      default: ''
     - name: endDate
       label: Término
       type: date
+      default: ''
     - name: summary
       label: Resumo
       type: text
@@ -711,6 +715,7 @@ content:
     - name: date
       label: Data completa
       type: date
+      default: ''
     - name: authors
       label: Autoria
       type: reference
@@ -808,6 +813,7 @@ content:
     - name: lastVerifiedAt
       label: Última verificação
       type: date
+      default: ''
     - name: translations
       component: translations_short
     - name: seo
@@ -877,6 +883,7 @@ content:
     - name: date
       label: Data
       type: date
+      default: ''
     - name: summary
       label: Resumo
       type: text
@@ -1071,9 +1078,11 @@ content:
     - name: startDate
       label: Início
       type: date
+      default: ''
     - name: endDate
       label: Término
       type: date
+      default: ''
     - name: format
       label: Formato
       type: select
