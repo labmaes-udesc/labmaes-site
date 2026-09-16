@@ -371,6 +371,9 @@ content:
     - name: photo
       label: Foto
       type: image
+      description: 'Foto de rosto/retrato da pessoa. Formatos aceitos: jpg, jpeg, png, webp, avif.
+        Prefira um arquivo já comprimido, na casa de algumas centenas de KB — arquivos muito
+        grandes podem falhar no envio.'
       options:
         media: images
     - name: photoAlt

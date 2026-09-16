@@ -84,8 +84,18 @@ Produções ganham `publicationStatus` (opcional): `in-press` / `published`. `ed
 Próximo teste: confirmar no Pages CMS que os dois novos textos de ajuda aparecem nos campos e que
 `publicationStatus` pode ficar em branco sem impedir salvar.
 
+#### Mídia — FOTO APROVADA; LIMITE DE TAMANHO DE ARQUIVO EM ABERTO
+
+Upload de foto em `people` funcionou (`outra-pessoa-teste.md` ganhou `photo`/`photoAlt` reais).
+`people.photo` ganhou `description` com formatos aceitos e recomendação de tamanho.
+
+Upload de documento (`documents.file`) funcionou com um PDF de ~500 KB
+(`aldodinucci5fluxodanilea.pdf`), mas um PDF maior retornou `Failed to upload file: 413` (Payload
+Too Large). Não é algo configurável em `.pages.yml` — nem `type: image` nem `type: file` têm opção
+de tamanho máximo documentada; é um limite do lado do serviço hospedado do Pages CMS. Teto exato
+ainda não determinado.
+
 Ainda testar depois disso:
-- mídia;
 - traduções;
 - workflow editorial;
 - mensagens de erro e campos obrigatórios;
