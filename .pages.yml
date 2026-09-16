@@ -283,8 +283,8 @@ content:
         collection: people
         multiple: true
         search: name,preferredName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{primary}'
     - name: relatedProjects
       label: Projetos relacionados
       type: reference
@@ -292,8 +292,8 @@ content:
         collection: projects
         multiple: true
         search: title,acronym
-        value: '{slug}'
-        label: '{title}'
+        value: '{fields.slug}'
+        label: '{primary}'
     - name: translations
       component: translations_longform
     - name: seo
@@ -381,8 +381,8 @@ content:
       options:
         collection: institutions
         search: name,shortName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{primary}'
     - name: roles
       label: Papéis / funções
       type: string
@@ -579,8 +579,8 @@ content:
         collection: people
         multiple: true
         search: name,preferredName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{primary}'
     - name: participants
       label: Participantes
       type: reference
@@ -588,8 +588,8 @@ content:
         collection: people
         multiple: true
         search: name,preferredName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{primary}'
     - name: institutions
       label: Instituições
       type: reference
@@ -597,8 +597,8 @@ content:
         collection: institutions
         multiple: true
         search: name,shortName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{primary}'
     - name: translations
       component: translations_longform
     - name: seo
@@ -725,8 +725,8 @@ content:
         multiple: true
         min: 1
         search: name,preferredName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{primary}'
     - name: summary
       label: Resumo de apresentação
       type: text
@@ -759,8 +759,8 @@ content:
         collection: projects
         multiple: true
         search: title,acronym
-        value: '{slug}'
-        label: '{title}'
+        value: '{fields.slug}'
+        label: '{primary}'
     - name: doi
       label: DOI
       type: string
@@ -1062,8 +1062,8 @@ content:
       options:
         collection: events
         search: name,shortName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{primary}'
     - name: year
       label: Ano
       type: number
@@ -1116,8 +1116,8 @@ content:
         collection: people
         multiple: true
         search: name,preferredName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{primary}'
     - name: institutions
       label: Instituições relacionadas
       type: reference
@@ -1125,8 +1125,8 @@ content:
         collection: institutions
         multiple: true
         search: name,shortName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{primary}'
     - name: translations
       component: translations_longform
     - name: seo
