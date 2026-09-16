@@ -1,34 +1,37 @@
 ---
 slug: fixture-producao-bibliografica
 editorialStatus: draft
-title: '[FIXTURE] Artigo bibliográfico de teste'
+title: "[FIXTURE] Artigo bibliográfico de teste"
 productionCategory: bibliographic
 productionType: article
 year: 2025
 contributors:
-- kind: internal
-  person: fixture-pessoa-atual
-  role: Autoria
-- kind: external
-  name: '[FIXTURE] Pessoa Autora Externa'
-  role: Autoria
-  affiliation: '[FIXTURE] Instituição Externa de Teste'
-- kind: internal
-  person: fixture-pessoa-egressa
-  role: Autoria
-summary: Produção fictícia para testar autoria mista, ordem autoral e vínculo com projeto.
+  - kind: internal
+    person: fixture-pessoa-atual
+    role: Autoria
+  - kind: external
+    name: "[FIXTURE] Pessoa Autora Externa"
+    role: Autoria
+    affiliation: "[FIXTURE] Instituição Externa de Teste"
+  - kind: internal
+    person: fixture-pessoa-egressa
+    role: Autoria
+  - kind: internal
+    person: outra-pessoa-teste
+summary: Produção fictícia para testar autoria mista, ordem autoral e vínculo
+  com projeto.
 keywords:
-- fixture
-- catalogação
-- teste
+  - fixture
+  - catalogação
+  - teste
 language: pt-BR
 projects:
-- fixture-projeto-pesquisa
+  - fixture-projeto-pesquisa
 externalUrl: https://example.org/fixture-producao-bibliografica
 featured: false
 catalogStatus: verified
 sourceNotes: FIXTURE — dados fictícios; não publicar.
-lastVerifiedAt: '2026-09-10'
+lastVerifiedAt: 2026-09-10
 translations:
   en:
     summary: Fictional bibliographic production used for CMS testing.
