@@ -44,6 +44,8 @@ components:
     type: select
     label: Status editorial
     required: true
+    description: Situação deste registro no NOSSO fluxo de edição do site (se já pode ficar
+      público) — não é sobre a situação da obra/evento/produção em si.
     options:
       values:
       - name: draft
@@ -821,10 +823,27 @@ content:
       label: Destaque
       type: boolean
       default: false
+    - name: publicationStatus
+      label: Situação de publicação
+      type: select
+      description: 'Em que ponto a obra está no seu próprio percurso editorial — independente
+        do status deste registro no nosso site (ver Status editorial, no topo). Deixe em branco
+        quando o conceito não se aplicar ao tipo de produção (ex.: exposição, produção audiovisual).'
+      options:
+        values:
+        - name: in-press
+          label: No prelo (aceita, ainda não publicada)
+        - name: published
+          label: Publicada
     - name: catalogStatus
       label: Estado de catalogação
       type: select
       required: true
+      description: Não é sobre a obra, e sim sobre a confiança do nosso próprio cadastro dela —
+        quanto já conferimos dos dados abaixo. Identificado = sabemos que existe, mas o registro
+        pode estar incompleto. Verificado = autoria, título e ano já foram conferidos numa fonte
+        confiável. Completo = todos os metadados, arquivo/link e relações aplicáveis já estão
+        preenchidos.
       options:
         values:
         - name: identified

@@ -55,7 +55,7 @@ O teste real confirmou:
 A tentativa com `{primary}` produziu labels vazios no CMS hospedado. A Correção 03b passou a usar
 labels explícitos (`{fields.name}` / `{fields.title}`), e o reteste foi aprovado.
 
-#### Modelo de autoria / créditos — IMPLEMENTAÇÃO PREPARADA; RETESTE PENDENTE
+#### Modelo de autoria / créditos — APROVADO
 
 Produções passam de `authors` para `contributors`, lista ordenada com dois formatos:
 - `internal`: referência a `people`;
@@ -63,16 +63,28 @@ Produções passam de `authors` para `contributors`, lista ordenada com dois for
 
 O ADR 0003 foi refinado para registrar a decisão.
 
-Próximo teste:
-- integrante interno → pessoa externa → integrante interno;
-- reordenação;
-- persistência após reabrir;
-- armazenamento correto de slug/nome.
+`list: {min: 1}` não é sintaxe reconhecida pelo Pages CMS para `type: block` (só `list: true`);
+corrigido, e o reteste real confirmou criação, reordenação, persistência da ordem após reabrir e
+o bloqueio de salvar produção sem nenhum contributor.
 
 Ver:
 `docs/superpowers/reviews/2026-09-16-fase-1-cms-auditoria-04-contributors.md`.
 
-Ainda testar depois de `contributors`:
+#### Situação de publicação da obra — IMPLEMENTADO; RETESTE PENDENTE
+
+O teste do bloqueio "sem contributor" levantou duas dúvidas de clareza editorial:
+- `catalogStatus` ("Estado de catalogação") não deixava claro que é sobre a confiança do NOSSO
+  cadastro, não sobre a obra — ganhou `description` explicando os três níveis;
+- não havia como registrar se a obra está no prelo (aceita, ainda não publicada) ou já publicada,
+  distinto de `editorialStatus` (que é só o nosso fluxo de edição do site).
+
+Produções ganham `publicationStatus` (opcional): `in-press` / `published`. `editorial_status`
+(componente usado em todas as coleções) ganhou `description` reforçando que não é sobre a obra.
+
+Próximo teste: confirmar no Pages CMS que os dois novos textos de ajuda aparecem nos campos e que
+`publicationStatus` pode ficar em branco sem impedir salvar.
+
+Ainda testar depois disso:
 - mídia;
 - traduções;
 - workflow editorial;

@@ -60,6 +60,21 @@ de autoria/crédito.
 Não devem ser criados perfis `person` artificiais apenas para permitir o registro de coautores ou
 colaboradores externos.
 
+### Refinamento — situação de publicação distinta do status editorial
+
+`editorialStatus` (rascunho/revisão/publicado) descreve exclusivamente o fluxo de edição do
+próprio site — se aquele registro já pode ficar público no LabMAES. Não descreve o percurso da
+obra em si.
+
+Produções ganham um campo opcional `publicationStatus`, independente de `editorialStatus`, com
+dois valores:
+
+- `in-press`: a obra foi aceita e ainda não foi publicada;
+- `published`: a obra já foi publicada.
+
+O campo fica em branco quando o conceito não se aplica ao tipo de produção (ex.: exposição,
+produção audiovisual sem ciclo editorial formal). Não é obrigatório.
+
 ## Consequências
 
 - relações substituem duplicação de nomes e metadados quando a pessoa integra o cadastro;
@@ -67,4 +82,6 @@ colaboradores externos.
 - páginas de autor, projeto, produção e evento poderão ser geradas automaticamente;
 - slugs passam a funcionar como identificadores estáveis;
 - a ordem de `contributors` deve ser preservada por CMS, validação e templates públicos;
+- `editorialStatus` e `publicationStatus` não devem ser confundidos em templates, filtros nem
+  documentação editorial futura;
 - alterações de taxonomia devem preservar compatibilidade ou prever migração.

@@ -30,6 +30,7 @@ projects:
   - fixture-projeto-pesquisa
 externalUrl: https://example.org/fixture-producao-bibliografica
 featured: false
+publicationStatus: published
 catalogStatus: verified
 sourceNotes: FIXTURE — dados fictícios; não publicar.
 lastVerifiedAt: 2026-09-10

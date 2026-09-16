@@ -18,6 +18,7 @@ projects:
 - fixture-projeto-extensao
 externalUrl: https://example.org/fixture-producao-audiovisual
 featured: false
+publicationStatus: in-press
 catalogStatus: identified
 sourceNotes: FIXTURE — dados fictícios; não publicar.
 ---
