@@ -284,7 +284,7 @@ content:
         multiple: true
         search: name,preferredName
         value: '{fields.slug}'
-        label: '{primary}'
+        label: '{fields.name}'
     - name: relatedProjects
       label: Projetos relacionados
       type: reference
@@ -293,7 +293,7 @@ content:
         multiple: true
         search: title,acronym
         value: '{fields.slug}'
-        label: '{primary}'
+        label: '{fields.title}'
     - name: translations
       component: translations_longform
     - name: seo
@@ -382,7 +382,7 @@ content:
         collection: institutions
         search: name,shortName
         value: '{fields.slug}'
-        label: '{primary}'
+        label: '{fields.name}'
     - name: roles
       label: Papéis / funções
       type: string
@@ -580,7 +580,7 @@ content:
         multiple: true
         search: name,preferredName
         value: '{fields.slug}'
-        label: '{primary}'
+        label: '{fields.name}'
     - name: participants
       label: Participantes
       type: reference
@@ -589,7 +589,7 @@ content:
         multiple: true
         search: name,preferredName
         value: '{fields.slug}'
-        label: '{primary}'
+        label: '{fields.name}'
     - name: institutions
       label: Instituições
       type: reference
@@ -598,7 +598,7 @@ content:
         multiple: true
         search: name,shortName
         value: '{fields.slug}'
-        label: '{primary}'
+        label: '{fields.name}'
     - name: translations
       component: translations_longform
     - name: seo
@@ -726,7 +726,7 @@ content:
         min: 1
         search: name,preferredName
         value: '{fields.slug}'
-        label: '{primary}'
+        label: '{fields.name}'
     - name: summary
       label: Resumo de apresentação
       type: text
@@ -760,7 +760,7 @@ content:
         multiple: true
         search: title,acronym
         value: '{fields.slug}'
-        label: '{primary}'
+        label: '{fields.title}'
     - name: doi
       label: DOI
       type: string
@@ -1063,7 +1063,7 @@ content:
         collection: events
         search: name,shortName
         value: '{fields.slug}'
-        label: '{primary}'
+        label: '{fields.name}'
     - name: year
       label: Ano
       type: number
@@ -1117,7 +1117,7 @@ content:
         multiple: true
         search: name,preferredName
         value: '{fields.slug}'
-        label: '{primary}'
+        label: '{fields.name}'
     - name: institutions
       label: Instituições relacionadas
       type: reference
@@ -1126,7 +1126,7 @@ content:
         multiple: true
         search: name,shortName
         value: '{fields.slug}'
-        label: '{primary}'
+        label: '{fields.name}'
     - name: translations
       component: translations_longform
     - name: seo
