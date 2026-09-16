@@ -6,9 +6,6 @@ productionCategory: bibliographic
 productionType: article
 year: 2025
 contributors:
-  - kind: internal
-    person: fixture-pessoa-atual
-    role: Autoria
   - kind: external
     name: "[FIXTURE] Pessoa Autora Externa"
     role: Autoria
@@ -18,6 +15,10 @@ contributors:
     role: Autoria
   - kind: internal
     person: outra-pessoa-teste
+    role: Validação
+  - kind: internal
+    person: fixture-pessoa-atual
+    role: Editoração
 summary: Produção fictícia para testar autoria mista, ordem autoral e vínculo
   com projeto.
 keywords:
