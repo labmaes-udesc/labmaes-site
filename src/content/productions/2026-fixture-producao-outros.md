@@ -6,8 +6,10 @@ productionCategory: other
 productionType: other
 otherTypeLabel: Objeto experimental de teste
 year: 2026
-authors:
-- fixture-pessoa-egressa
+contributors:
+- kind: internal
+  person: fixture-pessoa-egressa
+  role: Autoria
 summary: Fixture específica para validar a regra other + otherTypeLabel.
 language: pt-BR
 projects:

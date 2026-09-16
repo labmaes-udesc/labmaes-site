@@ -1,7 +1,7 @@
 # Plan — Redesign Fase 1: Content foundation
 
 **Status:** Em andamento  
-**Data:** 2026-09-15
+**Data:** 2026-09-16
 
 ## Etapas
 
@@ -32,48 +32,47 @@ Auditoria 02 aplicada:
 
 ### 4. Criar fixtures — CONCLUÍDA
 
-Conjunto criado em `src/content/**`, inteiramente marcado como fixture e mantido fora do build
-público. Inclui pessoas, instituição, projetos, produções, evento/edição, documento e página
-institucional de teste.
-
-Ver:
-`docs/superpowers/fixtures/2026-09-10-fase-1-fixtures-editoriais.md`.
+Conjunto criado em `src/content/**`, marcado como fixture e mantido fora do build público.
 
 ### 5. Validar CMS — EM ANDAMENTO
 
 #### Criação de registros — APROVADA
 
-O Pages CMS criou registros na branch corretamente e preservou o formato de frontmatter.
+O Pages CMS cria registros na branch corretamente e preserva o frontmatter.
 
-#### Datas opcionais — CORRIGIDAS
+#### Datas opcionais — APROVADAS
 
-O primeiro teste encontrou data artificial em campo vazio. A Correção 02 foi aplicada.
+A Correção 02 eliminou o valor artificial em campos de data opcionais.
 
-#### Referências relacionais — FUNCIONAIS; CORREÇÃO 03 PENDENTE DE RETESTE
+#### Referências relacionais — APROVADAS
 
-Teste real confirmou:
+O teste real confirmou:
 - múltiplas referências;
 - armazenamento por slug;
-- preservação da ordem.
+- preservação da ordem;
+- labels legíveis no CMS.
 
-Problema de UX identificado:
-- seletor exibia nomes de arquivo (`*.md`) em vez de nomes/títulos legíveis.
+A tentativa com `{primary}` produziu labels vazios no CMS hospedado. A Correção 03b passou a usar
+labels explícitos (`{fields.name}` / `{fields.title}`), e o reteste foi aprovado.
 
-Correção 03:
-- `value: '{fields.slug}'`;
-- `label: '{primary}'`.
+#### Modelo de autoria / créditos — IMPLEMENTAÇÃO PREPARADA; RETESTE PENDENTE
+
+Produções passam de `authors` para `contributors`, lista ordenada com dois formatos:
+- `internal`: referência a `people`;
+- `external`: nome e metadados mínimos.
+
+O ADR 0003 foi refinado para registrar a decisão.
+
+Próximo teste:
+- integrante interno → pessoa externa → integrante interno;
+- reordenação;
+- persistência após reabrir;
+- armazenamento correto de slug/nome.
 
 Ver:
-`docs/superpowers/reviews/2026-09-15-fase-1-cms-auditoria-03-referencias.md`.
+`docs/superpowers/reviews/2026-09-16-fase-1-cms-auditoria-04-contributors.md`.
 
-#### Modelo de autoria — DECISÃO TOMADA; IMPLEMENTAÇÃO PENDENTE
-
-Produções adotarão `contributors` em lista ordenada, aceitando:
-- pessoa interna por referência;
-- pessoa externa por nome/metadados mínimos.
-
-Ainda testar:
-- `contributors`;
+Ainda testar depois de `contributors`:
 - mídia;
 - traduções;
 - workflow editorial;
@@ -82,7 +81,8 @@ Ainda testar:
 
 ### 6. Evoluir validação
 
-Substituir o validador estrutural mínimo por validação real de frontmatter/schema e referências.
+Substituir o validador estrutural mínimo por validação real de frontmatter/schema e referências,
+incluindo regras específicas de `contributors`.
 
 ### 7. Gate de saída
 

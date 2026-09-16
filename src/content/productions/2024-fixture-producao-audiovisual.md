@@ -5,8 +5,10 @@ title: '[FIXTURE] Produção audiovisual de teste'
 productionCategory: audiovisual
 productionType: audiovisual
 year: 2024
-authors:
-- fixture-pessoa-atual
+contributors:
+- kind: internal
+  person: fixture-pessoa-atual
+  role: Autoria
 summary: Produção fictícia para testar a categoria audiovisual.
 keywords:
 - fixture

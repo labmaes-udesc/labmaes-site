@@ -5,10 +5,18 @@ title: '[FIXTURE] Artigo bibliográfico de teste'
 productionCategory: bibliographic
 productionType: article
 year: 2025
-authors:
-- fixture-pessoa-atual
-- fixture-pessoa-egressa
-summary: Produção fictícia para testar autoria múltipla e vínculo com projeto.
+contributors:
+- kind: internal
+  person: fixture-pessoa-atual
+  role: Autoria
+- kind: external
+  name: '[FIXTURE] Pessoa Autora Externa'
+  role: Autoria
+  affiliation: '[FIXTURE] Instituição Externa de Teste'
+- kind: internal
+  person: fixture-pessoa-egressa
+  role: Autoria
+summary: Produção fictícia para testar autoria mista, ordem autoral e vínculo com projeto.
 keywords:
 - fixture
 - catalogação

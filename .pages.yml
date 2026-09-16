@@ -632,7 +632,6 @@ content:
       - editorialStatus
       search:
       - title
-      - authors
       - keywords
       default:
         sort: year
@@ -716,17 +715,46 @@ content:
       label: Data completa
       type: date
       default: ''
-    - name: authors
-      label: Autoria
-      type: reference
+    - name: contributors
+      label: Pessoas autoras / colaboradoras
+      type: block
       required: true
-      options:
-        collection: people
-        multiple: true
+      description: A ordem desta lista é a ordem oficial de autoria/crédito.
+      list:
         min: 1
-        search: name,preferredName
-        value: '{fields.slug}'
-        label: '{fields.name}'
+      blockKey: kind
+      blocks:
+      - name: internal
+        fields:
+        - name: person
+          label: Integrante cadastrado
+          type: reference
+          required: true
+          options:
+            collection: people
+            search: name,preferredName
+            value: '{fields.slug}'
+            label: '{fields.name}'
+        - name: role
+          label: Função / crédito
+          type: string
+          description: 'Ex.: autoria, organização, direção, curadoria.'
+      - name: external
+        fields:
+        - name: name
+          label: Nome
+          type: string
+          required: true
+        - name: role
+          label: Função / crédito
+          type: string
+          description: 'Ex.: autoria, organização, direção, curadoria.'
+        - name: affiliation
+          label: Afiliação institucional
+          type: string
+        - name: orcid
+          label: ORCID
+          type: string
     - name: summary
       label: Resumo de apresentação
       type: text
