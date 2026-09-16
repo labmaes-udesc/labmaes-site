@@ -720,8 +720,7 @@ content:
       type: block
       required: true
       description: A ordem desta lista é a ordem oficial de autoria/crédito.
-      list:
-        min: 1
+      list: true
       blockKey: kind
       blocks:
       - name: internal
