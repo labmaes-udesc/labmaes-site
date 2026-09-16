@@ -84,16 +84,26 @@ Produções ganham `publicationStatus` (opcional): `in-press` / `published`. `ed
 Próximo teste: confirmar no Pages CMS que os dois novos textos de ajuda aparecem nos campos e que
 `publicationStatus` pode ficar em branco sem impedir salvar.
 
-#### Mídia — FOTO APROVADA; LIMITE DE TAMANHO DE ARQUIVO EM ABERTO
+#### Mídia — APROVADA, COM LIMITE DE TAMANHO DE ARQUIVO CONHECIDO
 
 Upload de foto em `people` funcionou (`outra-pessoa-teste.md` ganhou `photo`/`photoAlt` reais).
 `people.photo` ganhou `description` com formatos aceitos e recomendação de tamanho.
 
-Upload de documento (`documents.file`) funcionou com um PDF de ~500 KB
-(`aldodinucci5fluxodanilea.pdf`), mas um PDF maior retornou `Failed to upload file: 413` (Payload
-Too Large). Não é algo configurável em `.pages.yml` — nem `type: image` nem `type: file` têm opção
-de tamanho máximo documentada; é um limite do lado do serviço hospedado do Pages CMS. Teto exato
-ainda não determinado.
+Upload de documento (`documents.file`) testado com arquivos de vários tamanhos: aceito até
+~2,89 MB, falhou com `Failed to upload file: 413` a partir de ~3,8 MB. Limite não é configurável
+em `.pages.yml` (sem opção de tamanho máximo em `type: image`/`type: file`); é do lado do serviço
+hospedado do Pages CMS, provavelmente limite de corpo de requisição serverless (~4,5 MB
+codificados em base64 ≈ 3,3–3,4 MB de arquivo original). Recomendação prática: manter uploads pelo
+CMS até ~2,5 MB; arquivos maiores continuam indo por commit direto, como já é o caso de
+`assets/editais/`.
+
+Ver:
+`docs/superpowers/reviews/2026-09-16-fase-1-cms-auditoria-06-limite-upload-e-purga.md`.
+
+**Incidente:** um PDF com dado de saúde pessoal foi commitado por engano durante esse teste de
+limites e ficou pushado publicamente por um curto intervalo. Histórico da branch foi reescrito e
+forçado no `origin` para removê-lo; ver o mesmo documento acima para detalhes e o alerta a
+qualquer clone local desatualizado.
 
 Ainda testar depois disso:
 - traduções;
