@@ -2299,3 +2299,25 @@ img {
   .event-support__celula { height: 56px; }
   .event-support__celula img { max-height: 34px; }
 }
+
+/* ─── Anais: lista de edições anteriores ─────────────────── */
+.anais-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-24);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.anais-lista__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+}
+
+.anais-lista__data {
+  font-size: 0.875rem;
+  color: rgba(48, 42, 102, 0.75);
+}
