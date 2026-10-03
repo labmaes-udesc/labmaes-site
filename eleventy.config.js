@@ -6,6 +6,9 @@ export default function (eleventyConfig) {
   // Fundação de conteúdo do Pages CMS (Fase 1) — ainda não integrada ao build do Eleventy
   eleventyConfig.ignores.add("src/**");
 
+  // Versão do build: sufixo ?v= nos CSS/JS, para que uma atualização não fique presa no cache do navegador
+  eleventyConfig.addGlobalData("buildId", () => Date.now().toString(36));
+
   // Copiar assets estáticos para _site/ sem processar
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("css");

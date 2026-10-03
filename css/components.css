@@ -2300,24 +2300,114 @@ img {
   .event-support__celula img { max-height: 34px; }
 }
 
-/* ─── Anais: lista de edições anteriores ─────────────────── */
-.anais-lista {
+/* ─── Anais ──────────────────────────────────────────────── */
+.anais-destaque {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-32);
+  padding: 36px 40px;
+  background: #fff;
+  border-radius: var(--radius-xl);
+  border: 1.5px solid rgba(48, 42, 102, 0.14);
+}
+
+.anais-destaque__texto {
+  max-width: 560px;
+}
+
+.anais-destaque__titulo {
+  margin: var(--space-12) 0 var(--space-8);
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--color-brand-blue);
+}
+
+.anais-destaque__desc {
+  margin: 0;
+  line-height: 1.5;
+  color: rgba(48, 42, 102, 0.84);
+}
+
+.anais-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--space-24);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.anais-lista__item {
+.anais-edicao {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-8);
+  gap: var(--space-16);
+  padding: 28px 28px 32px;
+  background: #fff;
+  border-radius: var(--radius-xl);
 }
 
-.anais-lista__data {
+.anais-edicao__topo {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-12);
+}
+
+.anais-edicao__ano {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--color-brand-red);
+}
+
+.anais-edicao__ed {
   font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-brand-blue);
+}
+
+.anais-edicao__tema {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--color-brand-blue);
+}
+
+.anais-edicao__info {
+  display: grid;
+  gap: var(--space-8);
+  margin: 0 0 var(--space-8);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: rgba(48, 42, 102, 0.84);
+}
+
+.anais-edicao__info dt {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: rgba(48, 42, 102, 0.75);
+}
+
+.anais-edicao__info dd {
+  margin: 0;
+}
+
+.anais-edicao .button {
+  margin-top: auto;
+}
+
+@media (max-width: 767px) {
+  .anais-destaque {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+  }
+  .anais-destaque__titulo { font-size: 2rem; }
 }
