@@ -86,7 +86,7 @@ Próximo teste: confirmar no Pages CMS que os dois novos textos de ajuda aparece
 
 #### Mídia — APROVADA, COM LIMITE DE TAMANHO DE ARQUIVO CONHECIDO
 
-Upload de foto em `people` funcionou (`outra-pessoa-teste.md` ganhou `photo`/`photoAlt` reais).
+Upload de foto em `people` funcionou (o registro de teste ganhou `photo`/`photoAlt` reais; o registro e a foto foram removidos na limpeza abaixo).
 `people.photo` ganhou `description` com formatos aceitos e recomendação de tamanho.
 
 Upload de documento (`documents.file`) testado com arquivos de vários tamanhos: aceito até
@@ -105,7 +105,17 @@ limites e ficou pushado publicamente por um curto intervalo. Histórico da branc
 forçado no `origin` para removê-lo; ver o mesmo documento acima para detalhes e o alerta a
 qualquer clone local desatualizado.
 
+#### Limpeza do conteúdo de teste — CONCLUÍDA
+
+Removidos da branch os registros e uploads criados à mão durante os testes no CMS:
+- `people/outra-pessoa-teste.md` e `projects/teste-referencias-projeto.md`;
+- 5 arquivos em `src/assets/uploads/` (3 PDFs de teste de tamanho, 1 JPG e 1 PNG);
+- a referência a `outra-pessoa-teste` em `productions/2025-fixture-producao-bibliografica.md` (continua com autoria mista: 1 externo + 2 internos).
+
+Ficam só os fixtures `fixture-*`. A auditoria 03 cita os registros removidos como evidência histórica e não foi alterada.
+
 Ainda testar depois disso:
+- reteste de `publicationStatus` e dos textos de ajuda (auditoria 05);
 - traduções;
 - workflow editorial;
 - mensagens de erro e campos obrigatórios;

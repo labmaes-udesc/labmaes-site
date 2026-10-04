@@ -14,9 +14,6 @@ contributors:
     person: fixture-pessoa-egressa
     role: Autoria
   - kind: internal
-    person: outra-pessoa-teste
-    role: Validação
-  - kind: internal
     person: fixture-pessoa-atual
     role: Editoração
 summary: Produção fictícia para testar autoria mista, ordem autoral e vínculo
