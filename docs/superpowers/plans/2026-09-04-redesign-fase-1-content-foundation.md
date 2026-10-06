@@ -129,7 +129,7 @@ piloto editorial começar a ser usado de verdade (não bloqueiam a Etapa 6):
 
 Decisão registrada no ADR 0007: validador próprio que **lê o `.pages.yml` como fonte única do schema**
 (`gray-matter` + `js-yaml`), sem Zod/Ajv. Código em `tools/validate-content/`; comando
-`npm run validate:content`; testes com `npm run test:content` (35 testes, `node:test`).
+`npm run validate:content`; testes com `npm run test:content` (39 testes, `node:test`).
 
 Valida:
 - campos: obrigatoriedade, tipo, `select`, `pattern`, listas, objetos, blocos, campos fora do schema;
@@ -137,14 +137,17 @@ Valida:
 - slugs únicos por coleção e nome de arquivo igual ao `filename.template`;
 - `other` exige `otherTypeLabel`; ano coerente com a data; início não posterior ao fim;
 - `contributors`: mesma pessoa interna não se repete; ORCID malformado gera aviso;
-- tipo de campo ou componente desconhecido no `.pages.yml` falha de forma explícita.
+- tipo de campo ou componente desconhecido no `.pages.yml` falha de forma explícita, na leitura do
+  schema, mesmo que nenhum registro preencha o campo; o mesmo vale para referência a coleção
+  inexistente, `options.value` diferente de `{fields.slug}` e bloco sem `blockKey`.
 
 Os fixtures `fixture-*` passam sem erros nem avisos; um teste manual com referência quebrada,
 `other` sem rótulo e ano como texto produziu os três erros esperados.
 
 Fora de escopo, por não haver ADR que defina: compatibilidade entre `productionCategory` e
-`productionType`; publicado referenciando rascunho. O texto de ajuda de `otherTypeLabel` no
-`.pages.yml` ainda diz que a validação "será feita no CI"; ainda não há CI (ver Etapa 7).
+`productionType`; publicado referenciando rascunho. A CI (`.github/workflows/ci.yml`, PR #78) roda
+`validate:content` e `test:content` em todo pull request, o que torna verdadeiro o texto de ajuda de
+`otherTypeLabel` no `.pages.yml` ("será feita no CI").
 
 ### 7. Gate de saída
 
