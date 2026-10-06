@@ -160,3 +160,9 @@ antes da primeira carga real de conteúdo:
 
 Essas respostas não alteram o schema nem os ADRs aceitos; afetam política de conteúdo e
 podem ser resolvidas em paralelo à Fase 1.
+
+**Respondidas em 2026-10-06:** ver [docs/politica-editorial.md](../../politica-editorial.md)
+(issues #17 a #22). Resumo: bolsistas publicam, com revisão por amostragem; só entram documentos já
+públicos; notícias viram "Atualizações" leves; são traduzidos o institucional e os resumos; o único
+evento recorrente é o Caminhos; o acervo inclui anais, trabalhos acadêmicos, materiais didáticos,
+registros de eventos, peças e coleções e fontes primárias do acervo físico.

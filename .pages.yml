@@ -816,6 +816,7 @@ content:
     - name: file
       label: Arquivo
       type: file
+      description: 'Só documentos que já são públicos (edital, programação, anais, relatório publicado, template). Nunca avaliações, inscrições, documentos pessoais ou contratos: o arquivo fica público para sempre, mesmo se apagado. Até ~2,5 MB.'
       options:
         media: documents
     - name: cover
@@ -949,6 +950,7 @@ content:
       label: Arquivo
       type: file
       required: true
+      description: 'Só documentos que já são públicos (edital, programação, anais, relatório publicado, template). Nunca avaliações, inscrições, documentos pessoais ou contratos: o arquivo fica público para sempre, mesmo se apagado. Até ~2,5 MB.'
       options:
         media: documents
     - name: version
