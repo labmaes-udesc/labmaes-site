@@ -52,7 +52,7 @@ test("body vem do corpo do arquivo, não do frontmatter", () => {
 
 test("referência quebrada é erro com arquivo e campo", () => {
   const r = run({ ...OK, "projects/2026-p.md": "---\nslug: p\nyear: 2026\nlead: zé\n---\n" });
-  assert.match(r.errors[0], /projects\/2026-p\.md\|lead\|referência "zé"/);
+  assert.match(r.errors[0], /projects\/2026-p\.md\|lead\|aponta para "zé", que não existe em people/);
 });
 
 test("nome de arquivo diferente do template é erro", () => {
@@ -62,7 +62,7 @@ test("nome de arquivo diferente do template é erro", () => {
 
 test("slug duplicado na mesma coleção é erro", () => {
   const r = run({ ...OK, "projects/2025-p.md": "---\nslug: p\nyear: 2025\n---\n", "projects/2026-p.md": "---\nslug: p\nyear: 2026\n---\n" });
-  assert.ok(r.errors.some((e) => /slug\|.*"p".*já usado/.test(e)), r.errors.join("\n"));
+  assert.ok(r.errors.some((e) => /slug\|.*"p".*já é usado/.test(e)), r.errors.join("\n"));
 });
 
 test("pasta inesperada e arquivo que não é .md são erros", () => {
@@ -82,4 +82,32 @@ test("frontmatter YAML inválido vira erro, não exceção", () => {
 test("slug do arquivo difere do slug do frontmatter já cai no template", () => {
   const r = run({ "people/outro.md": "---\nslug: ana\nname: A\n---\nx" });
   assert.match(r.errors[0], /\(arquivo\)/);
+});
+
+test("erro traz os nomes do CMS: coleção, título do registro, campo e opção (caso C7, #90)", () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), "vc-"));
+  fs.writeFileSync(path.join(root, ".pages.yml"), `
+media: []
+components: {}
+content:
+- name: productions
+  label: Produções
+  type: collection
+  path: src/content/productions
+  filename: { template: '{fields.slug}.md' }
+  fields:
+  - { name: slug, type: string, required: true }
+  - { name: title, label: Título oficial, type: string, required: true }
+  - { name: productionCategory, label: Macro categoria, type: select, options: { values: [{ name: bibliographic, label: Bibliográfica }, { name: other, label: Outro }] } }
+  - { name: productionType, label: Tipo específico, type: select, options: { values: [{ name: book, label: Livro }, { name: other, label: Outro }] } }
+  - { name: otherTypeLabel, label: "Se “Outro”, qual?", type: string }
+`);
+  fs.mkdirSync(path.join(root, "src/content/productions"), { recursive: true });
+  fs.writeFileSync(path.join(root, "src/content/productions/t.md"), "---\nslug: t\ntitle: Teste de Título\nproductionCategory: bibliographic\nproductionType: other\n---\n");
+  const [e] = runValidation({ root }).errors;
+  assert.equal(e.collection, "Produções");
+  assert.equal(e.record, "Teste de Título");
+  assert.equal(e.fieldLabel, "Se “Outro”, qual?");
+  assert.equal(e.message, "obrigatório quando “Macro categoria” ou “Tipo específico” é “Outro”");
+  assert.equal(e.field, "otherTypeLabel");
 });

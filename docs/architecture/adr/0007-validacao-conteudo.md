@@ -31,6 +31,9 @@ Validar o conteúdo com um validador próprio que **lê o `.pages.yml` como font
   `other` exige `otherTypeLabel`, datas coerentes, `contributors` sem a mesma pessoa interna
   repetida;
 - o comando continua sendo `npm run validate:content`; saída com código 1 se houver erro.
+- as mensagens usam os nomes que aparecem no CMS (coleção, título do registro, `label` do campo e
+  das opções), lidos do mesmo `.pages.yml`; o caminho técnico do arquivo e do campo vem ao lado, para
+  quem desenvolve. Na CI, os problemas também viram anotações e um resumo da execução (#90).
 
 ## Consequências
 
