@@ -3,6 +3,8 @@
  * Operam sobre o registro já normalizado (datas como "AAAA-MM-DD").
  * Ver docs/architecture/adr/0007-validacao-conteudo.md.
  */
+import { categoriaDe } from "../content-model/categorias-producao.mjs";
+
 const ORCID = /^(https:\/\/orcid\.org\/)?\d{4}-\d{4}-\d{4}-\d{3}[\dX]$/;
 const err = (field, message) => ({ level: "error", field, message });
 const warn = (field, message) => ({ level: "warning", field, message });
@@ -23,12 +25,16 @@ const order = (a, b, field, la) =>
 
 function productionRules(d) {
   const out = [];
-  const isOther = d.productionType === "other" || d.productionCategory === "other";
+  const isOther = d.productionType === "other";
   if (isOther && !d.otherTypeLabel) {
-    out.push(err("otherTypeLabel", "obrigatório quando «campo:productionCategory» ou «campo:productionType» é «opção:productionType:other»"));
+    out.push(err("otherTypeLabel", "obrigatório quando «campo:productionType» é «opção:productionType:other»"));
   }
   if (!isOther && d.otherTypeLabel) {
-    out.push(warn("otherTypeLabel", "preenchido, mas nem «campo:productionCategory» nem «campo:productionType» é «opção:productionType:other»; será ignorado"));
+    out.push(warn("otherTypeLabel", "preenchido, mas «campo:productionType» não é «opção:productionType:other»; será ignorado"));
+  }
+  // A macro categoria é derivada do tipo (ADR 0009); um tipo novo precisa entrar na tabela.
+  if (d.productionType && !categoriaDe(d.productionType)) {
+    out.push(err("productionType", `"${d.productionType}" não tem macro categoria definida (tools/content-model/categorias-producao.mjs)`));
   }
   if (d.date && d.year !== undefined && Number(d.date.slice(0, 4)) !== d.year) {
     out.push(err("year", `${d.year} difere do ano de «campo:date» (${d.date.slice(0, 4)})`));

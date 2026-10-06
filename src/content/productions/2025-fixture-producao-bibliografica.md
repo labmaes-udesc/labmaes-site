@@ -2,7 +2,6 @@
 slug: fixture-producao-bibliografica
 editorialStatus: draft
 title: "[FIXTURE] Artigo bibliográfico de teste"
-productionCategory: bibliographic
 productionType: article
 year: 2025
 contributors:

@@ -629,7 +629,6 @@ content:
       fields:
       - title
       - year
-      - productionCategory
       - productionType
       - catalogStatus
       - editorialStatus
@@ -637,7 +636,7 @@ content:
       sort:
       - year
       - title
-      - productionCategory
+      - productionType
       - catalogStatus
       - editorialStatus
       search:
@@ -659,25 +658,6 @@ content:
       label: Título oficial
       type: string
       required: true
-    - name: productionCategory
-      label: Macro categoria
-      type: select
-      required: true
-      options:
-        placeholder: 'Selecione…'
-        values:
-        - name: bibliographic
-          label: Bibliográfica
-        - name: artistic
-          label: Artística
-        - name: audiovisual
-          label: Audiovisual
-        - name: educational
-          label: Educacional
-        - name: documentary
-          label: Documental
-        - name: other
-          label: Outros
     - name: productionType
       label: Tipo específico
       type: select

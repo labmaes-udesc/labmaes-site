@@ -42,6 +42,8 @@ Produções usam macro categorias públicas:
 
 `other` é escape controlado e deve registrar `otherTypeLabel`.
 
+A macro categoria não é editada: é derivada do tipo específico ([ADR 0009](0009-categoria-derivada-do-tipo.md)).
+
 ### Refinamento — autoria e contribuições
 
 Produções usam uma lista ordenada `contributors` para representar autoria e outros créditos.

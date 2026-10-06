@@ -98,16 +98,15 @@ content:
   fields:
   - { name: slug, type: string, required: true }
   - { name: title, label: Título oficial, type: string, required: true }
-  - { name: productionCategory, label: Macro categoria, type: select, options: { values: [{ name: bibliographic, label: Bibliográfica }, { name: other, label: Outro }] } }
   - { name: productionType, label: Tipo específico, type: select, options: { values: [{ name: book, label: Livro }, { name: other, label: Outro }] } }
   - { name: otherTypeLabel, label: "Se “Outro”, qual?", type: string }
 `);
   fs.mkdirSync(path.join(root, "src/content/productions"), { recursive: true });
-  fs.writeFileSync(path.join(root, "src/content/productions/t.md"), "---\nslug: t\ntitle: Teste de Título\nproductionCategory: bibliographic\nproductionType: other\n---\n");
+  fs.writeFileSync(path.join(root, "src/content/productions/t.md"), "---\nslug: t\ntitle: Teste de Título\nproductionType: other\n---\n");
   const [e] = runValidation({ root }).errors;
   assert.equal(e.collection, "Produções");
   assert.equal(e.record, "Teste de Título");
   assert.equal(e.fieldLabel, "Se “Outro”, qual?");
-  assert.equal(e.message, "obrigatório quando “Macro categoria” ou “Tipo específico” é “Outro”");
+  assert.equal(e.message, "obrigatório quando “Tipo específico” é “Outro”");
   assert.equal(e.field, "otherTypeLabel");
 });

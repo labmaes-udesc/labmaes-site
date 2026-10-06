@@ -7,7 +7,7 @@
     "build": "npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve",
     "validate:content": "node tools/validate-content-foundation.mjs",
-    "test:content": "node --test tools/validate-content/*.test.mjs",
+    "test:content": "node --test tools/validate-content/*.test.mjs tools/content-model/*.test.mjs",
     "test:site": "node --test tools/eleventy/*.test.mjs"
   },
   "devDependencies": {
