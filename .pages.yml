@@ -44,6 +44,8 @@ components:
     type: select
     label: Status editorial
     required: true
+    description: Situação deste registro no NOSSO fluxo de edição do site (se já pode ficar
+      público) — não é sobre a situação da obra/evento/produção em si.
     options:
       values:
       - name: draft
@@ -283,8 +285,8 @@ content:
         collection: people
         multiple: true
         search: name,preferredName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{fields.name}'
     - name: relatedProjects
       label: Projetos relacionados
       type: reference
@@ -292,8 +294,8 @@ content:
         collection: projects
         multiple: true
         search: title,acronym
-        value: '{slug}'
-        label: '{title}'
+        value: '{fields.slug}'
+        label: '{fields.title}'
     - name: translations
       component: translations_longform
     - name: seo
@@ -360,13 +362,18 @@ content:
     - name: membershipStart
       label: Início do vínculo
       type: date
+      default: ''
     - name: membershipEnd
       label: Fim do vínculo
       type: date
+      default: ''
       description: Preencher para egressos quando a informação for conhecida.
     - name: photo
       label: Foto
       type: image
+      description: 'Foto de rosto/retrato da pessoa. Formatos aceitos: jpg, jpeg, png, webp, avif.
+        Prefira um arquivo já comprimido, na casa de algumas centenas de KB — arquivos muito
+        grandes podem falhar no envio.'
       options:
         media: images
     - name: photoAlt
@@ -379,8 +386,8 @@ content:
       options:
         collection: institutions
         search: name,shortName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{fields.name}'
     - name: roles
       label: Papéis / funções
       type: string
@@ -554,9 +561,11 @@ content:
     - name: startDate
       label: Início
       type: date
+      default: ''
     - name: endDate
       label: Término
       type: date
+      default: ''
     - name: summary
       label: Resumo
       type: text
@@ -575,8 +584,8 @@ content:
         collection: people
         multiple: true
         search: name,preferredName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{fields.name}'
     - name: participants
       label: Participantes
       type: reference
@@ -584,8 +593,8 @@ content:
         collection: people
         multiple: true
         search: name,preferredName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{fields.name}'
     - name: institutions
       label: Instituições
       type: reference
@@ -593,8 +602,8 @@ content:
         collection: institutions
         multiple: true
         search: name,shortName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{fields.name}'
     - name: translations
       component: translations_longform
     - name: seo
@@ -628,7 +637,6 @@ content:
       - editorialStatus
       search:
       - title
-      - authors
       - keywords
       default:
         sort: year
@@ -711,17 +719,46 @@ content:
     - name: date
       label: Data completa
       type: date
-    - name: authors
-      label: Autoria
-      type: reference
+      default: ''
+    - name: contributors
+      label: Pessoas autoras / colaboradoras
+      type: block
       required: true
-      options:
-        collection: people
-        multiple: true
-        min: 1
-        search: name,preferredName
-        value: '{slug}'
-        label: '{name}'
+      description: A ordem desta lista é a ordem oficial de autoria/crédito.
+      list: true
+      blockKey: kind
+      blocks:
+      - name: internal
+        fields:
+        - name: person
+          label: Integrante cadastrado
+          type: reference
+          required: true
+          options:
+            collection: people
+            search: name,preferredName
+            value: '{fields.slug}'
+            label: '{fields.name}'
+        - name: role
+          label: Função / crédito
+          type: string
+          description: 'Ex.: autoria, organização, direção, curadoria.'
+      - name: external
+        fields:
+        - name: name
+          label: Nome
+          type: string
+          required: true
+        - name: role
+          label: Função / crédito
+          type: string
+          description: 'Ex.: autoria, organização, direção, curadoria.'
+        - name: affiliation
+          label: Afiliação institucional
+          type: string
+        - name: orcid
+          label: ORCID
+          type: string
     - name: summary
       label: Resumo de apresentação
       type: text
@@ -754,8 +791,8 @@ content:
         collection: projects
         multiple: true
         search: title,acronym
-        value: '{slug}'
-        label: '{title}'
+        value: '{fields.slug}'
+        label: '{fields.title}'
     - name: doi
       label: DOI
       type: string
@@ -789,10 +826,27 @@ content:
       label: Destaque
       type: boolean
       default: false
+    - name: publicationStatus
+      label: Situação de publicação
+      type: select
+      description: 'Em que ponto a obra está no seu próprio percurso editorial — independente
+        do status deste registro no nosso site (ver Status editorial, no topo). Deixe em branco
+        quando o conceito não se aplicar ao tipo de produção (ex.: exposição, produção audiovisual).'
+      options:
+        values:
+        - name: in-press
+          label: No prelo (aceita, ainda não publicada)
+        - name: published
+          label: Publicada
     - name: catalogStatus
       label: Estado de catalogação
       type: select
       required: true
+      description: Não é sobre a obra, e sim sobre a confiança do nosso próprio cadastro dela —
+        quanto já conferimos dos dados abaixo. Identificado = sabemos que existe, mas o registro
+        pode estar incompleto. Verificado = autoria, título e ano já foram conferidos numa fonte
+        confiável. Completo = todos os metadados, arquivo/link e relações aplicáveis já estão
+        preenchidos.
       options:
         values:
         - name: identified
@@ -808,6 +862,7 @@ content:
     - name: lastVerifiedAt
       label: Última verificação
       type: date
+      default: ''
     - name: translations
       component: translations_short
     - name: seo
@@ -877,6 +932,7 @@ content:
     - name: date
       label: Data
       type: date
+      default: ''
     - name: summary
       label: Resumo
       type: text
@@ -1055,8 +1111,8 @@ content:
       options:
         collection: events
         search: name,shortName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{fields.name}'
     - name: year
       label: Ano
       type: number
@@ -1071,9 +1127,11 @@ content:
     - name: startDate
       label: Início
       type: date
+      default: ''
     - name: endDate
       label: Término
       type: date
+      default: ''
     - name: format
       label: Formato
       type: select
@@ -1107,8 +1165,8 @@ content:
         collection: people
         multiple: true
         search: name,preferredName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{fields.name}'
     - name: institutions
       label: Instituições relacionadas
       type: reference
@@ -1116,8 +1174,8 @@ content:
         collection: institutions
         multiple: true
         search: name,shortName
-        value: '{slug}'
-        label: '{name}'
+        value: '{fields.slug}'
+        label: '{fields.name}'
     - name: translations
       component: translations_longform
     - name: seo

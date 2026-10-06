@@ -1,19 +1,13 @@
 # Plan — Redesign Fase 1: Content foundation
 
 **Status:** Em andamento  
-**Data:** 2026-09-04
-
-## Pré-condição
-
-A branch da Fase 1 deve conter a documentação final da Fase 0 (ADRs + spec + plan).
-
-**Status: concluído.**
+**Data:** 2026-09-16
 
 ## Etapas
 
 ### 1. Reconciliar histórico — CONCLUÍDA
 
-`redesign/fase-1-content-foundation` contém a Fase 0 e não há mais linhas arquiteturais paralelas.
+A branch da Fase 1 contém a Fase 0 e está sincronizada com `main`.
 
 ### 2. Formalizar documentação — CONCLUÍDA
 
@@ -23,48 +17,114 @@ Presentes:
 - spec e plan da Fase 1;
 - índice `docs/architecture/README.md`.
 
-### 3. Validar foundation existente — AUDITADA; CORREÇÃO 01 PENDENTE DE COMMIT
+### 3. Validar foundation existente — CONCLUÍDA
 
-Auditados:
-- `.pages.yml`;
-- `src/content/*`;
-- `src/assets/uploads/*`;
-- `tools/validate-content-foundation.mjs`;
-- `package.json`;
-- `eleventy.config.js`.
-
-Correções da Auditoria 01:
-- tokens explícitos `{fields.slug}` / `{fields.year}`;
+Auditoria 01 aplicada:
+- filenames com tokens explícitos de campos;
 - `editorialStatus` padronizado;
 - operações destrutivas bloqueadas durante piloto;
 - campos de texto alternativo;
-- SVG removido dos uploads via CMS.
+- SVG removido do upload editorial inicial.
+
+Auditoria 02 aplicada:
+- datas opcionais usam `default: ''`;
+- valores artificiais em datas vazias deixaram de ser aceitos como comportamento esperado.
+
+### 4. Criar fixtures — CONCLUÍDA
+
+Conjunto criado em `src/content/**`, marcado como fixture e mantido fora do build público.
+
+### 5. Validar CMS — EM ANDAMENTO
+
+#### Criação de registros — APROVADA
+
+O Pages CMS cria registros na branch corretamente e preserva o frontmatter.
+
+#### Datas opcionais — APROVADAS
+
+A Correção 02 eliminou o valor artificial em campos de data opcionais.
+
+#### Referências relacionais — APROVADAS
+
+O teste real confirmou:
+- múltiplas referências;
+- armazenamento por slug;
+- preservação da ordem;
+- labels legíveis no CMS.
+
+A tentativa com `{primary}` produziu labels vazios no CMS hospedado. A Correção 03b passou a usar
+labels explícitos (`{fields.name}` / `{fields.title}`), e o reteste foi aprovado.
+
+#### Modelo de autoria / créditos — APROVADO
+
+Produções passam de `authors` para `contributors`, lista ordenada com dois formatos:
+- `internal`: referência a `people`;
+- `external`: nome e metadados mínimos.
+
+O ADR 0003 foi refinado para registrar a decisão.
+
+`list: {min: 1}` não é sintaxe reconhecida pelo Pages CMS para `type: block` (só `list: true`);
+corrigido, e o reteste real confirmou criação, reordenação, persistência da ordem após reabrir e
+o bloqueio de salvar produção sem nenhum contributor.
 
 Ver:
-`docs/superpowers/reviews/2026-09-04-fase-1-content-foundation-auditoria-01.md`.
+`docs/superpowers/reviews/2026-09-16-fase-1-cms-auditoria-04-contributors.md`.
 
-### 4. Criar fixtures — PRÓXIMA ETAPA
+#### Situação de publicação da obra — IMPLEMENTADO; RETESTE PENDENTE
 
-Adicionar com garantia de não publicação:
-- integrante atual;
-- egresso;
-- instituição;
-- projeto de pesquisa;
-- projeto de extensão;
-- produção bibliográfica;
-- produção audiovisual;
-- produção `other`;
-- evento;
-- edição;
-- documento.
+O teste do bloqueio "sem contributor" levantou duas dúvidas de clareza editorial:
+- `catalogStatus` ("Estado de catalogação") não deixava claro que é sobre a confiança do NOSSO
+  cadastro, não sobre a obra — ganhou `description` explicando os três níveis;
+- não havia como registrar se a obra está no prelo (aceita, ainda não publicada) ou já publicada,
+  distinto de `editorialStatus` (que é só o nosso fluxo de edição do site).
 
-### 5. Validar CMS
+Produções ganham `publicationStatus` (opcional): `in-press` / `published`. `editorial_status`
+(componente usado em todas as coleções) ganhou `description` reforçando que não é sobre a obra.
 
-Testar referências, edição, mídia, traduções, erros e operações permitidas.
+Próximo teste: confirmar no Pages CMS que os dois novos textos de ajuda aparecem nos campos e que
+`publicationStatus` pode ficar em branco sem impedir salvar.
+
+#### Mídia — APROVADA, COM LIMITE DE TAMANHO DE ARQUIVO CONHECIDO
+
+Upload de foto em `people` funcionou (o registro de teste ganhou `photo`/`photoAlt` reais; o registro e a foto foram removidos na limpeza abaixo).
+`people.photo` ganhou `description` com formatos aceitos e recomendação de tamanho.
+
+Upload de documento (`documents.file`) testado com arquivos de vários tamanhos: aceito até
+~2,89 MB, falhou com `Failed to upload file: 413` a partir de ~3,8 MB. Limite não é configurável
+em `.pages.yml` (sem opção de tamanho máximo em `type: image`/`type: file`); é do lado do serviço
+hospedado do Pages CMS, provavelmente limite de corpo de requisição serverless (~4,5 MB
+codificados em base64 ≈ 3,3–3,4 MB de arquivo original). Recomendação prática: manter uploads pelo
+CMS até ~2,5 MB; arquivos maiores continuam indo por commit direto, como já é o caso de
+`assets/editais/`.
+
+Ver:
+`docs/superpowers/reviews/2026-09-16-fase-1-cms-auditoria-06-limite-upload-e-purga.md`.
+
+**Incidente:** um PDF com dado de saúde pessoal foi commitado por engano durante esse teste de
+limites e ficou pushado publicamente por um curto intervalo. Histórico da branch foi reescrito e
+forçado no `origin` para removê-lo; ver o mesmo documento acima para detalhes e o alerta a
+qualquer clone local desatualizado.
+
+#### Limpeza do conteúdo de teste — CONCLUÍDA
+
+Removidos da branch os registros e uploads criados à mão durante os testes no CMS:
+- `people/outra-pessoa-teste.md` e `projects/teste-referencias-projeto.md`;
+- 5 arquivos em `src/assets/uploads/` (3 PDFs de teste de tamanho, 1 JPG e 1 PNG);
+- a referência a `outra-pessoa-teste` em `productions/2025-fixture-producao-bibliografica.md` (continua com autoria mista: 1 externo + 2 internos).
+
+Ficam só os fixtures `fixture-*`. A auditoria 03 cita os registros removidos como evidência histórica e não foi alterada.
+
+Ainda testar depois disso:
+- reteste de `publicationStatus` e dos textos de ajuda (auditoria 05);
+- traduções;
+- workflow editorial;
+- mensagens de erro e campos obrigatórios;
+- ergonomia com uma pessoa não técnica.
 
 ### 6. Evoluir validação
 
-Substituir o validador estrutural mínimo por validação real de frontmatter/schema.
+Substituir o validador estrutural mínimo por validação real de frontmatter/schema e referências,
+incluindo regras específicas de `contributors`.
 
 ### 7. Gate de saída
 

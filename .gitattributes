@@ -1,0 +1,25 @@
+# Binários — nunca aplicar conversão de fim de linha nem diff textual.
+# (O repositório não define text=auto para não renormalizar arquivos existentes;
+#  core.autocrlf continua cuidando dos arquivos de texto no Windows.)
+*.pdf   binary
+*.doc   binary
+*.docx  binary
+*.odt   binary
+*.ppt   binary
+*.pptx  binary
+*.xls   binary
+*.xlsx  binary
+*.ods   binary
+*.zip   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.webp  binary
+*.avif  binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.mp4   binary
