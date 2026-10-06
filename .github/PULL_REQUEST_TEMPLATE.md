@@ -2,7 +2,8 @@
 
 <!-- Resumo em 1–3 frases. -->
 
-Fecha #
+<!-- O GitHub só fecha a issue com palavra-chave em inglês: "Closes #N" ou "Fixes #N". -->
+Closes #
 
 ## Por quê
 
