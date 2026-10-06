@@ -12,6 +12,7 @@ body {
   font-family: var(--font-sans);
   background: var(--color-background-default);
   color: var(--color-text-primary);
+  overflow-wrap: break-word;
 }
 
 a {
@@ -294,7 +295,7 @@ img {
 
 .event-card-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 28px;
 }
 
@@ -388,8 +389,9 @@ img {
 }
 
 .event-nav__row {
+  flex-wrap: wrap;
   justify-content: center;
-  gap: var(--space-48);
+  gap: var(--space-16) clamp(var(--space-16), 2vw, var(--space-48));
 }
 
 /* Botões de navegação: outline ice sobre fundo azul */
@@ -627,12 +629,12 @@ img {
 
 /* ─── Grid 3 colunas ─────────────────────────────────────── */
 .event-card-grid--3 {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 /* ─── Grid 2 colunas (eixos, passos) ─────────────────────── */
 .event-card-grid--2 {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 /* ─── Oficinas: cabeçalho com gráfico decorativo ─────────── */
@@ -988,7 +990,7 @@ img {
 /* ─── Grid de normas gerais (2 colunas) ──────────────────── */
 .normas-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
 }
 
@@ -1109,7 +1111,7 @@ img {
   }
 
   .event-card-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   /* Nav do evento: fundo branco + scroll horizontal no mobile */
@@ -1119,6 +1121,7 @@ img {
   }
 
   .event-nav .event-nav__row {
+    flex-wrap: nowrap;
     width: max-content;
     gap: 10px;
     justify-content: flex-start;
@@ -1180,6 +1183,30 @@ img {
   .submissao-card__actions .button {
     flex: 1 1 auto;
     font-size: 13px;
+  }
+}
+
+/* Tablet: o grid de 4 cards vai para 2 colunas e o de normas (3) empilha */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .event-card-grid:not(.event-card-grid--2, .event-card-grid--3) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .normas-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Telefone estreito: 1 coluna */
+@media (max-width: 559px) {
+  .event-card-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Botões com texto longo quebram linha em vez de alargar a página */
+  .button {
+    white-space: normal;
+    text-align: center;
   }
 }
 
