@@ -212,7 +212,7 @@ img {
   margin: 0;
   font-size: var(--text-body-large-size);
   line-height: var(--text-body-large-line);
-  color: rgba(48, 42, 102, 0.84);
+  color: var(--color-text-secondary);
 }
 
 /* Utilitário para espaçamento superior em conteúdo de seção */
@@ -284,7 +284,7 @@ img {
 .event-card,
 .event-placeholder-card {
   background: var(--color-white);
-  border: 1px solid rgba(48, 42, 102, 0.12);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: 28px;
 }
@@ -312,7 +312,7 @@ img {
   margin: 0;
   font-size: var(--text-body-size);
   line-height: var(--text-body-line);
-  color: rgba(48, 42, 102, 0.72);
+  color: var(--color-text-muted);
 }
 
 /* Ícone do card via CSS mask (aplica cor de marca ao SVG) */
@@ -412,7 +412,7 @@ img {
   gap: 28px;
   padding: 28px;
   background: var(--color-white);
-  border: 1px solid rgba(48, 42, 102, 0.12);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 }
 
@@ -524,7 +524,7 @@ img {
   gap: var(--space-12);
   padding: 24px;
   background: var(--color-white);
-  border: 1px solid rgba(48, 42, 102, 0.12);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 }
 
@@ -541,7 +541,7 @@ img {
   font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
-  color: rgba(48, 42, 102, 0.75);
+  color: var(--color-text-muted);
 }
 
 /* ─── Tag variante ice (fundos escuros) ──────────────────── */
@@ -672,7 +672,7 @@ img {
 /* ─── Card de oficina ────────────────────────────────────── */
 .oficina-card {
   background: var(--color-white);
-  border: 1px solid rgba(48, 42, 102, 0.12);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: 28px;
   display: flex;
@@ -692,11 +692,11 @@ img {
   margin: 0;
   margin-top: auto;
   padding-top: var(--space-12);
-  border-top: 1px solid rgba(48, 42, 102, 0.08);
+  border-top: 1px solid var(--color-divider);
   font-family: var(--font-event);
   font-size: 12px;
   line-height: 1.6;
-  color: rgba(48, 42, 102, 0.70);
+  color: var(--color-text-muted);
 }
 
 /* ─── Cabeçalho de modalidades (flex com gráfico laranja) ── */
@@ -778,7 +778,7 @@ img {
   gap: var(--space-16);
   padding: 24px;
   background: var(--color-white);
-  border: 1px solid rgba(48, 42, 102, 0.12);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 }
 
@@ -796,7 +796,7 @@ img {
   flex-direction: column;
   gap: 2px;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(48, 42, 102, 0.08);
+  border-bottom: 1px solid var(--color-divider);
 }
 
 .prazo-item:last-child {
@@ -808,7 +808,7 @@ img {
   font-size: 12px;
   font-weight: 600;
   line-height: 1.4;
-  color: rgba(48, 42, 102, 0.70);
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -826,9 +826,9 @@ img {
 }
 
 .prazo-item__date--encerrado {
-  color: rgba(48, 42, 102, 0.45);
+  color: var(--color-text-muted);
   text-decoration: line-through;
-  text-decoration-color: rgba(48, 42, 102, 0.35);
+  text-decoration-color: var(--color-text-muted);
 }
 
 .prazo-item__status {
@@ -836,12 +836,12 @@ img {
   margin-left: 8px;
   padding: 1px 8px;
   border-radius: var(--radius-pill);
-  background: rgba(48, 42, 102, 0.08);
+  background: var(--color-surface-tint);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: rgba(48, 42, 102, 0.65);
+  color: var(--color-text-muted);
   text-decoration: none;
   vertical-align: middle;
 }
@@ -849,7 +849,7 @@ img {
 /* ─── Card de submissão ──────────────────────────────────── */
 .submissao-card {
   background: var(--color-white);
-  border: 1px solid rgba(48, 42, 102, 0.12);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: 28px;
   display: flex;
@@ -875,7 +875,7 @@ img {
   margin: 0;
   font-size: var(--text-body-size);
   line-height: var(--text-body-line);
-  color: rgba(48, 42, 102, 0.72);
+  color: var(--color-text-muted);
   flex-grow: 1;
 }
 
@@ -896,7 +896,7 @@ img {
   align-items: baseline;
   gap: var(--space-8);
   padding: 8px 0;
-  border-bottom: 1px solid rgba(48, 42, 102, 0.08);
+  border-bottom: 1px solid var(--color-divider);
 }
 
 .submissao-meta__item:last-child {
@@ -910,7 +910,7 @@ img {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.6px;
-  color: rgba(48, 42, 102, 0.70);
+  color: var(--color-text-muted);
   flex-shrink: 0;
 }
 
@@ -936,7 +936,7 @@ img {
   flex-wrap: wrap;
   margin-top: auto;
   padding-top: var(--space-8);
-  border-top: 1px solid rgba(48, 42, 102, 0.08);
+  border-top: 1px solid var(--color-divider);
 }
 
 .submissao-card__actions .button {
@@ -965,7 +965,7 @@ img {
   padding-left: 40px;
   font-size: var(--text-body-size);
   line-height: var(--text-body-line);
-  color: rgba(48, 42, 102, 0.82);
+  color: var(--color-text-secondary);
 }
 .etapas-list > li::before {
   content: counter(etapa);
@@ -989,7 +989,7 @@ img {
   margin: 2px 0 0;
   font-size: 13px;
   line-height: 1.45;
-  color: rgba(48, 42, 102, 0.62);
+  color: var(--color-text-muted);
 }
 
 /* ─── Grid de normas gerais (2 colunas) ──────────────────── */
@@ -1011,7 +1011,7 @@ img {
   margin: 0;
   font-size: var(--text-body-size);
   line-height: var(--text-body-line);
-  color: rgba(48, 42, 102, 0.72);
+  color: var(--color-text-muted);
 }
 
 .normas-card p a {
@@ -1080,9 +1080,9 @@ img {
     gap: 8px;
     padding: 16px;
     background: var(--color-white);
-    border: 1px solid rgba(48, 42, 102, 0.12);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    box-shadow: 0 12px 32px rgba(48, 42, 102, 0.16);
+    box-shadow: 0 12px 32px var(--color-shadow);
   }
 
   .site-nav[data-open="true"] .button {
@@ -1291,7 +1291,7 @@ img {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: rgba(48, 42, 102, 0.70);
+  color: var(--color-text-muted);
 }
 
 /* ─── Tags de modalidade ────────────────────────────────── */
@@ -1309,7 +1309,7 @@ img {
 }
 
 .modality-tag--presencial {
-  background: rgba(48, 42, 102, 0.07);
+  background: var(--color-surface-tint);
   color: var(--color-brand-blue);
 }
 
@@ -1447,16 +1447,16 @@ img {
   font-family: var(--font-event);
   font-size: 12px;
   line-height: 1.6;
-  color: rgba(48, 42, 102, 0.70);
+  color: var(--color-text-muted);
   padding-bottom: var(--space-12);
-  border-bottom: 1px solid rgba(48, 42, 102, 0.08);
+  border-bottom: 1px solid var(--color-divider);
 }
 
 .oficina-card__ementa {
   margin: 0;
   font-size: var(--text-body-size);
   line-height: var(--text-body-line);
-  color: rgba(48, 42, 102, 0.72);
+  color: var(--color-text-muted);
   flex-grow: 1;
 }
 
@@ -1467,7 +1467,7 @@ img {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.7px;
-  color: rgba(48, 42, 102, 0.70);
+  color: var(--color-text-muted);
 }
 
 .oficina-card__materiais {
@@ -1476,13 +1476,13 @@ img {
   padding: 10px 14px;
   font-size: 13px;
   line-height: 1.65;
-  color: rgba(48, 42, 102, 0.70);
+  color: var(--color-text-muted);
 }
 
 /* ─── Cards de regras (seção "Como participar") ──────────── */
 .regra-card {
   background: var(--color-white);
-  border: 1px solid rgba(48, 42, 102, 0.12);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: 28px;
   display: flex;
@@ -1510,7 +1510,7 @@ img {
 .regra-card__item {
   font-size: var(--text-body-size);
   line-height: var(--text-body-line);
-  color: rgba(48, 42, 102, 0.72);
+  color: var(--color-text-muted);
   padding-left: 16px;
   position: relative;
 }
@@ -1612,7 +1612,7 @@ img {
 /* ─── Card de contato ───────────────────────────────────── */
 .contact-card {
   background: var(--color-white);
-  border: 1px solid rgba(48, 42, 102, 0.12);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-32);
   display: flex;
@@ -1698,7 +1698,7 @@ img {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.7px;
-  color: rgba(48, 42, 102, 0.70);
+  color: var(--color-text-muted);
 }
 
 .contact-card__value {
@@ -1714,7 +1714,7 @@ img {
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
-  color: rgba(48, 42, 102, 0.70);
+  color: var(--color-text-muted);
 }
 
 /* ─── Seção de localização ──────────────────────────────── */
@@ -1798,7 +1798,7 @@ img {
 .curadoria {
   margin-top: auto;
   padding-top: var(--space-16);
-  border-top: 1px solid rgba(48, 42, 102, 0.12);
+  border-top: 1px solid var(--color-border);
 }
 
 .curadoria__label {
@@ -1815,14 +1815,14 @@ img {
   margin: 0;
   font-size: var(--text-body-size);
   line-height: var(--text-body-line);
-  color: rgba(48, 42, 102, 0.72);
+  color: var(--color-text-muted);
 }
 
 /* ─── Passo (fluxo de inscrição) ─────────────────────────── */
 .passo-card {
   position: relative;
   background: var(--color-white);
-  border: 1px solid rgba(48, 42, 102, 0.12);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: 28px;
   display: flex;
@@ -1853,7 +1853,7 @@ img {
 
 .prog-card {
   background: var(--color-white);
-  border: 1px solid rgba(48, 42, 102, 0.10);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
@@ -1888,14 +1888,14 @@ img {
 .prog-card__head { display: flex; flex-direction: column; gap: var(--space-8); min-width: 0; }
 .prog-card__title { margin: 4px 0 0; font-size: 17px; font-weight: 600; line-height: 1.4; color: var(--color-brand-blue); }
 .prog-card--destaque .prog-card__title { font-size: 20px; }
-.prog-card__nomes { margin: 0; font-family: var(--font-event); font-size: 13px; color: rgba(48, 42, 102, 0.70); line-height: 1.4; }
+.prog-card__nomes { margin: 0; font-family: var(--font-event); font-size: 13px; color: var(--color-text-muted); line-height: 1.4; }
 .prog-card__meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-8); margin-top: 2px; }
-.prog-card__location { font-family: var(--font-event); font-size: 12px; color: rgba(48, 42, 102, 0.70); }
+.prog-card__location { font-family: var(--font-event); font-size: 12px; color: var(--color-text-muted); }
 
 .prog-card__chevron {
   width: 12px; height: 12px; align-self: center;
-  border-right: 2px solid rgba(48, 42, 102, 0.55);
-  border-bottom: 2px solid rgba(48, 42, 102, 0.55);
+  border-right: 2px solid var(--color-icon-muted);
+  border-bottom: 2px solid var(--color-icon-muted);
   transform: rotate(45deg);
   transition: transform 0.2s ease;
 }
@@ -1930,15 +1930,15 @@ img {
 
 .participante__texto { min-width: 0; }
 .participante__nome { margin: 0; font-size: 15px; font-weight: 600; color: var(--color-brand-blue); }
-.participante__inst { font-weight: 400; color: rgba(48,42,102,0.75); }
+.participante__inst { font-weight: 400; color: var(--color-text-muted); }
 .participante__papel {
   display: inline-block; margin-left: 6px; padding: 1px 8px;
-  border-radius: var(--radius-pill); background: rgba(48,42,102,0.07);
+  border-radius: var(--radius-pill); background: var(--color-surface-tint);
   font-family: var(--font-event); font-size: 12px; font-weight: 700;
-  text-transform: lowercase; color: rgba(48,42,102,0.70);
+  text-transform: lowercase; color: var(--color-text-muted);
 }
-.participante__fala { margin: 2px 0 0; font-size: 14px; font-style: italic; color: rgba(48,42,102,0.75); }
-.participante__bio { margin: 4px 0 0; font-size: 15px; line-height: 1.55; color: rgba(48,42,102,0.78); }
+.participante__fala { margin: 2px 0 0; font-size: 14px; font-style: italic; color: var(--color-text-muted); }
+.participante__bio { margin: 4px 0 0; font-size: 15px; line-height: 1.55; color: var(--color-text-secondary); }
 
 /* Card recuado: atividade que integra um bloco maior (ex.: noite de abertura) */
 .prog-card--aninhado {
@@ -1950,7 +1950,7 @@ img {
   font-family: var(--font-event);
   font-size: 13px;
   font-style: italic;
-  color: rgba(48, 42, 102, 0.70);
+  color: var(--color-text-muted);
 }
 
 /* Lista de apresentações (Comunicações Orais e Pôsteres) */
@@ -1959,13 +1959,13 @@ img {
   margin: 0 0 var(--space-8);
   font-family: var(--font-event); font-size: 12px; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.04em;
-  color: rgba(48, 42, 102, 0.60);
+  color: var(--color-text-muted);
 }
 .prog-programa__lista { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-8); }
 .prog-programa__item {
   display: grid; grid-template-columns: 52px 1fr; gap: var(--space-12);
   padding-left: var(--space-12);
-  border-left: 2px solid rgba(48, 42, 102, 0.12);
+  border-left: 2px solid var(--color-border);
 }
 .prog-programa__hora {
   font-family: var(--font-event); font-size: 13px; font-weight: 700;
@@ -1973,7 +1973,7 @@ img {
 }
 .prog-programa__txt { display: flex; flex-direction: column; min-width: 0; }
 .prog-programa__titulo { font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--color-brand-blue); }
-.prog-programa__autores { margin-top: 2px; font-size: 13px; color: rgba(48, 42, 102, 0.72); }
+.prog-programa__autores { margin-top: 2px; font-size: 13px; color: var(--color-text-muted); }
 
 /* Lista de livros lançados (card de Lançamento) */
 .prog-livros { margin-top: var(--space-16); }
@@ -1981,7 +1981,7 @@ img {
   margin: 0 0 var(--space-8);
   font-family: var(--font-event); font-size: 12px; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.04em;
-  color: rgba(48, 42, 102, 0.60);
+  color: var(--color-text-muted);
 }
 .prog-livros__grupo { margin-top: var(--space-16); }
 .prog-livros__grupo:first-child { margin-top: 0; }
@@ -1991,17 +1991,17 @@ img {
   color: var(--color-brand-blue);
 }
 .prog-livros__lista { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-16); }
-.prog-livro { padding-left: var(--space-12); border-left: 2px solid rgba(48, 42, 102, 0.12); }
+.prog-livro { padding-left: var(--space-12); border-left: 2px solid var(--color-border); }
 .prog-livro__titulo { margin: 0; font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--color-brand-blue); }
-.prog-livro__autores { margin: 2px 0 0; font-size: 13px; font-style: italic; color: rgba(48, 42, 102, 0.72); }
-.prog-livro__sinopse { margin: var(--space-8) 0 0; font-size: 14px; line-height: 1.55; color: rgba(48, 42, 102, 0.78); }
+.prog-livro__autores { margin: 2px 0 0; font-size: 13px; font-style: italic; color: var(--color-text-muted); }
+.prog-livro__sinopse { margin: var(--space-8) 0 0; font-size: 14px; line-height: 1.55; color: var(--color-text-secondary); }
 .prog-livro__bios { margin-top: var(--space-8); }
 .prog-livro__bios summary {
   font-family: var(--font-event); font-size: 13px; font-weight: 700;
   color: var(--color-brand-red); cursor: pointer;
 }
 .prog-livro__bios-lista { list-style: none; margin: var(--space-8) 0 0; padding: 0; display: grid; gap: var(--space-8); }
-.prog-livro__bios-lista li { font-size: 13px; line-height: 1.55; color: rgba(48, 42, 102, 0.78); }
+.prog-livro__bios-lista li { font-size: 13px; line-height: 1.55; color: var(--color-text-secondary); }
 .prog-livro__bio-nome { font-weight: 600; color: var(--color-brand-blue); }
 
 .prog-parallel { display: grid; grid-template-columns: 116px 1fr; gap: var(--space-24); align-items: start; }
@@ -2063,7 +2063,7 @@ a:has(> .visually-hidden) {
   height: 0;
   margin-block: var(--space-48);
   border: 0;
-  border-top: 1px solid rgba(48, 42, 102, 0.15);
+  border-top: 1px solid var(--color-border);
 }
 
 /* Grade das apoiadoras. A célula tem altura fixa e o logo é centrado
@@ -2120,7 +2120,7 @@ a:has(> .visually-hidden) {
   padding: 36px 40px;
   background: #fff;
   border-radius: var(--radius-xl);
-  border: 1.5px solid rgba(48, 42, 102, 0.14);
+  border: 1.5px solid var(--color-border);
 }
 
 .anais-destaque__texto {
@@ -2138,7 +2138,7 @@ a:has(> .visually-hidden) {
 .anais-destaque__desc {
   margin: 0;
   line-height: 1.5;
-  color: rgba(48, 42, 102, 0.84);
+  color: var(--color-text-secondary);
 }
 
 .anais-lista {
@@ -2195,7 +2195,7 @@ a:has(> .visually-hidden) {
   margin: 0 0 var(--space-8);
   font-size: 0.9375rem;
   line-height: 1.4;
-  color: rgba(48, 42, 102, 0.84);
+  color: var(--color-text-secondary);
 }
 
 .anais-edicao__info dt {
@@ -2203,7 +2203,7 @@ a:has(> .visually-hidden) {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: rgba(48, 42, 102, 0.75);
+  color: var(--color-text-muted);
 }
 
 .anais-edicao__info dd {
