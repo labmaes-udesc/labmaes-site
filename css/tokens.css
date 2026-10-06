@@ -68,6 +68,16 @@
   --color-action-primary: var(--color-brand-red);
   --color-action-secondary: var(--color-brand-blue);
 
+  /* Azul da marca em transparência, por papel. Os textos ficam acima de 4.5:1 sobre
+     branco, gelo e rosa (WCAG 2.2 AA); o ícone, acima de 3:1. */
+  --color-text-secondary: rgba(48, 42, 102, 0.84);
+  --color-text-muted: rgba(48, 42, 102, 0.78);
+  --color-icon-muted: rgba(48, 42, 102, 0.55);
+  --color-border: rgba(48, 42, 102, 0.12);
+  --color-divider: rgba(48, 42, 102, 0.08);
+  --color-surface-tint: rgba(48, 42, 102, 0.08);
+  --color-shadow: rgba(48, 42, 102, 0.16);
+
   /* Espaçamento */
   --space-8: 8px;
   --space-12: 12px;
