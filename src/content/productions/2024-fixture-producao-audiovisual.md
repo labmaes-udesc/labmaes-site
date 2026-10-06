@@ -1,24 +1,27 @@
 ---
 slug: fixture-producao-audiovisual
 editorialStatus: draft
-title: '[FIXTURE] Produção audiovisual de teste'
+title: "[FIXTURE] Produção audiovisual de teste"
 productionCategory: audiovisual
 productionType: audiovisual
 year: 2024
 contributors:
-- kind: internal
-  person: fixture-pessoa-atual
-  role: Autoria
+  - kind: internal
+    person: fixture-pessoa-atual
+    role: Autoria
 summary: Produção fictícia para testar a categoria audiovisual.
 keywords:
-- fixture
-- audiovisual
+  - fixture
+  - audiovisual
 language: pt-BR
 projects:
-- fixture-projeto-extensao
+  - fixture-projeto-extensao
 externalUrl: https://example.org/fixture-producao-audiovisual
 featured: false
 publicationStatus: in-press
 catalogStatus: identified
 sourceNotes: FIXTURE — dados fictícios; não publicar.
+translations:
+  fr:
+    summary: c'est une résumé pour une test.
 ---
