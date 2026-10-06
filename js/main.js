@@ -68,6 +68,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Com o menu aberto, Tab circula entre o botão e os links do menu,
+  // sem escapar para a página por trás do painel
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Tab" || nav.getAttribute("data-open") !== "true") return;
+    const focaveis = [toggle, ...nav.querySelectorAll("a[href]")];
+    const primeiro = focaveis[0];
+    const ultimo = focaveis[focaveis.length - 1];
+    if (!focaveis.includes(document.activeElement)) {
+      e.preventDefault();
+      primeiro.focus();
+    } else if (e.shiftKey && document.activeElement === primeiro) {
+      e.preventDefault();
+      ultimo.focus();
+    } else if (!e.shiftKey && document.activeElement === ultimo) {
+      e.preventDefault();
+      primeiro.focus();
+    }
+  });
+
   // Fechar ao clicar fora do menu
   document.addEventListener("click", (e) => {
     if (

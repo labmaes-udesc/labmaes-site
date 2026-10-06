@@ -1,3 +1,5 @@
+import { marcarLinksNovaAba } from "./tools/eleventy/links-externos.mjs";
+
 export default function (eleventyConfig) {
   // Ignorar pasta de documentação interna e README (não fazem parte do site publicado)
   eleventyConfig.ignores.add("docs/**");
@@ -10,6 +12,11 @@ export default function (eleventyConfig) {
   eleventyConfig.ignores.add("tools/**");
   // Fundação de conteúdo do Pages CMS (Fase 1) — ainda não integrada ao build do Eleventy
   eleventyConfig.ignores.add("src/**");
+
+  // Links com target="_blank": aviso de nova aba para leitor de tela e setas decorativas ocultas
+  eleventyConfig.addTransform("links-nova-aba", function (content) {
+    return (this.page.outputPath || "").endsWith(".html") ? marcarLinksNovaAba(content) : content;
+  });
 
   // Versão do build: sufixo ?v= nos CSS/JS, para que uma atualização não fique presa no cache do navegador
   eleventyConfig.addGlobalData("buildId", () => Date.now().toString(36));

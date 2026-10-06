@@ -32,5 +32,8 @@ jobs:
       - name: Testes do validador
         run: npm run test:content --if-present
 
+      - name: Testes do build do site
+        run: npm run test:site --if-present
+
       - name: Build do Eleventy
         run: npm run build
