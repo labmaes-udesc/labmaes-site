@@ -25,3 +25,4 @@ Em caso de divergência:
 - Fase 0 — Arquitetura de informação e conteúdo: **concluída**, após aceitação dos
   ADRs 0001–0006 e da spec correspondente.
 - Fase 1 — Content foundation: **em andamento**.
+- Fases 2–7: planejadas; ver [roadmap](../roadmap.md) e as milestones no GitHub.

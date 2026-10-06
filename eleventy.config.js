@@ -2,6 +2,11 @@ export default function (eleventyConfig) {
   // Ignorar pasta de documentação interna e README (não fazem parte do site publicado)
   eleventyConfig.ignores.add("docs/**");
   eleventyConfig.ignores.add("README.md");
+  // Arquivos de comunidade do repositório (lidos no GitHub, não no site)
+  eleventyConfig.ignores.add("CONTRIBUTING.md");
+  eleventyConfig.ignores.add("CODE_OF_CONDUCT.md");
+  eleventyConfig.ignores.add("SECURITY.md");
+  eleventyConfig.ignores.add(".github/**");
   eleventyConfig.ignores.add("tools/**");
   // Fundação de conteúdo do Pages CMS (Fase 1) — ainda não integrada ao build do Eleventy
   eleventyConfig.ignores.add("src/**");

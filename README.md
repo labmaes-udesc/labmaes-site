@@ -30,36 +30,34 @@ O cabeçalho (front matter) de cada arquivo define:
 
 Header, footer e navegação do evento ficam em `_includes/` — editar lá afeta todas as páginas de uma vez.
 
-## Pendências
+## Validar conteúdo
 
-- **Logo da AMAE em baixa resolução** (aceito por ora) — `assets/logos/apoio/amae.webp`. O único arquivo de origem existente tem 98×99 px de tinta, contra os 88 px de altura que a faixa exige em tela retina; é ampliado em 4× e fica visivelmente pixelado. Decisão de 2026-08-17: manter assim, por não haver outra versão. Se um dia chegar um vetor ou arquivo maior, coloque-o na pasta de origem, ajuste o nome em `tools/logos_apoio.py`, remova a entrada de `UPSCALE` e rode `python tools/normalizar_logos.py`.
-- **Corrigir o estouro horizontal do menu do evento** — em telas de 375 a 800 px, `.event-nav__link`, `.event-nav__inscricoes` e `.oficina-card` ultrapassam a largura da janela e provocam rolagem lateral. Defeito preexistente, identificado durante a implementação da faixa de créditos (2026-08-05); a faixa em si não estoura em nenhuma largura testada.
-- **Atualizar o Edital 03 (Mostra Audiovisual)** — `assets/editais/Caminhos_edital_03_MA.pdf`. As cláusulas 2.6 e 2.7 ainda indicam que a inscrição da Mostra é feita pela Even3 ("Modalidade Mostra Audiovisual"). O fluxo mudou para inscrição no evento via Even3 + submissão da obra via Google Forms (refletido na página `/2026/mostra-audiovisual/`). O PDF precisa ser regenerado para evitar novas dúvidas.
+O conteúdo estruturado do redesign fica em `src/content/` e é editado pelo Pages CMS
+(`.pages.yml`). Antes de abrir um PR:
 
-### Melhorias mapeadas na análise crítica (2026-07-02)
+```bash
+npm run validate:content
+```
 
-**Antes da tradução FR/EN (estruturais):**
+A CI roda o build e essa validação em todo pull request.
 
-- **Internacionalização (i18n)** — extrair todo o texto dos templates para arquivos de dados por idioma (`_data/i18n/pt.json`, `fr.json`, `en.json`); estrutura de URLs `/fr/` e `/en/` com PT na raiz; `lang` dinâmico no `<html>`; `hreflang` recíprocos + `x-default`; `og:locale:alternate`; seletor de idioma no header ("Português · Français · English", sem bandeiras); campos multilíngues em `programacao.json`/`pessoas.json` (ex.: `titulo: { pt, fr, en }`).
-- **Remover `white-space: nowrap`** de `.button` e `.tag` — textos em francês são 15–25% mais longos e vão estourar o layout. Testar com strings francesas.
-- ~~**Auto-hospedar Poppins e DM Mono**~~ — **FEITO (2026-07-03):** Poppins 400/600/700 e DM Mono 400 convertidas para WOFF2 em `assets/fonts/`, declaradas via `@font-face` em `tokens.css`, com preload dos pesos críticos no `layout.njk`. Removido o `<link>` do Google Fonts e os domínios `fonts.googleapis.com`/`fonts.gstatic.com` da CSP (agora `style-src 'self'; font-src 'self'`). Resolve GDPR (CNIL) e elimina o render-blocking de terceiro.
-- **Consolidar o CSS**: criar tokens semânticos (`--color-text-muted`, `--color-border`) substituindo os ~40 `rgba(48,42,102,X)` repetidos; unificar os 7 headers decorativos (`.areas-header`, `.modalidades-header`, `.oficinas-header`, `.prog-header`, `.contact-hero`, `.contact-location`, `.oficinas-section-intro`) num componente base; unificar os 7 cards brancos num `.card` base; remover código morto (`_includes/event-nav.njk` e o CSS `.schedule-*` legado, se confirmado que não são usados).
+## Roadmap e tarefas
 
-**SEO e assets:**
+- [Roadmap do redesign](docs/roadmap.md) — fases 0 a 7 e onde está o detalhe de cada uma.
+- [Milestones](https://github.com/labmaes-udesc/labmaes-site/milestones) — uma por fase, mais
+  a de manutenção contínua.
+- [Issues](https://github.com/labmaes-udesc/labmaes-site/issues) — pendências, bugs e
+  melhorias. As que estavam listadas neste README desde 2026-07 viraram issues.
+- [Decisões de arquitetura](docs/architecture/README.md) — ADRs, com a ordem de precedência
+  entre ADR, spec e plan.
 
-- **OG image própria do LabMAES** na home (hoje o preview do WhatsApp mostra o banner do Caminhos, não o laboratório) — o mecanismo `ogImage` já existe no layout.
-- **Twitter Cards** (`twitter:card: summary_large_image`).
-- **Favicons**: `favicon.ico` fallback, `apple-touch-icon`, `theme-color`.
-- **Minificação + fingerprint de CSS/JS** — permitiria cache imutável de 1 ano (hoje `no-cache` no `_headers`).
+## Contribuir
 
-**Acessibilidade e UX:**
+Leia o [guia de contribuição](CONTRIBUTING.md) e o [código de conduta](CODE_OF_CONDUCT.md).
+Falhas de segurança ou exposição de dados pessoais: siga o [SECURITY.md](SECURITY.md), sem
+abrir issue pública.
 
-- **Alvos de toque ≥44px** nos ícones sociais do rodapé (hoje 24×24px — adicionar padding na âncora).
-- **Focus trap** no menu mobile aberto.
-- **Chevron do `prog-card` visível no mobile** (hoje `display:none` remove a indicação de que o card expande).
-- **"Inscrições ↗"** — envolver a seta em `<span aria-hidden="true">` e indicar que abre em nova aba.
-- **Tipografia fluida** com `clamp()` nas escalas display/section + breakpoint tablet (768–1024px, grids de 4 colunas ficam apertados).
+## Licença
 
-**Conteúdo:**
-
-- **Completar as páginas "em construção"** (`/sobre/` e `/anais/`) — a página Sobre é a mais importante para o SEO institucional do laboratório.
+Ainda não definida. Até a decisão, o código e o conteúdo não têm licença aberta. A discussão
+está na [issue #69](https://github.com/labmaes-udesc/labmaes-site/issues/69).
