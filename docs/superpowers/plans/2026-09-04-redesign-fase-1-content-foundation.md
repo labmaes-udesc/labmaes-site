@@ -1,6 +1,6 @@
 # Plan — Redesign Fase 1: Content foundation
 
-**Status:** Em andamento  
+**Status:** Em andamento (Etapas 1–5 concluídas; próxima: Etapa 6)  
 **Data:** 2026-09-16
 
 ## Etapas
@@ -34,7 +34,7 @@ Auditoria 02 aplicada:
 
 Conjunto criado em `src/content/**`, marcado como fixture e mantido fora do build público.
 
-### 5. Validar CMS — EM ANDAMENTO
+### 5. Validar CMS — CONCLUÍDA (2026-10-05)
 
 #### Criação de registros — APROVADA
 
@@ -114,7 +114,11 @@ Removidos da branch os registros e uploads criados à mão durante os testes no 
 
 Ficam só os fixtures `fixture-*`. A auditoria 03 cita os registros removidos como evidência histórica e não foi alterada.
 
-Ainda testar depois disso:
+#### Encerramento da etapa
+
+Etapa dada como concluída por decisão do responsável do projeto em 2026-10-05. Os itens abaixo
+**não foram exercitados** no CMS e ficam registrados como risco conhecido, a observar quando o
+piloto editorial começar a ser usado de verdade (não bloqueiam a Etapa 6):
 - reteste de `publicationStatus` e dos textos de ajuda (auditoria 05);
 - traduções;
 - workflow editorial;
