@@ -47,6 +47,7 @@ components:
     description: Situação deste registro no NOSSO fluxo de edição do site (se já pode ficar
       público) — não é sobre a situação da obra/evento/produção em si.
     options:
+      placeholder: 'Selecione…'
       values:
       - name: draft
         label: Rascunho
@@ -352,6 +353,7 @@ content:
       type: select
       required: true
       options:
+        placeholder: 'Selecione…'
         values:
         - name: current
           label: Integrante atual
@@ -457,6 +459,7 @@ content:
       label: Tipo
       type: select
       options:
+        placeholder: 'Em branco (opcional)'
         values:
         - name: university
           label: Universidade
@@ -535,6 +538,7 @@ content:
       type: select
       required: true
       options:
+        placeholder: 'Selecione…'
         values:
         - name: research
           label: Pesquisa
@@ -551,6 +555,7 @@ content:
       type: select
       required: true
       options:
+        placeholder: 'Selecione…'
         values:
         - name: planned
           label: Planejado
@@ -659,6 +664,7 @@ content:
       type: select
       required: true
       options:
+        placeholder: 'Selecione…'
         values:
         - name: bibliographic
           label: Bibliográfica
@@ -677,6 +683,7 @@ content:
       type: select
       required: true
       options:
+        placeholder: 'Selecione…'
         values:
         - name: article
           label: Artigo
@@ -773,6 +780,7 @@ content:
       label: Idioma original
       type: select
       options:
+        placeholder: 'Em branco (opcional)'
         values:
         - name: pt-BR
           label: Português (Brasil)
@@ -829,10 +837,9 @@ content:
     - name: publicationStatus
       label: Situação de publicação
       type: select
-      description: 'Em que ponto a obra está no seu próprio percurso editorial — independente
-        do status deste registro no nosso site (ver Status editorial, no topo). Deixe em branco
-        quando o conceito não se aplicar ao tipo de produção (ex.: exposição, produção audiovisual).'
+      description: 'Se a obra já saiu ou está no prelo. Deixe em branco quando não se aplicar (ex.: exposição).'
       options:
+        placeholder: 'Em branco: não se aplica ou ainda não se sabe'
         values:
         - name: in-press
           label: No prelo (aceita, ainda não publicada)
@@ -848,6 +855,7 @@ content:
         confiável. Completo = todos os metadados, arquivo/link e relações aplicáveis já estão
         preenchidos.
       options:
+        placeholder: 'Selecione…'
         values:
         - name: identified
           label: Identificado
@@ -912,6 +920,7 @@ content:
       type: select
       required: true
       options:
+        placeholder: 'Selecione…'
         values:
         - name: call
           label: Edital / chamada
@@ -949,6 +958,7 @@ content:
       label: Idioma
       type: select
       options:
+        placeholder: 'Em branco (opcional)'
         values:
         - pt-BR
         - en
@@ -1136,6 +1146,7 @@ content:
       label: Formato
       type: select
       options:
+        placeholder: 'Em branco (opcional)'
         values:
         - name: in-person
           label: Presencial
@@ -1148,6 +1159,7 @@ content:
       type: select
       required: true
       options:
+        placeholder: 'Selecione…'
         values:
         - name: planned
           label: Planejada
