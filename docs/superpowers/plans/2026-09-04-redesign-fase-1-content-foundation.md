@@ -119,11 +119,12 @@ Ficam só os fixtures `fixture-*`. A auditoria 03 cita os registros removidos co
 Etapa dada como concluída por decisão do responsável do projeto em 2026-10-05. Os itens abaixo
 **não foram exercitados** no CMS e ficam registrados como risco conhecido, a observar quando o
 piloto editorial começar a ser usado de verdade (não bloqueiam a Etapa 6):
-- reteste de `publicationStatus` e dos textos de ajuda (auditoria 05);
-- traduções;
-- workflow editorial;
-- mensagens de erro e campos obrigatórios;
-- ergonomia com uma pessoa não técnica.
+- reteste de `publicationStatus` e dos textos de ajuda (auditoria 05) — **feito em 2026-10-06**
+  (auditoria 07, #11);
+- traduções — **feito em 2026-10-06** (auditoria 07, #12);
+- workflow editorial (#13, depende da definição da equipe editorial, #22);
+- mensagens de erro e campos obrigatórios — **feito em 2026-10-06** (auditoria 07, #14);
+- ergonomia com uma pessoa não técnica (#15, sessão com bolsista).
 
 ### 6. Evoluir validação — CONCLUÍDA (2026-10-05)
 
