@@ -4,7 +4,7 @@ Site estático do LabMAES e do 7º Caminhos do Contemporâneo, gerado com [Eleve
 
 ## Desenvolvimento local
 
-Pré-requisitos: Node.js 18+
+Pré-requisitos: Node.js 22 ou mais recente (versão em `.nvmrc`)
 
 ```bash
 npm install
@@ -18,7 +18,7 @@ Fazer push para `main`. O Cloudflare Pages executa o build automaticamente.
 
 - Build command: `npx @11ty/eleventy`
 - Output directory: `_site`
-- Node.js version: 18 (variável de ambiente `NODE_VERSION=18`)
+- Node.js version: 22, lida do `.nvmrc` (se a variável `NODE_VERSION` estiver definida no painel do Cloudflare, ela tem precedência e precisa ser 22)
 
 ## Editar páginas
 
