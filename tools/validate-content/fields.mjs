@@ -23,6 +23,7 @@ export const SUPPORTED_TYPES = new Set([
 ]);
 
 const optionNames = (f) => (f.options?.values ?? []).map((v) => (typeof v === "string" ? v : v.name));
+const optionLabels = (f) => (f.options?.values ?? []).map((v) => (typeof v === "string" ? v : v.label ?? v.name));
 
 const error = (field, message) => ({ field, message });
 
@@ -48,7 +49,7 @@ function validateScalar(f, v, ctx, at) {
       const names = optionNames(f);
       return names.includes(v)
         ? []
-        : [error(at, `valor "${v}" inválido; opções: ${names.join(", ")}`)];
+        : [error(at, `"${v}" não é uma opção válida; use uma destas: ${optionLabels(f).join(", ")}`)];
     }
     case "image":
     case "file": {
@@ -69,7 +70,7 @@ function validateScalar(f, v, ctx, at) {
       if (typeof v !== "string") return [error(at, "deve ser um slug (texto)")];
       return ctx.slugs.get(target).has(v)
         ? []
-        : [error(at, `referência "${v}" não existe na coleção ${target}`)];
+        : [error(at, `aponta para "${v}", que não existe em ${ctx.collectionLabels?.get(target) ?? target}`)];
     }
     case "object":
       if (!isObject(v)) return [error(at, "deve ser um objeto")];
@@ -101,7 +102,7 @@ export function validateFields(fields, data, ctx, at = "", extraKnown = []) {
   const errors = [];
   const known = new Set([...fields.map((f) => f.name), ...extraKnown]);
   for (const k of Object.keys(data)) {
-    if (!known.has(k)) errors.push(error(`${at}${k}`, "campo não existe no schema (.pages.yml)"));
+    if (!known.has(k)) errors.push(error(`${at}${k}`, "campo desconhecido: não existe no schema do CMS (.pages.yml)"));
   }
   for (const f of fields) {
     const v = data[f.name];

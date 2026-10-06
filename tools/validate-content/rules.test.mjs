@@ -34,7 +34,7 @@ test("edição de evento: ano confere com startDate", () => {
 
 test("contributors: mesma pessoa interna repetida é erro; externos podem repetir nome com aviso", () => {
   const dup = { contributors: [{ kind: "internal", person: "ana" }, { kind: "internal", person: "ana", role: "Revisão" }] };
-  assert.match(msgs("productions", dup)[0], /^error\|contributors\[1\]\.person: .*"ana".*contributors\[0\]/);
+  assert.match(msgs("productions", dup)[0], /^error\|contributors\[1\]\.person: .*"ana".*1º item/);
   const ok = { contributors: [{ kind: "internal", person: "ana" }, { kind: "external", name: "Z" }] };
   assert.deepEqual(msgs("productions", ok), []);
 });

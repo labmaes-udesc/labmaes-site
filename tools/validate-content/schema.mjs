@@ -54,6 +54,7 @@ export function parseSchema(text) {
     if (!template) throw new Error(`.pages.yml: coleção "${c.name}" sem filename.template`);
     collections.set(c.name, {
       name: c.name,
+      label: c.label ?? c.name,
       dir: c.path,
       filenameTemplate: template,
       fields: expand(c.fields, components),
