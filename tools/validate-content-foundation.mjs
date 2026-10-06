@@ -1,33 +1,24 @@
 #!/usr/bin/env node
 /**
- * Validador mínimo da nova camada editorial do LabMAES.
- *
- * Fase 1: validações que não exigem parser externo de frontmatter.
- * A validação completa por schema entra após definirmos a biblioteca
- * de frontmatter/validação no ADR correspondente.
+ * Validador do conteúdo editorial (src/content), derivado do .pages.yml.
+ * Ver docs/architecture/adr/0007-validacao-conteudo.md.
  */
-import fs from "node:fs";
-import path from "node:path";
+import { runValidation } from "./validate-content/run.mjs";
 
-const ROOT = path.resolve("src/content");
-const ALLOWED = new Set([
-  "pages", "people", "institutions", "projects", "productions",
-  "documents", "collections", "events", "event-editions", "news"
-]);
-
-let failed = false;
-
-if (!fs.existsSync(ROOT)) {
-  console.error("ERRO: src/content não existe.");
+let result;
+try {
+  result = runValidation();
+} catch (e) {
+  console.error(`ERRO: ${e.message}`);
   process.exit(1);
 }
 
-for (const entry of fs.readdirSync(ROOT, { withFileTypes: true })) {
-  if (entry.isDirectory() && !ALLOWED.has(entry.name)) {
-    console.error(`ERRO: coleção inesperada em src/content: ${entry.name}`);
-    failed = true;
-  }
-}
+const line = ({ file, field, message }) => `  ${file} › ${field}: ${message}`;
+for (const w of result.warnings) console.warn(`AVISO${line(w).slice(1)}`);
+for (const e of result.errors) console.error(`ERRO${line(e).slice(1)}`);
 
-if (failed) process.exit(1);
-console.log("Content foundation OK.");
+if (result.errors.length) {
+  console.error(`\n${result.errors.length} erro(s), ${result.warnings.length} aviso(s).`);
+  process.exit(1);
+}
+console.log(`Conteúdo OK (${result.warnings.length} aviso(s)).`);

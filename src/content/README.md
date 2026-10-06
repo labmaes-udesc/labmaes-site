@@ -15,6 +15,7 @@ arquivos até que schemas, CMS, validações e templates tenham sido testados.
 - referências entre entidades usam slugs estáveis;
 - egressos permanecem no acervo;
 - `productionType: other` exige `otherTypeLabel`;
+- `npm run validate:content` valida este conteúdo contra o `.pages.yml` (ver ADR 0007);
 - itens de produção usam `catalogStatus: identified | verified | complete`;
 - traduções só devem ser preenchidas quando revisadas.
 
