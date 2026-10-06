@@ -26,3 +26,4 @@ Em caso de divergência:
   ADRs 0001–0006 e da spec correspondente.
 - Fase 1 — Content foundation: **em andamento** (ADR 0007: validação de conteúdo derivada do
   `.pages.yml`).
+- Fases 2–7: planejadas; ver [roadmap](../roadmap.md) e as milestones no GitHub.

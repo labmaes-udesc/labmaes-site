@@ -1,0 +1,28 @@
+name: Tarefa ou funcionalidade
+description: Trabalho de desenvolvimento planejado (redesign, melhoria, manutenção).
+labels: ["tipo:tarefa"]
+body:
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto
+      description: Por que isto é necessário? Cite spec, plan, ADR ou issue relacionada.
+    validations:
+      required: true
+  - type: textarea
+    id: escopo
+    attributes:
+      label: Escopo
+      description: O que entra e o que fica de fora.
+    validations:
+      required: true
+  - type: textarea
+    id: aceite
+    attributes:
+      label: Critérios de aceite
+      value: |
+        - [ ] 
+        - [ ] `npm run build` e `npm run validate:content` passam
+        - [ ] Acessibilidade conferida (ADR 0005) quando houver mudança de interface
+    validations:
+      required: true

@@ -1,0 +1,29 @@
+name: Decisão / proposta de ADR
+description: Questão arquitetural ou de política editorial que precisa ser decidida pela equipe.
+title: "[Decisão] "
+labels: ["tipo:decisão"]
+body:
+  - type: textarea
+    id: questao
+    attributes:
+      label: Questão
+      description: O que precisa ser decidido?
+    validations:
+      required: true
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto e restrições
+      description: ADRs, specs ou fatos que limitam as opções.
+  - type: textarea
+    id: opcoes
+    attributes:
+      label: Opções consideradas
+      value: |
+        1. 
+        2. 
+  - type: textarea
+    id: registro
+    attributes:
+      label: Onde a decisão será registrada
+      description: Novo ADR em `docs/architecture/adr/`, atualização de spec, ou política editorial.

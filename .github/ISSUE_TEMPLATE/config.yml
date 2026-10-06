@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Contato com o LabMAES
+    url: https://labmaes.com.br/contato/
+    about: Dúvidas sobre o laboratório, o evento ou parcerias (não sobre o site).
+  - name: Reportar falha de segurança ou exposição de dados pessoais
+    url: https://github.com/labmaes-udesc/labmaes-site/blob/main/SECURITY.md
+    about: Não abra issue pública. Siga as instruções do SECURITY.md.
