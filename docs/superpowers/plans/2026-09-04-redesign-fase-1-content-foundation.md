@@ -1,6 +1,6 @@
 # Plan — Redesign Fase 1: Content foundation
 
-**Status:** Em andamento (Etapas 1–5 concluídas; próxima: Etapa 6)  
+**Status:** Em andamento (Etapas 1–6 concluídas; próxima: Etapa 7)  
 **Data:** 2026-09-16
 
 ## Etapas
@@ -125,10 +125,26 @@ piloto editorial começar a ser usado de verdade (não bloqueiam a Etapa 6):
 - mensagens de erro e campos obrigatórios;
 - ergonomia com uma pessoa não técnica.
 
-### 6. Evoluir validação
+### 6. Evoluir validação — CONCLUÍDA (2026-10-05)
 
-Substituir o validador estrutural mínimo por validação real de frontmatter/schema e referências,
-incluindo regras específicas de `contributors`.
+Decisão registrada no ADR 0007: validador próprio que **lê o `.pages.yml` como fonte única do schema**
+(`gray-matter` + `js-yaml`), sem Zod/Ajv. Código em `tools/validate-content/`; comando
+`npm run validate:content`; testes com `npm run test:content` (35 testes, `node:test`).
+
+Valida:
+- campos: obrigatoriedade, tipo, `select`, `pattern`, listas, objetos, blocos, campos fora do schema;
+- referências por slug existentes, arquivos de mídia existentes e em pasta de mídia conhecida;
+- slugs únicos por coleção e nome de arquivo igual ao `filename.template`;
+- `other` exige `otherTypeLabel`; ano coerente com a data; início não posterior ao fim;
+- `contributors`: mesma pessoa interna não se repete; ORCID malformado gera aviso;
+- tipo de campo ou componente desconhecido no `.pages.yml` falha de forma explícita.
+
+Os fixtures `fixture-*` passam sem erros nem avisos; um teste manual com referência quebrada,
+`other` sem rótulo e ano como texto produziu os três erros esperados.
+
+Fora de escopo, por não haver ADR que defina: compatibilidade entre `productionCategory` e
+`productionType`; publicado referenciando rascunho. O texto de ajuda de `otherTypeLabel` no
+`.pages.yml` ainda diz que a validação "será feita no CI"; ainda não há CI (ver Etapa 7).
 
 ### 7. Gate de saída
 

@@ -6,9 +6,12 @@
   "scripts": {
     "build": "npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve",
-    "validate:content": "node tools/validate-content-foundation.mjs"
+    "validate:content": "node tools/validate-content-foundation.mjs",
+    "test:content": "node --test tools/validate-content/*.test.mjs"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.3.2"
   }
 }
