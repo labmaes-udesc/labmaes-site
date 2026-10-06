@@ -37,4 +37,5 @@ translations:
     summary: Producción bibliográfica ficticia utilizada para probar el CMS.
   fr:
     summary: Production bibliographique fictive utilisée pour tester le CMS.
+publicationStatus: in-press
 ---
