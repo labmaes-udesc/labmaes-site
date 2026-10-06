@@ -17,7 +17,12 @@ translations:
   en:
     title: a made up text
     summary: this is a made up text just for a test
-    body: this is a body text
+    body: |+
+      this is a body **text:**
+
+      - this is a list iten
+      - this also is a list iten
+
   es:
     title: un texto inventado
 ---
