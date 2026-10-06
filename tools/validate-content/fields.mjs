@@ -16,6 +16,12 @@ export function normalizeDate(v) {
   return Number.isNaN(d.getTime()) || d.toISOString().slice(0, 10) !== iso ? null : iso;
 }
 
+/** Tipos de campo do Pages CMS que o validador sabe conferir (o schema é recusado com qualquer outro). */
+export const SUPPORTED_TYPES = new Set([
+  "string", "text", "rich-text", "number", "boolean", "date",
+  "select", "image", "file", "reference", "object", "block",
+]);
+
 const optionNames = (f) => (f.options?.values ?? []).map((v) => (typeof v === "string" ? v : v.name));
 
 const error = (field, message) => ({ field, message });

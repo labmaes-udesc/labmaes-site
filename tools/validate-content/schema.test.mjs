@@ -56,3 +56,28 @@ test("componente inexistente é erro", () => {
 test("coleção sem filename.template é erro", () => {
   assert.throws(() => parseSchema(YML.replace("template: '{fields.slug}.md'", "x: 1")), /filename\.template/);
 });
+
+// Sem nenhum registro preenchendo o campo: o schema sozinho precisa falhar (ADR 0007).
+const withField = (field) => YML.replace("    - name: seo\n", `${field}    - name: seo\n`);
+
+test("tipo de campo não suportado é erro mesmo sem conteúdo", () => {
+  assert.throws(() => parseSchema(withField("    - name: notas\n      type: code\n")), /pages\.notas: tipo "code" não suportado/);
+});
+
+test("tipo não suportado dentro de objeto ou bloco também é erro", () => {
+  const obj = "    - name: o\n      type: object\n      fields:\n      - name: c\n        type: color\n";
+  assert.throws(() => parseSchema(withField(obj)), /pages\.o\.c: tipo "color"/);
+  const blk = "    - name: b\n      type: block\n      blockKey: kind\n      blocks:\n      - name: x\n        fields:\n        - name: c\n          type: color\n";
+  assert.throws(() => parseSchema(withField(blk)), /pages\.b\.x\.c: tipo "color"/);
+});
+
+test("referência para coleção inexistente ou com value não suportado é erro", () => {
+  const ref = (opts) => `    - name: r\n      type: reference\n      options:\n${opts}`;
+  assert.throws(() => parseSchema(withField(ref("        collection: nada\n        value: '{fields.slug}'\n"))), /pages\.r: .*coleção "nada"/);
+  assert.throws(() => parseSchema(withField(ref("        collection: pages\n        value: '{fields.title}'\n"))), /pages\.r: .*value/);
+});
+
+test("bloco sem blockKey é erro", () => {
+  const blk = "    - name: b\n      type: block\n      blocks:\n      - name: x\n        fields: []\n";
+  assert.throws(() => parseSchema(withField(blk)), /pages\.b: .*blockKey/);
+});
