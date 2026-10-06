@@ -145,8 +145,8 @@ Valida:
 Os fixtures `fixture-*` passam sem erros nem avisos; um teste manual com referência quebrada,
 `other` sem rótulo e ano como texto produziu os três erros esperados.
 
-Fora de escopo, por não haver ADR que defina: compatibilidade entre `productionCategory` e
-`productionType`; publicado referenciando rascunho. A CI (`.github/workflows/ci.yml`, PR #78) roda
+Fora de escopo, por não haver ADR que defina: publicado referenciando rascunho. (A compatibilidade
+entre categoria e tipo foi resolvida depois pelo ADR 0009: a categoria é derivada do tipo.) A CI (`.github/workflows/ci.yml`, PR #78) roda
 `validate:content` e `test:content` em todo pull request, o que torna verdadeiro o texto de ajuda de
 `otherTypeLabel` no `.pages.yml` ("será feita no CI").
 

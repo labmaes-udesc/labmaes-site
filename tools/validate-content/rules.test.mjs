@@ -4,14 +4,18 @@ import { recordRules, filenameFor } from "./rules.mjs";
 
 const msgs = (c, d) => recordRules(c, d).map((e) => `${e.level}|${e.field}: ${e.message}`);
 
-test("other exige otherTypeLabel, em tipo ou categoria", () => {
+test("tipo other exige otherTypeLabel", () => {
   assert.match(msgs("productions", { productionType: "other" })[0], /^error\|otherTypeLabel: .*obrigatório/);
-  assert.match(msgs("productions", { productionCategory: "other" })[0], /^error\|otherTypeLabel/);
   assert.deepEqual(msgs("productions", { productionType: "other", otherTypeLabel: "X" }), []);
 });
 
+test("tipo sem macro categoria na tabela é erro (ADR 0009)", () => {
+  assert.match(msgs("productions", { productionType: "novo-tipo" })[0], /^error\|productionType: .*"novo-tipo".*categoria/);
+  assert.deepEqual(msgs("productions", { productionType: "catalog" }), []);
+});
+
 test("otherTypeLabel sem other gera aviso, não erro", () => {
-  assert.match(msgs("productions", { productionType: "book", productionCategory: "bibliographic", otherTypeLabel: "X" })[0], /^warning\|otherTypeLabel/);
+  assert.match(msgs("productions", { productionType: "book", otherTypeLabel: "X" })[0], /^warning\|otherTypeLabel/);
 });
 
 test("ano da produção confere com o ano da data, quando há data", () => {

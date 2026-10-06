@@ -2,7 +2,6 @@
 slug: fixture-producao-audiovisual
 editorialStatus: draft
 title: '[FIXTURE] Produção audiovisual de teste'
-productionCategory: audiovisual
 productionType: audiovisual
 year: 2024
 contributors:

@@ -2,7 +2,6 @@
 slug: fixture-producao-outros
 editorialStatus: draft
 title: '[FIXTURE] Produção classificada como outros'
-productionCategory: other
 productionType: other
 otherTypeLabel: Objeto experimental de teste
 year: 2026

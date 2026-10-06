@@ -44,7 +44,8 @@ Validar o conteúdo com um validador próprio que **lê o `.pages.yml` como font
   validado;
 - o validador garante coerência do conteúdo, não que o CMS grave corretamente (isso foi testado
   na Etapa 5);
-- a regra de compatibilidade entre `productionCategory` e `productionType` não é validada,
-  porque nenhum ADR a define;
+- a compatibilidade entre categoria e tipo de produção deixou de existir como regra: a categoria
+  passou a ser derivada do tipo ([ADR 0009](0009-categoria-derivada-do-tipo.md)), e o validador
+  recusa tipo sem categoria na tabela;
 - se o projeto passar a consumir `src/content` com TypeScript, schemas Zod podem ser gerados a
   partir do mesmo `.pages.yml` sem reabrir esta decisão.
