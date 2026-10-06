@@ -46,7 +46,7 @@ npm run validate:content  # valida src/content contra o .pages.yml
 2. **Commits no padrão [Conventional Commits](https://www.conventionalcommits.org/pt-br/)**,
    em português, no imperativo e com escopo quando ajudar:
    `feat(anais): …`, `fix(submissoes): …`, `docs(plan): …`, `chore(cms): …`.
-3. **Pull request para a `main`**, preenchendo o modelo e citando a issue (`Fecha #N`).
+3. **Pull request para a `main`**, preenchendo o modelo e citando a issue com `Closes #N` (o GitHub só reconhece as palavras-chave em inglês — `Closes`, `Fixes`, `Resolves` — para fechar a issue no merge).
    A CI roda build e validação de conteúdo; o PR só é mesclado com a CI verde e pelo menos
    uma revisão.
 4. **Publicação:** todo merge na `main` é publicado automaticamente pelo Cloudflare Pages.
