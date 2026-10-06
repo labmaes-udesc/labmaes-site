@@ -72,6 +72,9 @@ npm run validate:content  # valida src/content contra o .pages.yml
 
 ## Equipe editorial (Pages CMS)
 
+Antes de editar, leia a [política editorial](docs/politica-editorial.md): quem publica, que
+documentos podem entrar e o que é traduzido.
+
 Quem edita conteúdo pelo Pages CMS não precisa de Git nem de pull request: o CMS grava direto na
 `main`, e um registro só aparece no site quando seu status editorial é "Publicado"
 ([ADR 0008](docs/architecture/adr/0008-publicacao-direta-cms.md)). A CI valida cada edição e avisa
