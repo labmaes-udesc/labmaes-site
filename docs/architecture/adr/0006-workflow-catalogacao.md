@@ -33,3 +33,5 @@ proveniência.
 - a primeira carga prioriza produções recentes, verificáveis e vinculadas aos projetos
   atuais;
 - o workflow por branch/PR será preferido enquanto for operacionalmente viável.
+  Refinado pelo ADR 0008: edições do Pages CMS vão direto para a `main`; o PR vale para
+  código, templates, configuração e schema.
