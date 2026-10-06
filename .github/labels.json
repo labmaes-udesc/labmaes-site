@@ -1,0 +1,34 @@
+[
+  { "name": "tipo:bug", "from": "bug", "color": "d73a4a", "description": "Algo no site está quebrado ou errado" },
+  { "name": "tipo:funcionalidade", "from": "enhancement", "color": "a2eeef", "description": "Nova página, componente ou capacidade" },
+  { "name": "tipo:tarefa", "color": "c5def5", "description": "Trabalho planejado de desenvolvimento" },
+  { "name": "tipo:conteúdo", "color": "fef2c0", "description": "Texto, dado, foto ou documento a criar ou corrigir" },
+  { "name": "tipo:documentação", "from": "documentation", "color": "0075ca", "description": "README, guias, specs, plans" },
+  { "name": "tipo:decisão", "color": "5319e7", "description": "Precisa de decisão da equipe; pode virar ADR" },
+  { "name": "tipo:manutenção", "color": "bfdadc", "description": "Dependências, CI, limpeza, configuração" },
+
+  { "name": "área:cms", "color": "d4c5f9", "description": "Pages CMS e .pages.yml" },
+  { "name": "área:modelo-de-conteúdo", "color": "d4c5f9", "description": "Schema, src/content, validação" },
+  { "name": "área:design-system", "color": "d4c5f9", "description": "Tokens, componentes, CSS" },
+  { "name": "área:acessibilidade", "color": "d4c5f9", "description": "WCAG 2.2 AA (ADR 0005)" },
+  { "name": "área:seo", "color": "d4c5f9", "description": "Metadados, Schema.org, sitemap, hreflang" },
+  { "name": "área:i18n", "color": "d4c5f9", "description": "PT/EN/ES/FR (ADR 0004)" },
+  { "name": "área:desempenho", "color": "d4c5f9", "description": "Peso, cache, Core Web Vitals" },
+  { "name": "área:segurança", "color": "d4c5f9", "description": "Headers, CSP, dados pessoais" },
+  { "name": "área:infra", "color": "d4c5f9", "description": "Build, CI, Cloudflare, domínio" },
+  { "name": "área:editorial", "color": "d4c5f9", "description": "Fluxo e política editorial, catalogação" },
+  { "name": "área:evento-caminhos", "color": "d4c5f9", "description": "Caminhos do Contemporâneo" },
+
+  { "name": "prioridade:alta", "color": "b60205", "description": "Bloqueia uma fase ou afeta quem usa o site agora" },
+  { "name": "prioridade:média", "color": "fbca04", "description": "Importante, sem urgência" },
+  { "name": "prioridade:baixa", "color": "0e8a16", "description": "Desejável" },
+
+  { "name": "status:bloqueado", "color": "000000", "description": "Depende de outra issue ou decisão" },
+  { "name": "status:precisa-de-informação", "from": "question", "color": "d876e3", "description": "Falta informação para seguir" },
+
+  { "name": "good first issue", "color": "7057ff", "description": "Boa para quem está começando no projeto" },
+  { "name": "help wanted", "color": "008672", "description": "Contribuições externas são bem-vindas" },
+  { "name": "duplicate", "color": "cfd3d7", "description": "Já existe issue ou PR igual" },
+  { "name": "invalid", "color": "e4e669", "description": "Não se aplica ou não procede" },
+  { "name": "wontfix", "color": "ffffff", "description": "Não será feito" }
+]

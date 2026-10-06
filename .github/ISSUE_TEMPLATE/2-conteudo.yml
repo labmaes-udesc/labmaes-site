@@ -1,0 +1,42 @@
+name: Correção ou atualização de conteúdo
+description: Texto, nome, data, foto, documento ou link que precisa mudar.
+title: "[Conteúdo] "
+labels: ["tipo:conteúdo"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use este modelo para pedidos editoriais (não é preciso saber programar).
+        **Nunca anexe documentos com dados pessoais sensíveis** (saúde, CPF, endereço, notas) — nem para teste.
+  - type: input
+    id: url
+    attributes:
+      label: Página ou registro
+      description: Endereço da página ou nome do registro no CMS.
+    validations:
+      required: true
+  - type: textarea
+    id: atual
+    attributes:
+      label: Como está hoje
+    validations:
+      required: true
+  - type: textarea
+    id: correto
+    attributes:
+      label: Como deve ficar
+    validations:
+      required: true
+  - type: input
+    id: fonte
+    attributes:
+      label: Fonte da informação
+      description: Documento, edital, e-mail ou pessoa responsável que confirma a mudança.
+  - type: dropdown
+    id: idiomas
+    attributes:
+      label: Afeta traduções?
+      options:
+        - Não sei
+        - Só português
+        - Sim — também precisa atualizar EN/ES/FR

@@ -1,0 +1,43 @@
+name: Problema no site
+description: Algo no site está quebrado, errado ou inacessível.
+title: "[Bug] "
+labels: ["tipo:bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por avisar. Não inclua dados pessoais de terceiros, senhas ou links privados (ex.: salas de Zoom).
+  - type: input
+    id: url
+    attributes:
+      label: Página
+      description: Endereço onde o problema aparece.
+      placeholder: https://labmaes.com.br/...
+    validations:
+      required: true
+  - type: textarea
+    id: descricao
+    attributes:
+      label: O que acontece
+      description: Descreva o problema. Se puder, inclua uma captura de tela.
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: O que deveria acontecer
+    validations:
+      required: true
+  - type: textarea
+    id: passos
+    attributes:
+      label: Como reproduzir
+      placeholder: |
+        1. Abrir a página no celular
+        2. Tocar no menu
+        3. ...
+  - type: input
+    id: ambiente
+    attributes:
+      label: Dispositivo e navegador
+      placeholder: "Ex.: Android 14, Chrome; Windows 11, Firefox; leitor de tela NVDA"
