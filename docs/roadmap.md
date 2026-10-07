@@ -16,7 +16,7 @@ A divisão em fases vem de
 | --- | --- | --- | --- |
 | 0 | Arquitetura de informação e conteúdo | concluída (PR #7) | [spec](superpowers/specs/2026-09-04-redesign-fase-0-arquitetura-conteudo-design.md), ADRs 0001–0006 |
 | 1 | Content foundation | concluída (2026-10-07) | [spec](superpowers/specs/2026-09-04-redesign-fase-1-content-foundation-design.md), [plan](superpowers/plans/2026-09-04-redesign-fase-1-content-foundation.md), ADRs 0007–0009, [política editorial](politica-editorial.md) |
-| 2 | Design system | planejada | — |
+| 2 | Design system | em andamento | [spec](superpowers/specs/2026-10-07-redesign-fase-2-design-system-design.md) |
 | 3 | Institucional | planejada | — |
 | 4 | Repositório de produções | planejada | — |
 | 5 | Eventos | planejada | — |
