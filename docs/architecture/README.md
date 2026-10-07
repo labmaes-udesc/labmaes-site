@@ -24,6 +24,6 @@ Em caso de divergência:
 
 - Fase 0 — Arquitetura de informação e conteúdo: **concluída**, após aceitação dos
   ADRs 0001–0006 e da spec correspondente.
-- Fase 1 — Content foundation: **em andamento** (ADR 0007: validação de conteúdo derivada do
-  `.pages.yml`).
+- Fase 1 — Content foundation: **concluída** em 2026-10-07 (ADRs 0007–0009 e política editorial;
+  gate registrado no plan da fase).
 - Fases 2–7: planejadas; ver [roadmap](../roadmap.md) e as milestones no GitHub.
