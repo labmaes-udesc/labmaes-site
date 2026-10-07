@@ -135,7 +135,7 @@ components:
   translations_short:
     type: object
     label: Traduções
-    description: Traduções de apresentação; títulos oficiais de obras não precisam ser traduzidos.
+    description: 'Tradução do Resumo de apresentação (em Produções) ou da Descrição (em Eventos). Títulos oficiais de obras não são traduzidos.'
     fields:
     - name: en
       label: English
@@ -749,9 +749,11 @@ content:
     - name: summary
       label: Resumo de apresentação
       type: text
+      description: 'Texto curto, escrito pelo LabMAES, que apresenta a obra no site (2–3 frases). É este o resumo que vai em "Traduções".'
     - name: abstract
       label: Resumo/abstract da obra
       type: text
+      description: 'O resumo oficial, como foi publicado na própria obra: copie do original, no idioma original. Opcional.'
     - name: keywords
       label: Palavras-chave
       type: string

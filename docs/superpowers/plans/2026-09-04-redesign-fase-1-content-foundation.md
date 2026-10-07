@@ -1,6 +1,6 @@
 # Plan — Redesign Fase 1: Content foundation
 
-**Status:** Em andamento (Etapas 1–6 concluídas; próxima: Etapa 7)  
+**Status:** Concluída (2026-10-07)  
 **Data:** 2026-09-16
 
 ## Etapas
@@ -150,6 +150,18 @@ entre categoria e tipo foi resolvida depois pelo ADR 0009: a categoria é deriva
 `validate:content` e `test:content` em todo pull request, o que torna verdadeiro o texto de ajuda de
 `otherTypeLabel` no `.pages.yml` ("será feita no CI").
 
-### 7. Gate de saída
+### 7. Gate de saída — CONCLUÍDA (2026-10-07)
 
-Não conectar `src/content` ao Eleventy público até os critérios da spec da Fase 1 serem atendidos.
+Os seis critérios de saída da spec foram atendidos:
+
+| Critério | Evidência |
+| --- | --- |
+| 1. O CMS carrega a configuração sem erros | Etapa 5 e testes A–D (auditorias 02–08) |
+| 2. Fixtures relacionais funcionam | auditorias 03 e 04; tarefas D3–D5 da sessão com bolsista |
+| 3. Schema validado automaticamente | validador derivado do `.pages.yml` (ADR 0007, #83), com mensagens com os nomes do CMS (#91); roda na CI em todo PR e em todo push na `main` |
+| 4. Site atual inalterado | `src/**` fora do build do Eleventy; o build segue gerando as mesmas 12 páginas |
+| 5. Fluxo editorial aprovado para bolsistas | sessão com bolsista: 8 de 8 tarefas sem ajuda e os três estados editoriais compreendidos (#15, #13, auditoria 08) |
+| 6. Decisões emergentes registradas em ADR | ADR 0007 (validação), ADR 0008 (CMS direto na `main`), ADR 0009 (categoria derivada do tipo); política editorial em `docs/politica-editorial.md` |
+
+`src/content` pode ser ligado ao Eleventy público a partir da Fase 3 (#37), seguindo a política
+editorial: só registros com status editorial "Publicado" e nunca os fixtures `fixture-*`.

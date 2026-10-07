@@ -1,6 +1,6 @@
 # Spec — Redesign Fase 1: Content foundation
 
-**Status:** Em implementação  
+**Status:** Concluída (2026-10-07)  
 **Data:** 2026-09-04  
 **Dependência:** Fase 0 concluída e ADRs 0001–0006 aceitos.
 
