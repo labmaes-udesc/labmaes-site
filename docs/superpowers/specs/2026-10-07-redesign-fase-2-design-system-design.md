@@ -18,7 +18,8 @@ HTML que é a fonte da verdade, publicado junto do site e consumido diretamente 
 - seis telas-chave e a home mobile, do mock ao HTML;
 - catálogo `design-system.html` extraído das telas;
 - integração com o Eleventy (publicação do catálogo, macros, layout v2);
-- testes de sincronia e de acessibilidade na CI.
+- testes de sincronia e de acessibilidade na CI;
+- aprovação da coordenadora do LabMAES antes de qualquer publicação.
 
 ## Fora de escopo
 
@@ -282,6 +283,11 @@ design-systems/
 
 ## 5. Integração com o Eleventy
 
+**Branch da fase.** Todo o trabalho da Fase 2 acontece na branch `redesign/fase-2-design-system`
+(PRs menores entram nela, não na `main`). Até a aprovação da coordenação (seção 7), nada da
+fase chega à `main`, e o catálogo só existe nos deploys de preview do Cloudflare para essa
+branch.
+
 **Publicação.** O Eleventy ignora `design-systems/**` como fonte de templates e copia
 `design-systems/labmaes/` sem transformação para `/design-system/`, com o
 `design-system.html` copiado também como `/design-system/index.html`. O catálogo abre em
@@ -298,7 +304,8 @@ markup e as mesmas classes do preview correspondente.
 verifica que todo `data-component` do catálogo tem uma macro e que a macro renderizada produz
 as mesmas classes raiz do preview.
 
-**Migração.** A Fase 2 não altera nenhuma página pública. As páginas migram para o layout v2
+**Migração.** A Fase 2 não altera nenhuma página pública, e o próprio catálogo só vai para
+produção depois da aprovação da coordenação. As páginas migram para o layout v2
 nas Fases 3, 4 e 5, e o `css/` e o `js/` antigos são removidos na Fase 7.
 
 ## 6. Acessibilidade e testes
@@ -315,7 +322,34 @@ catálogo gerado pelo build:
 O catálogo mostra cada componente em todos os estados, então o job cobre o sistema inteiro.
 As páginas migradas entram na mesma bateria nas fases seguintes.
 
-## 7. Issues
+## 7. Aprovação da coordenação
+
+A nova versão do site não fica pública sem a aprovação da coordenadora do LabMAES, Profa. Mara
+Rúbia Sant'Anna. Essa regra vale para todas as fases do redesign e é registrada no ADR 0010
+durante o plan desta fase. Ela não se aplica às atualizações de conteúdo do site atual feitas
+pelo CMS, que seguem o ADR 0008.
+
+Na Fase 2, a aprovação é o último passo, depois que os critérios 1 a 7 da seção 9 forem
+cumpridos.
+
+**O que é enviado à coordenadora:**
+
+- o link do catálogo no deploy de preview da branch da fase;
+- os mocks aprovados das seis telas e da home mobile (PNG);
+- os links das telas em HTML no mesmo preview;
+- um resumo curto das decisões (conceito, intensidade, cor, tipografia, matéria, movimento),
+  em linguagem não técnica.
+
+**Registro.** A resposta é registrada num documento em `docs/superpowers/reviews/` e num
+comentário na issue da aprovação, com data e eventuais ressalvas.
+
+**Se houver pedidos de mudança:** volta-se à etapa correspondente (tela, extração ou
+fundamento), refaz-se a extração final se necessário e reenvia-se o pacote.
+
+**Depois da aprovação:** a branch da fase é mesclada na `main`, e o catálogo passa a ser
+publicado em `/design-system/` no site de produção.
+
+## 8. Issues
 
 | Issue | Destino |
 |---|---|
@@ -328,22 +362,24 @@ As páginas migradas entram na mesma bateria nas fases seguintes.
 | #35 | Atendida pelo job da seção 6 |
 
 Issues novas: licença da Thunder, guia de direção de arte, uma por tela, extração 1, extração
-final e integração com o Eleventy.
+final, integração com o Eleventy, ADR 0010 e aprovação da coordenação.
 
-## 8. Critérios de saída
+## 9. Critérios de saída
 
 1. As seis telas e a home mobile estão aprovadas como mock e como HTML.
 2. O catálogo saiu da extração final e cobre Foundations (com Matéria e Movimento),
    Components e Layouts, os três níveis de intensidade e `data-brand="caminhos"`.
 3. O guia de direção de arte está no catálogo, com 3 a 5 âncoras e o log das gerações.
-4. O catálogo está publicado em `/design-system/`; as macros de `_includes/ds/` e o
-   `layout-v2.njk` existem; nenhuma página pública foi alterada.
+4. O catálogo está publicado em `/design-system/` no deploy de preview da branch da fase; as
+   macros de `_includes/ds/` e o `layout-v2.njk` existem; nenhuma página pública foi alterada.
 5. `test:ds` e o job de acessibilidade estão verdes na CI.
 6. A licença da Thunder está resolvida (confirmada, ou a Poppins Black adotada).
-7. As issues foram reorganizadas, e `docs/roadmap.md` e `docs/architecture/README.md` estão
-   atualizados.
+7. As issues foram reorganizadas, o ADR 0010 foi registrado, e `docs/roadmap.md` e
+   `docs/architecture/README.md` estão atualizados.
+8. A coordenadora aprovou o pacote da seção 7, a aprovação está registrada, e só então a branch
+   da fase foi mesclada na `main`.
 
-## 9. Riscos
+## 10. Riscos
 
 | Risco | Mitigação |
 |---|---|
@@ -352,3 +388,4 @@ final e integração com o Eleventy.
 | A extração final sobrescrever ajustes | Nenhuma edição manual entre as extrações |
 | Custo das gerações | Log com custo por imagem; saldo em 2026-10-07 de cerca de US$ 5,40 no OpenRouter |
 | Thunder sem licença para web | Poppins Black como alternativa definida |
+| A coordenação pedir mudanças de fundo só no fim, gerando retrabalho | Mostrar à coordenadora o preview do catálogo v1, depois da extração 1, como consulta informal; a aprovação formal continua sendo o passo final |
