@@ -16,7 +16,7 @@ A divisão em fases vem de
 | --- | --- | --- | --- |
 | 0 | Arquitetura de informação e conteúdo | concluída (PR #7) | [spec](superpowers/specs/2026-09-04-redesign-fase-0-arquitetura-conteudo-design.md), ADRs 0001–0006 |
 | 1 | Content foundation | concluída (2026-10-07) | [spec](superpowers/specs/2026-09-04-redesign-fase-1-content-foundation-design.md), [plan](superpowers/plans/2026-09-04-redesign-fase-1-content-foundation.md), ADRs 0007–0009, [política editorial](politica-editorial.md) |
-| 2 | Design system | planejada | — |
+| 2 | Design system | em andamento | [spec](superpowers/specs/2026-10-07-redesign-fase-2-design-system-design.md), [plan](superpowers/plans/2026-11-25-redesign-fase-2-design-system.md) |
 | 3 | Institucional | planejada | — |
 | 4 | Repositório de produções | planejada | — |
 | 5 | Eventos | planejada | — |
@@ -33,8 +33,9 @@ conteúdo v1, estratégia de CMS e política de catalogação progressiva.
 `src/content/`, fixtures, validação automática e teste do Pages CMS com bolsistas. O gate de
 saída (Etapa 7) impede ligar `src/content` ao site público antes dos seis critérios da spec.
 
-**2 — Design system.** Tokens, componentes, documentação, protótipos no Figma e testes de
-acessibilidade dos componentes.
+**2 — Design system.** Site novo dentro da marca atual (2D, Manual de Marca): telas em HTML construídas com a
+`design-taste-frontend`, catálogo extraído como fonte da verdade, tokens, componentes e testes
+de acessibilidade.
 
 **3 — Institucional.** Home, Sobre, Equipe, Projetos, Redes e parceiros, Contato — as primeiras
 páginas alimentadas por `src/content`.
