@@ -587,7 +587,7 @@ fim da linha, à mão, depois da aprovação do usuário.
 
 Run: `mkdir -p design-systems/marca/textura && touch design-systems/marca/textura/.gitkeep`
 
-- [ ] **Passo 4 (pendente em 2026-11-25: a OpenRouter recusou com HTTP 402, crédito insuficiente para o custo máximo da requisição; repetir depois de recarregar): Testar o wrapper com uma geração barata** (só depois de o usuário confirmar o saldo do OpenRouter)
+- [x] **Passo 4 (feito em 2026-11-25, depois de recarregar a OpenRouter: US$ 0,139 por imagem 1K): Testar o wrapper com uma geração barata** (só depois de o usuário confirmar o saldo do OpenRouter)
 
 ```bash
 printf 'Swatch of ice-white cotton paper with a faint fibrous texture.' > ../redesign-fase2-referencias/teste.txt
