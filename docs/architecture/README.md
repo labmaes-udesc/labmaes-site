@@ -26,4 +26,7 @@ Em caso de divergência:
   ADRs 0001–0006 e da spec correspondente.
 - Fase 1 — Content foundation: **concluída** em 2026-10-07 (ADRs 0007–0009 e política editorial;
   gate registrado no plan da fase).
-- Fases 2–7: planejadas; ver [roadmap](../roadmap.md) e as milestones no GitHub.
+- Fase 2 — Design system: **em andamento** (spec e plan em `docs/superpowers/`; ADR 0010).
+- Fases 3–7: planejadas; ver [roadmap](../roadmap.md) e as milestones no GitHub.
+
+Desde o ADR 0010, nenhuma fase do redesign é publicada sem a aprovação da coordenadora do LabMAES.
