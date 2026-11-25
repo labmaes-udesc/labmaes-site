@@ -33,8 +33,9 @@ conteúdo v1, estratégia de CMS e política de catalogação progressiva.
 `src/content/`, fixtures, validação automática e teste do Pages CMS com bolsistas. O gate de
 saída (Etapa 7) impede ligar `src/content` ao site público antes dos seis critérios da spec.
 
-**2 — Design system.** Tokens, componentes, documentação, protótipos no Figma e testes de
-acessibilidade dos componentes.
+**2 — Design system.** Site novo dentro da marca atual (2D, Manual de Marca): telas em HTML construídas com a
+`design-taste-frontend`, catálogo extraído como fonte da verdade, tokens, componentes e testes
+de acessibilidade.
 
 **3 — Institucional.** Home, Sobre, Equipe, Projetos, Redes e parceiros, Contato — as primeiras
 páginas alimentadas por `src/content`.
