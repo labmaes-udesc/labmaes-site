@@ -507,7 +507,7 @@ Só texturas chapadas e imagens de apoio 2D (spec, seções 2.4 e 3).
 - Criar: `design-systems/marca/ia/log.md`
 - Criar: `design-systems/marca/textura/.gitkeep`
 
-- [ ] **Passo 1: Escrever o wrapper**
+- [x] **Passo 1: Escrever o wrapper**
 
 `tools/ds/gerar-imagem.sh`:
 
@@ -532,9 +532,14 @@ fi
 prompt="$(tr -d '\r' < "$fixo" | sed -n '/^```prompt$/,/^```$/p' | sed '1d;$d') $(tr -d '\r' < "$arquivo_prompt")"
 
 mkdir -p "$(dirname "$saida")"
+status=0
 resultado="$(uv run --system-certs "$script" --model pro --resolution 1K --aspect-ratio "$proporcao" \
-  --filename "$saida" --prompt "$prompt" 2>&1 | tail -3)"
-echo "$resultado"
+  --filename "$saida" --prompt "$prompt" 2>&1)" || status=$?
+printf '%s\n' "$resultado" | tail -3
+if [ "$status" -ne 0 ]; then
+  echo "geração falhou (código $status); nada foi registrado no log" >&2
+  exit "$status"
+fi
 
 custo="$(printf '%s\n' "$resultado" | sed -n 's/.*usage.cost): \(.*\)$/\1/p')"
 printf '| %s | `%s` | `%s` | %s | %s |\n' \
@@ -543,7 +548,7 @@ printf '| %s | `%s` | `%s` | %s | %s |\n' \
 
 Run: `chmod +x tools/ds/gerar-imagem.sh`
 
-- [ ] **Passo 2: Escrever o prompt fixo e o checklist**
+- [x] **Passo 2: Escrever o prompt fixo e o checklist**
 
 `design-systems/marca/ia/prompt-fixo.md`:
 
@@ -566,7 +571,7 @@ Flat top-down material swatch for the website of LabMAES, a university research 
 - [ ] Aprovada pelo usuário; linha marcada com ✅ no `log.md`.
 ````
 
-- [ ] **Passo 3: Criar o log e a pasta das texturas**
+- [x] **Passo 3: Criar o log e a pasta das texturas**
 
 `design-systems/marca/ia/log.md`:
 
@@ -582,7 +587,7 @@ fim da linha, à mão, depois da aprovação do usuário.
 
 Run: `mkdir -p design-systems/marca/textura && touch design-systems/marca/textura/.gitkeep`
 
-- [ ] **Passo 4: Testar o wrapper com uma geração barata** (só depois de o usuário confirmar o saldo do OpenRouter)
+- [ ] **Passo 4 (pendente em 2026-11-25: a OpenRouter recusou com HTTP 402, crédito insuficiente para o custo máximo da requisição; repetir depois de recarregar): Testar o wrapper com uma geração barata** (só depois de o usuário confirmar o saldo do OpenRouter)
 
 ```bash
 printf 'Swatch of ice-white cotton paper with a faint fibrous texture.' > ../redesign-fase2-referencias/teste.txt
@@ -592,7 +597,7 @@ tail -1 design-systems/marca/ia/log.md
 
 Esperado: `Image saved to: ...teste-wrapper.png`, custo em torno de US$ 0,13 e uma linha nova no log. Apagar essa linha de teste do log e o arquivo `../redesign-fase2-referencias/teste.txt`.
 
-- [ ] **Passo 5: Commit**
+- [x] **Passo 5: Commit**
 
 ```bash
 git add tools/ds/gerar-imagem.sh design-systems/marca/ia design-systems/marca/textura/.gitkeep
