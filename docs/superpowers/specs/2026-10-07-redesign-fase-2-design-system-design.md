@@ -257,7 +257,7 @@ couber).
 | Ciclo | Telas |
 |---|---|
 | 1 | Home desktop |
-| 1 | Home mobile |
+| 1 | Home mobile (mesma página da home, responsiva) |
 | 1 | Listagem do repositório (Produções, com busca e filtros) |
 | — | **Extração 1** → catálogo v1, ponto de revisão e consulta informal à coordenação |
 | 2 | Página de item (uma produção) |
@@ -279,8 +279,7 @@ design-systems/
     ia/                 # prompt fixo, checklist e log.md das gerações
   telas/
     index.html          # liga as telas; entrada do /extract-ds
-    01-home/            # index.html, captura-1440.png, captura-390.png, verificacao.md, assets/
-    02-home-mobile/
+    01-home/            # responsiva: as capturas em 1440 e 390 px cobrem a home desktop e a mobile
     03-repositorio/
     04-item/
     05-sobre/
@@ -297,8 +296,11 @@ design-systems/
 
 ### 4.5 Regras
 
-- O kit da skill é copiado para a pasta de cada tela pela própria skill; os arquivos do kit não
-  são editados (regra da skill). Só a camada de marca muda.
+- Cada tela guarda no git só o `index.html`, as capturas, o `verificacao.md` e os waivers do gate.
+  A cópia do kit da skill (cerca de 37 MB), a cópia da marca e as saídas dos verificadores ficam
+  fora do git e são recriadas por um script. Os arquivos do kit não são editados (regra da
+  skill); só a camada de marca muda.
+- Por isso as telas não são publicadas no preview: a coordenação vê o catálogo e as capturas.
 - Entre a extração 1 e a extração final, o catálogo não é editado à mão, porque a extração
   final o regenera. Ajustes finos só depois dela.
 - Alternativas descartadas ficam em `../redesign-fase2-referencias/`, fora do repositório.
@@ -360,7 +362,6 @@ cumpridos.
 
 - o link do catálogo no deploy de preview da branch da fase;
 - as capturas aprovadas das seis telas e da home mobile (PNG);
-- os links das telas em HTML no mesmo preview;
 - um resumo curto das decisões (site novo com a mesma marca, cor, tipografia, forma, textura,
   movimento), em linguagem não técnica.
 

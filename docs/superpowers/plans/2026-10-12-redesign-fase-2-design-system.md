@@ -1,9 +1,8 @@
 # Redesign Fase 2: Design system — plano de implementação
 
-> **DESATUALIZADO (2026-11-24):** a spec foi revisada (Revisão 1: marca atual 2D, textura como
-> detalhe, telas construídas com a `design-taste-frontend`). As Partes A4, B, D e E2 abaixo
-> seguem a direção antiga (cenas 3D por IA, `/to-img`, `/img-to-html`) e não devem ser
-> executadas. Este plano será reescrito a partir da spec revisada.
+> **SUBSTITUÍDO (2026-11-25)** pelo [plan v2](2026-11-25-redesign-fase-2-design-system.md), que segue a
+> Revisão 1 da spec (marca atual 2D, textura como detalhe, telas construídas com a
+> `design-taste-frontend`). Mantido só como histórico; não executar.
 
 > **Para agentes:** SUB-SKILL OBRIGATÓRIA: use superpowers:subagent-driven-development (recomendado) ou superpowers:executing-plans para executar este plano tarefa por tarefa. Os passos usam checkbox (`- [ ]`) para acompanhamento.
 >
