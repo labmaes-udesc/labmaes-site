@@ -277,7 +277,7 @@ design-systems/telas/*/marca/
 design-systems/telas/*/shots/
 design-systems/telas/*/.taste-skill/*
 !design-systems/telas/*/.taste-skill/waivers.json
-.taste-skill/
+/.taste-skill/
 ```
 
 - [ ] **Passo 2: Escrever a camada de marca**
