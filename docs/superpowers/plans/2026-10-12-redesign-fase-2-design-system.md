@@ -1,5 +1,10 @@
 # Redesign Fase 2: Design system — plano de implementação
 
+> **DESATUALIZADO (2026-11-24):** a spec foi revisada (Revisão 1: marca atual 2D, textura como
+> detalhe, telas construídas com a `design-taste-frontend`). As Partes A4, B, D e E2 abaixo
+> seguem a direção antiga (cenas 3D por IA, `/to-img`, `/img-to-html`) e não devem ser
+> executadas. Este plano será reescrito a partir da spec revisada.
+
 > **Para agentes:** SUB-SKILL OBRIGATÓRIA: use superpowers:subagent-driven-development (recomendado) ou superpowers:executing-plans para executar este plano tarefa por tarefa. Os passos usam checkbox (`- [ ]`) para acompanhamento.
 >
 > **Atenção:** as Partes B, D e parte da C e da E são trabalho de design com gates humanos. As skills `/plan-screen`, `/to-img`, `/img-to-html`, `/to-wireframe` e `/extract-ds` têm `disable-model-invocation: true`, então **quem as invoca é o usuário**, digitando o comando no chat. Os textos de invocação estão prontos neste plano. Essas tarefas não podem ser delegadas a subagentes, e quem executa nunca avança um gate sem aprovação explícita do usuário.

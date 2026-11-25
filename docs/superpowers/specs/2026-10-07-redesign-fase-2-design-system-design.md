@@ -1,21 +1,39 @@
 # Spec — Redesign Fase 2: Design system
 
-**Status:** Aprovada no brainstorming, aguardando plan
-**Data:** 2026-10-07
+**Status:** Revisada em 2026-11-24 (brainstorming); o plan de 2026-10-12 precisa ser reescrito
+**Data:** 2026-10-07 · **Revisão 1:** 2026-11-24
 **Dependência:** Fase 1 concluída (gate #23, PR #96).
 **Issue:** #24
 
+## Revisões
+
+**Revisão 1 (2026-11-24).** A versão de 2026-10-07 propunha uma nova linguagem visual,
+"estrutura + matéria", com cenas 3D de massinha, papel, blocos e tecido geradas por IA e três
+níveis de intensidade. Ao retomar a fase, o usuário julgou ousado demais mudar o branding junto
+com o site novo. Decisões desta revisão:
+
+1. **Layout novo, marca igual.** As páginas e os componentes são redesenhados, mas a identidade
+   é a do Manual de Marca, 2D e chapada. Saem o par estrutura/matéria e o `data-intensity`.
+2. **Textura como detalhe:** grão e trama em CSS e, onde fizer falta, amostras chapadas de
+   material geradas por IA, aplicadas dentro dos módulos do manual. Nada de cena 3D.
+3. **A skill `design-taste-frontend` constrói as telas**, com uma camada de marca por cima do
+   kit dela e uma lista explícita de exceções às suas regras (seção 4.2). Saem o `/to-img` e o
+   `/img-to-html`; o `/plan-screen` fica opcional e o `/extract-ds` continua gerando o catálogo.
+
+As seções 1 a 4 foram reescritas; as seções 5 a 10 receberam só os ajustes decorrentes.
+
 ## Objetivo
 
-Criar do zero o design system do site do LabMAES, sem herdar o CSS e os componentes atuais,
-tendo como única regra visual o Manual de Marca do laboratório. O resultado é um catálogo em
-HTML que é a fonte da verdade, publicado junto do site e consumido diretamente por ele.
+Criar o design system do novo site do LabMAES dentro da marca atual, tendo o Manual de Marca
+como regra visual. O CSS e os componentes do site atual não são herdados como código, mas a
+identidade que eles expressam é mantida. O resultado é um catálogo em HTML que é a fonte da
+verdade, publicado junto do site e consumido diretamente por ele.
 
 ## Escopo
 
-- fundamentos visuais (cor, tipografia, forma, matéria, espaçamento, movimento);
-- direção de arte das imagens geradas por IA;
-- seis telas-chave e a home mobile, do mock ao HTML;
+- fundamentos visuais (cor, tipografia, forma, textura, espaçamento, movimento);
+- guia das texturas e imagens de apoio geradas por IA;
+- seis telas-chave e a home mobile, construídas em HTML;
 - catálogo `design-system.html` extraído das telas;
 - integração com o Eleventy (publicação do catálogo, macros, layout v2);
 - testes de sincronia e de acessibilidade na CI;
@@ -23,53 +41,39 @@ HTML que é a fonte da verdade, publicado junto do site e consumido diretamente 
 
 ## Fora de escopo
 
+- mudar a marca do LabMAES (logotipo, paleta, tipografia ou vocabulário de formas);
 - migrar páginas públicas para o novo sistema (Fases 3, 4 e 5);
 - remover o `css/` e o `js/` atuais (Fase 7);
 - textos das páginas e a declaração de uso de IA (Fase 3);
 - modo escuro (só fica preparado);
-- mocks das páginas Equipe/Pessoa e Contato, que serão montadas com os componentes;
+- telas das páginas Equipe/Pessoa e Contato, que serão montadas com os componentes;
 - auditoria manual com leitor de tela (Fase 7, ADR 0005).
 
 ## 1. Conceito
 
-### 1.1 Estrutura e matéria
+### 1.1 Site novo, mesma marca
 
-O sistema tem duas camadas, que vêm das ideias de bloco de montar e de massinha de modelar:
+O LabMAES ganha um site novo, com a arquitetura de informação das Fases 0 e 1 (repositório de
+produções, itens, pessoas, eventos), mas quem o visita reconhece a mesma identidade do site
+atual e das peças do laboratório. O visual é **2D e chapado**, como no manual.
 
-- **Estrutura**: grid, módulos, encaixe, regra. Garante ordem, previsibilidade e
-  acessibilidade, e predomina onde se lê e se busca.
-- **Matéria**: massinha, papel, blocos de montar e tecido. Traz gesto, textura e volume, e
-  traduz a estratégia dos saberes sensíveis.
+A expressão vem do **vocabulário modular** do manual (quadrado de canto arredondado, quarto de
+círculo, arco), compondo heroes e aberturas de seção, na linha do cabeçalho decorativo que o
+site atual já usa. A **textura entra como detalhe**, em pontos contados (seção 2.4), e nunca
+como camada visual própria.
 
-Os quatro materiais têm **peso igual**. Nenhum deles representa uma área: Moda, Artes,
-Ensino e Sociedade são tratadas de modo igual e transdisciplinar.
+Papel, tecido, massinha e blocos de montar, quando aparecem como textura, têm **peso igual**.
+Nenhum deles representa uma área: Moda, Artes, Ensino e Sociedade são tratadas de modo igual e
+transdisciplinar, na estratégia dos saberes sensíveis.
 
 ### 1.2 Manual de Marca como regra
 
 Valem a paleta oficial, a Poppins como fonte principal, a Thunder como secundária e o
-vocabulário modular (quadrado de canto arredondado, quarto de círculo, arco). O manual não é
-reproduzido peça por peça; seus princípios são traduzidos para o meio digital.
+vocabulário modular. O manual não é reproduzido peça por peça; seus princípios são traduzidos
+para o meio digital.
 
 O Caminhos do Contemporâneo continua como submarca, com tipografia e acentos próprios
 (seção 2.6).
-
-### 1.3 Intensidade
-
-A dose de matéria é um parâmetro do sistema, aplicado por contexto com o atributo
-`data-intensity`:
-
-| Nível | Onde | O que entra |
-|---|---|---|
-| 1 | Repositório, leitura longa, página de item | Módulos chapados, grão leve de papel, no máximo um acento de matéria |
-| 2 | Institucionais, eventos, 404 | Hero com uma composição de matéria contida |
-| 3 | Home (só em toques sobre a base do nível 2) | Hero com vários materiais equilibrados e movimento mais presente |
-
-Em todos os contextos, os pontos de interação têm volume sutil e "afundam" quando
-pressionados (seção 2.5).
-
-As calibragens que levaram a essa tabela estão em
-`../redesign-fase2-referencias/2026-10-07-14-16-nivel-{1-sutil,2-medio,3-alto}.png`, fora do
-repositório.
 
 ## 2. Fundamentos
 
@@ -83,7 +87,7 @@ um modo escuro possa ser acrescentado depois sem retrabalho.
 | Azul | `#302A66` | Texto, links, ações |
 | Vermelho | `#B10000` | Texto, links, ações |
 | Verde | `#00523C` | Texto, links, ações |
-| Laranja | `#F44F21` | Matéria, formas, títulos muito grandes (contraste ≈ 3:1 sobre o gelo: nunca em texto comum) |
+| Laranja | `#F44F21` | Formas, títulos muito grandes (contraste ≈ 3:1 sobre o gelo: nunca em texto comum) |
 | Rosa | `#F4BEBE` | Superfícies e decoração, nunca em texto |
 | Gelo | `#F0F0FF` | Fundo de papel |
 
@@ -108,35 +112,44 @@ licença. A licença para web precisa ser confirmada antes que a Thunder entre n
 
 ### 2.3 Forma
 
-O vocabulário é o do manual: quadrado de canto arredondado, quarto de círculo e arco. Os
-raios dos componentes e os ícones modulares derivam desses módulos. O grid é modular, como
-uma base de montar.
+O vocabulário é o do manual: quadrado de canto arredondado, quarto de círculo e arco. É o
+principal recurso expressivo do sistema. Os raios dos componentes e os ícones modulares
+derivam desses módulos; os heroes e as aberturas de seção são composições de módulos chapados
+na paleta. O grid é modular.
 
-### 2.4 Matéria
+### 2.4 Textura como detalhe
 
-A matéria aparece em duas técnicas:
+Dois meios, ambos em pontos contados:
 
-- **imagens geradas por IA**, só na camada expressiva (heroes, aberturas de seção, estados
-  vazios, 404), seguindo o guia da seção 3;
-- **código**, na camada sistêmica: grão de papel no fundo, volume dos botões, módulos
-  chapados e movimento.
+- **CSS:** grão leve de papel no fundo e trama sutil, aplicados em poucos lugares (fundo de
+  página, uma superfície de destaque). Nunca atrás de texto de leitura longa.
+- **IA:** só **amostras chapadas de material**, vistas de cima, sem volume nem perspectiva
+  (papel, tecido, massinha, blocos de montar, com peso igual), usadas **dentro de um módulo**
+  do manual (por exemplo, um quarto de círculo preenchido com trama de tecido); e imagens de
+  apoio 2D onde faltar conteúdo (estados vazios, 404). Guia na seção 3.
+
+Fotos de pessoas, registros de eventos e acervo são sempre fotografias reais. Nenhuma imagem
+gerada ou de banco é apresentada como se fosse do laboratório.
 
 ### 2.5 Movimento e interação
 
 Princípios adaptados da filosofia de design engineering de Emil Kowalski para o nosso stack
-(CSS puro; JavaScript e Web Animations API só quando necessário).
+(CSS puro; JavaScript e Web Animations API só quando necessário), somados à camada de hover e
+pressão da `design-taste-frontend` (seção 4.2).
 
-**Onde há movimento.** Mais presente no hero da home; nas outras páginas, só no hero e nos
-pontos de interação. O movimento nunca atrasa a navegação nem bloqueia conteúdo.
+**Onde há movimento.** O hero de cada página entra uma única vez ao carregar. Os "momentos" da
+skill só valem se forem tipográficos ou feitos com os módulos da marca, e só na home, no Sobre,
+na edição de evento e na 404; nunca nas páginas de leitura e busca. O movimento nunca atrasa a
+navegação nem bloqueia conteúdo.
 
 **A frequência decide.**
 
 | Frequência | Exemplos | Decisão |
 |---|---|---|
 | O tempo todo | Filtros e busca do repositório, paginação, menu aberto pelo teclado | Sem animação |
-| Muitas vezes | Hover em cards e links | Mínima: cor ou sombra, cerca de 150 ms |
+| Muitas vezes | Hover em cards e links | Mínima: cor, sombra ou elevação de 2 px, cerca de 150 ms |
 | De vez em quando | Menu mobile, acordeões da programação, avisos | Padrão: 200–250 ms |
-| Raramente | Hero da home, 404, primeira visita | Pode ter prazer: a matéria "se assenta", com cascata leve |
+| Raramente | Hero, 404, primeira visita | Pode ter prazer: os módulos "se encaixam", com cascata leve |
 
 Ações iniciadas pelo teclado nunca são animadas.
 
@@ -150,20 +163,20 @@ Ações iniciadas pelo teclado nunca são animadas.
 - a saída é mais rápida que a entrada;
 - cascatas com 30–80 ms entre itens, sem bloquear a interação.
 
-**Pressionar.** Elementos pressionáveis vão a `scale(0.97)` e reduzem a sombra de volume. Nada
-entra a partir de `scale(0)`: a entrada mais forte começa em `scale(0.95)` com opacidade zero.
-O hover que muda forma só existe em `@media (hover: hover) and (pointer: fine)`.
+**Pressionar.** Elementos pressionáveis vão a `scale(0.97)`. Nada entra a partir de
+`scale(0)`: a entrada mais forte começa em `scale(0.95)` com opacidade zero. O hover que muda
+forma só existe em `@media (hover: hover) and (pointer: fine)`.
 
 **Desempenho.** Só se animam `transform`, `opacity` e `clip-path`. Tudo o que pode ser
 acionado repetidamente usa transições (interrompíveis), não keyframes. Entradas usam
-`@starting-style`. As imagens de matéria do hero se revelam com `clip-path` ao entrar na tela,
-uma única vez.
+`@starting-style`.
 
-**Personalidade.** Elasticidade leve (bounce de 0,1 a 0,2) só nas peças decorativas do hero
+**Personalidade.** Elasticidade leve (bounce de 0,1 a 0,2) só nos módulos decorativos do hero
 da home e da 404. Componentes funcionais não têm bounce.
 
 **Movimento reduzido.** Com `prefers-reduced-motion: reduce`, saem deslocamentos, escala e
 cascatas; ficam as transições de opacidade e cor que ajudam a entender a mudança de estado.
+Nada fica escondido.
 
 **Revisão.** Toda animação do catálogo é revista em câmera lenta (duração ×3 a ×5) e de novo
 no dia seguinte, antes da aprovação.
@@ -174,90 +187,99 @@ A submarca é uma camada de tema, `data-brand="caminhos"`, que troca só a tipog
 (Cormorant Garamond + DM Mono) e os acentos de cor do evento. Os componentes são os mesmos;
 não há fork.
 
-## 3. Direção de arte das imagens geradas
+## 3. Guia das imagens geradas por IA
 
-**Uso.** Só a camada expressiva. Fotos de pessoas, registros de eventos e acervo continuam
-sendo fotografias reais.
+**Uso.** Só as amostras de textura e as imagens de apoio da seção 2.4. Documentado no catálogo
+(Foundations → Textura).
 
-**Guia**, documentado no catálogo (Foundations → Matéria):
+1. **Prompt fixo**, com: amostra de material vista de cima, chapada, sem perspectiva nem
+   volume; os seis hexadecimais da paleta; luz plana e uniforme; proibições: brilho,
+   perspectiva 3D, sombras projetadas, cores fora da paleta, letras e logos inventados, mãos
+   ou pessoas.
+2. **Parâmetros fixos:** Nano Banana Pro (`google/gemini-3-pro-image`) via OpenRouter, geração
+   em 1K, recorte e exportação para WebP. Trocar de modelo exige registrar um ADR.
+3. **Checklist de aprovação:** paleta conferida com conta-gotas; nenhum texto ou logo; sem
+   volume nem perspectiva; os quatro materiais equilibrados no conjunto do site; peso dentro
+   do orçamento.
+4. **Orçamento de peso:** cerca de 60 KB por amostra; imagens de apoio até cerca de 120 KB.
+   Nenhuma tem prioridade de carregamento.
+5. **Texto alternativo:** texturas usam `alt=""` (ou entram como fundo CSS). Uma imagem de
+   apoio que comunica algo (a 404, por exemplo) ganha uma descrição curta.
+6. **Log:** cada geração aprovada é registrada (prompt, modelo, data, custo) em
+   `design-systems/marca/ia/log.md`.
 
-1. **Prompt-mestre fixo**, com:
-   - o vocabulário da matéria: massinha fosca com marcas de dedo, papel de algodão
-     levemente amassado, blocos de montar foscos, tecido de trama visível;
-   - os seis hexadecimais da paleta;
-   - luz difusa vinda de cima à esquerda, sombra curta e suave, câmera frontal ou em 30°;
-   - fundo de papel gelo;
-   - proibições: brilho plástico, cores fora da paleta, letras e logos inventados, mãos ou
-     pessoas.
-2. **Imagens-âncora:** de 3 a 5 imagens tiradas da primeira composição aprovada da home. São
-   passadas como `--input-image` em toda geração nova.
-3. **Parâmetros fixos:** Nano Banana Pro (`google/gemini-3-pro-image`) via OpenRouter,
-   geração em 2K, depois recorte e exportação para WebP em tamanhos responsivos. Trocar de
-   modelo exige regerar as âncoras e registrar um ADR.
-4. **Checklist de aprovação:**
-   - paleta conferida com conta-gotas;
-   - nenhum texto ou logo inventado;
-   - os quatro materiais equilibrados no conjunto;
-   - luz e ângulo iguais aos das âncoras;
-   - texto da interface só sobre área lisa;
-   - peso dentro do orçamento.
-5. **Orçamento de peso:** o hero da home fica abaixo de cerca de 200 KB no mobile, e as outras
-   imagens expressivas abaixo de cerca de 120 KB. Tudo em WebP com `srcset`, e só o hero tem
-   prioridade de carregamento.
-6. **Texto alternativo:** imagens puramente decorativas usam `alt=""`. Quando a composição
-   comunica algo (a 404, por exemplo), ganha uma descrição curta.
-7. **Log:** cada geração aprovada é registrada (prompt, modelo, imagens de entrada, data,
-   custo) em `design-systems/labmaes/assets/materia/log.md`.
-
-**Onde ficam:** as imagens fixas do sistema (heroes das telas-chave, 404, estados vazios)
-ficam em `design-systems/labmaes/assets/materia/`. Imagens de páginas específicas criadas
-depois seguem o mesmo guia e entram pelo upload do CMS.
+**Onde ficam:** as imagens do sistema ficam em `design-systems/labmaes/assets/textura/` depois
+da extração. Imagens de páginas específicas criadas depois seguem o mesmo guia e entram pelo
+upload do CMS.
 
 ## 4. Fluxo de produção
 
-O DS é produzido com as skills de `rtadewald/skills`:
+### 4.1 Etapas de cada tela
 
-1. `/plan-screen`: planeja cada tela (três propostas com wireframe);
-2. `/to-img`: gera o mock aprovado em PNG;
-3. `/img-to-html`: recria o mock em HTML, CSS e JS puros, etapa por etapa;
-4. `/extract-ds`: extrai o catálogo `design-system.html` (Overview, Foundations, Components,
-   Layouts).
+1. **`/plan-screen` (opcional, invocado pelo usuário):** planeja a tela e propõe wireframes.
+2. **Construção com a `design-taste-frontend`:** a tela é feita em HTML, CSS e JS com o kit da
+   skill e a camada de marca `design-systems/marca/marca.css` (tokens do manual, fontes, raios
+   derivados dos módulos, grão e trama), que vem depois do kit e prevalece sobre ele.
+3. **Verificação:** rodam os verificadores da skill (`check.mjs`, `consistency.mjs`,
+   `perf.mjs`, `copy-lint.mjs`) e o axe. O resultado fica em `verificacao.md` na pasta da tela:
+   avisos que correspondem a uma exceção da seção 4.2 são marcados como aceitos, com a
+   exceção citada; todos os outros são corrigidos.
+4. **Gate:** o usuário aprova pela captura em PNG (1440 px e 390 px). Sem "aprovado" ou "pode
+   seguir", a tela não avança.
+5. **Extração:** o `/extract-ds` gera o catálogo `design-systems/labmaes/`. Como ele aceita uma
+   única entrada, `design-systems/telas/index.html` liga as telas e serve de entrada.
 
-As skills são usadas como estão, com três adaptações:
+O site depende só do catálogo extraído, nunca do kit da skill. Se a skill for atualizada ou
+trocada, o catálogo e o site não mudam.
 
-- no `/plan-screen`, o critério de impacto é o deste DS (estrutura e matéria, intensidade por
-  contexto, saberes sensíveis), não o de conteúdo para redes sociais;
-- no `/to-img`, o modelo padrão `gpt2` é substituído pelos parâmetros da seção 3;
-- o `/extract-ds` aceita uma única entrada, então `design-systems/telas/index.html` liga as
-  telas e serve de entrada para a extração.
+### 4.2 Exceções às regras da `design-taste-frontend`
 
-Os gates de aprovação das skills valem integralmente.
+A skill foi feita para sites de empresa. Nestas regras, o LabMAES segue a própria marca:
 
-### 4.1 Telas e ordem
+| Regra da skill | No LabMAES |
+|---|---|
+| Sem violeta nem lavanda no design | Vale a paleta do manual (azul `#302A66`, gelo `#F0F0FF`) |
+| Fundos chapados, sem grão fora de tecnologia | Grão e trama leves como detalhe (seção 2.4) |
+| Uma seção por tela | Vale só na home e nas institucionais; repositório, item, leitura longa e programação seguem o conteúdo |
+| Nenhuma legenda sob imagem | Acervo e produções têm legenda, crédito e autoria |
+| Fotos de banco como substitutas | Proibidas; sem foto real, usa-se composição de módulos ou textura de IA, nunca algo que pareça ser do laboratório |
+| Ícones reais coloridos de produtos | Ícones modulares da marca, sempre com rótulo |
+| Contatos em `.example`, sem número | Dados reais e públicos do LabMAES |
+| Um ou dois "momentos" em toda página | Só na home, no Sobre, na edição de evento e na 404 (seção 2.5) |
 
-| Ciclo | Telas | Nível |
-|---|---|---|
-| 1 | Home desktop | 3 |
-| 1 | Home mobile | 3 |
-| 1 | Listagem do repositório (Produções, com busca e filtros) | 1 |
-| — | **Extração 1** → catálogo v1, ponto de revisão | — |
-| 2 | Página de item (uma produção) | 1 |
-| 2 | Página institucional (Sobre) | 1–2 |
-| 2 | Edição de evento (Caminhos 2026) | 1–2, com `data-brand="caminhos"` |
-| 2 | 404 | 2 |
-| — | **Extração final** → catálogo completo, fonte da verdade | — |
+As demais regras da skill valem: bordas iguais, sistema único (um par de botões, um estilo de
+card, uma escala de raios, um estilo de link), alvos de toque de 44 px, nada além da tela em
+320 px, contraste, foco visível, peso das imagens e o `copy-lint` (adaptado ao português onde
+couber).
 
-O ciclo 1 junta os dois extremos para que os fundamentos não fiquem puxados para a matéria
-nem para a estrutura. As imagens-âncora saem da home. No ciclo 2, cada tela parte do
-`styles.css` do catálogo v1 e só acrescenta o que falta.
+### 4.3 Telas e ordem
 
-### 4.2 Estrutura no repositório
+| Ciclo | Telas |
+|---|---|
+| 1 | Home desktop |
+| 1 | Home mobile |
+| 1 | Listagem do repositório (Produções, com busca e filtros) |
+| — | **Extração 1** → catálogo v1, ponto de revisão e consulta informal à coordenação |
+| 2 | Página de item (uma produção) |
+| 2 | Página institucional (Sobre) |
+| 2 | Edição de evento (Caminhos 2026), com `data-brand="caminhos"` |
+| 2 | 404 |
+| — | **Extração final** → catálogo completo, fonte da verdade |
+
+O ciclo 1 junta a página mais expressiva (home) e a mais funcional (repositório), para que os
+fundamentos não fiquem puxados para um lado só. No ciclo 2, cada tela parte do `styles.css` do
+catálogo v1 e só acrescenta o que falta.
+
+### 4.4 Estrutura no repositório
 
 ```text
 design-systems/
+  marca/
+    marca.css           # camada de marca sobre o kit da skill
+    ia/                 # prompt fixo, checklist e log.md das gerações
   telas/
     index.html          # liga as telas; entrada do /extract-ds
-    01-home/            # saída do /img-to-html: reference.png, wireframe.txt, index.html, assets/
+    01-home/            # index.html, captura-1440.png, captura-390.png, verificacao.md, assets/
     02-home-mobile/
     03-repositorio/
     04-item/
@@ -269,16 +291,17 @@ design-systems/
     styles.css
     interactions.js
     assets/
-      materia/          # imagens geradas, âncoras e log.md
+      textura/
       fonts/
 ```
 
-### 4.3 Regras
+### 4.5 Regras
 
+- O kit da skill é copiado para a pasta de cada tela pela própria skill; os arquivos do kit não
+  são editados (regra da skill). Só a camada de marca muda.
 - Entre a extração 1 e a extração final, o catálogo não é editado à mão, porque a extração
   final o regenera. Ajustes finos só depois dela.
-- Só entram no repositório os mocks aprovados (o `reference.png` de cada tela). As
-  alternativas descartadas ficam em `../redesign-fase2-referencias/`, fora do repositório.
+- Alternativas descartadas ficam em `../redesign-fase2-referencias/`, fora do repositório.
 - Nenhum token fica em JSON ou outro arquivo paralelo ao `styles.css`.
 
 ## 5. Integração com o Eleventy
@@ -312,8 +335,9 @@ nas Fases 3, 4 e 5, e o `css/` e o `js/` antigos são removidos na Fase 7.
 
 Alvo: WCAG 2.2 AA (ADR 0005).
 
-Um job novo no `.github/workflows/ci.yml` roda Playwright com `@axe-core/playwright` contra o
-catálogo gerado pelo build:
+Durante a construção, cada tela passa pelos verificadores da skill e pelo axe (seção 4.1). Na
+CI, um job novo no `.github/workflows/ci.yml` roda Playwright com `@axe-core/playwright`
+contra o catálogo gerado pelo build:
 
 1. regras WCAG 2.2 A e AA do axe;
 2. a mesma checagem com `prefers-reduced-motion: reduce` emulado;
@@ -335,10 +359,10 @@ cumpridos.
 **O que é enviado à coordenadora:**
 
 - o link do catálogo no deploy de preview da branch da fase;
-- os mocks aprovados das seis telas e da home mobile (PNG);
+- as capturas aprovadas das seis telas e da home mobile (PNG);
 - os links das telas em HTML no mesmo preview;
-- um resumo curto das decisões (conceito, intensidade, cor, tipografia, matéria, movimento),
-  em linguagem não técnica.
+- um resumo curto das decisões (site novo com a mesma marca, cor, tipografia, forma, textura,
+  movimento), em linguagem não técnica.
 
 **Registro.** A resposta é registrada num documento em `docs/superpowers/reviews/` e num
 comentário na issue da aprovação, com data e eventuais ressalvas.
@@ -357,19 +381,20 @@ publicado em `/design-system/` no site de produção.
 | #26 | Reescrita: header e card saem do catálogo |
 | #27 | Absorvida pelas Foundations (seção 2.2) |
 | #28 | Regra do DS (seção 2.2); ainda pode ser corrigida no CSS atual |
-| #33 | Fechada como substituída pelos mocks PNG e telas em HTML |
+| #33 | Fechada como substituída pelas telas em HTML construídas com a `design-taste-frontend` |
 | #34 | Atendida pelo `design-system.html` |
 | #35 | Atendida pelo job da seção 6 |
 
-Issues novas: licença da Thunder, guia de direção de arte, uma por tela, extração 1, extração
-final, integração com o Eleventy, ADR 0010 e aprovação da coordenação.
+Issues novas: licença da Thunder, camada de marca e guia de IA, uma por tela, extração 1,
+extração final, integração com o Eleventy, ADR 0010 e aprovação da coordenação.
 
 ## 9. Critérios de saída
 
-1. As seis telas e a home mobile estão aprovadas como mock e como HTML.
-2. O catálogo saiu da extração final e cobre Foundations (com Matéria e Movimento),
-   Components e Layouts, os três níveis de intensidade e `data-brand="caminhos"`.
-3. O guia de direção de arte está no catálogo, com 3 a 5 âncoras e o log das gerações.
+1. As seis telas e a home mobile estão aprovadas pelas capturas, com `verificacao.md` sem
+   aviso pendente.
+2. O catálogo saiu da extração final e cobre Foundations (com Forma, Textura e Movimento),
+   Components e Layouts, e `data-brand="caminhos"`.
+3. O guia de IA está no catálogo, com o log das gerações.
 4. O catálogo está publicado em `/design-system/` no deploy de preview da branch da fase; as
    macros de `_includes/ds/` e o `layout-v2.njk` existem; nenhuma página pública foi alterada.
 5. `test:ds` e o job de acessibilidade estão verdes na CI.
@@ -383,9 +408,12 @@ final, integração com o Eleventy, ADR 0010 e aprovação da coordenação.
 
 | Risco | Mitigação |
 |---|---|
-| A IA se desviar da direção de arte | Âncoras obrigatórias e checklist |
+| A skill puxar o visual para fora da marca | Camada de marca obrigatória, tabela de exceções (seção 4.2) e gate do usuário em cada tela |
+| Os verificadores da skill acusarem as exceções o tempo todo | Avisos aceitos registrados em `verificacao.md`, citando a exceção |
+| O site ficar preso ao kit da skill | O site consome só o catálogo extraído (seção 4.1) |
 | O catálogo e as macros divergirem | `test:ds` na CI |
 | A extração final sobrescrever ajustes | Nenhuma edição manual entre as extrações |
-| Custo das gerações | Log com custo por imagem; saldo em 2026-10-07 de cerca de US$ 5,40 no OpenRouter |
+| A IA se desviar do guia | Prompt fixo e checklist; uso restrito a texturas e apoio |
+| Custo das gerações | Geração em 1K e log com custo; conferir o saldo do OpenRouter antes de gerar |
 | Thunder sem licença para web | Poppins Black como alternativa definida |
 | A coordenação pedir mudanças de fundo só no fim, gerando retrabalho | Mostrar à coordenadora o preview do catálogo v1, depois da extração 1, como consulta informal; a aprovação formal continua sendo o passo final |
