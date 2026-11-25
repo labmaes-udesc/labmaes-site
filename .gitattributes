@@ -23,3 +23,6 @@
 *.gif   binary
 *.ico   binary
 *.mp4   binary
+
+# Scripts de shell: sempre LF, senão o bash do Git for Windows quebra com CR no fim da linha
+*.sh    text eol=lf

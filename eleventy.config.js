@@ -12,6 +12,8 @@ export default function (eleventyConfig) {
   eleventyConfig.ignores.add("tools/**");
   // Fundação de conteúdo do Pages CMS (Fase 1) — ainda não integrada ao build do Eleventy
   eleventyConfig.ignores.add("src/**");
+  // Design system (Fase 2): telas e catálogo não são templates. O catálogo é copiado por passthrough.
+  eleventyConfig.ignores.add("design-systems/**");
 
   // Links com target="_blank": aviso de nova aba para leitor de tela e setas decorativas ocultas
   eleventyConfig.addTransform("links-nova-aba", function (content) {

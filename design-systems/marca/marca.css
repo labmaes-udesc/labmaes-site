@@ -1,0 +1,53 @@
+/* Camada de marca do LabMAES sobre o kit da design-taste-frontend (spec da Fase 2, seções 2 e 4.1).
+   Fonte: Manual de Marca e css/tokens.css do site atual. Carregar depois de assets/system.css. */
+
+@font-face { font-family: "Poppins"; src: url("fonts/Poppins-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("fonts/Poppins-SemiBold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("fonts/Poppins-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+/* Thunder: só depois da Tarefa A5 (licença para web). Sem licença, Poppins Black (fonts/Poppins-Black.woff2). */
+@font-face { font-family: "Thunder"; src: url("fonts/Thunder-BoldHC.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+:root {
+  /* paleta do manual (spec 2.1) */
+  --marca-azul: #302A66;
+  --marca-vermelho: #B10000;
+  --marca-verde: #00523C;
+  --marca-laranja: #F44F21;
+  --marca-rosa: #F4BEBE;
+  --marca-gelo: #F0F0FF;
+
+  /* tokens do kit (system.css) apontados para a marca */
+  --p-bg: var(--marca-gelo);
+  --p-surface: #FFFFFF;
+  --p-ink: var(--marca-azul);
+  --p-muted: rgba(48, 42, 102, 0.78);
+  --p-accent: var(--marca-vermelho);
+  --p-accent-ink: #FFFFFF;
+  --p-action: var(--marca-vermelho);
+  --p-action-ink: #FFFFFF;
+  --p-inv-bg: var(--marca-azul);
+  --p-inv-surface: #3B3477;
+  --p-inv-ink: var(--marca-gelo);
+  --p-inv-muted: rgba(240, 240, 255, 0.82);
+  --p-inv-accent: var(--marca-gelo);
+  --p-inv-accent-ink: var(--marca-azul);
+  --p-inv-action: var(--marca-gelo);
+  --p-inv-action-ink: var(--marca-azul);
+
+  --font-display: "Thunder", "Poppins", system-ui, sans-serif;
+  --font-text: "Poppins", system-ui, sans-serif;
+  --display-weight: 700;
+  --display-tracking: 0;
+
+  /* raios derivados dos módulos do manual (quadrado de canto arredondado) */
+  --r-sm: 8px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-btn: 999px;
+
+  /* textura como detalhe (spec 2.4): grão de papel em SVG, aplicado só onde a tela pedir */
+  --textura-grao: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .19 0 0 0 0 .16 0 0 0 0 .4 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+/* Utilitário de textura: um elemento com data-textura="grao" ganha o grão por cima do próprio fundo */
+[data-textura="grao"] { background-image: var(--textura-grao); background-repeat: repeat; }

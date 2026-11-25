@@ -124,7 +124,7 @@ Na linha da Fase 2 de `docs/roadmap.md`, a coluna "Referência" passa a ser:
 | 2 | Design system | em andamento | [spec](superpowers/specs/2026-10-07-redesign-fase-2-design-system-design.md), [plan](superpowers/plans/2026-11-25-redesign-fase-2-design-system.md) |
 ```
 
-- [ ] **Passo 2: Commit, push e PR da documentação** (branch `docs/fase-2-spec-design-system`, que já tem a spec revisada e o plano antigo marcado como substituído)
+- [x] **Passo 2: Commit, push e PR da documentação** (branch `docs/fase-2-spec-design-system`, que já tem a spec revisada e o plano antigo marcado como substituído)
 
 ```bash
 export PATH="$PATH:/c/Program Files/GitHub CLI"
@@ -138,7 +138,7 @@ Closes #24"
 
 Esperado: a CI passa (só `docs/` mudou). **Pedir ao usuário para revisar e mesclar o PR.**
 
-- [ ] **Passo 3: Criar a branch da fase a partir da `main` atualizada**
+- [x] **Passo 3: Criar a branch da fase a partir da `main` atualizada**
 
 ```bash
 git switch main && git pull --ff-only
@@ -146,7 +146,7 @@ git switch -c redesign/fase-2-design-system
 git push -u origin redesign/fase-2-design-system
 ```
 
-- [ ] **Passo 4: Abrir um PR de rascunho permanente da fase**
+- [x] **Passo 4: Abrir um PR de rascunho permanente da fase**
 
 O PR de rascunho faz o Cloudflare publicar a URL de preview da branch e concentra a CI. Ele **não** é mesclado antes da Parte F.
 
@@ -158,7 +158,7 @@ gh pr create --draft --base main --head redesign/fase-2-design-system \
   --body "Branch da Fase 2. Só é mesclada depois da aprovação da coordenadora (spec, seção 7; ADR 0010)."
 ```
 
-- [ ] **Passo 5: Confirmar o preview do Cloudflare**
+- [x] **Passo 5: Confirmar o preview do Cloudflare**
 
 Rodar `gh pr view --comments` e procurar o comentário do Cloudflare com a URL de preview. Se não houver comentário em alguns minutos, **pedir ao usuário** que confira no painel do Cloudflare (Workers & Pages → `labmaes-site` → Settings → Builds) se os builds de branches que não são de produção e as preview URLs estão ativados. Anotar a URL de preview no corpo do PR.
 
@@ -168,7 +168,7 @@ Rodar `gh pr view --comments` e procurar o comentário do Cloudflare com a URL d
 - Criar: `docs/architecture/adr/0010-aprovacao-coordenacao.md`
 - Modificar: `docs/architecture/README.md`
 
-- [ ] **Passo 1: Escrever o ADR**
+- [x] **Passo 1: Escrever o ADR**
 
 ```markdown
 # ADR 0010 — O redesign só vai ao ar com a aprovação da coordenadora do LabMAES
@@ -208,7 +208,7 @@ dependem desta aprovação.
   consulta informal; a aprovação formal continua sendo o último passo.
 ```
 
-- [ ] **Passo 2: Atualizar o README da arquitetura**
+- [x] **Passo 2: Atualizar o README da arquitetura**
 
 Em `docs/architecture/README.md`, trocar a linha "- Fases 2–7: planejadas; ..." por:
 
@@ -219,7 +219,7 @@ Em `docs/architecture/README.md`, trocar a linha "- Fases 2–7: planejadas; ...
 Desde o ADR 0010, nenhuma fase do redesign é publicada sem a aprovação da coordenadora do LabMAES.
 ```
 
-- [ ] **Passo 3: Commit**
+- [x] **Passo 3: Commit**
 
 ```bash
 git add docs/architecture/adr/0010-aprovacao-coordenacao.md docs/architecture/README.md
@@ -234,7 +234,7 @@ O Eleventy usa `input: "."`; sem isto, os `index.html` das telas virariam págin
 **Arquivos:**
 - Modificar: `eleventy.config.js` (bloco de `ignores`)
 
-- [ ] **Passo 1: Acrescentar o ignore**
+- [x] **Passo 1: Acrescentar o ignore**
 
 Logo depois de `eleventyConfig.ignores.add("src/**");`:
 
@@ -243,12 +243,12 @@ Logo depois de `eleventyConfig.ignores.add("src/**");`:
   eleventyConfig.ignores.add("design-systems/**");
 ```
 
-- [ ] **Passo 2: Verificar o build**
+- [x] **Passo 2: Verificar o build**
 
 Run: `npm run build`
 Esperado: termina sem erro, com o mesmo número de páginas de antes (`Wrote N files`).
 
-- [ ] **Passo 3: Commit**
+- [x] **Passo 3: Commit**
 
 ```bash
 git add eleventy.config.js
@@ -266,7 +266,7 @@ git push
 - Criar: `design-systems/marca/excecoes.md`
 - Criar: `tools/ds/preparar-tela.sh`
 
-- [ ] **Passo 1: Ignorar as cópias locais**
+- [x] **Passo 1: Ignorar as cópias locais**
 
 Acrescentar ao fim de `.gitignore`:
 
@@ -277,10 +277,10 @@ design-systems/telas/*/marca/
 design-systems/telas/*/shots/
 design-systems/telas/*/.taste-skill/*
 !design-systems/telas/*/.taste-skill/waivers.json
-.taste-skill/
+/.taste-skill/
 ```
 
-- [ ] **Passo 2: Escrever a camada de marca**
+- [x] **Passo 2: Escrever a camada de marca**
 
 `design-systems/marca/marca.css` (carregado **depois** do `assets/system.css` do kit; redefine só tokens e fontes, nunca classes do kit):
 
@@ -342,7 +342,7 @@ design-systems/telas/*/.taste-skill/*
 
 Os raios e o `--display-tracking` são o ponto de partida; a Tarefa B1 calibra com o usuário. A Thunder só entra no catálogo depois da Tarefa A5.
 
-- [ ] **Passo 3: Escrever as exceções**
+- [x] **Passo 3: Escrever as exceções**
 
 `design-systems/marca/excecoes.md`:
 
@@ -369,7 +369,7 @@ ficam só no `verificacao.md`, e a tela é encerrada com `gate.mjs --done` depoi
 usuário (Tarefa B0, Passo 7).
 ```
 
-- [ ] **Passo 4: Escrever o preparador de telas**
+- [x] **Passo 4: Escrever o preparador de telas**
 
 `tools/ds/preparar-tela.sh`:
 
@@ -408,7 +408,7 @@ echo "tela $slug pronta em $tela"
 
 Run: `chmod +x tools/ds/preparar-tela.sh`
 
-- [ ] **Passo 5: Testar o preparador numa pasta descartável**
+- [x] **Passo 5: Testar o preparador numa pasta descartável**
 
 ```bash
 tools/ds/preparar-tela.sh 00-teste
@@ -419,7 +419,7 @@ rm -rf design-systems/telas/00-teste
 
 Esperado: `assets/`, `index.html` e `marca/` (com `marca.css` e `fonts/`) existem; o lembrete do `marca.css` aparece; o `git status` lista só `design-systems/telas/00-teste/index.html` (as cópias são ignoradas). Depois a pasta é removida.
 
-- [ ] **Passo 6: Escrever o README da pasta**
+- [x] **Passo 6: Escrever o README da pasta**
 
 `design-systems/README.md`:
 
@@ -445,7 +445,7 @@ Design system do novo site do LabMAES (Fase 2 do redesign). Spec:
 O site publica só `labmaes/`, em `/design-system/`. As telas nunca vão para o site.
 ```
 
-- [ ] **Passo 7: Commit**
+- [x] **Passo 7: Commit**
 
 ```bash
 git add .gitignore design-systems/README.md design-systems/marca/marca.css design-systems/marca/excecoes.md tools/ds/preparar-tela.sh
@@ -466,7 +466,9 @@ Essa tarefa pode correr em paralelo com o resto. Ela só bloqueia a extração f
 
 ### Tarefa A6: Reorganizar as issues da milestone
 
-- [ ] **Passo 1: Comentar e fechar as issues absorvidas**
+> Feita em 2026-11-25: issues #100 (Thunder), #101 (camada de marca), #102–#107 (telas 01, 03–07), #108 (extração 1), #109 (extração final), #110 (integração), #111 (aprovação). Lista no corpo do PR #99.
+
+- [x] **Passo 1: Comentar e fechar as issues absorvidas**
 
 ```bash
 gh issue comment 33 --body "Substituída pela spec da Fase 2: os protótipos passam a ser telas em HTML construídas com a skill design-taste-frontend sobre a marca atual (Revisão 1 da spec). Ver docs/superpowers/specs/2026-10-07-redesign-fase-2-design-system-design.md."
@@ -478,7 +480,7 @@ gh issue comment 34 --body "Atendida pelo catálogo design-systems/labmaes/desig
 gh issue comment 35 --body "Atendida pelo job de acessibilidade da Tarefa C5 do plan da Fase 2 (Playwright + axe sobre o catálogo)."
 ```
 
-- [ ] **Passo 2: Criar as issues novas**
+- [x] **Passo 2: Criar as issues novas**
 
 ```bash
 M="Fase 2 — Design system"
@@ -493,7 +495,7 @@ gh issue create --milestone "$M" --label "tipo:tarefa,área:design-system,área:
 gh issue create --milestone "$M" --label "tipo:decisão,área:design-system" --title "Aprovação da coordenação (Fase 2)" --body "Pacote para a Profa. Mara Rúbia Sant'Anna e registro da resposta (spec, seção 7; ADR 0010; plan, Parte F)."
 ```
 
-- [ ] **Passo 3: Anotar os números das issues** criadas no corpo do PR de rascunho da fase, para referenciá-las nos commits (`Refs #N`).
+- [x] **Passo 3: Anotar os números das issues** criadas no corpo do PR de rascunho da fase, para referenciá-las nos commits (`Refs #N`).
 
 ### Tarefa A7: Ferramenta de imagens e guia da IA
 
@@ -505,7 +507,7 @@ Só texturas chapadas e imagens de apoio 2D (spec, seções 2.4 e 3).
 - Criar: `design-systems/marca/ia/log.md`
 - Criar: `design-systems/marca/textura/.gitkeep`
 
-- [ ] **Passo 1: Escrever o wrapper**
+- [x] **Passo 1: Escrever o wrapper**
 
 `tools/ds/gerar-imagem.sh`:
 
@@ -530,9 +532,14 @@ fi
 prompt="$(tr -d '\r' < "$fixo" | sed -n '/^```prompt$/,/^```$/p' | sed '1d;$d') $(tr -d '\r' < "$arquivo_prompt")"
 
 mkdir -p "$(dirname "$saida")"
+status=0
 resultado="$(uv run --system-certs "$script" --model pro --resolution 1K --aspect-ratio "$proporcao" \
-  --filename "$saida" --prompt "$prompt" 2>&1 | tail -3)"
-echo "$resultado"
+  --filename "$saida" --prompt "$prompt" 2>&1)" || status=$?
+printf '%s\n' "$resultado" | tail -3
+if [ "$status" -ne 0 ]; then
+  echo "geração falhou (código $status); nada foi registrado no log" >&2
+  exit "$status"
+fi
 
 custo="$(printf '%s\n' "$resultado" | sed -n 's/.*usage.cost): \(.*\)$/\1/p')"
 printf '| %s | `%s` | `%s` | %s | %s |\n' \
@@ -541,7 +548,7 @@ printf '| %s | `%s` | `%s` | %s | %s |\n' \
 
 Run: `chmod +x tools/ds/gerar-imagem.sh`
 
-- [ ] **Passo 2: Escrever o prompt fixo e o checklist**
+- [x] **Passo 2: Escrever o prompt fixo e o checklist**
 
 `design-systems/marca/ia/prompt-fixo.md`:
 
@@ -564,7 +571,7 @@ Flat top-down material swatch for the website of LabMAES, a university research 
 - [ ] Aprovada pelo usuário; linha marcada com ✅ no `log.md`.
 ````
 
-- [ ] **Passo 3: Criar o log e a pasta das texturas**
+- [x] **Passo 3: Criar o log e a pasta das texturas**
 
 `design-systems/marca/ia/log.md`:
 
@@ -580,7 +587,7 @@ fim da linha, à mão, depois da aprovação do usuário.
 
 Run: `mkdir -p design-systems/marca/textura && touch design-systems/marca/textura/.gitkeep`
 
-- [ ] **Passo 4: Testar o wrapper com uma geração barata** (só depois de o usuário confirmar o saldo do OpenRouter)
+- [x] **Passo 4 (feito em 2026-11-25, depois de recarregar a OpenRouter: US$ 0,139 por imagem 1K): Testar o wrapper com uma geração barata** (só depois de o usuário confirmar o saldo do OpenRouter)
 
 ```bash
 printf 'Swatch of ice-white cotton paper with a faint fibrous texture.' > ../redesign-fase2-referencias/teste.txt
@@ -590,7 +597,7 @@ tail -1 design-systems/marca/ia/log.md
 
 Esperado: `Image saved to: ...teste-wrapper.png`, custo em torno de US$ 0,13 e uma linha nova no log. Apagar essa linha de teste do log e o arquivo `../redesign-fase2-referencias/teste.txt`.
 
-- [ ] **Passo 5: Commit**
+- [x] **Passo 5: Commit**
 
 ```bash
 git add tools/ds/gerar-imagem.sh design-systems/marca/ia design-systems/marca/textura/.gitkeep

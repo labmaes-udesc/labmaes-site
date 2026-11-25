@@ -20,3 +20,11 @@ node_modules/
 # Python (scripts de preparação de assets em tools/)
 __pycache__/
 *.pyc
+
+# Design system (Fase 2): cópias locais recriadas por tools/ds/preparar-tela.sh
+design-systems/telas/*/assets/
+design-systems/telas/*/marca/
+design-systems/telas/*/shots/
+design-systems/telas/*/.taste-skill/*
+!design-systems/telas/*/.taste-skill/waivers.json
+/.taste-skill/
